@@ -1,0 +1,40 @@
+[Typerock facades](../index.md) / [Exports](../modules.md) / [google](../modules/google.md) / Facade
+
+# Interface: Facade
+
+[google](../modules/google.md).Facade
+
+## Table of contents
+
+### Methods
+
+- [idToken](google.Facade.md#idtoken)
+- [loadSdk](google.Facade.md#loadsdk)
+
+## Methods
+
+### idToken
+
+▸ `Readonly` **idToken**(): `Promise`<`stringU`\>
+
+Obtains permission to access user's Google account.
+
+#### Returns
+
+`Promise`<`stringU`\>
+
+ID token.
+
+___
+
+### loadSdk
+
+▸ `Readonly` **loadSdk**(): `Promise`<`void`\>
+
+Loads SDK.
+
+#### Returns
+
+`Promise`<`void`\>
+
+Promise.
