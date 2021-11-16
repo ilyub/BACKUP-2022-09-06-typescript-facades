@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / showConfirm
+[Typescript facades](../index.md) / [Exports](../modules.md) / showConfirm
 
 # Module: showConfirm
 

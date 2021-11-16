@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / lang
+[Typescript facades](../index.md) / [Exports](../modules.md) / lang
 
 # Module: lang
 

@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / inlineSearch
+[Typescript facades](../index.md) / [Exports](../modules.md) / inlineSearch
 
 # Module: inlineSearch
 

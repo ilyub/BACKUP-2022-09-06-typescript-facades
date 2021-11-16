@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ExistingDocument
+[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ExistingDocument
 
 # Interface: ExistingDocument
 

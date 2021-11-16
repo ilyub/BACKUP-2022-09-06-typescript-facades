@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [progressReporter](../modules/progressReporter.md) / Process
+[Typescript facades](../index.md) / [Exports](../modules.md) / [progressReporter](../modules/progressReporter.md) / Process
 
 # Interface: Process
 

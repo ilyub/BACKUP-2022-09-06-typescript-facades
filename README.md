@@ -1,4 +1,4 @@
-# Typerock facades
+# Typescript facades
 
 Facades represent a layer between main program and facade implementations.
 

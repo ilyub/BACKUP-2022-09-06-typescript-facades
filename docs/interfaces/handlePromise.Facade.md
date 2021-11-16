@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [handlePromise](../modules/handlePromise.md) / Facade
+[Typescript facades](../index.md) / [Exports](../modules.md) / [handlePromise](../modules/handlePromise.md) / Facade
 
 # Interface: Facade
 

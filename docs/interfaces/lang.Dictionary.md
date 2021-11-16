@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [lang](../modules/lang.md) / Dictionary
+[Typescript facades](../index.md) / [Exports](../modules.md) / [lang](../modules/lang.md) / Dictionary
 
 # Interface: Dictionary
 

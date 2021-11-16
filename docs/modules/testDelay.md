@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / testDelay
+[Typescript facades](../index.md) / [Exports](../modules.md) / testDelay
 
 # Module: testDelay
 

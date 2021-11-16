@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [datetime](../modules/datetime.md) / Facade
+[Typescript facades](../index.md) / [Exports](../modules.md) / [datetime](../modules/datetime.md) / Facade
 
 # Interface: Facade
 

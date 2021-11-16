@@ -2,10 +2,10 @@
   "name": "@skylib/facades",
   "version": "0.1.0",
   "private": false,
-  "description": "Typerock facades",
+  "description": "Typescript facades",
   "keywords": [
     "facade",
-    "skylib"
+    "typescript"
   ],
   "homepage": "https://github.com/ilyub/typescript-facades",
   "bugs": {

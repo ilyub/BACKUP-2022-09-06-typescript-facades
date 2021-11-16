@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / httpRequest
+[Typescript facades](../index.md) / [Exports](../modules.md) / httpRequest
 
 # Module: httpRequest
 

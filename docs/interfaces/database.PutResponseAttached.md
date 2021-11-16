@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / PutResponseAttached
+[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / PutResponseAttached
 
 # Interface: PutResponseAttached
 

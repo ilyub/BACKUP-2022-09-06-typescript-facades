@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / reactiveStorage
+[Typescript facades](../index.md) / [Exports](../modules.md) / reactiveStorage
 
 # Module: reactiveStorage
 

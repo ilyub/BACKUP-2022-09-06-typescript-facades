@@ -1,6 +1,6 @@
-Typerock facades / [Exports](modules.md)
+Typescript facades / [Exports](modules.md)
 
-# Typerock facades
+# Typescript facades
 
 Facades represent a layer between main program and facade implementations.
 

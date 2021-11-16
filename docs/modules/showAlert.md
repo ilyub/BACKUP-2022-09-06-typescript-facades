@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / showAlert
+[Typescript facades](../index.md) / [Exports](../modules.md) / showAlert
 
 # Module: showAlert
 

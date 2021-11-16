@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / google
+[Typescript facades](../index.md) / [Exports](../modules.md) / google
 
 # Module: google
 

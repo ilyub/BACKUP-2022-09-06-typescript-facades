@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / progressReporter
+[Typescript facades](../index.md) / [Exports](../modules.md) / progressReporter
 
 # Module: progressReporter
 

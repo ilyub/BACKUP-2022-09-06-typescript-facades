@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / icons
+[Typescript facades](../index.md) / [Exports](../modules.md) / icons
 
 # Module: icons
 

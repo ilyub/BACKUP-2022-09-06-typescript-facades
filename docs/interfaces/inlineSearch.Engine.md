@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [inlineSearch](../modules/inlineSearch.md) / Engine
+[Typescript facades](../index.md) / [Exports](../modules.md) / [inlineSearch](../modules/inlineSearch.md) / Engine
 
 # Interface: Engine
 

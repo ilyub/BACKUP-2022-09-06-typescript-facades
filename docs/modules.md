@@ -1,6 +1,6 @@
-[Typerock facades](index.md) / Exports
+[Typescript facades](index.md) / Exports
 
-# Typerock facades
+# Typescript facades
 
 ## Table of contents
 

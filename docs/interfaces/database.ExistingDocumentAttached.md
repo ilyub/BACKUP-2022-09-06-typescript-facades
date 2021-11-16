@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ExistingDocumentAttached
+[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ExistingDocumentAttached
 
 # Interface: ExistingDocumentAttached
 

@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / facebook
+[Typescript facades](../index.md) / [Exports](../modules.md) / facebook
 
 # Module: facebook
 

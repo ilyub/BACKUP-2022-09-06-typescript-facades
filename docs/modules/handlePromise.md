@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / handlePromise
+[Typescript facades](../index.md) / [Exports](../modules.md) / handlePromise
 
 # Module: handlePromise
 

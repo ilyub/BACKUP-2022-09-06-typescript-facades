@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / Condition
+[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / Condition
 
 # Interface: Condition
 

@@ -1,4 +1,4 @@
-[Typerock facades](../index.md) / [Exports](../modules.md) / uniqueId
+[Typescript facades](../index.md) / [Exports](../modules.md) / uniqueId
 
 # Module: uniqueId
 
