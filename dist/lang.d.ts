@@ -34,7 +34,7 @@ export interface Dictionary {
      * @param key - Word ID.
      * @returns _True_ if word exists, _false_ otherwise.
      */
-    readonly has: (key: string) => key is Transforms;
+    readonly has: (key: string) => key is Transforms<Word>;
     /**
      * Sets count for plural form.
      *
@@ -51,8 +51,8 @@ export interface Dictionary {
      */
     readonly with: (search: string, replace: NumStr) => Facade;
 }
-export declare type Facade = Dictionary & Words;
+export declare type DictionaryAndWords<T extends string> = Dictionary & ReadonlyRecord<Transforms<T>, string>;
+export declare type Facade = DictionaryAndWords<Word>;
+export declare type Transforms<T extends string> = Capitalize<T> | Lowercase<T> | Uncapitalize<T> | Uppercase<T>;
 export declare type Word = keyof facades.lang.Word;
-export declare type Transforms = Capitalize<Word> | Lowercase<Word> | Uncapitalize<Word> | Uppercase<Word>;
-export declare type Words = ReadonlyRecord<Transforms, string>;
 //# sourceMappingURL=lang.d.ts.map

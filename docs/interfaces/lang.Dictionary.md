@@ -58,7 +58,7 @@ ___
 
 ### has
 
-▸ `Readonly` **has**(`key`): key is Transforms
+▸ `Readonly` **has**(`key`): key is Transforms<"SampleWord"\>
 
 Checks if word exists.
 
@@ -70,7 +70,7 @@ Checks if word exists.
 
 #### Returns
 
-key is Transforms
+key is Transforms<"SampleWord"\>
 
 _True_ if word exists, _false_ otherwise.
 

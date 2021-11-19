@@ -11,10 +11,10 @@
 ### Type aliases
 
 - [Context](lang.md#context)
+- [DictionaryAndWords](lang.md#dictionaryandwords)
 - [Facade](lang.md#facade)
 - [Transforms](lang.md#transforms)
 - [Word](lang.md#word)
-- [Words](lang.md#words)
 
 ### Variables
 
@@ -28,27 +28,39 @@
 
 ___
 
+### DictionaryAndWords
+
+Ƭ **DictionaryAndWords**<`T`\>: [`Dictionary`](../interfaces/lang.Dictionary.md) & `ReadonlyRecord`<[`Transforms`](lang.md#transforms)<`T`\>, `string`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
+
+___
+
 ### Facade
 
-Ƭ **Facade**: [`Dictionary`](../interfaces/lang.Dictionary.md) & [`Words`](lang.md#words)
+Ƭ **Facade**: [`DictionaryAndWords`](lang.md#dictionaryandwords)<[`Word`](lang.md#word)\>
 
 ___
 
 ### Transforms
 
-Ƭ **Transforms**: `Capitalize`<[`Word`](lang.md#word)\> \| `Lowercase`<[`Word`](lang.md#word)\> \| `Uncapitalize`<[`Word`](lang.md#word)\> \| `Uppercase`<[`Word`](lang.md#word)\>
+Ƭ **Transforms**<`T`\>: `Capitalize`<`T`\> \| `Lowercase`<`T`\> \| `Uncapitalize`<`T`\> \| `Uppercase`<`T`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
 
 ___
 
 ### Word
 
 Ƭ **Word**: keyof `facades.lang.Word`
-
-___
-
-### Words
-
-Ƭ **Words**: `ReadonlyRecord`<[`Transforms`](lang.md#transforms), `string`\>
 
 ## Variables
 
