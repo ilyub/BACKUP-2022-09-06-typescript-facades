@@ -40,7 +40,7 @@ export interface Dictionary {
    * @param key - Word ID.
    * @returns _True_ if word exists, _false_ otherwise.
    */
-  readonly has: (key: string) => key is Transforms;
+  readonly has: (key: string) => key is Transforms<Word>;
   /**
    * Sets count for plural form.
    *
@@ -58,14 +58,15 @@ export interface Dictionary {
   readonly with: (search: string, replace: NumStr) => Facade;
 }
 
-export type Facade = Dictionary & Words;
+export type DictionaryAndWords<T extends string> = Dictionary &
+  ReadonlyRecord<Transforms<T>, string>;
+
+export type Facade = DictionaryAndWords<Word>;
+
+export type Transforms<T extends string> =
+  | Capitalize<T>
+  | Lowercase<T>
+  | Uncapitalize<T>
+  | Uppercase<T>;
 
 export type Word = keyof facades.lang.Word;
-
-export type Transforms =
-  | Capitalize<Word>
-  | Lowercase<Word>
-  | Uncapitalize<Word>
-  | Uppercase<Word>;
-
-export type Words = ReadonlyRecord<Transforms, string>;
