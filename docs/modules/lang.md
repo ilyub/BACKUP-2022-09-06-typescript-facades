@@ -7,6 +7,7 @@
 ### Interfaces
 
 - [Dictionary](../interfaces/lang.Dictionary.md)
+- [Extension](../interfaces/lang.Extension.md)
 
 ### Type aliases
 
@@ -66,4 +67,4 @@ ___
 
 ### lang
 
-• **lang**: `Facade`<[`Facade`](lang.md#facade), `unknown`\>
+• **lang**: `Facade`<[`Facade`](lang.md#facade), [`Extension`](../interfaces/lang.Extension.md)\>
