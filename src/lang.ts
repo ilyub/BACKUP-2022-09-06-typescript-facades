@@ -1,4 +1,7 @@
-import { createFacade } from "@skylib/functions/dist/helpers";
+import * as cast from "@skylib/functions/dist/converters";
+import * as is from "@skylib/functions/dist/guards";
+import { createFacade, wrapProxyHandler } from "@skylib/functions/dist/helpers";
+import * as reflect from "@skylib/functions/dist/reflect";
 import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 
 declare global {
@@ -15,7 +18,33 @@ declare global {
   }
 }
 
-export const lang = createFacade<Facade>("lang", {});
+export const lang = createFacade<Facade, Extension>("lang", {
+  createExcerpt<T extends Word>(
+    keys: readonly T[],
+    dev: boolean
+  ): DictionaryAndWords<T> {
+    const keysSet = new Set<PropertyKey>(keys);
+
+    return dev
+      ? new Proxy(
+          lang,
+          wrapProxyHandler("lang.createExcerpt", {
+            get(target, key) {
+              if (keysSet.has(key)) return reflect.get(target, key);
+
+              if (is.string(key) && key.startsWith("__"))
+                return reflect.get(target, key);
+
+              throw new Error(`Unknown key: ${cast.string(key)}`);
+            },
+            getOwnPropertyDescriptor(target, key) {
+              return Object.getOwnPropertyDescriptor(target, key);
+            }
+          })
+        )
+      : lang;
+  }
+});
 
 export type Context = keyof facades.lang.Context;
 
@@ -60,6 +89,20 @@ export interface Dictionary {
 
 export type DictionaryAndWords<T extends string> = Dictionary &
   ReadonlyRecord<Transforms<T>, string>;
+
+export interface Extension {
+  /**
+   * Creates facade excerpt.
+   *
+   * @param keys - Keys.
+   * @param dev - Development mode.
+   * @returns Facade excerpt.
+   */
+  readonly createExcerpt: <T extends Word>(
+    keys: readonly T[],
+    dev: boolean
+  ) => DictionaryAndWords<T>;
+}
 
 export type Facade = DictionaryAndWords<Word>;
 
