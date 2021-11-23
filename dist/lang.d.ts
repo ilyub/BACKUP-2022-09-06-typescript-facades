@@ -2,12 +2,6 @@ import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 declare global {
     namespace facades {
         namespace lang {
-            interface DefaultContext {
-                readonly SampleContext: true;
-            }
-            interface DefaultWord {
-                readonly SampleWord: true;
-            }
             interface Context {
             }
             interface Word {
@@ -16,7 +10,7 @@ declare global {
     }
 }
 export declare const lang: import("@skylib/functions/dist/helpers").Facade<Facade, Extension>;
-export declare type Context = keyof facades.lang.Context extends never ? keyof facades.lang.DefaultContext : keyof facades.lang.Context;
+export declare type Context = keyof facades.lang.Context;
 export interface Dictionary {
     /**
      * Sets context.
@@ -68,5 +62,5 @@ export interface Extension {
 }
 export declare type Facade = DictionaryAndWords<Word>;
 export declare type Transforms<T extends string> = Capitalize<T> | Lowercase<T> | Uncapitalize<T> | Uppercase<T>;
-export declare type Word = keyof facades.lang.Word extends never ? keyof facades.lang.DefaultWord : keyof facades.lang.Word;
+export declare type Word = keyof facades.lang.Word;
 //# sourceMappingURL=lang.d.ts.map

@@ -25,7 +25,7 @@
 
 ### Context
 
-Ƭ **Context**: keyof `facades.lang.Context` extends `never` ? keyof `facades.lang.DefaultContext` : keyof `facades.lang.Context`
+Ƭ **Context**: keyof `facades.lang.Context`
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 ### Word
 
-Ƭ **Word**: keyof `facades.lang.Word` extends `never` ? keyof `facades.lang.DefaultWord` : keyof `facades.lang.Word`
+Ƭ **Word**: keyof `facades.lang.Word`
 
 ## Variables
 
