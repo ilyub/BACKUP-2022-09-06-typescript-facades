@@ -6,9 +6,12 @@ import * as reflect from "@skylib/functions/dist/reflect";
 declare global {
   namespace facades {
     namespace icons {
-      interface Facade {
+      interface DefaultFacade {
         readonly sampleIcon: string;
       }
+
+      // eslint-disable-next-line @typescript-eslint/no-empty-interface
+      interface Facade {}
     }
   }
 }
@@ -55,6 +58,8 @@ export interface Extension {
   ) => Record<T, string>;
 }
 
-export type Facade = facades.icons.Facade;
+export type Facade = keyof facades.icons.Facade extends never
+  ? facades.icons.DefaultFacade
+  : facades.icons.Facade;
 
 export type Icon = keyof Facade;

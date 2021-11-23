@@ -1,6 +1,9 @@
 {
   "extends": "node_modules/@skylib/config/src/typedoc",
   "intentionallyNotExported": [
+    "DefaultContext",
+    "DefaultFacade",
+    "DefaultWord",
     "Context",
     "Facade",
     "Word"
