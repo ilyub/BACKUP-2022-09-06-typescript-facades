@@ -44,9 +44,7 @@ export const lang = createFacade<Facade, Extension>("lang", {
   }
 });
 
-export type Context = keyof facades.lang.Context extends never
-  ? "SampleContext"
-  : keyof facades.lang.Context;
+export type Context = keyof facades.lang.Context;
 
 export interface Dictionary {
   /**
@@ -112,6 +110,4 @@ export type Transforms<T extends string> =
   | Uncapitalize<T>
   | Uppercase<T>;
 
-export type Word = keyof facades.lang.Word extends never
-  ? "SampleWord"
-  : keyof facades.lang.Word;
+export type Word = keyof facades.lang.Word;

@@ -54,12 +54,6 @@ export interface Extension {
   ) => Record<T, string>;
 }
 
-export interface DefaultFacade {
-  readonly sampleIcon: string;
-}
-
-export type Facade = keyof facades.icons.Facade extends never
-  ? DefaultFacade
-  : facades.icons.Facade;
+export type Facade = facades.icons.Facade;
 
 export type Icon = keyof Facade;
