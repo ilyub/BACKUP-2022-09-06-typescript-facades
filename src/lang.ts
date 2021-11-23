@@ -7,14 +7,6 @@ import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 declare global {
   namespace facades {
     namespace lang {
-      interface DefaultContext {
-        readonly SampleContext: true;
-      }
-
-      interface DefaultWord {
-        readonly SampleWord: true;
-      }
-
       // eslint-disable-next-line @typescript-eslint/no-empty-interface
       interface Context {}
 
@@ -53,7 +45,7 @@ export const lang = createFacade<Facade, Extension>("lang", {
 });
 
 export type Context = keyof facades.lang.Context extends never
-  ? keyof facades.lang.DefaultContext
+  ? "SampleContext"
   : keyof facades.lang.Context;
 
 export interface Dictionary {
@@ -121,5 +113,5 @@ export type Transforms<T extends string> =
   | Uppercase<T>;
 
 export type Word = keyof facades.lang.Word extends never
-  ? keyof facades.lang.DefaultWord
+  ? "SampleWord"
   : keyof facades.lang.Word;
