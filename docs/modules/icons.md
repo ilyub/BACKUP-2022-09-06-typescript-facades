@@ -21,7 +21,7 @@
 
 ### Facade
 
-Ƭ **Facade**: `facades.icons.Facade`
+Ƭ **Facade**: keyof `facades.icons.Facade` extends `never` ? `facades.icons.DefaultFacade` : `facades.icons.Facade`
 
 ___
 
@@ -33,4 +33,4 @@ ___
 
 ### icons
 
-• **icons**: `Facade`<`Facade`, [`Extension`](../interfaces/icons.Extension.md)\>
+• **icons**: `Facade`<`DefaultFacade`, [`Extension`](../interfaces/icons.Extension.md)\>
