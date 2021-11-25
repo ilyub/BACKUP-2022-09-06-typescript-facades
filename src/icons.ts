@@ -2,6 +2,7 @@ import * as cast from "@skylib/functions/dist/converters";
 import * as is from "@skylib/functions/dist/guards";
 import { createFacade, wrapProxyHandler } from "@skylib/functions/dist/helpers";
 import * as reflect from "@skylib/functions/dist/reflect";
+import type { ReadonlyRecord } from "@skylib/functions/dist/types/core";
 
 declare global {
   namespace facades {
@@ -16,7 +17,7 @@ export const icons = createFacade<Facade, Extension>("icons", {
   createExcerpt<T extends Icon>(
     keys: readonly T[],
     dev: boolean
-  ): Record<T, string> {
+  ): ReadonlyRecord<T, string> {
     const keysSet = new Set<PropertyKey>(keys);
 
     return dev
@@ -51,7 +52,7 @@ export interface Extension {
   readonly createExcerpt: <T extends Icon>(
     keys: readonly T[],
     dev: boolean
-  ) => Record<T, string>;
+  ) => ReadonlyRecord<T, string>;
 }
 
 export type Facade = facades.icons.Facade;
