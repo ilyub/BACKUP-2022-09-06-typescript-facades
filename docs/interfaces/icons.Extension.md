@@ -14,7 +14,7 @@
 
 ### createExcerpt
 
-▸ `Readonly` **createExcerpt**<`T`\>(`keys`, `dev`): `Record`<`T`, `string`\>
+▸ `Readonly` **createExcerpt**<`T`\>(`keys`, `dev`): `Readonly`<`Record`<`T`, `string`\>\>
 
 Creates facade excerpt.
 
@@ -33,6 +33,6 @@ Creates facade excerpt.
 
 #### Returns
 
-`Record`<`T`, `string`\>
+`Readonly`<`Record`<`T`, `string`\>\>
 
 Facade excerpt.

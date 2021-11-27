@@ -1,3 +1,4 @@
+import type { ReadonlyRecord } from "@skylib/functions/es/types/core";
 declare global {
     namespace facades {
         namespace icons {
@@ -15,7 +16,7 @@ export interface Extension {
      * @param dev - Development mode.
      * @returns Facade excerpt.
      */
-    readonly createExcerpt: <T extends Icon>(keys: readonly T[], dev: boolean) => Record<T, string>;
+    readonly createExcerpt: <T extends Icon>(keys: readonly T[], dev: boolean) => ReadonlyRecord<T, string>;
 }
 export declare type Facade = facades.icons.Facade;
 export declare type Icon = keyof Facade;
