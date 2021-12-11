@@ -7,17 +7,8 @@ declare global {
         }
     }
 }
-export declare const icons: import("@skylib/functions/es/helpers").Facade<facades.icons.Facade, Extension>;
-export interface Extension {
-    /**
-     * Creates facade excerpt.
-     *
-     * @param keys - Keys.
-     * @param dev - Development mode.
-     * @returns Facade excerpt.
-     */
-    readonly createExcerpt: <T extends Icon>(keys: readonly T[], dev: boolean) => ReadonlyRecord<T, string>;
-}
+export declare const icons: import("@skylib/functions/es/helpers").Facade<facades.icons.Facade, object>;
 export declare type Facade = facades.icons.Facade;
 export declare type Icon = keyof Facade;
+export declare type Icons<T extends Icon> = ReadonlyRecord<T, string>;
 //# sourceMappingURL=icons.d.ts.map

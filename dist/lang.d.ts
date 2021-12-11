@@ -9,7 +9,7 @@ declare global {
         }
     }
 }
-export declare const lang: import("@skylib/functions/dist/helpers").Facade<Facade, Extension>;
+export declare const lang: import("@skylib/functions/dist/helpers").Facade<Facade, object>;
 export declare type Context = keyof facades.lang.Context;
 export interface Dictionary {
     /**
@@ -49,17 +49,7 @@ export interface Dictionary {
      */
     readonly with: (search: string, replace: NumStr) => Facade;
 }
-export declare type DictionaryAndWords<T extends string> = Dictionary & ReadonlyRecord<Transforms<T>, string>;
-export interface Extension {
-    /**
-     * Creates facade excerpt.
-     *
-     * @param keys - Keys.
-     * @param dev - Development mode.
-     * @returns Facade excerpt.
-     */
-    readonly createExcerpt: <T extends Word>(keys: readonly T[], dev: boolean) => DictionaryAndWords<T>;
-}
+export declare type DictionaryAndWords<T extends Word> = Dictionary & ReadonlyRecord<Transforms<T>, string>;
 export declare type Facade = DictionaryAndWords<Word>;
 export declare type Transforms<T extends string> = Capitalize<T> | Lowercase<T> | Uncapitalize<T> | Uppercase<T>;
 export declare type Word = keyof facades.lang.Word;

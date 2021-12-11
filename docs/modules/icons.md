@@ -4,14 +4,11 @@
 
 ## Table of contents
 
-### Interfaces
-
-- [Extension](../interfaces/icons.Extension.md)
-
 ### Type aliases
 
 - [Facade](icons.md#facade)
 - [Icon](icons.md#icon)
+- [Icons](icons.md#icons)
 
 ### Variables
 
@@ -29,8 +26,20 @@ ___
 
 Ƭ **Icon**: keyof [`Facade`](icons.md#facade)
 
+___
+
+### Icons
+
+Ƭ **Icons**<`T`\>: `ReadonlyRecord`<`T`, `string`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends [`Icon`](icons.md#icon) |
+
 ## Variables
 
 ### icons
 
-• **icons**: `Facade`<`Facade`, [`Extension`](../interfaces/icons.Extension.md)\>
+• **icons**: `Facade`<`Facade`, `object`\>

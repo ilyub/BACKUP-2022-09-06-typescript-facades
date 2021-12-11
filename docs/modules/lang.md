@@ -7,7 +7,6 @@
 ### Interfaces
 
 - [Dictionary](../interfaces/lang.Dictionary.md)
-- [Extension](../interfaces/lang.Extension.md)
 
 ### Type aliases
 
@@ -37,7 +36,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `string` |
+| `T` | extends [`Word`](lang.md#word) |
 
 ___
 
@@ -67,4 +66,4 @@ ___
 
 ### lang
 
-• **lang**: `Facade`<[`Facade`](lang.md#facade), [`Extension`](../interfaces/lang.Extension.md)\>
+• **lang**: `Facade`<[`Facade`](lang.md#facade), `object`\>
