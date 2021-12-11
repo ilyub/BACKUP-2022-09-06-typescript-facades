@@ -56,7 +56,7 @@ export interface Dictionary {
   readonly with: (search: string, replace: NumStr) => Facade;
 }
 
-export type DictionaryAndWords<T extends string> = Dictionary &
+export type DictionaryAndWords<T extends Word> = Dictionary &
   ReadonlyRecord<Transforms<T>, string>;
 
 export type Facade = DictionaryAndWords<Word>;
