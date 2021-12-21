@@ -1,4 +1,5 @@
 module.exports = [
+  "compare",
   "database",
   "datetime",
   "facebook",

@@ -1,5 +1,6 @@
 import * as reflect from "@skylib/functions/dist/reflect";
 
+import { compare } from "@/compare";
 import { database } from "@/database";
 import { datetime } from "@/datetime";
 import { facebook } from "@/facebook";
@@ -18,6 +19,7 @@ import { uniqueId } from "@/uniqueId";
 
 it("Facades", () => {
   const facades = {
+    compare,
     database,
     datetime,
     facebook,
