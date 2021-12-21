@@ -14,20 +14,26 @@
 
 ### create
 
-▸ `Readonly` **create**(`idField`, `fields`, `items`): [`Engine`](inlineSearch.Engine.md)
+▸ `Readonly` **create**<`T`\>(`idField`, `fields`, `items`): [`Engine`](inlineSearch.Engine.md)<`T`\>
 
 Creates search engine.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `idField` | `string` | ID field. |
-| `fields` | readonly `string`[] | Searchable fields. |
-| `items` | readonly `object`[] | Items. |
+| `idField` | keyof `T` & `string` | ID field. |
+| `fields` | readonly keyof `T` & `string`[] | Searchable fields. |
+| `items` | readonly `T`[] | Items. |
 
 #### Returns
 
-[`Engine`](inlineSearch.Engine.md)
+[`Engine`](inlineSearch.Engine.md)<`T`\>
 
 Search engine instance.

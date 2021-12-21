@@ -6,6 +6,7 @@
 
 ### Modules
 
+- [compare](modules/compare.md)
 - [database](modules/database.md)
 - [datetime](modules/datetime.md)
 - [facebook](modules/facebook.md)

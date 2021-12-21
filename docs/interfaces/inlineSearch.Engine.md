@@ -1,8 +1,14 @@
 [Typescript facades](../index.md) / [Exports](../modules.md) / [inlineSearch](../modules/inlineSearch.md) / Engine
 
-# Interface: Engine
+# Interface: Engine<T\>
 
 [inlineSearch](../modules/inlineSearch.md).Engine
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
 
 ## Table of contents
 
@@ -14,7 +20,7 @@
 
 ### search
 
-▸ `Readonly` **search**(`query`): readonly `unknown`[]
+▸ `Readonly` **search**(`query`): readonly `T`[]
 
 Performs search.
 
@@ -26,6 +32,6 @@ Performs search.
 
 #### Returns
 
-readonly `unknown`[]
+readonly `T`[]
 
 - Matching items' IDs.
