@@ -22,7 +22,7 @@ ___
 
 ### migrations
 
-• `Optional` `Readonly` **migrations**: readonly [`Migration`](database.Migration.md)[]
+• `Optional` `Readonly` **migrations**: [`Migrations`](../modules/database.md#migrations)
 
 ___
 

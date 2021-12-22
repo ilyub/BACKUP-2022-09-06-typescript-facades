@@ -1,3 +1,4 @@
+import * as is from "@skylib/functions/es/guards";
 import type { NumStr, ReadonlyRecord } from "@skylib/functions/es/types/core";
 export declare const database: import("@skylib/functions/es/helpers").Facade<Facade, unknown>;
 export interface Facade {
@@ -17,7 +18,7 @@ export interface Database {
      * @param docs - Documents.
      * @returns Responses.
      */
-    readonly bulkDocs: (docs: readonly PutDocument[]) => Promise<PutResponse[]>;
+    readonly bulkDocs: (docs: PutDocuments) => Promise<PutResponses>;
     /**
      * Counts documents.
      *
@@ -62,7 +63,7 @@ export interface Database {
      * @param parentId - Parent ID.
      * @returns Attached document.
      */
-    readonly getAttached: (id: number, parentId: string) => Promise<ExistingDocumentAttached>;
+    readonly getAttached: (id: number, parentId: string) => Promise<ExistingAttachedDocument>;
     /**
      * Fetches document if exists.
      *
@@ -77,7 +78,7 @@ export interface Database {
      * @param parentId - Parent ID.
      * @returns Attached document if exists, _undefined_ otherwise.
      */
-    readonly getIfExistsAttached: (id: number, parentId: string) => Promise<ExistingDocumentAttached | undefined>;
+    readonly getIfExistsAttached: (id: number, parentId: string) => Promise<ExistingAttachedDocument | undefined>;
     /**
      * Puts document.
      *
@@ -92,7 +93,7 @@ export interface Database {
      * @param doc - Attached document.
      * @returns Response.
      */
-    readonly putAttached: (parentId: string, doc: PutDocumentAttached) => Promise<PutResponseAttached>;
+    readonly putAttached: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse>;
     /**
      * Puts document if not exists.
      *
@@ -107,7 +108,7 @@ export interface Database {
      * @param doc - Attached document.
      * @returns Response.
      */
-    readonly putIfNotExistsAttached: (parentId: string, doc: PutDocumentAttached) => Promise<PutResponseAttached | undefined>;
+    readonly putIfNotExistsAttached: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse | undefined>;
     /**
      * Queries database.
      *
@@ -115,7 +116,7 @@ export interface Database {
      * @param options - Options.
      * @returns Documents.
      */
-    readonly query: (conditions: Conditions, options?: QueryOptions) => Promise<readonly ExistingDocument[]>;
+    readonly query: (conditions: Conditions, options?: QueryOptions) => Promise<ExistingDocuments>;
     /**
      * Queries database.
      *
@@ -124,7 +125,7 @@ export interface Database {
      * @param options - Options.
      * @returns Attached documents.
      */
-    readonly queryAttached: (conditions: Conditions, parentConditions?: Conditions, options?: QueryOptions) => Promise<readonly ExistingDocumentAttached[]>;
+    readonly queryAttached: (conditions: Conditions, parentConditions?: Conditions, options?: QueryOptions) => Promise<ExistingAttachedDocuments>;
     /**
      * Resets database.
      *
@@ -145,7 +146,7 @@ export interface Database {
      * @param handler - Handler.
      * @returns Subscription ID.
      */
-    readonly subscribeAttached: (handler: ChangesHandlerAttached) => Promise<Symbol>;
+    readonly subscribeAttached: (handler: AttachedChangesHandler) => Promise<Symbol>;
     /**
      * Returns the number of unsettled documents.
      *
@@ -176,8 +177,8 @@ export interface Database {
      */
     readonly unsubscribeAttached: (id: Symbol) => Promise<void>;
 }
+export declare type AttachedChangesHandler = (doc: ExistingAttachedDocument) => void;
 export declare type ChangesHandler = (doc: ExistingDocument) => void;
-export declare type ChangesHandlerAttached = (doc: ExistingDocumentAttached) => void;
 export interface Condition {
     readonly dgt?: number;
     readonly dlt?: number;
@@ -190,47 +191,52 @@ export interface Condition {
 export declare type Conditions = ReadonlyRecord<string, Condition>;
 export interface DatabaseOptions {
     readonly caseSensitiveSorting?: boolean;
-    readonly migrations?: readonly Migration[];
+    readonly migrations?: Migrations;
     readonly retries?: number;
 }
-export interface ExistingDocument extends PutDocument {
-    readonly _id: string;
-    readonly _rev: string;
-}
-export interface ExistingDocumentAttached extends PutDocumentAttached {
+export interface ExistingAttachedDocument extends PutAttachedDocument {
     readonly _id: number;
     readonly _rev: number;
     readonly parentDoc: ExistingDocument;
 }
+export declare type ExistingAttachedDocuments = readonly ExistingAttachedDocument[];
+export interface ExistingDocument extends PutDocument {
+    readonly _id: string;
+    readonly _rev: string;
+}
+export declare type ExistingDocuments = readonly ExistingDocument[];
 export interface Migration {
     readonly callback: MigrationCallback;
     readonly id: string;
 }
+export declare type Migrations = readonly Migration[];
 export declare type MigrationCallback = (this: Database) => Promise<void>;
-export interface PutDocument {
-    readonly [key: string]: unknown;
-    readonly _deleted?: true;
-    readonly _id?: string;
-    readonly _rev?: string;
-    readonly attachedDocs?: readonly StoredDocumentAttached[];
-    readonly lastAttachedDoc?: number;
-}
-export interface PutDocumentAttached {
+export interface PutAttachedDocument {
     readonly [key: string]: unknown;
     readonly _deleted?: true;
     readonly _id?: number;
     readonly _rev?: number;
 }
-export interface PutResponse {
-    readonly id: string;
-    readonly rev: string;
-}
-export interface PutResponseAttached {
+export interface PutAttachedResponse {
     readonly id: number;
     readonly parentId: string;
     readonly parentRev: string;
     readonly rev: number;
 }
+export interface PutDocument {
+    readonly [key: string]: unknown;
+    readonly _deleted?: true;
+    readonly _id?: string;
+    readonly _rev?: string;
+    readonly attachedDocs?: StoredAttachedDocuments;
+    readonly lastAttachedDoc?: number;
+}
+export declare type PutDocuments = readonly PutDocument[];
+export interface PutResponse {
+    readonly id: string;
+    readonly rev: string;
+}
+export declare type PutResponses = readonly PutResponse[];
 export interface QueryOptions {
     readonly limit?: number;
     readonly skip?: number;
@@ -238,8 +244,17 @@ export interface QueryOptions {
     readonly sortDesc?: boolean;
 }
 export declare type ResetCallback = (this: Database) => Promise<void>;
-export interface StoredDocumentAttached extends PutDocumentAttached {
+export interface StoredAttachedDocument extends PutAttachedDocument {
     readonly _id: number;
     readonly _rev: number;
 }
+export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
+export declare const isStoredAttachedDocument: is.Guard<Required<{
+    _id: number;
+    _rev: number;
+}> & import("@skylib/functions/es/types/core").Optional<unknown>>;
+export declare const isStoredAttachedDocuments: is.Guard<readonly (Required<{
+    _id: number;
+    _rev: number;
+}> & import("@skylib/functions/es/types/core").Optional<unknown>)[]>;
 //# sourceMappingURL=database.d.ts.map

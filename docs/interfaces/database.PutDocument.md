@@ -46,7 +46,7 @@ ___
 
 ### attachedDocs
 
-• `Optional` `Readonly` **attachedDocs**: readonly [`StoredDocumentAttached`](database.StoredDocumentAttached.md)[]
+• `Optional` `Readonly` **attachedDocs**: [`StoredAttachedDocuments`](../modules/database.md#storedattacheddocuments)
 
 ___
 

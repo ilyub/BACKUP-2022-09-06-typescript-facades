@@ -35,7 +35,7 @@
 
 ### bulkDocs
 
-▸ `Readonly` **bulkDocs**(`docs`): `Promise`<[`PutResponse`](database.PutResponse.md)[]\>
+▸ `Readonly` **bulkDocs**(`docs`): `Promise`<[`PutResponses`](../modules/database.md#putresponses)\>
 
 Creates or updates multiple documents.
 
@@ -43,11 +43,11 @@ Creates or updates multiple documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `docs` | readonly [`PutDocument`](database.PutDocument.md)[] | Documents. |
+| `docs` | [`PutDocuments`](../modules/database.md#putdocuments) | Documents. |
 
 #### Returns
 
-`Promise`<[`PutResponse`](database.PutResponse.md)[]\>
+`Promise`<[`PutResponses`](../modules/database.md#putresponses)\>
 
 Responses.
 
@@ -157,7 +157,7 @@ ___
 
 ### getAttached
 
-▸ `Readonly` **getAttached**(`id`, `parentId`): `Promise`<[`ExistingDocumentAttached`](database.ExistingDocumentAttached.md)\>
+▸ `Readonly` **getAttached**(`id`, `parentId`): `Promise`<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 Fetches attached document.
 
@@ -170,7 +170,7 @@ Fetches attached document.
 
 #### Returns
 
-`Promise`<[`ExistingDocumentAttached`](database.ExistingDocumentAttached.md)\>
+`Promise`<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 Attached document.
 
@@ -198,7 +198,7 @@ ___
 
 ### getIfExistsAttached
 
-▸ `Readonly` **getIfExistsAttached**(`id`, `parentId`): `Promise`<`undefined` \| [`ExistingDocumentAttached`](database.ExistingDocumentAttached.md)\>
+▸ `Readonly` **getIfExistsAttached**(`id`, `parentId`): `Promise`<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 Fetches attached document if exists.
 
@@ -211,7 +211,7 @@ Fetches attached document if exists.
 
 #### Returns
 
-`Promise`<`undefined` \| [`ExistingDocumentAttached`](database.ExistingDocumentAttached.md)\>
+`Promise`<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 Attached document if exists, _undefined_ otherwise.
 
@@ -239,7 +239,7 @@ ___
 
 ### putAttached
 
-▸ `Readonly` **putAttached**(`parentId`, `doc`): `Promise`<[`PutResponseAttached`](database.PutResponseAttached.md)\>
+▸ `Readonly` **putAttached**(`parentId`, `doc`): `Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
 
 Puts attached document.
 
@@ -248,11 +248,11 @@ Puts attached document.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `parentId` | `string` | Parent ID. |
-| `doc` | [`PutDocumentAttached`](database.PutDocumentAttached.md) | Attached document. |
+| `doc` | [`PutAttachedDocument`](database.PutAttachedDocument.md) | Attached document. |
 
 #### Returns
 
-`Promise`<[`PutResponseAttached`](database.PutResponseAttached.md)\>
+`Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
 
 Response.
 
@@ -280,7 +280,7 @@ ___
 
 ### putIfNotExistsAttached
 
-▸ `Readonly` **putIfNotExistsAttached**(`parentId`, `doc`): `Promise`<`undefined` \| [`PutResponseAttached`](database.PutResponseAttached.md)\>
+▸ `Readonly` **putIfNotExistsAttached**(`parentId`, `doc`): `Promise`<`undefined` \| [`PutAttachedResponse`](database.PutAttachedResponse.md)\>
 
 Puts attached document if not exists.
 
@@ -289,11 +289,11 @@ Puts attached document if not exists.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `parentId` | `string` | Parent ID. |
-| `doc` | [`PutDocumentAttached`](database.PutDocumentAttached.md) | Attached document. |
+| `doc` | [`PutAttachedDocument`](database.PutAttachedDocument.md) | Attached document. |
 
 #### Returns
 
-`Promise`<`undefined` \| [`PutResponseAttached`](database.PutResponseAttached.md)\>
+`Promise`<`undefined` \| [`PutAttachedResponse`](database.PutAttachedResponse.md)\>
 
 Response.
 
@@ -301,7 +301,7 @@ ___
 
 ### query
 
-▸ `Readonly` **query**(`conditions`, `options?`): `Promise`<readonly [`ExistingDocument`](database.ExistingDocument.md)[]\>
+▸ `Readonly` **query**(`conditions`, `options?`): `Promise`<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>
 
 Queries database.
 
@@ -314,7 +314,7 @@ Queries database.
 
 #### Returns
 
-`Promise`<readonly [`ExistingDocument`](database.ExistingDocument.md)[]\>
+`Promise`<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>
 
 Documents.
 
@@ -322,7 +322,7 @@ ___
 
 ### queryAttached
 
-▸ `Readonly` **queryAttached**(`conditions`, `parentConditions?`, `options?`): `Promise`<readonly [`ExistingDocumentAttached`](database.ExistingDocumentAttached.md)[]\>
+▸ `Readonly` **queryAttached**(`conditions`, `parentConditions?`, `options?`): `Promise`<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>
 
 Queries database.
 
@@ -336,7 +336,7 @@ Queries database.
 
 #### Returns
 
-`Promise`<readonly [`ExistingDocumentAttached`](database.ExistingDocumentAttached.md)[]\>
+`Promise`<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>
 
 Attached documents.
 
@@ -392,7 +392,7 @@ Subscribes to changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `handler` | [`ChangesHandlerAttached`](../modules/database.md#changeshandlerattached) | Handler. |
+| `handler` | [`AttachedChangesHandler`](../modules/database.md#attachedchangeshandler) | Handler. |
 
 #### Returns
 
