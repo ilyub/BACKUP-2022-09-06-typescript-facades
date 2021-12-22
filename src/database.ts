@@ -75,23 +75,23 @@ export interface Database {
     parentId: string
   ) => Promise<ExistingAttachedDocument>;
   /**
-   * Fetches document if exists.
-   *
-   * @param id - ID.
-   * @returns Document if exists, _undefined_ otherwise.
-   */
-  readonly getIfExists: (id: string) => Promise<ExistingDocument | undefined>;
-  /**
    * Fetches attached document if exists.
    *
    * @param id - ID.
    * @param parentId - Parent ID.
    * @returns Attached document if exists, _undefined_ otherwise.
    */
-  readonly getIfExistsAttached: (
+  readonly getAttachedIfExists: (
     id: number,
     parentId: string
   ) => Promise<ExistingAttachedDocument | undefined>;
+  /**
+   * Fetches document if exists.
+   *
+   * @param id - ID.
+   * @returns Document if exists, _undefined_ otherwise.
+   */
+  readonly getIfExists: (id: string) => Promise<ExistingDocument | undefined>;
   /**
    * Puts document.
    *
@@ -111,6 +111,17 @@ export interface Database {
     doc: PutAttachedDocument
   ) => Promise<PutAttachedResponse>;
   /**
+   * Puts attached document if not exists.
+   *
+   * @param parentId - Parent ID.
+   * @param doc - Attached document.
+   * @returns Response.
+   */
+  readonly putAttachedIfNotExists: (
+    parentId: string,
+    doc: PutAttachedDocument
+  ) => Promise<PutAttachedResponse | undefined>;
+  /**
    * Puts document if not exists.
    *
    * @param doc - Document.
@@ -119,17 +130,6 @@ export interface Database {
   readonly putIfNotExists: (
     doc: PutDocument
   ) => Promise<PutResponse | undefined>;
-  /**
-   * Puts attached document if not exists.
-   *
-   * @param parentId - Parent ID.
-   * @param doc - Attached document.
-   * @returns Response.
-   */
-  readonly putIfNotExistsAttached: (
-    parentId: string,
-    doc: PutAttachedDocument
-  ) => Promise<PutAttachedResponse | undefined>;
   /**
    * Queries database.
    *
