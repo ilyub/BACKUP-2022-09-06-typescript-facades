@@ -15,12 +15,12 @@
 - [existsAttached](database.Database.md#existsattached)
 - [get](database.Database.md#get)
 - [getAttached](database.Database.md#getattached)
+- [getAttachedIfExists](database.Database.md#getattachedifexists)
 - [getIfExists](database.Database.md#getifexists)
-- [getIfExistsAttached](database.Database.md#getifexistsattached)
 - [put](database.Database.md#put)
 - [putAttached](database.Database.md#putattached)
+- [putAttachedIfNotExists](database.Database.md#putattachedifnotexists)
 - [putIfNotExists](database.Database.md#putifnotexists)
-- [putIfNotExistsAttached](database.Database.md#putifnotexistsattached)
 - [query](database.Database.md#query)
 - [queryAttached](database.Database.md#queryattached)
 - [reset](database.Database.md#reset)
@@ -176,6 +176,27 @@ Attached document.
 
 ___
 
+### getAttachedIfExists
+
+▸ `Readonly` **getAttachedIfExists**(`id`, `parentId`): `Promise`<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+
+Fetches attached document if exists.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | ID. |
+| `parentId` | `string` | Parent ID. |
+
+#### Returns
+
+`Promise`<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+
+Attached document if exists, _undefined_ otherwise.
+
+___
+
 ### getIfExists
 
 ▸ `Readonly` **getIfExists**(`id`): `Promise`<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>
@@ -193,27 +214,6 @@ Fetches document if exists.
 `Promise`<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>
 
 Document if exists, _undefined_ otherwise.
-
-___
-
-### getIfExistsAttached
-
-▸ `Readonly` **getIfExistsAttached**(`id`, `parentId`): `Promise`<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
-
-Fetches attached document if exists.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `id` | `number` | ID. |
-| `parentId` | `string` | Parent ID. |
-
-#### Returns
-
-`Promise`<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
-
-Attached document if exists, _undefined_ otherwise.
 
 ___
 
@@ -258,6 +258,27 @@ Response.
 
 ___
 
+### putAttachedIfNotExists
+
+▸ `Readonly` **putAttachedIfNotExists**(`parentId`, `doc`): `Promise`<`undefined` \| [`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+
+Puts attached document if not exists.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parentId` | `string` | Parent ID. |
+| `doc` | [`PutAttachedDocument`](database.PutAttachedDocument.md) | Attached document. |
+
+#### Returns
+
+`Promise`<`undefined` \| [`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+
+Response.
+
+___
+
 ### putIfNotExists
 
 ▸ `Readonly` **putIfNotExists**(`doc`): `Promise`<`undefined` \| [`PutResponse`](database.PutResponse.md)\>
@@ -273,27 +294,6 @@ Puts document if not exists.
 #### Returns
 
 `Promise`<`undefined` \| [`PutResponse`](database.PutResponse.md)\>
-
-Response.
-
-___
-
-### putIfNotExistsAttached
-
-▸ `Readonly` **putIfNotExistsAttached**(`parentId`, `doc`): `Promise`<`undefined` \| [`PutAttachedResponse`](database.PutAttachedResponse.md)\>
-
-Puts attached document if not exists.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `parentId` | `string` | Parent ID. |
-| `doc` | [`PutAttachedDocument`](database.PutAttachedDocument.md) | Attached document. |
-
-#### Returns
-
-`Promise`<`undefined` \| [`PutAttachedResponse`](database.PutAttachedResponse.md)\>
 
 Response.
 

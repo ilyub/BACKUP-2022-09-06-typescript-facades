@@ -65,20 +65,20 @@ export interface Database {
      */
     readonly getAttached: (id: number, parentId: string) => Promise<ExistingAttachedDocument>;
     /**
-     * Fetches document if exists.
-     *
-     * @param id - ID.
-     * @returns Document if exists, _undefined_ otherwise.
-     */
-    readonly getIfExists: (id: string) => Promise<ExistingDocument | undefined>;
-    /**
      * Fetches attached document if exists.
      *
      * @param id - ID.
      * @param parentId - Parent ID.
      * @returns Attached document if exists, _undefined_ otherwise.
      */
-    readonly getIfExistsAttached: (id: number, parentId: string) => Promise<ExistingAttachedDocument | undefined>;
+    readonly getAttachedIfExists: (id: number, parentId: string) => Promise<ExistingAttachedDocument | undefined>;
+    /**
+     * Fetches document if exists.
+     *
+     * @param id - ID.
+     * @returns Document if exists, _undefined_ otherwise.
+     */
+    readonly getIfExists: (id: string) => Promise<ExistingDocument | undefined>;
     /**
      * Puts document.
      *
@@ -95,20 +95,20 @@ export interface Database {
      */
     readonly putAttached: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse>;
     /**
-     * Puts document if not exists.
-     *
-     * @param doc - Document.
-     * @returns Response.
-     */
-    readonly putIfNotExists: (doc: PutDocument) => Promise<PutResponse | undefined>;
-    /**
      * Puts attached document if not exists.
      *
      * @param parentId - Parent ID.
      * @param doc - Attached document.
      * @returns Response.
      */
-    readonly putIfNotExistsAttached: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse | undefined>;
+    readonly putAttachedIfNotExists: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse | undefined>;
+    /**
+     * Puts document if not exists.
+     *
+     * @param doc - Document.
+     * @returns Response.
+     */
+    readonly putIfNotExists: (doc: PutDocument) => Promise<PutResponse | undefined>;
     /**
      * Queries database.
      *
