@@ -252,9 +252,9 @@ export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 export declare const isStoredAttachedDocument: is.Guard<Required<{
     _id: number;
     _rev: number;
-}> & import("@skylib/functions/es/types/core").Optional<unknown>>;
+}> & Partial<unknown>>;
 export declare const isStoredAttachedDocuments: is.Guard<readonly (Required<{
     _id: number;
     _rev: number;
-}> & import("@skylib/functions/es/types/core").Optional<unknown>)[]>;
+}> & Partial<unknown>)[]>;
 //# sourceMappingURL=database.d.ts.map

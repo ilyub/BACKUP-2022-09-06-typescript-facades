@@ -175,7 +175,7 @@ ___
 
 ### isStoredAttachedDocument
 
-▸ `Const` **isStoredAttachedDocument**(`value`): value is Required<Object\> & Optional<unknown\>
+▸ `Const` **isStoredAttachedDocument**(`value`): value is Required<Object\> & Partial<unknown\>
 
 #### Parameters
 
@@ -185,13 +185,13 @@ ___
 
 #### Returns
 
-value is Required<Object\> & Optional<unknown\>
+value is Required<Object\> & Partial<unknown\>
 
 ___
 
 ### isStoredAttachedDocuments
 
-▸ `Const` **isStoredAttachedDocuments**(`value`): value is readonly (Required<Object\> & Optional<unknown\>)[]
+▸ `Const` **isStoredAttachedDocuments**(`value`): value is readonly (Required<Object\> & Partial<unknown\>)[]
 
 #### Parameters
 
@@ -201,4 +201,4 @@ ___
 
 #### Returns
 
-value is readonly (Required<Object\> & Optional<unknown\>)[]
+value is readonly (Required<Object\> & Partial<unknown\>)[]
