@@ -422,7 +422,7 @@ export interface ReactiveCountConfig {
 
 export interface ReactiveCountAttachedConfig {
   readonly conditions: Conditions;
-  readonly parentConditions: Conditions;
+  readonly parentConditions?: Conditions;
   /**
    * Triggers update on new doc.
    *
@@ -435,7 +435,7 @@ export interface ReactiveCountAttachedConfig {
 
 export interface ReactiveQueryConfig {
   readonly conditions: Conditions;
-  readonly options: QueryOptions;
+  readonly options?: QueryOptions;
   /**
    * Triggers update on new doc.
    *
@@ -448,8 +448,8 @@ export interface ReactiveQueryConfig {
 
 export interface ReactiveQueryAttachedConfig {
   readonly conditions: Conditions;
-  readonly options: QueryOptions;
-  readonly parentConditions: Conditions;
+  readonly options?: QueryOptions;
+  readonly parentConditions?: Conditions;
   /**
    * Triggers update on new doc.
    *
