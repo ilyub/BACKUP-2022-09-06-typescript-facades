@@ -27,13 +27,13 @@ ___
 
 ### options
 
-• `Readonly` **options**: [`QueryOptions`](database.QueryOptions.md)
+• `Optional` `Readonly` **options**: [`QueryOptions`](database.QueryOptions.md)
 
 ___
 
 ### parentConditions
 
-• `Readonly` **parentConditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+• `Optional` `Readonly` **parentConditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
 
 ___
 

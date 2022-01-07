@@ -26,7 +26,7 @@ ___
 
 ### options
 
-• `Readonly` **options**: [`QueryOptions`](database.QueryOptions.md)
+• `Optional` `Readonly` **options**: [`QueryOptions`](database.QueryOptions.md)
 
 ___
 
