@@ -20,7 +20,11 @@ export interface Facade {
    */
   readonly withChangesHandler: <T extends object, R>(
     data: T,
-    onChange: (x: R) => void,
-    reduce: (x: T) => R
+    onChange: OnChange<R>,
+    reduce: Reduce<T, R>
   ) => T;
 }
+
+export type OnChange<T> = (reduced: T) => void;
+
+export type Reduce<T extends object, R> = (data: T) => R;
