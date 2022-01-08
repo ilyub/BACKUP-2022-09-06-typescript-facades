@@ -15,6 +15,8 @@ export interface Facade {
      * @param reduce - Generates reduced value.
      * @returns Reactive wrapper for data object.
      */
-    readonly withChangesHandler: <T extends object, R>(data: T, onChange: (x: R) => void, reduce: (x: T) => R) => T;
+    readonly withChangesHandler: <T extends object, R>(data: T, onChange: OnChange<R>, reduce: Reduce<T, R>) => T;
 }
+export declare type OnChange<T> = (reduced: T) => void;
+export declare type Reduce<T extends object, R> = (data: T) => R;
 //# sourceMappingURL=reactiveStorage.d.ts.map

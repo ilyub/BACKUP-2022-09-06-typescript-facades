@@ -18,11 +18,10 @@
 - [PutDocument](../interfaces/database.PutDocument.md)
 - [PutResponse](../interfaces/database.PutResponse.md)
 - [QueryOptions](../interfaces/database.QueryOptions.md)
-- [ReactiveCountAttachedConfig](../interfaces/database.ReactiveCountAttachedConfig.md)
-- [ReactiveCountConfig](../interfaces/database.ReactiveCountConfig.md)
-- [ReactiveQueryAttachedConfig](../interfaces/database.ReactiveQueryAttachedConfig.md)
-- [ReactiveQueryConfig](../interfaces/database.ReactiveQueryConfig.md)
+- [ReactiveConfig](../interfaces/database.ReactiveConfig.md)
+- [ReactiveConfigAttached](../interfaces/database.ReactiveConfigAttached.md)
 - [ReactiveResponse](../interfaces/database.ReactiveResponse.md)
+- [ReactiveResponseAttached](../interfaces/database.ReactiveResponseAttached.md)
 - [StoredAttachedDocument](../interfaces/database.StoredAttachedDocument.md)
 
 ### Type aliases

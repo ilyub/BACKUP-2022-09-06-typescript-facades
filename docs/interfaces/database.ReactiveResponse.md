@@ -14,6 +14,8 @@
 
 ### Properties
 
+- [conditions](database.ReactiveResponse.md#conditions)
+- [options](database.ReactiveResponse.md#options)
 - [value](database.ReactiveResponse.md#value)
 
 ### Methods
@@ -21,6 +23,18 @@
 - [unsubscribe](database.ReactiveResponse.md#unsubscribe)
 
 ## Properties
+
+### conditions
+
+• **conditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+
+___
+
+### options
+
+• **options**: `undefined` \| [`QueryOptions`](database.QueryOptions.md)
+
+___
 
 ### value
 

@@ -1,20 +1,20 @@
-[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ReactiveQueryConfig
+[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ReactiveConfig
 
-# Interface: ReactiveQueryConfig
+# Interface: ReactiveConfig
 
-[database](../modules/database.md).ReactiveQueryConfig
+[database](../modules/database.md).ReactiveConfig
 
 ## Table of contents
 
 ### Properties
 
-- [conditions](database.ReactiveQueryConfig.md#conditions)
-- [options](database.ReactiveQueryConfig.md#options)
-- [updateInterval](database.ReactiveQueryConfig.md#updateinterval)
+- [conditions](database.ReactiveConfig.md#conditions)
+- [options](database.ReactiveConfig.md#options)
+- [updateInterval](database.ReactiveConfig.md#updateinterval)
 
 ### Methods
 
-- [updateFn](database.ReactiveQueryConfig.md#updatefn)
+- [updateFn](database.ReactiveConfig.md#updatefn)
 
 ## Properties
 
@@ -40,13 +40,13 @@ ___
 
 ▸ `Optional` `Readonly` **updateFn**(`doc`): `boolean`
 
-Triggers update on new doc.
+Triggers update on new document.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `doc` | [`ExistingDocument`](database.ExistingDocument.md) | New doc. |
+| `doc` | [`ExistingDocument`](database.ExistingDocument.md) | New document. |
 
 #### Returns
 

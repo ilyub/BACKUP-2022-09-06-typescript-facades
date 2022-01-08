@@ -364,7 +364,7 @@ Counts documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`ReactiveCountConfig`](database.ReactiveCountConfig.md) | Configuration. |
+| `config` | [`ReactiveConfig`](database.ReactiveConfig.md) | Configuration. |
 
 #### Returns
 
@@ -376,7 +376,7 @@ ___
 
 ### reactiveCountAttached
 
-▸ `Readonly` **reactiveCountAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+▸ `Readonly` **reactiveCountAttached**(`config`): `Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
 
 Counts attached documents.
 
@@ -384,11 +384,11 @@ Counts attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`ReactiveCountAttachedConfig`](database.ReactiveCountAttachedConfig.md) | Configuration. |
+| `config` | [`ReactiveConfigAttached`](database.ReactiveConfigAttached.md) | Configuration. |
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+`Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
 
 The number of attached documents.
 
@@ -527,7 +527,7 @@ Queries database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`ReactiveQueryConfig`](database.ReactiveQueryConfig.md) | Configuration. |
+| `config` | [`ReactiveConfig`](database.ReactiveConfig.md) | Configuration. |
 
 #### Returns
 
@@ -539,7 +539,7 @@ ___
 
 ### reactiveQueryAttached
 
-▸ `Readonly` **reactiveQueryAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+▸ `Readonly` **reactiveQueryAttached**(`config`): `Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
 
 Queries database.
 
@@ -547,11 +547,11 @@ Queries database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`ReactiveQueryAttachedConfig`](database.ReactiveQueryAttachedConfig.md) | Configuration. |
+| `config` | [`ReactiveConfigAttached`](database.ReactiveConfigAttached.md) | Configuration. |
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+`Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
 
 Attached documents.
 
@@ -567,7 +567,7 @@ Returns the number of unsettled documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`ReactiveCountConfig`](database.ReactiveCountConfig.md) | Configuration. |
+| `config` | [`ReactiveConfig`](database.ReactiveConfig.md) | Configuration. |
 
 #### Returns
 
@@ -579,7 +579,7 @@ ___
 
 ### reactiveUnsettledAttached
 
-▸ `Readonly` **reactiveUnsettledAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+▸ `Readonly` **reactiveUnsettledAttached**(`config`): `Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
 
 Returns the number of unsettled attached documents.
 
@@ -587,11 +587,11 @@ Returns the number of unsettled attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `config` | [`ReactiveCountAttachedConfig`](database.ReactiveCountAttachedConfig.md) | Configuration. |
+| `config` | [`ReactiveConfigAttached`](database.ReactiveConfigAttached.md) | Configuration. |
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+`Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
 
 The number of unsettled attached documents.
 

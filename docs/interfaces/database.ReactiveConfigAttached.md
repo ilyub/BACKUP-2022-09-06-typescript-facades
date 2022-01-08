@@ -1,21 +1,21 @@
-[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ReactiveQueryAttachedConfig
+[Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ReactiveConfigAttached
 
-# Interface: ReactiveQueryAttachedConfig
+# Interface: ReactiveConfigAttached
 
-[database](../modules/database.md).ReactiveQueryAttachedConfig
+[database](../modules/database.md).ReactiveConfigAttached
 
 ## Table of contents
 
 ### Properties
 
-- [conditions](database.ReactiveQueryAttachedConfig.md#conditions)
-- [options](database.ReactiveQueryAttachedConfig.md#options)
-- [parentConditions](database.ReactiveQueryAttachedConfig.md#parentconditions)
-- [updateInterval](database.ReactiveQueryAttachedConfig.md#updateinterval)
+- [conditions](database.ReactiveConfigAttached.md#conditions)
+- [options](database.ReactiveConfigAttached.md#options)
+- [parentConditions](database.ReactiveConfigAttached.md#parentconditions)
+- [updateInterval](database.ReactiveConfigAttached.md#updateinterval)
 
 ### Methods
 
-- [updateFn](database.ReactiveQueryAttachedConfig.md#updatefn)
+- [updateFn](database.ReactiveConfigAttached.md#updatefn)
 
 ## Properties
 
@@ -47,13 +47,13 @@ ___
 
 ▸ `Optional` `Readonly` **updateFn**(`doc`): `boolean`
 
-Triggers update on new doc.
+Triggers update on new attached document.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `doc` | [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md) | New doc. |
+| `doc` | [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md) | New attached document. |
 
 #### Returns
 

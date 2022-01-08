@@ -132,14 +132,14 @@ export interface Database {
      * @param config - Configuration.
      * @returns The number of documents.
      */
-    readonly reactiveCount: (config: ReactiveCountConfig) => Promise<ReactiveResponse<number>>;
+    readonly reactiveCount: (config: ReactiveConfig) => Promise<ReactiveResponse<number>>;
     /**
      * Counts attached documents.
      *
      * @param config - Configuration.
      * @returns The number of attached documents.
      */
-    readonly reactiveCountAttached: (config: ReactiveCountAttachedConfig) => Promise<ReactiveResponse<number>>;
+    readonly reactiveCountAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAttached<number>>;
     /**
      * Checks if document exists.
      *
@@ -191,28 +191,28 @@ export interface Database {
      * @param config - Configuration.
      * @returns Documents.
      */
-    readonly reactiveQuery: (config: ReactiveQueryConfig) => Promise<ReactiveResponse<ExistingDocuments>>;
+    readonly reactiveQuery: (config: ReactiveConfig) => Promise<ReactiveResponse<ExistingDocuments>>;
     /**
      * Queries database.
      *
      * @param config - Configuration.
      * @returns Attached documents.
      */
-    readonly reactiveQueryAttached: (config: ReactiveQueryAttachedConfig) => Promise<ReactiveResponse<ExistingAttachedDocuments>>;
+    readonly reactiveQueryAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAttached<ExistingAttachedDocuments>>;
     /**
      * Returns the number of unsettled documents.
      *
      * @param config - Configuration.
      * @returns The number of unsettled documents.
      */
-    readonly reactiveUnsettled: (config: ReactiveCountConfig) => Promise<ReactiveResponse<number>>;
+    readonly reactiveUnsettled: (config: ReactiveConfig) => Promise<ReactiveResponse<number>>;
     /**
      * Returns the number of unsettled attached documents.
      *
      * @param config - Configuration.
      * @returns The number of unsettled attached documents.
      */
-    readonly reactiveUnsettledAttached: (config: ReactiveCountAttachedConfig) => Promise<ReactiveResponse<number>>;
+    readonly reactiveUnsettledAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAttached<number>>;
     /**
      * Resets database.
      *
@@ -330,55 +330,46 @@ export interface QueryOptions {
     readonly sortBy?: string;
     readonly sortDesc?: boolean;
 }
-export interface ReactiveCountConfig {
+export interface ReactiveConfig {
     readonly conditions: Conditions;
+    readonly options?: QueryOptions;
     /**
-     * Triggers update on new doc.
+     * Triggers update on new document.
      *
-     * @param doc - New doc.
+     * @param doc - New document.
      * @returns _True_ to trigger update, _false_ otherwise.
      */
     readonly updateFn?: (doc: ExistingDocument) => boolean;
     readonly updateInterval?: number;
 }
-export interface ReactiveCountAttachedConfig {
-    readonly conditions: Conditions;
-    readonly parentConditions?: Conditions;
-    /**
-     * Triggers update on new doc.
-     *
-     * @param doc - New doc.
-     * @returns _True_ to trigger update, _false_ otherwise.
-     */
-    readonly updateFn?: (doc: ExistingAttachedDocument) => boolean;
-    readonly updateInterval?: number;
-}
-export interface ReactiveQueryConfig {
-    readonly conditions: Conditions;
-    readonly options?: QueryOptions;
-    /**
-     * Triggers update on new doc.
-     *
-     * @param doc - New doc.
-     * @returns _True_ to trigger update, _false_ otherwise.
-     */
-    readonly updateFn?: (doc: ExistingDocument) => boolean;
-    readonly updateInterval?: number;
-}
-export interface ReactiveQueryAttachedConfig {
+export interface ReactiveConfigAttached {
     readonly conditions: Conditions;
     readonly options?: QueryOptions;
     readonly parentConditions?: Conditions;
     /**
-     * Triggers update on new doc.
+     * Triggers update on new attached document.
      *
-     * @param doc - New doc.
+     * @param doc - New attached document.
      * @returns _True_ to trigger update, _false_ otherwise.
      */
     readonly updateFn?: (doc: ExistingAttachedDocument) => boolean;
     readonly updateInterval?: number;
 }
 export interface ReactiveResponse<T> {
+    conditions: Conditions;
+    options: QueryOptions | undefined;
+    /**
+     * Unsubscribes from changes.
+     *
+     * @returns Promise.
+     */
+    readonly unsubscribe: () => Promise<void>;
+    readonly value: T;
+}
+export interface ReactiveResponseAttached<T> {
+    conditions: Conditions;
+    options: QueryOptions | undefined;
+    parentConditions: Conditions | undefined;
     /**
      * Unsubscribes from changes.
      *

@@ -56,8 +56,8 @@ Creates reactive wrapper for data object.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `data` | `T` | Data. |
-| `onChange` | (`x`: `R`) => `void` | Handles reduced value change. |
-| `reduce` | (`x`: `T`) => `R` | Generates reduced value. |
+| `onChange` | [`OnChange`](../modules/reactiveStorage.md#onchange)<`R`\> | Handles reduced value change. |
+| `reduce` | [`Reduce`](../modules/reactiveStorage.md#reduce)<`T`, `R`\> | Generates reduced value. |
 
 #### Returns
 
