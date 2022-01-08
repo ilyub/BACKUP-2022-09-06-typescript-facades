@@ -161,7 +161,7 @@ export interface Database {
    * @returns The number of documents.
    */
   readonly reactiveCount: (
-    config: ReactiveCountConfig
+    config: ReactiveConfig
   ) => Promise<ReactiveResponse<number>>;
   /**
    * Counts attached documents.
@@ -170,8 +170,8 @@ export interface Database {
    * @returns The number of attached documents.
    */
   readonly reactiveCountAttached: (
-    config: ReactiveCountAttachedConfig
-  ) => Promise<ReactiveResponse<number>>;
+    config: ReactiveConfigAttached
+  ) => Promise<ReactiveResponseAttached<number>>;
   /**
    * Checks if document exists.
    *
@@ -237,7 +237,7 @@ export interface Database {
    * @returns Documents.
    */
   readonly reactiveQuery: (
-    config: ReactiveQueryConfig
+    config: ReactiveConfig
   ) => Promise<ReactiveResponse<ExistingDocuments>>;
   /**
    * Queries database.
@@ -246,8 +246,8 @@ export interface Database {
    * @returns Attached documents.
    */
   readonly reactiveQueryAttached: (
-    config: ReactiveQueryAttachedConfig
-  ) => Promise<ReactiveResponse<ExistingAttachedDocuments>>;
+    config: ReactiveConfigAttached
+  ) => Promise<ReactiveResponseAttached<ExistingAttachedDocuments>>;
   /**
    * Returns the number of unsettled documents.
    *
@@ -255,7 +255,7 @@ export interface Database {
    * @returns The number of unsettled documents.
    */
   readonly reactiveUnsettled: (
-    config: ReactiveCountConfig
+    config: ReactiveConfig
   ) => Promise<ReactiveResponse<number>>;
   /**
    * Returns the number of unsettled attached documents.
@@ -264,8 +264,8 @@ export interface Database {
    * @returns The number of unsettled attached documents.
    */
   readonly reactiveUnsettledAttached: (
-    config: ReactiveCountAttachedConfig
-  ) => Promise<ReactiveResponse<number>>;
+    config: ReactiveConfigAttached
+  ) => Promise<ReactiveResponseAttached<number>>;
   /**
    * Resets database.
    *
@@ -408,59 +408,51 @@ export interface QueryOptions {
   readonly sortDesc?: boolean;
 }
 
-export interface ReactiveCountConfig {
+export interface ReactiveConfig {
   readonly conditions: Conditions;
+  readonly options?: QueryOptions;
   /**
-   * Triggers update on new doc.
+   * Triggers update on new document.
    *
-   * @param doc - New doc.
+   * @param doc - New document.
    * @returns _True_ to trigger update, _false_ otherwise.
    */
   readonly updateFn?: (doc: ExistingDocument) => boolean;
   readonly updateInterval?: number;
 }
 
-export interface ReactiveCountAttachedConfig {
+export interface ReactiveConfigAttached {
   readonly conditions: Conditions;
+  readonly options?: QueryOptions;
   readonly parentConditions?: Conditions;
   /**
-   * Triggers update on new doc.
+   * Triggers update on new attached document.
    *
-   * @param doc - New doc.
+   * @param doc - New attached document.
    * @returns _True_ to trigger update, _false_ otherwise.
    */
   readonly updateFn?: (doc: ExistingAttachedDocument) => boolean;
   readonly updateInterval?: number;
 }
 
-export interface ReactiveQueryConfig {
-  readonly conditions: Conditions;
-  readonly options?: QueryOptions;
-  /**
-   * Triggers update on new doc.
-   *
-   * @param doc - New doc.
-   * @returns _True_ to trigger update, _false_ otherwise.
-   */
-  readonly updateFn?: (doc: ExistingDocument) => boolean;
-  readonly updateInterval?: number;
-}
-
-export interface ReactiveQueryAttachedConfig {
-  readonly conditions: Conditions;
-  readonly options?: QueryOptions;
-  readonly parentConditions?: Conditions;
-  /**
-   * Triggers update on new doc.
-   *
-   * @param doc - New doc.
-   * @returns _True_ to trigger update, _false_ otherwise.
-   */
-  readonly updateFn?: (doc: ExistingAttachedDocument) => boolean;
-  readonly updateInterval?: number;
-}
-
+// eslint-disable-next-line @skylib/prefer-readonly
 export interface ReactiveResponse<T> {
+  conditions: Conditions;
+  options: QueryOptions | undefined;
+  /**
+   * Unsubscribes from changes.
+   *
+   * @returns Promise.
+   */
+  readonly unsubscribe: () => Promise<void>;
+  readonly value: T;
+}
+
+// eslint-disable-next-line @skylib/prefer-readonly
+export interface ReactiveResponseAttached<T> {
+  conditions: Conditions;
+  options: QueryOptions | undefined;
+  parentConditions: Conditions | undefined;
   /**
    * Unsubscribes from changes.
    *
