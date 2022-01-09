@@ -11,17 +11,14 @@
 - [conditions](database.ReactiveConfigAttached.md#conditions)
 - [options](database.ReactiveConfigAttached.md#options)
 - [parentConditions](database.ReactiveConfigAttached.md#parentconditions)
-- [updateInterval](database.ReactiveConfigAttached.md#updateinterval)
-
-### Methods
-
 - [updateFn](database.ReactiveConfigAttached.md#updatefn)
+- [updateInterval](database.ReactiveConfigAttached.md#updateinterval)
 
 ## Properties
 
 ### conditions
 
-• `Readonly` **conditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+• `Optional` `Readonly` **conditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
 
 ___
 
@@ -37,26 +34,12 @@ ___
 
 ___
 
+### updateFn
+
+• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](../modules/database.md#reactiveupdatefn)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+
+___
+
 ### updateInterval
 
 • `Optional` `Readonly` **updateInterval**: `number`
-
-## Methods
-
-### updateFn
-
-▸ `Optional` `Readonly` **updateFn**(`doc`): `boolean`
-
-Triggers update on new attached document.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `doc` | [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md) | New attached document. |
-
-#### Returns
-
-`boolean`
-
-_True_ to trigger update, _false_ otherwise.

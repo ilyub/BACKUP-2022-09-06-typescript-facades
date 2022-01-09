@@ -10,17 +10,14 @@
 
 - [conditions](database.ReactiveConfig.md#conditions)
 - [options](database.ReactiveConfig.md#options)
-- [updateInterval](database.ReactiveConfig.md#updateinterval)
-
-### Methods
-
 - [updateFn](database.ReactiveConfig.md#updatefn)
+- [updateInterval](database.ReactiveConfig.md#updateinterval)
 
 ## Properties
 
 ### conditions
 
-• `Readonly` **conditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+• `Optional` `Readonly` **conditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
 
 ___
 
@@ -30,26 +27,12 @@ ___
 
 ___
 
+### updateFn
+
+• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](../modules/database.md#reactiveupdatefn)<[`ExistingDocument`](database.ExistingDocument.md)\>
+
+___
+
 ### updateInterval
 
 • `Optional` `Readonly` **updateInterval**: `number`
-
-## Methods
-
-### updateFn
-
-▸ `Optional` `Readonly` **updateFn**(`doc`): `boolean`
-
-Triggers update on new document.
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `doc` | [`ExistingDocument`](database.ExistingDocument.md) | New document. |
-
-#### Returns
-
-`boolean`
-
-_True_ to trigger update, _false_ otherwise.

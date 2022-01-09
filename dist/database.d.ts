@@ -1,5 +1,5 @@
 import * as is from "@skylib/functions/dist/guards";
-import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
+import type { numberU, NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 export declare const database: import("@skylib/functions/dist/helpers").Facade<Facade, unknown>;
 export interface Facade {
     /**
@@ -25,7 +25,7 @@ export interface Database {
      * @param conditions - Conditions.
      * @returns The number of documents.
      */
-    readonly count: (conditions: Conditions) => Promise<number>;
+    readonly count: (conditions?: Conditions) => Promise<number>;
     /**
      * Counts attached documents.
      *
@@ -33,7 +33,7 @@ export interface Database {
      * @param parentConditions - Parent conditions.
      * @returns The number of attached documents.
      */
-    readonly countAttached: (conditions: Conditions, parentConditions?: Conditions) => Promise<number>;
+    readonly countAttached: (conditions?: Conditions, parentConditions?: Conditions) => Promise<number>;
     /**
      * Checks if document exists.
      *
@@ -116,7 +116,7 @@ export interface Database {
      * @param options - Options.
      * @returns Documents.
      */
-    readonly query: (conditions: Conditions, options?: QueryOptions) => Promise<ExistingDocuments>;
+    readonly query: (conditions?: Conditions, options?: QueryOptions) => Promise<ExistingDocuments>;
     /**
      * Queries database.
      *
@@ -125,7 +125,7 @@ export interface Database {
      * @param options - Options.
      * @returns Attached documents.
      */
-    readonly queryAttached: (conditions: Conditions, parentConditions?: Conditions, options?: QueryOptions) => Promise<ExistingAttachedDocuments>;
+    readonly queryAttached: (conditions?: Conditions, parentConditions?: Conditions, options?: QueryOptions) => Promise<ExistingAttachedDocuments>;
     /**
      * Counts documents.
      *
@@ -240,7 +240,7 @@ export interface Database {
      * @param conditions - Conditions.
      * @returns The number of unsettled documents.
      */
-    readonly unsettled: (conditions: Conditions) => Promise<number>;
+    readonly unsettled: (conditions?: Conditions) => Promise<number>;
     /**
      * Returns the number of unsettled attached documents.
      *
@@ -248,7 +248,7 @@ export interface Database {
      * @param parentConditions - Parent conditions.
      * @returns The number of unsettled attached documents.
      */
-    readonly unsettledAttached: (conditions: Conditions, parentConditions?: Conditions) => Promise<number>;
+    readonly unsettledAttached: (conditions?: Conditions, parentConditions?: Conditions) => Promise<number>;
     /**
      * Unsubscribes from changes.
      *
@@ -331,53 +331,37 @@ export interface QueryOptions {
     readonly sortDesc?: boolean;
 }
 export interface ReactiveConfig {
-    readonly conditions: Conditions;
+    readonly conditions?: Conditions;
     readonly options?: QueryOptions;
-    /**
-     * Triggers update on new document.
-     *
-     * @param doc - New document.
-     * @returns _True_ to trigger update, _false_ otherwise.
-     */
-    readonly updateFn?: (doc: ExistingDocument) => boolean;
+    readonly updateFn?: ReactiveUpdateFn<ExistingDocument>;
     readonly updateInterval?: number;
 }
 export interface ReactiveConfigAttached {
-    readonly conditions: Conditions;
+    readonly conditions?: Conditions;
     readonly options?: QueryOptions;
     readonly parentConditions?: Conditions;
-    /**
-     * Triggers update on new attached document.
-     *
-     * @param doc - New attached document.
-     * @returns _True_ to trigger update, _false_ otherwise.
-     */
-    readonly updateFn?: (doc: ExistingAttachedDocument) => boolean;
+    readonly updateFn?: ReactiveUpdateFn<ExistingAttachedDocument>;
     readonly updateInterval?: number;
 }
 export interface ReactiveResponse<T> {
     conditions: Conditions;
-    options: QueryOptions | undefined;
-    /**
-     * Unsubscribes from changes.
-     *
-     * @returns Promise.
-     */
-    readonly unsubscribe: () => Promise<void>;
+    options: QueryOptions;
+    readonly unsubscribe: ReactiveUnsubscribe;
+    updateFn: ReactiveUpdateFn<ExistingDocument> | undefined;
+    updateInterval: numberU;
     readonly value: T;
 }
 export interface ReactiveResponseAttached<T> {
     conditions: Conditions;
-    options: QueryOptions | undefined;
-    parentConditions: Conditions | undefined;
-    /**
-     * Unsubscribes from changes.
-     *
-     * @returns Promise.
-     */
-    readonly unsubscribe: () => Promise<void>;
+    options: QueryOptions;
+    parentConditions: Conditions;
+    readonly unsubscribe: ReactiveUnsubscribe;
+    updateFn: ReactiveUpdateFn<ExistingAttachedDocument> | undefined;
+    updateInterval: numberU;
     readonly value: T;
 }
+export declare type ReactiveUpdateFn<T> = (doc: T) => boolean;
+export declare type ReactiveUnsubscribe = () => Promise<void>;
 export declare type ResetCallback = (this: Database) => Promise<void>;
 export interface StoredAttachedDocument extends PutAttachedDocument {
     readonly _id: number;

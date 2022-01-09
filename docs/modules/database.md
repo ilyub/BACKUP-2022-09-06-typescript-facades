@@ -35,6 +35,8 @@
 - [Migrations](database.md#migrations)
 - [PutDocuments](database.md#putdocuments)
 - [PutResponses](database.md#putresponses)
+- [ReactiveUnsubscribe](database.md#reactiveunsubscribe)
+- [ReactiveUpdateFn](database.md#reactiveupdatefn)
 - [ResetCallback](database.md#resetcallback)
 - [StoredAttachedDocuments](database.md#storedattacheddocuments)
 
@@ -142,6 +144,46 @@ ___
 ### PutResponses
 
 Ƭ **PutResponses**: readonly [`PutResponse`](../interfaces/database.PutResponse.md)[]
+
+___
+
+### ReactiveUnsubscribe
+
+Ƭ **ReactiveUnsubscribe**: () => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (): `Promise`<`void`\>
+
+##### Returns
+
+`Promise`<`void`\>
+
+___
+
+### ReactiveUpdateFn
+
+Ƭ **ReactiveUpdateFn**<`T`\>: (`doc`: `T`) => `boolean`
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Type declaration
+
+▸ (`doc`): `boolean`
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `doc` | `T` |
+
+##### Returns
+
+`boolean`
 
 ___
 

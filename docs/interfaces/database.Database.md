@@ -67,7 +67,7 @@ ___
 
 ### count
 
-▸ `Readonly` **count**(`conditions`): `Promise`<`number`\>
+▸ `Readonly` **count**(`conditions?`): `Promise`<`number`\>
 
 Counts documents.
 
@@ -75,7 +75,7 @@ Counts documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
 
 #### Returns
 
@@ -87,7 +87,7 @@ ___
 
 ### countAttached
 
-▸ `Readonly` **countAttached**(`conditions`, `parentConditions?`): `Promise`<`number`\>
+▸ `Readonly` **countAttached**(`conditions?`, `parentConditions?`): `Promise`<`number`\>
 
 Counts attached documents.
 
@@ -95,7 +95,7 @@ Counts attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
 | `parentConditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Parent conditions. |
 
 #### Returns
@@ -313,7 +313,7 @@ ___
 
 ### query
 
-▸ `Readonly` **query**(`conditions`, `options?`): `Promise`<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>
+▸ `Readonly` **query**(`conditions?`, `options?`): `Promise`<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>
 
 Queries database.
 
@@ -321,7 +321,7 @@ Queries database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
 | `options?` | [`QueryOptions`](database.QueryOptions.md) | Options. |
 
 #### Returns
@@ -334,7 +334,7 @@ ___
 
 ### queryAttached
 
-▸ `Readonly` **queryAttached**(`conditions`, `parentConditions?`, `options?`): `Promise`<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>
+▸ `Readonly` **queryAttached**(`conditions?`, `parentConditions?`, `options?`): `Promise`<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>
 
 Queries database.
 
@@ -342,7 +342,7 @@ Queries database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
 | `parentConditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Parent conditions. |
 | `options?` | [`QueryOptions`](database.QueryOptions.md) | Options. |
 
@@ -659,7 +659,7 @@ ___
 
 ### unsettled
 
-▸ `Readonly` **unsettled**(`conditions`): `Promise`<`number`\>
+▸ `Readonly` **unsettled**(`conditions?`): `Promise`<`number`\>
 
 Returns the number of unsettled documents.
 
@@ -667,7 +667,7 @@ Returns the number of unsettled documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
 
 #### Returns
 
@@ -679,7 +679,7 @@ ___
 
 ### unsettledAttached
 
-▸ `Readonly` **unsettledAttached**(`conditions`, `parentConditions?`): `Promise`<`number`\>
+▸ `Readonly` **unsettledAttached**(`conditions?`, `parentConditions?`): `Promise`<`number`\>
 
 Returns the number of unsettled attached documents.
 
@@ -687,7 +687,7 @@ Returns the number of unsettled attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
 | `parentConditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Parent conditions. |
 
 #### Returns

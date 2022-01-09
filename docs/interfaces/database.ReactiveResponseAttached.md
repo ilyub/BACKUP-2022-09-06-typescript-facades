@@ -17,11 +17,10 @@
 - [conditions](database.ReactiveResponseAttached.md#conditions)
 - [options](database.ReactiveResponseAttached.md#options)
 - [parentConditions](database.ReactiveResponseAttached.md#parentconditions)
-- [value](database.ReactiveResponseAttached.md#value)
-
-### Methods
-
 - [unsubscribe](database.ReactiveResponseAttached.md#unsubscribe)
+- [updateFn](database.ReactiveResponseAttached.md#updatefn)
+- [updateInterval](database.ReactiveResponseAttached.md#updateinterval)
+- [value](database.ReactiveResponseAttached.md#value)
 
 ## Properties
 
@@ -33,30 +32,34 @@ ___
 
 ### options
 
-• **options**: `undefined` \| [`QueryOptions`](database.QueryOptions.md)
+• **options**: [`QueryOptions`](database.QueryOptions.md)
 
 ___
 
 ### parentConditions
 
-• **parentConditions**: `undefined` \| `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+• **parentConditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+
+___
+
+### unsubscribe
+
+• `Readonly` **unsubscribe**: [`ReactiveUnsubscribe`](../modules/database.md#reactiveunsubscribe)
+
+___
+
+### updateFn
+
+• **updateFn**: `undefined` \| [`ReactiveUpdateFn`](../modules/database.md#reactiveupdatefn)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+
+___
+
+### updateInterval
+
+• **updateInterval**: `numberU`
 
 ___
 
 ### value
 
 • `Readonly` **value**: `T`
-
-## Methods
-
-### unsubscribe
-
-▸ `Readonly` **unsubscribe**(): `Promise`<`void`\>
-
-Unsubscribes from changes.
-
-#### Returns
-
-`Promise`<`void`\>
-
-Promise.
