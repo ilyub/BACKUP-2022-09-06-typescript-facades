@@ -1,10 +1,6 @@
 import * as is from "@skylib/functions/dist/guards";
 import { createFacade } from "@skylib/functions/dist/helpers";
-import type {
-  numberU,
-  NumStr,
-  ReadonlyRecord
-} from "@skylib/functions/dist/types/core";
+import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 
 export const database = createFacade<Facade>("database", {});
 
@@ -175,7 +171,7 @@ export interface Database {
    */
   readonly reactiveCountAttached: (
     config: ReactiveConfigAttached
-  ) => Promise<ReactiveResponseAttached<number>>;
+  ) => Promise<ReactiveResponse<number>>;
   /**
    * Checks if document exists.
    *
@@ -251,7 +247,7 @@ export interface Database {
    */
   readonly reactiveQueryAttached: (
     config: ReactiveConfigAttached
-  ) => Promise<ReactiveResponseAttached<ExistingAttachedDocuments>>;
+  ) => Promise<ReactiveResponse<ExistingAttachedDocuments>>;
   /**
    * Returns the number of unsettled documents.
    *
@@ -269,7 +265,7 @@ export interface Database {
    */
   readonly reactiveUnsettledAttached: (
     config: ReactiveConfigAttached
-  ) => Promise<ReactiveResponseAttached<number>>;
+  ) => Promise<ReactiveResponse<number>>;
   /**
    * Resets database.
    *
@@ -427,24 +423,8 @@ export interface ReactiveConfigAttached {
   readonly updateInterval?: number;
 }
 
-// eslint-disable-next-line @skylib/prefer-readonly
 export interface ReactiveResponse<T> {
-  conditions: Conditions;
-  options: QueryOptions;
   readonly unsubscribe: ReactiveUnsubscribe;
-  updateFn: ReactiveUpdateFn<ExistingDocument> | undefined;
-  updateInterval: numberU;
-  readonly value: T;
-}
-
-// eslint-disable-next-line @skylib/prefer-readonly
-export interface ReactiveResponseAttached<T> {
-  conditions: Conditions;
-  options: QueryOptions;
-  parentConditions: Conditions;
-  readonly unsubscribe: ReactiveUnsubscribe;
-  updateFn: ReactiveUpdateFn<ExistingAttachedDocument> | undefined;
-  updateInterval: numberU;
   readonly value: T;
 }
 
