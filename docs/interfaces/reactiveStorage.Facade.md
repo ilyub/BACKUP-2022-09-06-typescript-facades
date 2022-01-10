@@ -8,9 +8,9 @@
 
 ### Facade
 
-▸ **Facade**<`T`\>(`data`): `T`
+▸ **Facade**<`T`\>(`obj`): `T`
 
-Creates reactive wrapper for data object.
+Creates reactive object.
 
 #### Type parameters
 
@@ -22,45 +22,64 @@ Creates reactive wrapper for data object.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `data` | `T` | Data. |
+| `obj` | `T` | Object. |
 
 #### Returns
 
 `T`
 
-Reactive wrapper for data object.
+Reactive object.
 
 ## Table of contents
 
 ### Methods
 
-- [withChangesHandler](reactiveStorage.Facade.md#withchangeshandler)
+- [unwatch](reactiveStorage.Facade.md#unwatch)
+- [watch](reactiveStorage.Facade.md#watch)
 
 ## Methods
 
-### withChangesHandler
+### unwatch
 
-▸ `Readonly` **withChangesHandler**<`T`, `R`\>(`data`, `onChange`, `reduce`): `T`
+▸ `Readonly` **unwatch**(`obj`, `observer`): `void`
 
-Creates reactive wrapper for data object.
+Unsubscribes from changes.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj` | `object` | Reactive object. |
+| `observer` | `unknown` | Observer. |
+
+#### Returns
+
+`void`
+
+___
+
+### watch
+
+▸ `Readonly` **watch**<`T`\>(`obj`, `handler`, `reducer?`): `unknown`
+
+Subscribes to changes.
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `T` | extends `object` |
-| `R` | `R` |
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `data` | `T` | Data. |
-| `onChange` | [`OnChange`](../modules/reactiveStorage.md#onchange)<`R`\> | Handles reduced value change. |
-| `reduce` | [`Reduce`](../modules/reactiveStorage.md#reduce)<`T`, `R`\> | Generates reduced value. |
+| `obj` | `T` | Reactive object. |
+| `handler` | [`Handler`](../modules/reactiveStorage.md#handler)<`T`\> | Handles changes. |
+| `reducer?` | [`Reducer`](../modules/reactiveStorage.md#reducer)<`T`\> | Generates reduced value. |
 
 #### Returns
 
-`T`
+`unknown`
 
-Reactive wrapper for data object.
+Observer.

@@ -1,5 +1,5 @@
 import * as is from "@skylib/functions/dist/guards";
-import type { numberU, NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
+import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 export declare const database: import("@skylib/functions/dist/helpers").Facade<Facade, unknown>;
 export interface Facade {
     /**
@@ -139,7 +139,7 @@ export interface Database {
      * @param config - Configuration.
      * @returns The number of attached documents.
      */
-    readonly reactiveCountAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAttached<number>>;
+    readonly reactiveCountAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponse<number>>;
     /**
      * Checks if document exists.
      *
@@ -198,7 +198,7 @@ export interface Database {
      * @param config - Configuration.
      * @returns Attached documents.
      */
-    readonly reactiveQueryAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAttached<ExistingAttachedDocuments>>;
+    readonly reactiveQueryAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponse<ExistingAttachedDocuments>>;
     /**
      * Returns the number of unsettled documents.
      *
@@ -212,7 +212,7 @@ export interface Database {
      * @param config - Configuration.
      * @returns The number of unsettled attached documents.
      */
-    readonly reactiveUnsettledAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAttached<number>>;
+    readonly reactiveUnsettledAttached: (config: ReactiveConfigAttached) => Promise<ReactiveResponse<number>>;
     /**
      * Resets database.
      *
@@ -344,20 +344,7 @@ export interface ReactiveConfigAttached {
     readonly updateInterval?: number;
 }
 export interface ReactiveResponse<T> {
-    conditions: Conditions;
-    options: QueryOptions;
     readonly unsubscribe: ReactiveUnsubscribe;
-    updateFn: ReactiveUpdateFn<ExistingDocument> | undefined;
-    updateInterval: numberU;
-    readonly value: T;
-}
-export interface ReactiveResponseAttached<T> {
-    conditions: Conditions;
-    options: QueryOptions;
-    parentConditions: Conditions;
-    readonly unsubscribe: ReactiveUnsubscribe;
-    updateFn: ReactiveUpdateFn<ExistingAttachedDocument> | undefined;
-    updateInterval: numberU;
     readonly value: T;
 }
 export declare type ReactiveUpdateFn<T> = (doc: T) => boolean;

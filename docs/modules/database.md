@@ -21,7 +21,6 @@
 - [ReactiveConfig](../interfaces/database.ReactiveConfig.md)
 - [ReactiveConfigAttached](../interfaces/database.ReactiveConfigAttached.md)
 - [ReactiveResponse](../interfaces/database.ReactiveResponse.md)
-- [ReactiveResponseAttached](../interfaces/database.ReactiveResponseAttached.md)
 - [StoredAttachedDocument](../interfaces/database.StoredAttachedDocument.md)
 
 ### Type aliases

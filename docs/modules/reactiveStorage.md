@@ -10,8 +10,8 @@
 
 ### Type aliases
 
-- [OnChange](reactiveStorage.md#onchange)
-- [Reduce](reactiveStorage.md#reduce)
+- [Handler](reactiveStorage.md#handler)
+- [Reducer](reactiveStorage.md#reducer)
 
 ### Variables
 
@@ -19,25 +19,25 @@
 
 ## Type aliases
 
-### OnChange
+### Handler
 
-Ƭ **OnChange**<`T`\>: (`reduced`: `T`) => `void`
+Ƭ **Handler**<`T`\>: (`obj`: `T`) => `void`
 
 #### Type parameters
 
-| Name |
-| :------ |
-| `T` |
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
 
 #### Type declaration
 
-▸ (`reduced`): `void`
+▸ (`obj`): `void`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `reduced` | `T` |
+| `obj` | `T` |
 
 ##### Returns
 
@@ -45,30 +45,29 @@
 
 ___
 
-### Reduce
+### Reducer
 
-Ƭ **Reduce**<`T`, `R`\>: (`data`: `T`) => `R`
+Ƭ **Reducer**<`T`\>: (`obj`: `T`) => `unknown`
 
 #### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `T` | extends `object` |
-| `R` | `R` |
 
 #### Type declaration
 
-▸ (`data`): `R`
+▸ (`obj`): `unknown`
 
 ##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `T` |
+| `obj` | `T` |
 
 ##### Returns
 
-`R`
+`unknown`
 
 ## Variables
 

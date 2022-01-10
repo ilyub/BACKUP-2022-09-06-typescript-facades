@@ -376,7 +376,7 @@ ___
 
 ### reactiveCountAttached
 
-▸ `Readonly` **reactiveCountAttached**(`config`): `Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
+▸ `Readonly` **reactiveCountAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
 
 Counts attached documents.
 
@@ -388,7 +388,7 @@ Counts attached documents.
 
 #### Returns
 
-`Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
+`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
 
 The number of attached documents.
 
@@ -539,7 +539,7 @@ ___
 
 ### reactiveQueryAttached
 
-▸ `Readonly` **reactiveQueryAttached**(`config`): `Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+▸ `Readonly` **reactiveQueryAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
 
 Queries database.
 
@@ -551,7 +551,7 @@ Queries database.
 
 #### Returns
 
-`Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
 
 Attached documents.
 
@@ -579,7 +579,7 @@ ___
 
 ### reactiveUnsettledAttached
 
-▸ `Readonly` **reactiveUnsettledAttached**(`config`): `Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
+▸ `Readonly` **reactiveUnsettledAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
 
 Returns the number of unsettled attached documents.
 
@@ -591,7 +591,7 @@ Returns the number of unsettled attached documents.
 
 #### Returns
 
-`Promise`<[`ReactiveResponseAttached`](database.ReactiveResponseAttached.md)<`number`\>\>
+`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
 
 The number of unsettled attached documents.
 
