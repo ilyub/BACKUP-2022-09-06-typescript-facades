@@ -4,27 +4,34 @@ export const reactiveStorage = createFacade<Facade>("reactiveStorage", {});
 
 export interface Facade {
   /**
-   * Creates reactive wrapper for data object.
+   * Creates reactive object.
    *
-   * @param data - Data.
-   * @returns Reactive wrapper for data object.
+   * @param obj - Object.
+   * @returns Reactive object.
    */
-  <T extends object>(data: T): T;
+  <T extends object>(obj: T): T;
   /**
-   * Creates reactive wrapper for data object.
+   * Unsubscribes from changes.
    *
-   * @param data - Data.
-   * @param onChange - Handles reduced value change.
-   * @param reduce - Generates reduced value.
-   * @returns Reactive wrapper for data object.
+   * @param obj - Reactive object.
+   * @param observer - Observer.
    */
-  readonly withChangesHandler: <T extends object, R>(
-    data: T,
-    onChange: OnChange<R>,
-    reduce: Reduce<T, R>
-  ) => T;
+  readonly unwatch: (obj: object, observer: unknown) => void;
+  /**
+   * Subscribes to changes.
+   *
+   * @param obj - Reactive object.
+   * @param handler - Handles changes.
+   * @param reducer - Generates reduced value.
+   * @returns Observer.
+   */
+  readonly watch: <T extends object>(
+    obj: T,
+    handler: Handler<T>,
+    reducer?: Reducer<T>
+  ) => unknown;
 }
 
-export type OnChange<T> = (reduced: T) => void;
+export type Handler<T extends object> = (obj: T) => void;
 
-export type Reduce<T extends object, R> = (data: T) => R;
+export type Reducer<T extends object> = (obj: T) => unknown;
