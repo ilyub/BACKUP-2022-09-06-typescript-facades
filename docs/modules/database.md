@@ -20,7 +20,8 @@
 - [QueryOptions](../interfaces/database.QueryOptions.md)
 - [ReactiveConfig](../interfaces/database.ReactiveConfig.md)
 - [ReactiveConfigAttached](../interfaces/database.ReactiveConfigAttached.md)
-- [ReactiveResponse](../interfaces/database.ReactiveResponse.md)
+- [ReactiveResponseAsync](../interfaces/database.ReactiveResponseAsync.md)
+- [ReactiveResponseLoading](../interfaces/database.ReactiveResponseLoading.md)
 - [StoredAttachedDocument](../interfaces/database.StoredAttachedDocument.md)
 
 ### Type aliases
@@ -34,6 +35,7 @@
 - [Migrations](database.md#migrations)
 - [PutDocuments](database.md#putdocuments)
 - [PutResponses](database.md#putresponses)
+- [ReactiveResponse](database.md#reactiveresponse)
 - [ReactiveUnsubscribe](database.md#reactiveunsubscribe)
 - [ReactiveUpdateFn](database.md#reactiveupdatefn)
 - [ResetCallback](database.md#resetcallback)
@@ -143,6 +145,18 @@ ___
 ### PutResponses
 
 Ƭ **PutResponses**: readonly [`PutResponse`](../interfaces/database.PutResponse.md)[]
+
+___
+
+### ReactiveResponse
+
+Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseAsync`](../interfaces/database.ReactiveResponseAsync.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
 
 ___
 

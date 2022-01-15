@@ -24,17 +24,29 @@
 - [query](database.Database.md#query)
 - [queryAttached](database.Database.md#queryattached)
 - [reactiveCount](database.Database.md#reactivecount)
+- [reactiveCountAsync](database.Database.md#reactivecountasync)
 - [reactiveCountAttached](database.Database.md#reactivecountattached)
+- [reactiveCountAttachedAsync](database.Database.md#reactivecountattachedasync)
 - [reactiveExists](database.Database.md#reactiveexists)
+- [reactiveExistsAsync](database.Database.md#reactiveexistsasync)
 - [reactiveExistsAttached](database.Database.md#reactiveexistsattached)
+- [reactiveExistsAttachedAsync](database.Database.md#reactiveexistsattachedasync)
 - [reactiveGet](database.Database.md#reactiveget)
+- [reactiveGetAsync](database.Database.md#reactivegetasync)
 - [reactiveGetAttached](database.Database.md#reactivegetattached)
+- [reactiveGetAttachedAsync](database.Database.md#reactivegetattachedasync)
 - [reactiveGetAttachedIfExists](database.Database.md#reactivegetattachedifexists)
+- [reactiveGetAttachedIfExistsAsync](database.Database.md#reactivegetattachedifexistsasync)
 - [reactiveGetIfExists](database.Database.md#reactivegetifexists)
+- [reactiveGetIfExistsAsync](database.Database.md#reactivegetifexistsasync)
 - [reactiveQuery](database.Database.md#reactivequery)
+- [reactiveQueryAsync](database.Database.md#reactivequeryasync)
 - [reactiveQueryAttached](database.Database.md#reactivequeryattached)
+- [reactiveQueryAttachedAsync](database.Database.md#reactivequeryattachedasync)
 - [reactiveUnsettled](database.Database.md#reactiveunsettled)
+- [reactiveUnsettledAsync](database.Database.md#reactiveunsettledasync)
 - [reactiveUnsettledAttached](database.Database.md#reactiveunsettledattached)
+- [reactiveUnsettledAttachedAsync](database.Database.md#reactiveunsettledattachedasync)
 - [reset](database.Database.md#reset)
 - [subscribe](database.Database.md#subscribe)
 - [subscribeAttached](database.Database.md#subscribeattached)
@@ -356,7 +368,7 @@ ___
 
 ### reactiveCount
 
-▸ `Readonly` **reactiveCount**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+▸ `Readonly` **reactiveCount**(`config`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
 
 Counts documents.
 
@@ -368,7 +380,27 @@ Counts documents.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
+
+The number of documents.
+
+___
+
+### reactiveCountAsync
+
+▸ `Readonly` **reactiveCountAsync**(`config`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
+
+Counts documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`ReactiveConfig`](database.ReactiveConfig.md) | Configuration. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
 
 The number of documents.
 
@@ -376,7 +408,7 @@ ___
 
 ### reactiveCountAttached
 
-▸ `Readonly` **reactiveCountAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+▸ `Readonly` **reactiveCountAttached**(`config`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
 
 Counts attached documents.
 
@@ -388,7 +420,27 @@ Counts attached documents.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
+
+The number of attached documents.
+
+___
+
+### reactiveCountAttachedAsync
+
+▸ `Readonly` **reactiveCountAttachedAsync**(`config`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
+
+Counts attached documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`ReactiveConfigAttached`](database.ReactiveConfigAttached.md) | Configuration. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
 
 The number of attached documents.
 
@@ -396,7 +448,7 @@ ___
 
 ### reactiveExists
 
-▸ `Readonly` **reactiveExists**(`id`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`boolean`\>\>
+▸ `Readonly` **reactiveExists**(`id`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`boolean`\>
 
 Checks if document exists.
 
@@ -408,7 +460,27 @@ Checks if document exists.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`boolean`\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`boolean`\>
+
+_True_ if document exists, _false_ otherwise.
+
+___
+
+### reactiveExistsAsync
+
+▸ `Readonly` **reactiveExistsAsync**(`id`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`boolean`\>\>
+
+Checks if document exists.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | ID. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`boolean`\>\>
 
 _True_ if document exists, _false_ otherwise.
 
@@ -416,7 +488,7 @@ ___
 
 ### reactiveExistsAttached
 
-▸ `Readonly` **reactiveExistsAttached**(`id`, `parentId`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`boolean`\>\>
+▸ `Readonly` **reactiveExistsAttached**(`id`, `parentId`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`boolean`\>
 
 Checks if attached document exists.
 
@@ -429,7 +501,28 @@ Checks if attached document exists.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`boolean`\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`boolean`\>
+
+_True_ if attached document exists, _false_ otherwise.
+
+___
+
+### reactiveExistsAttachedAsync
+
+▸ `Readonly` **reactiveExistsAttachedAsync**(`id`, `parentId`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`boolean`\>\>
+
+Checks if attached document exists.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | ID. |
+| `parentId` | `string` | Parent ID. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`boolean`\>\>
 
 _True_ if attached document exists, _false_ otherwise.
 
@@ -437,7 +530,7 @@ ___
 
 ### reactiveGet
 
-▸ `Readonly` **reactiveGet**(`id`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingDocument`](database.ExistingDocument.md)\>\>
+▸ `Readonly` **reactiveGet**(`id`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingDocument`](database.ExistingDocument.md)\>
 
 Fetches document.
 
@@ -449,7 +542,27 @@ Fetches document.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingDocument`](database.ExistingDocument.md)\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingDocument`](database.ExistingDocument.md)\>
+
+Document.
+
+___
+
+### reactiveGetAsync
+
+▸ `Readonly` **reactiveGetAsync**(`id`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingDocument`](database.ExistingDocument.md)\>\>
+
+Fetches document.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | ID. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingDocument`](database.ExistingDocument.md)\>\>
 
 Document.
 
@@ -457,7 +570,7 @@ ___
 
 ### reactiveGetAttached
 
-▸ `Readonly` **reactiveGetAttached**(`id`, `parentId`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
+▸ `Readonly` **reactiveGetAttached**(`id`, `parentId`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 Fetches attached document.
 
@@ -470,7 +583,28 @@ Fetches attached document.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+
+Attached document.
+
+___
+
+### reactiveGetAttachedAsync
+
+▸ `Readonly` **reactiveGetAttachedAsync**(`id`, `parentId`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
+
+Fetches attached document.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | ID. |
+| `parentId` | `string` | Parent ID. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
 
 Attached document.
 
@@ -478,7 +612,7 @@ ___
 
 ### reactiveGetAttachedIfExists
 
-▸ `Readonly` **reactiveGetAttachedIfExists**(`id`, `parentId`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
+▸ `Readonly` **reactiveGetAttachedIfExists**(`id`, `parentId`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 Fetches attached document if exists.
 
@@ -491,7 +625,28 @@ Fetches attached document if exists.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+
+Attached document if exists, _undefined_ otherwise.
+
+___
+
+### reactiveGetAttachedIfExistsAsync
+
+▸ `Readonly` **reactiveGetAttachedIfExistsAsync**(`id`, `parentId`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
+
+Fetches attached document if exists.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `number` | ID. |
+| `parentId` | `string` | Parent ID. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`undefined` \| [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>\>
 
 Attached document if exists, _undefined_ otherwise.
 
@@ -499,7 +654,7 @@ ___
 
 ### reactiveGetIfExists
 
-▸ `Readonly` **reactiveGetIfExists**(`id`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>\>
+▸ `Readonly` **reactiveGetIfExists**(`id`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>
 
 Fetches document if exists.
 
@@ -511,7 +666,27 @@ Fetches document if exists.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>
+
+Document if exists, _undefined_ otherwise.
+
+___
+
+### reactiveGetIfExistsAsync
+
+▸ `Readonly` **reactiveGetIfExistsAsync**(`id`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>\>
+
+Fetches document if exists.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `id` | `string` | ID. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`undefined` \| [`ExistingDocument`](database.ExistingDocument.md)\>\>
 
 Document if exists, _undefined_ otherwise.
 
@@ -519,7 +694,7 @@ ___
 
 ### reactiveQuery
 
-▸ `Readonly` **reactiveQuery**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>\>
+▸ `Readonly` **reactiveQuery**(`config`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>
 
 Queries database.
 
@@ -531,7 +706,27 @@ Queries database.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>
+
+Documents.
+
+___
+
+### reactiveQueryAsync
+
+▸ `Readonly` **reactiveQueryAsync**(`config`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>\>
+
+Queries database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`ReactiveConfig`](database.ReactiveConfig.md) | Configuration. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingDocuments`](../modules/database.md#existingdocuments)\>\>
 
 Documents.
 
@@ -539,7 +734,7 @@ ___
 
 ### reactiveQueryAttached
 
-▸ `Readonly` **reactiveQueryAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+▸ `Readonly` **reactiveQueryAttached**(`config`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>
 
 Queries database.
 
@@ -551,7 +746,27 @@ Queries database.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>
+
+Attached documents.
+
+___
+
+### reactiveQueryAttachedAsync
+
+▸ `Readonly` **reactiveQueryAttachedAsync**(`config`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
+
+Queries database.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`ReactiveConfigAttached`](database.ReactiveConfigAttached.md) | Configuration. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<[`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments)\>\>
 
 Attached documents.
 
@@ -559,7 +774,7 @@ ___
 
 ### reactiveUnsettled
 
-▸ `Readonly` **reactiveUnsettled**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+▸ `Readonly` **reactiveUnsettled**(`config`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
 
 Returns the number of unsettled documents.
 
@@ -571,7 +786,27 @@ Returns the number of unsettled documents.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
+
+The number of unsettled documents.
+
+___
+
+### reactiveUnsettledAsync
+
+▸ `Readonly` **reactiveUnsettledAsync**(`config`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
+
+Returns the number of unsettled documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`ReactiveConfig`](database.ReactiveConfig.md) | Configuration. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
 
 The number of unsettled documents.
 
@@ -579,7 +814,7 @@ ___
 
 ### reactiveUnsettledAttached
 
-▸ `Readonly` **reactiveUnsettledAttached**(`config`): `Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+▸ `Readonly` **reactiveUnsettledAttached**(`config`): [`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
 
 Returns the number of unsettled attached documents.
 
@@ -591,7 +826,27 @@ Returns the number of unsettled attached documents.
 
 #### Returns
 
-`Promise`<[`ReactiveResponse`](database.ReactiveResponse.md)<`number`\>\>
+[`ReactiveResponse`](../modules/database.md#reactiveresponse)<`number`\>
+
+The number of unsettled attached documents.
+
+___
+
+### reactiveUnsettledAttachedAsync
+
+▸ `Readonly` **reactiveUnsettledAttachedAsync**(`config`): `Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
+
+Returns the number of unsettled attached documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `config` | [`ReactiveConfigAttached`](database.ReactiveConfigAttached.md) | Configuration. |
+
+#### Returns
+
+`Promise`<[`ReactiveResponseAsync`](database.ReactiveResponseAsync.md)<`number`\>\>
 
 The number of unsettled attached documents.
 
