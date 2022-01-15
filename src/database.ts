@@ -160,9 +160,16 @@ export interface Database {
    * @param config - Configuration.
    * @returns The number of documents.
    */
-  readonly reactiveCount: (
+  readonly reactiveCount: (config: ReactiveConfig) => ReactiveResponse<number>;
+  /**
+   * Counts documents.
+   *
+   * @param config - Configuration.
+   * @returns The number of documents.
+   */
+  readonly reactiveCountAsync: (
     config: ReactiveConfig
-  ) => Promise<ReactiveResponse<number>>;
+  ) => Promise<ReactiveResponseAsync<number>>;
   /**
    * Counts attached documents.
    *
@@ -171,14 +178,32 @@ export interface Database {
    */
   readonly reactiveCountAttached: (
     config: ReactiveConfigAttached
-  ) => Promise<ReactiveResponse<number>>;
+  ) => ReactiveResponse<number>;
+  /**
+   * Counts attached documents.
+   *
+   * @param config - Configuration.
+   * @returns The number of attached documents.
+   */
+  readonly reactiveCountAttachedAsync: (
+    config: ReactiveConfigAttached
+  ) => Promise<ReactiveResponseAsync<number>>;
   /**
    * Checks if document exists.
    *
    * @param id - ID.
    * @returns _True_ if document exists, _false_ otherwise.
    */
-  readonly reactiveExists: (id: string) => Promise<ReactiveResponse<boolean>>;
+  readonly reactiveExists: (id: string) => ReactiveResponse<boolean>;
+  /**
+   * Checks if document exists.
+   *
+   * @param id - ID.
+   * @returns _True_ if document exists, _false_ otherwise.
+   */
+  readonly reactiveExistsAsync: (
+    id: string
+  ) => Promise<ReactiveResponseAsync<boolean>>;
   /**
    * Checks if attached document exists.
    *
@@ -189,16 +214,34 @@ export interface Database {
   readonly reactiveExistsAttached: (
     id: number,
     parentId: string
-  ) => Promise<ReactiveResponse<boolean>>;
+  ) => ReactiveResponse<boolean>;
+  /**
+   * Checks if attached document exists.
+   *
+   * @param id - ID.
+   * @param parentId - Parent ID.
+   * @returns _True_ if attached document exists, _false_ otherwise.
+   */
+  readonly reactiveExistsAttachedAsync: (
+    id: number,
+    parentId: string
+  ) => Promise<ReactiveResponseAsync<boolean>>;
   /**
    * Fetches document.
    *
    * @param id - ID.
    * @returns Document.
    */
-  readonly reactiveGet: (
+  readonly reactiveGet: (id: string) => ReactiveResponse<ExistingDocument>;
+  /**
+   * Fetches document.
+   *
+   * @param id - ID.
+   * @returns Document.
+   */
+  readonly reactiveGetAsync: (
     id: string
-  ) => Promise<ReactiveResponse<ExistingDocument>>;
+  ) => Promise<ReactiveResponseAsync<ExistingDocument>>;
   /**
    * Fetches attached document.
    *
@@ -209,7 +252,18 @@ export interface Database {
   readonly reactiveGetAttached: (
     id: number,
     parentId: string
-  ) => Promise<ReactiveResponse<ExistingAttachedDocument>>;
+  ) => ReactiveResponse<ExistingAttachedDocument>;
+  /**
+   * Fetches attached document.
+   *
+   * @param id - ID.
+   * @param parentId - Parent ID.
+   * @returns Attached document.
+   */
+  readonly reactiveGetAttachedAsync: (
+    id: number,
+    parentId: string
+  ) => Promise<ReactiveResponseAsync<ExistingAttachedDocument>>;
   /**
    * Fetches attached document if exists.
    *
@@ -220,7 +274,18 @@ export interface Database {
   readonly reactiveGetAttachedIfExists: (
     id: number,
     parentId: string
-  ) => Promise<ReactiveResponse<ExistingAttachedDocument | undefined>>;
+  ) => ReactiveResponse<ExistingAttachedDocument | undefined>;
+  /**
+   * Fetches attached document if exists.
+   *
+   * @param id - ID.
+   * @param parentId - Parent ID.
+   * @returns Attached document if exists, _undefined_ otherwise.
+   */
+  readonly reactiveGetAttachedIfExistsAsync: (
+    id: number,
+    parentId: string
+  ) => Promise<ReactiveResponseAsync<ExistingAttachedDocument | undefined>>;
   /**
    * Fetches document if exists.
    *
@@ -229,7 +294,16 @@ export interface Database {
    */
   readonly reactiveGetIfExists: (
     id: string
-  ) => Promise<ReactiveResponse<ExistingDocument | undefined>>;
+  ) => ReactiveResponse<ExistingDocument | undefined>;
+  /**
+   * Fetches document if exists.
+   *
+   * @param id - ID.
+   * @returns Document if exists, _undefined_ otherwise.
+   */
+  readonly reactiveGetIfExistsAsync: (
+    id: string
+  ) => Promise<ReactiveResponseAsync<ExistingDocument | undefined>>;
   /**
    * Queries database.
    *
@@ -238,7 +312,16 @@ export interface Database {
    */
   readonly reactiveQuery: (
     config: ReactiveConfig
-  ) => Promise<ReactiveResponse<ExistingDocuments>>;
+  ) => ReactiveResponse<ExistingDocuments>;
+  /**
+   * Queries database.
+   *
+   * @param config - Configuration.
+   * @returns Documents.
+   */
+  readonly reactiveQueryAsync: (
+    config: ReactiveConfig
+  ) => Promise<ReactiveResponseAsync<ExistingDocuments>>;
   /**
    * Queries database.
    *
@@ -247,7 +330,16 @@ export interface Database {
    */
   readonly reactiveQueryAttached: (
     config: ReactiveConfigAttached
-  ) => Promise<ReactiveResponse<ExistingAttachedDocuments>>;
+  ) => ReactiveResponse<ExistingAttachedDocuments>;
+  /**
+   * Queries database.
+   *
+   * @param config - Configuration.
+   * @returns Attached documents.
+   */
+  readonly reactiveQueryAttachedAsync: (
+    config: ReactiveConfigAttached
+  ) => Promise<ReactiveResponseAsync<ExistingAttachedDocuments>>;
   /**
    * Returns the number of unsettled documents.
    *
@@ -256,7 +348,16 @@ export interface Database {
    */
   readonly reactiveUnsettled: (
     config: ReactiveConfig
-  ) => Promise<ReactiveResponse<number>>;
+  ) => ReactiveResponse<number>;
+  /**
+   * Returns the number of unsettled documents.
+   *
+   * @param config - Configuration.
+   * @returns The number of unsettled documents.
+   */
+  readonly reactiveUnsettledAsync: (
+    config: ReactiveConfig
+  ) => Promise<ReactiveResponseAsync<number>>;
   /**
    * Returns the number of unsettled attached documents.
    *
@@ -265,7 +366,16 @@ export interface Database {
    */
   readonly reactiveUnsettledAttached: (
     config: ReactiveConfigAttached
-  ) => Promise<ReactiveResponse<number>>;
+  ) => ReactiveResponse<number>;
+  /**
+   * Returns the number of unsettled attached documents.
+   *
+   * @param config - Configuration.
+   * @returns The number of unsettled attached documents.
+   */
+  readonly reactiveUnsettledAttachedAsync: (
+    config: ReactiveConfigAttached
+  ) => Promise<ReactiveResponseAsync<number>>;
   /**
    * Resets database.
    *
@@ -423,9 +533,18 @@ export interface ReactiveConfigAttached {
   readonly updateInterval?: number;
 }
 
-export interface ReactiveResponse<T> {
+export type ReactiveResponse<T> =
+  | ReactiveResponseAsync<T>
+  | ReactiveResponseLoading;
+
+export interface ReactiveResponseAsync<T> {
+  readonly loaded: true;
   readonly unsubscribe: ReactiveUnsubscribe;
   readonly value: T;
+}
+
+export interface ReactiveResponseLoading {
+  readonly loaded: false;
 }
 
 export type ReactiveUpdateFn<T> = (doc: T) => boolean;
