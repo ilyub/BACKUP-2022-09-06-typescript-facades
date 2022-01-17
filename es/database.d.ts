@@ -361,6 +361,7 @@ export interface Condition {
     readonly gte?: NumStr;
     readonly lt?: NumStr;
     readonly lte?: NumStr;
+    readonly neq?: unknown;
 }
 export declare type Conditions = ReadonlyRecord<string, Condition>;
 export interface DatabaseOptions {

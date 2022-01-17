@@ -15,6 +15,7 @@
 - [gte](database.Condition.md#gte)
 - [lt](database.Condition.md#lt)
 - [lte](database.Condition.md#lte)
+- [neq](database.Condition.md#neq)
 
 ## Properties
 
@@ -57,3 +58,9 @@ ___
 ### lte
 
 • `Optional` `Readonly` **lte**: `NumStr`
+
+___
+
+### neq
+
+• `Optional` `Readonly` **neq**: `unknown`
