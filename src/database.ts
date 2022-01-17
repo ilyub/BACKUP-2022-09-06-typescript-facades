@@ -445,6 +445,7 @@ export interface Condition {
   readonly gte?: NumStr;
   readonly lt?: NumStr;
   readonly lte?: NumStr;
+  readonly neq?: unknown;
 }
 
 export type Conditions = ReadonlyRecord<string, Condition>;
