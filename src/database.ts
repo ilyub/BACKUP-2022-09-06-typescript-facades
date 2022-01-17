@@ -535,7 +535,7 @@ export interface ReactiveConfigAttached {
 
 export type ReactiveResponse<T> =
   | ReactiveResponseAsync<T>
-  | ReactiveResponseLoading;
+  | ReactiveResponseLoading<T>;
 
 export interface ReactiveResponseAsync<T> {
   readonly loaded: true;
@@ -543,8 +543,10 @@ export interface ReactiveResponseAsync<T> {
   readonly value: T;
 }
 
-export interface ReactiveResponseLoading {
+export interface ReactiveResponseLoading<T> {
   readonly loaded: false;
+  readonly unsubscribe?: ReactiveUnsubscribe;
+  readonly value?: T;
 }
 
 export type ReactiveUpdateFn<T> = (doc: T) => boolean;
