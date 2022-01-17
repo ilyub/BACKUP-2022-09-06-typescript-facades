@@ -430,14 +430,16 @@ export interface ReactiveConfigAttached {
     readonly updateFn?: ReactiveUpdateFn<ExistingAttachedDocument>;
     readonly updateInterval?: number;
 }
-export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading;
+export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading<T>;
 export interface ReactiveResponseAsync<T> {
     readonly loaded: true;
     readonly unsubscribe: ReactiveUnsubscribe;
     readonly value: T;
 }
-export interface ReactiveResponseLoading {
+export interface ReactiveResponseLoading<T> {
     readonly loaded: false;
+    readonly unsubscribe?: ReactiveUnsubscribe;
+    readonly value?: T;
 }
 export declare type ReactiveUpdateFn<T> = (doc: T) => boolean;
 export declare type ReactiveUnsubscribe = () => Promise<void>;
