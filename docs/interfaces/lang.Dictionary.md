@@ -26,7 +26,7 @@ Sets context.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `context` | ``"SampleContext"`` | Context. |
+| `context` | `never` | Context. |
 
 #### Returns
 
@@ -58,7 +58,7 @@ ___
 
 ### has
 
-▸ `Readonly` **has**(`key`): key is Transforms<"SampleWord"\>
+▸ `Readonly` **has**(`key`): key is never
 
 Checks if word exists.
 
@@ -70,7 +70,7 @@ Checks if word exists.
 
 #### Returns
 
-key is Transforms<"SampleWord"\>
+key is never
 
 _True_ if word exists, _false_ otherwise.
 
