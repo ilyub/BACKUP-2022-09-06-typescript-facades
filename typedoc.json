@@ -6,5 +6,6 @@
     "Word"
   ],
   "name": "Typescript facades",
-  "out": "docs"
+  "out": "docs",
+  "tsconfig": "tsconfig-typedoc.json"
 }
