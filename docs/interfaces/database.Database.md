@@ -8,7 +8,9 @@
 
 ### Methods
 
+- [bulkAttachedDocs](database.Database.md#bulkattacheddocs)
 - [bulkDocs](database.Database.md#bulkdocs)
+- [bulkExistingAttachedDocs](database.Database.md#bulkexistingattacheddocs)
 - [count](database.Database.md#count)
 - [countAttached](database.Database.md#countattached)
 - [exists](database.Database.md#exists)
@@ -57,6 +59,27 @@
 
 ## Methods
 
+### bulkAttachedDocs
+
+▸ `Readonly` **bulkAttachedDocs**(`parentId`, `docs`): `Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+
+Creates or updates multiple attached documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `parentId` | `string` | Parent ID. |
+| `docs` | [`PutAttachedDocument`](database.PutAttachedDocument.md) | Attached documents. |
+
+#### Returns
+
+`Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+
+Responses.
+
+___
+
 ### bulkDocs
 
 ▸ `Readonly` **bulkDocs**(`docs`): `Promise`<[`PutResponses`](../modules/database.md#putresponses)\>
@@ -72,6 +95,26 @@ Creates or updates multiple documents.
 #### Returns
 
 `Promise`<[`PutResponses`](../modules/database.md#putresponses)\>
+
+Responses.
+
+___
+
+### bulkExistingAttachedDocs
+
+▸ `Readonly` **bulkExistingAttachedDocs**(`docs`): `Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+
+Updates multiple attached documents.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `docs` | [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md) | Attached documents. |
+
+#### Returns
+
+`Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
 
 Responses.
 

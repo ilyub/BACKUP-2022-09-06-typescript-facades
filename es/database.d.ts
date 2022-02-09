@@ -13,12 +13,27 @@ export interface Facade {
 }
 export interface Database {
     /**
+     * Creates or updates multiple attached documents.
+     *
+     * @param parentId - Parent ID.
+     * @param docs - Attached documents.
+     * @returns Responses.
+     */
+    readonly bulkAttachedDocs: (parentId: string, docs: PutAttachedDocument) => Promise<PutAttachedResponse>;
+    /**
      * Creates or updates multiple documents.
      *
      * @param docs - Documents.
      * @returns Responses.
      */
     readonly bulkDocs: (docs: PutDocuments) => Promise<PutResponses>;
+    /**
+     * Updates multiple attached documents.
+     *
+     * @param docs - Attached documents.
+     * @returns Responses.
+     */
+    readonly bulkExistingAttachedDocs: (docs: ExistingAttachedDocument) => Promise<PutAttachedResponse>;
     /**
      * Counts documents.
      *
@@ -392,6 +407,7 @@ export interface PutAttachedDocument {
     readonly _id?: number;
     readonly _rev?: number;
 }
+export declare type PutAttachedDocuments = readonly PutAttachedDocument[];
 export interface PutAttachedResponse {
     readonly id: number;
     readonly parentId: string;
