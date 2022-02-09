@@ -61,7 +61,7 @@
 
 ### bulkAttachedDocs
 
-▸ `Readonly` **bulkAttachedDocs**(`parentId`, `docs`): `Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+▸ `Readonly` **bulkAttachedDocs**(`parentId`, `docs`): `Promise`<[`PutAttachedResponses`](../modules/database.md#putattachedresponses)\>
 
 Creates or updates multiple attached documents.
 
@@ -74,7 +74,7 @@ Creates or updates multiple attached documents.
 
 #### Returns
 
-`Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+`Promise`<[`PutAttachedResponses`](../modules/database.md#putattachedresponses)\>
 
 Responses.
 
@@ -102,7 +102,7 @@ ___
 
 ### bulkExistingAttachedDocs
 
-▸ `Readonly` **bulkExistingAttachedDocs**(`docs`): `Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+▸ `Readonly` **bulkExistingAttachedDocs**(`docs`): `Promise`<[`PutAttachedResponses`](../modules/database.md#putattachedresponses)\>
 
 Updates multiple attached documents.
 
@@ -114,7 +114,7 @@ Updates multiple attached documents.
 
 #### Returns
 
-`Promise`<[`PutAttachedResponse`](database.PutAttachedResponse.md)\>
+`Promise`<[`PutAttachedResponses`](../modules/database.md#putattachedresponses)\>
 
 Responses.
 

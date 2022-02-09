@@ -34,6 +34,7 @@
 - [MigrationCallback](database.md#migrationcallback)
 - [Migrations](database.md#migrations)
 - [PutAttachedDocuments](database.md#putattacheddocuments)
+- [PutAttachedResponses](database.md#putattachedresponses)
 - [PutDocuments](database.md#putdocuments)
 - [PutResponses](database.md#putresponses)
 - [ReactiveResponse](database.md#reactiveresponse)
@@ -140,6 +141,12 @@ ___
 ### PutAttachedDocuments
 
 Ƭ **PutAttachedDocuments**: readonly [`PutAttachedDocument`](../interfaces/database.PutAttachedDocument.md)[]
+
+___
+
+### PutAttachedResponses
+
+Ƭ **PutAttachedResponses**: readonly [`PutAttachedResponses`](database.md#putattachedresponses)[]
 
 ___
 
