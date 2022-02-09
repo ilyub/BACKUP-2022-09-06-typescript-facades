@@ -70,7 +70,7 @@ Creates or updates multiple attached documents.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `parentId` | `string` | Parent ID. |
-| `docs` | [`PutAttachedDocument`](database.PutAttachedDocument.md) | Attached documents. |
+| `docs` | [`PutAttachedDocuments`](../modules/database.md#putattacheddocuments) | Attached documents. |
 
 #### Returns
 
@@ -110,7 +110,7 @@ Updates multiple attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `docs` | [`ExistingAttachedDocument`](database.ExistingAttachedDocument.md) | Attached documents. |
+| `docs` | [`ExistingAttachedDocuments`](../modules/database.md#existingattacheddocuments) | Attached documents. |
 
 #### Returns
 
