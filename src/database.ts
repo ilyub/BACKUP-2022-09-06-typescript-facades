@@ -26,7 +26,7 @@ export interface Database {
   readonly bulkAttachedDocs: (
     parentId: string,
     docs: PutAttachedDocument
-  ) => Promise<PutAttachedResponse>;
+  ) => Promise<PutAttachedResponses>;
   /**
    * Creates or updates multiple documents.
    *
@@ -42,7 +42,7 @@ export interface Database {
    */
   readonly bulkExistingAttachedDocs: (
     docs: ExistingAttachedDocument
-  ) => Promise<PutAttachedResponse>;
+  ) => Promise<PutAttachedResponses>;
   /**
    * Counts documents.
    *
@@ -515,6 +515,8 @@ export interface PutAttachedResponse {
   readonly parentRev: string;
   readonly rev: number;
 }
+
+export type PutAttachedResponses = readonly PutAttachedResponses[];
 
 export interface PutDocument {
   readonly [key: string]: unknown;
