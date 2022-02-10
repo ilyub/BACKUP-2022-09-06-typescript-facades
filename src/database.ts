@@ -1,6 +1,10 @@
 import * as is from "@skylib/functions/dist/guards";
 import { createFacade } from "@skylib/functions/dist/helpers";
-import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
+import type {
+  numbers,
+  NumStr,
+  ReadonlyRecord
+} from "@skylib/functions/dist/types/core";
 
 export const database = createFacade<Facade>("database", {});
 
@@ -516,7 +520,7 @@ export interface PutAttachedResponse {
   readonly rev: number;
 }
 
-export type PutAttachedResponses = readonly PutAttachedResponses[];
+export type PutAttachedResponses = readonly PutAttachedResponse[];
 
 export interface PutDocument {
   readonly [key: string]: unknown;
@@ -524,7 +528,7 @@ export interface PutDocument {
   readonly _id?: string;
   readonly _rev?: string;
   readonly attachedDocs?: StoredAttachedDocuments;
-  readonly lastAttachedDoc?: number;
+  readonly lastAttachedDocs?: numbers;
 }
 
 export type PutDocuments = readonly PutDocument[];
