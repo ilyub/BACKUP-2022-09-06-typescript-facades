@@ -18,7 +18,7 @@
 - [\_id](database.ExistingDocument.md#_id)
 - [\_rev](database.ExistingDocument.md#_rev)
 - [attachedDocs](database.ExistingDocument.md#attacheddocs)
-- [lastAttachedDoc](database.ExistingDocument.md#lastattacheddoc)
+- [lastAttachedDocs](database.ExistingDocument.md#lastattacheddocs)
 
 ## Properties
 
@@ -62,10 +62,10 @@ ___
 
 ___
 
-### lastAttachedDoc
+### lastAttachedDocs
 
-• `Optional` `Readonly` **lastAttachedDoc**: `number`
+• `Optional` `Readonly` **lastAttachedDocs**: `numbers`
 
 #### Inherited from
 
-[PutDocument](database.PutDocument.md).[lastAttachedDoc](database.PutDocument.md#lastattacheddoc)
+[PutDocument](database.PutDocument.md).[lastAttachedDocs](database.PutDocument.md#lastattacheddocs)

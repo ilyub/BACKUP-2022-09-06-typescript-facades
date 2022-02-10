@@ -146,7 +146,7 @@ ___
 
 ### PutAttachedResponses
 
-Ƭ **PutAttachedResponses**: readonly [`PutAttachedResponses`](database.md#putattachedresponses)[]
+Ƭ **PutAttachedResponses**: readonly [`PutAttachedResponse`](../interfaces/database.PutAttachedResponse.md)[]
 
 ___
 

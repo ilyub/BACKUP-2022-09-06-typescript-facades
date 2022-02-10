@@ -22,7 +22,7 @@
 - [\_id](database.PutDocument.md#_id)
 - [\_rev](database.PutDocument.md#_rev)
 - [attachedDocs](database.PutDocument.md#attacheddocs)
-- [lastAttachedDoc](database.PutDocument.md#lastattacheddoc)
+- [lastAttachedDocs](database.PutDocument.md#lastattacheddocs)
 
 ## Properties
 
@@ -50,6 +50,6 @@ ___
 
 ___
 
-### lastAttachedDoc
+### lastAttachedDocs
 
-• `Optional` `Readonly` **lastAttachedDoc**: `number`
+• `Optional` `Readonly` **lastAttachedDocs**: `numbers`

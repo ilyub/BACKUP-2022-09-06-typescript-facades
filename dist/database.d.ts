@@ -1,5 +1,5 @@
 import * as is from "@skylib/functions/dist/guards";
-import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
+import type { numbers, NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 export declare const database: import("@skylib/functions/dist/helpers").Facade<Facade, unknown>;
 export interface Facade {
     /**
@@ -414,14 +414,14 @@ export interface PutAttachedResponse {
     readonly parentRev: string;
     readonly rev: number;
 }
-export declare type PutAttachedResponses = readonly PutAttachedResponses[];
+export declare type PutAttachedResponses = readonly PutAttachedResponse[];
 export interface PutDocument {
     readonly [key: string]: unknown;
     readonly _deleted?: true;
     readonly _id?: string;
     readonly _rev?: string;
     readonly attachedDocs?: StoredAttachedDocuments;
-    readonly lastAttachedDoc?: number;
+    readonly lastAttachedDocs?: numbers;
 }
 export declare type PutDocuments = readonly PutDocument[];
 export interface PutResponse {
