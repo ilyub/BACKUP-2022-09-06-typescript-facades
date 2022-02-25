@@ -457,9 +457,23 @@ export interface Database {
   readonly unsubscribeAttached: (id: Symbol) => Promise<void>;
 }
 
-export type AttachedChangesHandler = (doc: ExistingAttachedDocument) => void;
+export interface AttachedChangesHandler {
+  /**
+   * Changes handler.
+   *
+   * @param doc - Changed document.
+   */
+  (doc: ExistingAttachedDocument): void;
+}
 
-export type ChangesHandler = (doc: ExistingDocument) => void;
+export interface ChangesHandler {
+  /**
+   * Changes handler.
+   *
+   * @param doc - Changed document.
+   */
+  (doc: ExistingDocument): void;
+}
 
 export interface Condition {
   readonly dgt?: number;
@@ -502,7 +516,14 @@ export interface Migration {
 
 export type Migrations = readonly Migration[];
 
-export type MigrationCallback = (this: Database) => Promise<void>;
+export interface MigrationCallback {
+  /**
+   * Migration callback.
+   *
+   * @param this - Database.
+   */
+  (this: Database): Promise<void>;
+}
 
 export interface PutAttachedDocument {
   readonly [key: string]: unknown;
@@ -580,11 +601,31 @@ export interface ReactiveResponseLoading<T> {
   readonly value?: T;
 }
 
-export type ReactiveUpdateFn<T> = (doc: T) => boolean;
+export interface ReactiveUpdateFn<T> {
+  /**
+   * Determines whether reactive query should be updated.
+   *
+   * @param doc - Received document.
+   * @returns _True_ if query should be updated after receiving document, _false_ otherwise.
+   */
+  (doc: T): boolean;
+}
 
-export type ReactiveUnsubscribe = () => Promise<void>;
+export interface ReactiveUnsubscribe {
+  /**
+   * Unsubscribes from reactive query.
+   */
+  (): Promise<void>;
+}
 
-export type ResetCallback = (this: Database) => Promise<void>;
+export interface ResetCallback {
+  /**
+   * Reset callback.
+   *
+   * @param this - Database.
+   */
+  (this: Database): Promise<void>;
+}
 
 export interface StoredAttachedDocument extends PutAttachedDocument {
   readonly _id: number;
@@ -595,7 +636,7 @@ export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 
 export const isStoredAttachedDocument = is.factory(
   is.object.of,
-  { _id: is.number, _rev: is.number },
+  { _id: is.number, _rev: is.number } as const,
   {}
 );
 

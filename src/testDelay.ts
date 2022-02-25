@@ -2,10 +2,9 @@ import { createFacade } from "@skylib/functions/dist/helpers";
 
 export const testDelay = createFacade<Facade>("testDelay", {});
 
-export type Facade =
+export interface Facade {
   /**
-   * Delays script execution.
-   *
-   * @returns Promise.
+   * Test delay.
    */
-  () => Promise<void>;
+  (): Promise<void>;
+}

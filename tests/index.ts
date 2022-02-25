@@ -17,7 +17,9 @@ import { showConfirm } from "@/showConfirm";
 import { testDelay } from "@/testDelay";
 import { uniqueId } from "@/uniqueId";
 
-it("Facades", () => {
+test("facades", () => {
+  expect.hasAssertions();
+
   const facades = {
     compare,
     database,

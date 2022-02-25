@@ -26,8 +26,8 @@ export interface Facade {
 }
 
 export type HttpHeader =
-  | "Accept"
   | "Accept-Language"
+  | "Accept"
   | "Authorization"
   | "Content-Type";
 

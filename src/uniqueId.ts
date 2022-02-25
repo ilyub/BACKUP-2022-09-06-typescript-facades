@@ -2,10 +2,11 @@ import { createFacade } from "@skylib/functions/dist/helpers";
 
 export const uniqueId = createFacade<Facade>("uniqueId", {});
 
-export type Facade =
+export interface Facade {
   /**
-   * Generates unique ID.
+   * Creates unique ID.
    *
    * @returns Unique ID.
    */
-  () => string;
+  (): string;
+}

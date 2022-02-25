@@ -196,7 +196,7 @@ export interface Facade {
    * @param dt - Date/time.
    * @returns DateTime instance.
    */
-  readonly create: (dt?: string | Date | DateTime) => DateTime;
+  readonly create: (dt?: Date | DateTime | string) => DateTime;
   /**
    * Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
    *
@@ -219,15 +219,15 @@ export interface Facade {
 }
 
 export type Unit =
-  | "minute"
-  | "minutes"
-  | "hour"
-  | "hours"
   | "day"
   | "days"
-  | "week"
-  | "weeks"
+  | "hour"
+  | "hours"
+  | "minute"
+  | "minutes"
   | "month"
   | "months"
+  | "week"
+  | "weeks"
   | "year"
   | "years";

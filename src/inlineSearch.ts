@@ -22,8 +22,8 @@ export interface Facade {
    * @returns Search engine instance.
    */
   readonly create: <T extends object>(
-    idField: keyof T & string,
-    fields: ReadonlyArray<keyof T & string>,
+    idField: string & keyof T,
+    fields: ReadonlyArray<string & keyof T>,
     items: readonly T[]
   ) => Engine<T>;
 }

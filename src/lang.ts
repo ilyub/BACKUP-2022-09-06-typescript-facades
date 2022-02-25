@@ -4,10 +4,8 @@ import type { NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
 declare global {
   namespace facades {
     namespace lang {
-      // eslint-disable-next-line @typescript-eslint/no-empty-interface
       interface Context {}
 
-      // eslint-disable-next-line @typescript-eslint/no-empty-interface
       interface Word {}
     }
   }

@@ -4,7 +4,6 @@ import type { ReadonlyRecord } from "@skylib/functions/dist/types/core";
 declare global {
   namespace facades {
     namespace icons {
-      // eslint-disable-next-line @typescript-eslint/no-empty-interface
       interface Facade {}
     }
   }

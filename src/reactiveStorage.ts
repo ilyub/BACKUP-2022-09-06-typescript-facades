@@ -32,6 +32,20 @@ export interface Facade {
   ) => unknown;
 }
 
-export type Handler<T extends object> = (obj: T) => void;
+export interface Handler<T extends object> {
+  /**
+   * Handles object change.
+   *
+   * @param obj - Object.
+   */
+  (obj: T): void;
+}
 
-export type Reducer<T extends object> = (obj: T) => unknown;
+export interface Reducer<T extends object> {
+  /**
+   * Reduces object for comparison.
+   *
+   * @param obj - Object.
+   */
+  (obj: T): unknown;
+}
