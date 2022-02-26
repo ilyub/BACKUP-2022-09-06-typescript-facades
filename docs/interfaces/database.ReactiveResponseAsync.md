@@ -35,7 +35,7 @@ ___
 
 ### unsubscribe
 
-• `Readonly` **unsubscribe**: [`ReactiveUnsubscribe`](../modules/database.md#reactiveunsubscribe)
+• `Readonly` **unsubscribe**: [`ReactiveUnsubscribe`](database.ReactiveUnsubscribe.md)
 
 ___
 

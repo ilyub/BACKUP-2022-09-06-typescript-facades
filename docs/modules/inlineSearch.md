@@ -17,4 +17,4 @@
 
 ### inlineSearch
 
-• **inlineSearch**: `Facade`<[`Facade`](../interfaces/inlineSearch.Facade.md), `unknown`\>
+• `Const` **inlineSearch**: `Facade`<[`Facade`](../interfaces/inlineSearch.Facade.md), `unknown`\>

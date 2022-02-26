@@ -24,6 +24,20 @@ export interface Facade {
      */
     readonly watch: <T extends object>(obj: T, handler: Handler<T>, reducer?: Reducer<T>) => unknown;
 }
-export declare type Handler<T extends object> = (obj: T) => void;
-export declare type Reducer<T extends object> = (obj: T) => unknown;
+export interface Handler<T extends object> {
+    /**
+     * Handles object change.
+     *
+     * @param obj - Object.
+     */
+    (obj: T): void;
+}
+export interface Reducer<T extends object> {
+    /**
+     * Reduces object for comparison.
+     *
+     * @param obj - Object.
+     */
+    (obj: T): unknown;
+}
 //# sourceMappingURL=reactiveStorage.d.ts.map

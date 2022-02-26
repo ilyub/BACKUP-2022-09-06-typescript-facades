@@ -29,7 +29,7 @@ ___
 
 ### updateFn
 
-• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](../modules/database.md#reactiveupdatefn)<[`ExistingDocument`](database.ExistingDocument.md)\>
+• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](database.ReactiveUpdateFn.md)<[`ExistingDocument`](database.ExistingDocument.md)\>
 
 ___
 

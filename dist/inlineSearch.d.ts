@@ -17,6 +17,6 @@ export interface Facade {
      * @param items - Items.
      * @returns Search engine instance.
      */
-    readonly create: <T extends object>(idField: keyof T & string, fields: ReadonlyArray<keyof T & string>, items: readonly T[]) => Engine<T>;
+    readonly create: <T extends object>(idField: string & keyof T, fields: ReadonlyArray<string & keyof T>, items: readonly T[]) => Engine<T>;
 }
 //# sourceMappingURL=inlineSearch.d.ts.map

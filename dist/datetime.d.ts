@@ -192,7 +192,7 @@ export interface Facade {
      * @param dt - Date/time.
      * @returns DateTime instance.
      */
-    readonly create: (dt?: string | Date | DateTime) => DateTime;
+    readonly create: (dt?: Date | DateTime | string) => DateTime;
     /**
      * Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
      *
@@ -213,5 +213,5 @@ export interface Facade {
      */
     readonly validate: (dt: string) => boolean;
 }
-export declare type Unit = "minute" | "minutes" | "hour" | "hours" | "day" | "days" | "week" | "weeks" | "month" | "months" | "year" | "years";
+export declare type Unit = "day" | "days" | "hour" | "hours" | "minute" | "minutes" | "month" | "months" | "week" | "weeks" | "year" | "years";
 //# sourceMappingURL=datetime.d.ts.map

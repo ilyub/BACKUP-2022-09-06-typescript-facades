@@ -16,4 +16,4 @@
 
 ### facebook
 
-• **facebook**: `Facade`<[`Facade`](../interfaces/facebook.Facade.md), `unknown`\>
+• `Const` **facebook**: `Facade`<[`Facade`](../interfaces/facebook.Facade.md), `unknown`\>

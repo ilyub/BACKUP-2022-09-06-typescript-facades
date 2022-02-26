@@ -4,30 +4,16 @@
 
 ## Table of contents
 
-### Type aliases
+### Interfaces
 
-- [Facade](testDelay.md#facade)
+- [Facade](../interfaces/testDelay.Facade.md)
 
 ### Variables
 
 - [testDelay](testDelay.md#testdelay)
 
-## Type aliases
-
-### Facade
-
-Ƭ **Facade**: () => `Promise`<`void`\>
-
-#### Type declaration
-
-▸ (): `Promise`<`void`\>
-
-##### Returns
-
-`Promise`<`void`\>
-
 ## Variables
 
 ### testDelay
 
-• **testDelay**: `Facade`<[`Facade`](testDelay.md#facade), `unknown`\>
+• `Const` **testDelay**: `Facade`<[`Facade`](../interfaces/testDelay.Facade.md), `unknown`\>

@@ -1,1 +1,1 @@
-{"version":3,"file":"testDelay.d.ts","sourceRoot":"","sources":["../src/testDelay.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,SAAS,kEAAwC,CAAC;AAE/D,oBAAY,MAAM;AAChB;;;;GAIG;AACH,MAAM,OAAO,CAAC,IAAI,CAAC,CAAC"}
+{"version":3,"file":"testDelay.d.ts","sourceRoot":"","sources":["../src/testDelay.ts"],"names":[],"mappings":"AAEA,eAAO,MAAM,SAAS,kEAAwC,CAAC;AAE/D,MAAM,WAAW,MAAM;IACrB;;OAEG;IACH,IAAI,OAAO,CAAC,IAAI,CAAC,CAAC;CACnB"}

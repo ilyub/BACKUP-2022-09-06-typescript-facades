@@ -905,7 +905,7 @@ Resets database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `callback?` | [`ResetCallback`](../modules/database.md#resetcallback) | Callback. |
+| `callback?` | [`ResetCallback`](database.ResetCallback.md) | Callback. |
 
 #### Returns
 
@@ -925,7 +925,7 @@ Subscribes to changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `handler` | [`ChangesHandler`](../modules/database.md#changeshandler) | Handler. |
+| `handler` | [`ChangesHandler`](database.ChangesHandler.md) | Handler. |
 
 #### Returns
 
@@ -945,7 +945,7 @@ Subscribes to changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `handler` | [`AttachedChangesHandler`](../modules/database.md#attachedchangeshandler) | Handler. |
+| `handler` | [`AttachedChangesHandler`](database.AttachedChangesHandler.md) | Handler. |
 
 #### Returns
 

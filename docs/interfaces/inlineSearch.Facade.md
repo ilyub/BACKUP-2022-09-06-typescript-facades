@@ -28,8 +28,8 @@ Creates search engine.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `idField` | keyof `T` & `string` | ID field. |
-| `fields` | readonly keyof `T` & `string`[] | Searchable fields. |
+| `idField` | `string` & keyof `T` | ID field. |
+| `fields` | readonly `string` & keyof `T`[] | Searchable fields. |
 | `items` | readonly `T`[] | Items. |
 
 #### Returns

@@ -366,8 +366,22 @@ export interface Database {
      */
     readonly unsubscribeAttached: (id: Symbol) => Promise<void>;
 }
-export declare type AttachedChangesHandler = (doc: ExistingAttachedDocument) => void;
-export declare type ChangesHandler = (doc: ExistingDocument) => void;
+export interface AttachedChangesHandler {
+    /**
+     * Changes handler.
+     *
+     * @param doc - Changed document.
+     */
+    (doc: ExistingAttachedDocument): void;
+}
+export interface ChangesHandler {
+    /**
+     * Changes handler.
+     *
+     * @param doc - Changed document.
+     */
+    (doc: ExistingDocument): void;
+}
 export interface Condition {
     readonly dgt?: number;
     readonly dlt?: number;
@@ -400,7 +414,14 @@ export interface Migration {
     readonly id: string;
 }
 export declare type Migrations = readonly Migration[];
-export declare type MigrationCallback = (this: Database) => Promise<void>;
+export interface MigrationCallback {
+    /**
+     * Migration callback.
+     *
+     * @param this - Database.
+     */
+    (this: Database): Promise<void>;
+}
 export interface PutAttachedDocument {
     readonly [key: string]: unknown;
     readonly _deleted?: true;
@@ -430,10 +451,10 @@ export interface PutResponse {
 }
 export declare type PutResponses = readonly PutResponse[];
 export interface QueryOptions {
+    readonly descending?: boolean;
     readonly limit?: number;
     readonly skip?: number;
     readonly sortBy?: string;
-    readonly sortDesc?: boolean;
 }
 export interface ReactiveConfig {
     readonly conditions?: Conditions;
@@ -461,20 +482,42 @@ export interface ReactiveResponseLoading<T> {
     readonly unsubscribe?: ReactiveUnsubscribe;
     readonly value?: T;
 }
-export declare type ReactiveUpdateFn<T> = (doc: T) => boolean;
-export declare type ReactiveUnsubscribe = () => Promise<void>;
-export declare type ResetCallback = (this: Database) => Promise<void>;
+export interface ReactiveUpdateFn<T> {
+    /**
+     * Determines whether reactive query should be updated.
+     *
+     * @param doc - Received document.
+     * @returns _True_ if query should be updated after receiving document, _false_ otherwise.
+     */
+    (doc: T): boolean;
+}
+export interface ReactiveUnsubscribe {
+    /**
+     * Unsubscribes from reactive query.
+     */
+    (): Promise<void>;
+}
+export interface ResetCallback {
+    /**
+     * Reset callback.
+     *
+     * @param this - Database.
+     */
+    (this: Database): Promise<void>;
+}
 export interface StoredAttachedDocument extends PutAttachedDocument {
     readonly _id: number;
     readonly _rev: number;
 }
 export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
-export declare const isStoredAttachedDocument: is.Guard<Required<{
+export declare const isCondition: is.Guard<Condition>;
+export declare const isConditions: is.Guard<Readonly<import("@skylib/functions/es/types/core").IndexedObject<Condition>>>;
+export declare const isStoredAttachedDocument: is.Guard<Partial<unknown> & Required<{
     _id: number;
     _rev: number;
-}> & Partial<unknown>>;
-export declare const isStoredAttachedDocuments: is.Guard<readonly (Required<{
+}>>;
+export declare const isStoredAttachedDocuments: is.Guard<readonly (Partial<unknown> & Required<{
     _id: number;
     _rev: number;
-}> & Partial<unknown>)[]>;
+}>)[]>;
 //# sourceMappingURL=database.d.ts.map

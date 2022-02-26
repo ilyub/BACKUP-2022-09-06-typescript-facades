@@ -16,4 +16,4 @@
 
 ### showAlert
 
-• **showAlert**: `Facade`<[`Facade`](../interfaces/showAlert.Facade.md), `unknown`\>
+• `Const` **showAlert**: `Facade`<[`Facade`](../interfaces/showAlert.Facade.md), `unknown`\>

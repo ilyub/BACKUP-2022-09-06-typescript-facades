@@ -16,4 +16,4 @@
 
 ### google
 
-• **google**: `Facade`<[`Facade`](../interfaces/google.Facade.md), `unknown`\>
+• `Const` **google**: `Facade`<[`Facade`](../interfaces/google.Facade.md), `unknown`\>

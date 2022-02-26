@@ -4,30 +4,16 @@
 
 ## Table of contents
 
-### Type aliases
+### Interfaces
 
-- [Facade](uniqueId.md#facade)
+- [Facade](../interfaces/uniqueId.Facade.md)
 
 ### Variables
 
 - [uniqueId](uniqueId.md#uniqueid)
 
-## Type aliases
-
-### Facade
-
-Ƭ **Facade**: () => `string`
-
-#### Type declaration
-
-▸ (): `string`
-
-##### Returns
-
-`string`
-
 ## Variables
 
 ### uniqueId
 
-• **uniqueId**: `Facade`<[`Facade`](uniqueId.md#facade), `unknown`\>
+• `Const` **uniqueId**: `Facade`<[`Facade`](../interfaces/uniqueId.Facade.md), `unknown`\>

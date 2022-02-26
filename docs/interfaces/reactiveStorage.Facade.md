@@ -75,8 +75,8 @@ Subscribes to changes.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `obj` | `T` | Reactive object. |
-| `handler` | [`Handler`](../modules/reactiveStorage.md#handler)<`T`\> | Handles changes. |
-| `reducer?` | [`Reducer`](../modules/reactiveStorage.md#reducer)<`T`\> | Generates reduced value. |
+| `handler` | [`Handler`](reactiveStorage.Handler.md)<`T`\> | Handles changes. |
+| `reducer?` | [`Reducer`](reactiveStorage.Reducer.md)<`T`\> | Generates reduced value. |
 
 #### Returns
 

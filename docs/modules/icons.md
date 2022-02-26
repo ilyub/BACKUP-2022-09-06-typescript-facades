@@ -42,4 +42,4 @@ ___
 
 ### icons
 
-• **icons**: `Facade`<`Facade`, `object`\>
+• `Const` **icons**: `Facade`<`Facade`, `object`\>

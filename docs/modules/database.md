@@ -6,6 +6,8 @@
 
 ### Interfaces
 
+- [AttachedChangesHandler](../interfaces/database.AttachedChangesHandler.md)
+- [ChangesHandler](../interfaces/database.ChangesHandler.md)
 - [Condition](../interfaces/database.Condition.md)
 - [Database](../interfaces/database.Database.md)
 - [DatabaseOptions](../interfaces/database.DatabaseOptions.md)
@@ -13,6 +15,7 @@
 - [ExistingDocument](../interfaces/database.ExistingDocument.md)
 - [Facade](../interfaces/database.Facade.md)
 - [Migration](../interfaces/database.Migration.md)
+- [MigrationCallback](../interfaces/database.MigrationCallback.md)
 - [PutAttachedDocument](../interfaces/database.PutAttachedDocument.md)
 - [PutAttachedResponse](../interfaces/database.PutAttachedResponse.md)
 - [PutDocument](../interfaces/database.PutDocument.md)
@@ -22,25 +25,22 @@
 - [ReactiveConfigAttached](../interfaces/database.ReactiveConfigAttached.md)
 - [ReactiveResponseAsync](../interfaces/database.ReactiveResponseAsync.md)
 - [ReactiveResponseLoading](../interfaces/database.ReactiveResponseLoading.md)
+- [ReactiveUnsubscribe](../interfaces/database.ReactiveUnsubscribe.md)
+- [ReactiveUpdateFn](../interfaces/database.ReactiveUpdateFn.md)
+- [ResetCallback](../interfaces/database.ResetCallback.md)
 - [StoredAttachedDocument](../interfaces/database.StoredAttachedDocument.md)
 
 ### Type aliases
 
-- [AttachedChangesHandler](database.md#attachedchangeshandler)
-- [ChangesHandler](database.md#changeshandler)
 - [Conditions](database.md#conditions)
 - [ExistingAttachedDocuments](database.md#existingattacheddocuments)
 - [ExistingDocuments](database.md#existingdocuments)
-- [MigrationCallback](database.md#migrationcallback)
 - [Migrations](database.md#migrations)
 - [PutAttachedDocuments](database.md#putattacheddocuments)
 - [PutAttachedResponses](database.md#putattachedresponses)
 - [PutDocuments](database.md#putdocuments)
 - [PutResponses](database.md#putresponses)
 - [ReactiveResponse](database.md#reactiveresponse)
-- [ReactiveUnsubscribe](database.md#reactiveunsubscribe)
-- [ReactiveUpdateFn](database.md#reactiveupdatefn)
-- [ResetCallback](database.md#resetcallback)
 - [StoredAttachedDocuments](database.md#storedattacheddocuments)
 
 ### Variables
@@ -49,50 +49,12 @@
 
 ### Functions
 
+- [isCondition](database.md#iscondition)
+- [isConditions](database.md#isconditions)
 - [isStoredAttachedDocument](database.md#isstoredattacheddocument)
 - [isStoredAttachedDocuments](database.md#isstoredattacheddocuments)
 
 ## Type aliases
-
-### AttachedChangesHandler
-
-Ƭ **AttachedChangesHandler**: (`doc`: [`ExistingAttachedDocument`](../interfaces/database.ExistingAttachedDocument.md)) => `void`
-
-#### Type declaration
-
-▸ (`doc`): `void`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `doc` | [`ExistingAttachedDocument`](../interfaces/database.ExistingAttachedDocument.md) |
-
-##### Returns
-
-`void`
-
-___
-
-### ChangesHandler
-
-Ƭ **ChangesHandler**: (`doc`: [`ExistingDocument`](../interfaces/database.ExistingDocument.md)) => `void`
-
-#### Type declaration
-
-▸ (`doc`): `void`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `doc` | [`ExistingDocument`](../interfaces/database.ExistingDocument.md) |
-
-##### Returns
-
-`void`
-
-___
 
 ### Conditions
 
@@ -109,26 +71,6 @@ ___
 ### ExistingDocuments
 
 Ƭ **ExistingDocuments**: readonly [`ExistingDocument`](../interfaces/database.ExistingDocument.md)[]
-
-___
-
-### MigrationCallback
-
-Ƭ **MigrationCallback**: (`this`: [`Database`](../interfaces/database.Database.md)) => `Promise`<`void`\>
-
-#### Type declaration
-
-▸ (`this`): `Promise`<`void`\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `this` | [`Database`](../interfaces/database.Database.md) |
-
-##### Returns
-
-`Promise`<`void`\>
 
 ___
 
@@ -174,66 +116,6 @@ ___
 
 ___
 
-### ReactiveUnsubscribe
-
-Ƭ **ReactiveUnsubscribe**: () => `Promise`<`void`\>
-
-#### Type declaration
-
-▸ (): `Promise`<`void`\>
-
-##### Returns
-
-`Promise`<`void`\>
-
-___
-
-### ReactiveUpdateFn
-
-Ƭ **ReactiveUpdateFn**<`T`\>: (`doc`: `T`) => `boolean`
-
-#### Type parameters
-
-| Name |
-| :------ |
-| `T` |
-
-#### Type declaration
-
-▸ (`doc`): `boolean`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `doc` | `T` |
-
-##### Returns
-
-`boolean`
-
-___
-
-### ResetCallback
-
-Ƭ **ResetCallback**: (`this`: [`Database`](../interfaces/database.Database.md)) => `Promise`<`void`\>
-
-#### Type declaration
-
-▸ (`this`): `Promise`<`void`\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `this` | [`Database`](../interfaces/database.Database.md) |
-
-##### Returns
-
-`Promise`<`void`\>
-
-___
-
 ### StoredAttachedDocuments
 
 Ƭ **StoredAttachedDocuments**: readonly [`StoredAttachedDocument`](../interfaces/database.StoredAttachedDocument.md)[]
@@ -242,13 +124,13 @@ ___
 
 ### database
 
-• **database**: `Facade`<[`Facade`](../interfaces/database.Facade.md), `unknown`\>
+• `Const` **database**: `Facade`<[`Facade`](../interfaces/database.Facade.md), `unknown`\>
 
 ## Functions
 
-### isStoredAttachedDocument
+### isCondition
 
-▸ `Const` **isStoredAttachedDocument**(`value`): value is Required<Object\> & Partial<unknown\>
+▸ **isCondition**(`value`): value is Condition
 
 #### Parameters
 
@@ -258,13 +140,45 @@ ___
 
 #### Returns
 
-value is Required<Object\> & Partial<unknown\>
+value is Condition
+
+___
+
+### isConditions
+
+▸ **isConditions**(`value`): value is Readonly<IndexedObject<Condition\>\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is Readonly<IndexedObject<Condition\>\>
+
+___
+
+### isStoredAttachedDocument
+
+▸ **isStoredAttachedDocument**(`value`): value is Partial<unknown\> & Required<Object\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is Partial<unknown\> & Required<Object\>
 
 ___
 
 ### isStoredAttachedDocuments
 
-▸ `Const` **isStoredAttachedDocuments**(`value`): value is readonly (Required<Object\> & Partial<unknown\>)[]
+▸ **isStoredAttachedDocuments**(`value`): value is readonly (Partial<unknown\> & Required<Object\>)[]
 
 #### Parameters
 
@@ -274,4 +188,4 @@ ___
 
 #### Returns
 
-value is readonly (Required<Object\> & Partial<unknown\>)[]
+value is readonly (Partial<unknown\> & Required<Object\>)[]

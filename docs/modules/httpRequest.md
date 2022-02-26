@@ -24,7 +24,7 @@
 
 ### HttpHeader
 
-Ƭ **HttpHeader**: ``"Accept"`` \| ``"Accept-Language"`` \| ``"Authorization"`` \| ``"Content-Type"``
+Ƭ **HttpHeader**: ``"Accept-Language"`` \| ``"Accept"`` \| ``"Authorization"`` \| ``"Content-Type"``
 
 ___
 
@@ -42,16 +42,16 @@ ___
 
 ### HttpHeaderVO
 
-• **HttpHeaderVO**: `ValidationObject`<[`HttpHeader`](httpRequest.md#httpheader)\>
+• `Const` **HttpHeaderVO**: `ValidationObject`<[`HttpHeader`](httpRequest.md#httpheader)\>
 
 ___
 
 ### HttpRequestMethodVO
 
-• **HttpRequestMethodVO**: `ValidationObject`<[`HttpRequestMethod`](httpRequest.md#httprequestmethod)\>
+• `Const` **HttpRequestMethodVO**: `ValidationObject`<[`HttpRequestMethod`](httpRequest.md#httprequestmethod)\>
 
 ___
 
 ### httpRequest
 
-• **httpRequest**: `Facade`<[`Facade`](../interfaces/httpRequest.Facade.md), `unknown`\>
+• `Const` **httpRequest**: `Facade`<[`Facade`](../interfaces/httpRequest.Facade.md), `unknown`\>

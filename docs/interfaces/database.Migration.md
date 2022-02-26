@@ -15,7 +15,7 @@
 
 ### callback
 
-• `Readonly` **callback**: [`MigrationCallback`](../modules/database.md#migrationcallback)
+• `Readonly` **callback**: [`MigrationCallback`](database.MigrationCallback.md)
 
 ___
 

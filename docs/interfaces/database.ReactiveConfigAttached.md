@@ -36,7 +36,7 @@ ___
 
 ### updateFn
 
-• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](../modules/database.md#reactiveupdatefn)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](database.ReactiveUpdateFn.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 ___
 

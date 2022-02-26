@@ -8,12 +8,18 @@
 
 ### Properties
 
+- [descending](database.QueryOptions.md#descending)
 - [limit](database.QueryOptions.md#limit)
 - [skip](database.QueryOptions.md#skip)
 - [sortBy](database.QueryOptions.md#sortby)
-- [sortDesc](database.QueryOptions.md#sortdesc)
 
 ## Properties
+
+### descending
+
+• `Optional` `Readonly` **descending**: `boolean`
+
+___
 
 ### limit
 
@@ -30,9 +36,3 @@ ___
 ### sortBy
 
 • `Optional` `Readonly` **sortBy**: `string`
-
-___
-
-### sortDesc
-
-• `Optional` `Readonly` **sortDesc**: `boolean`

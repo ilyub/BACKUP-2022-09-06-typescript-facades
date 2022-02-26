@@ -17,4 +17,4 @@
 
 ### progressReporter
 
-• **progressReporter**: `Facade`<[`Facade`](../interfaces/progressReporter.Facade.md), `unknown`\>
+• `Const` **progressReporter**: `Facade`<[`Facade`](../interfaces/progressReporter.Facade.md), `unknown`\>

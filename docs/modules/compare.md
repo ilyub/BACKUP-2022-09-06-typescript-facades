@@ -16,4 +16,4 @@
 
 ### compare
 
-• **compare**: `Facade`<[`Facade`](../interfaces/compare.Facade.md), `unknown`\>
+• `Const` **compare**: `Facade`<[`Facade`](../interfaces/compare.Facade.md), `unknown`\>

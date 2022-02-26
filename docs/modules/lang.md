@@ -66,4 +66,4 @@ ___
 
 ### lang
 
-• **lang**: `Facade`<[`Facade`](lang.md#facade), `object`\>
+• `Const` **lang**: `Facade`<[`Facade`](lang.md#facade), `object`\>

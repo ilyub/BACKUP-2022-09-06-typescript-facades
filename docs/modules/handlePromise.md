@@ -26,4 +26,4 @@
 
 ### handlePromise
 
-• **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), `unknown`\>
+• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), `unknown`\>

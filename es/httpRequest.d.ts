@@ -12,7 +12,7 @@ export interface Facade {
      */
     readonly send: (url: string, method?: HttpRequestMethod, data?: ReadonlyIndexedObject, headers?: HttpHeaders) => Promise<unknown>;
 }
-export declare type HttpHeader = "Accept" | "Accept-Language" | "Authorization" | "Content-Type";
+export declare type HttpHeader = "Accept-Language" | "Accept" | "Authorization" | "Content-Type";
 export declare const HttpHeaderVO: import("@skylib/functions/es/types/core").ValidationObject<HttpHeader>;
 export declare type HttpHeaders = ReadonlyPartialRecord<HttpHeader, string>;
 export declare type HttpRequestMethod = "delete" | "get" | "post";

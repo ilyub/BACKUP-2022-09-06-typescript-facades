@@ -7,70 +7,15 @@
 ### Interfaces
 
 - [Facade](../interfaces/reactiveStorage.Facade.md)
-
-### Type aliases
-
-- [Handler](reactiveStorage.md#handler)
-- [Reducer](reactiveStorage.md#reducer)
+- [Handler](../interfaces/reactiveStorage.Handler.md)
+- [Reducer](../interfaces/reactiveStorage.Reducer.md)
 
 ### Variables
 
 - [reactiveStorage](reactiveStorage.md#reactivestorage)
 
-## Type aliases
-
-### Handler
-
-Ƭ **Handler**<`T`\>: (`obj`: `T`) => `void`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `object` |
-
-#### Type declaration
-
-▸ (`obj`): `void`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `obj` | `T` |
-
-##### Returns
-
-`void`
-
-___
-
-### Reducer
-
-Ƭ **Reducer**<`T`\>: (`obj`: `T`) => `unknown`
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `object` |
-
-#### Type declaration
-
-▸ (`obj`): `unknown`
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `obj` | `T` |
-
-##### Returns
-
-`unknown`
-
 ## Variables
 
 ### reactiveStorage
 
-• **reactiveStorage**: `Facade`<[`Facade`](../interfaces/reactiveStorage.Facade.md), `unknown`\>
+• `Const` **reactiveStorage**: `Facade`<[`Facade`](../interfaces/reactiveStorage.Facade.md), `unknown`\>

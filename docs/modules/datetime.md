@@ -21,10 +21,10 @@
 
 ### Unit
 
-Ƭ **Unit**: ``"minute"`` \| ``"minutes"`` \| ``"hour"`` \| ``"hours"`` \| ``"day"`` \| ``"days"`` \| ``"week"`` \| ``"weeks"`` \| ``"month"`` \| ``"months"`` \| ``"year"`` \| ``"years"``
+Ƭ **Unit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"`` \| ``"month"`` \| ``"months"`` \| ``"week"`` \| ``"weeks"`` \| ``"year"`` \| ``"years"``
 
 ## Variables
 
 ### datetime
 
-• **datetime**: `Facade`<[`Facade`](../interfaces/datetime.Facade.md), `unknown`\>
+• `Const` **datetime**: `Facade`<[`Facade`](../interfaces/datetime.Facade.md), `unknown`\>

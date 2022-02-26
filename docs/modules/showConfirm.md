@@ -16,4 +16,4 @@
 
 ### showConfirm
 
-• **showConfirm**: `Facade`<[`Facade`](../interfaces/showConfirm.Facade.md), `unknown`\>
+• `Const` **showConfirm**: `Facade`<[`Facade`](../interfaces/showConfirm.Facade.md), `unknown`\>
