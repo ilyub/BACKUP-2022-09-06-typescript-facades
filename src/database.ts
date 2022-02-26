@@ -562,10 +562,10 @@ export interface PutResponse {
 export type PutResponses = readonly PutResponse[];
 
 export interface QueryOptions {
+  readonly descending?: boolean;
   readonly limit?: number;
   readonly skip?: number;
   readonly sortBy?: string;
-  readonly sortDesc?: boolean;
 }
 
 export interface ReactiveConfig {
@@ -633,6 +633,23 @@ export interface StoredAttachedDocument extends PutAttachedDocument {
 }
 
 export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
+
+export const isCondition: is.Guard<Condition> = is.factory(
+  is.object.of,
+  {},
+  {
+    dgt: is.number,
+    dlt: is.number,
+    eq: is.unknown,
+    gt: is.numStr,
+    gte: is.numStr,
+    lt: is.numStr,
+    lte: is.numStr,
+    neq: is.unknown
+  }
+);
+
+export const isConditions = is.factory(is.indexedObject.of, isCondition);
 
 export const isStoredAttachedDocument = is.factory(
   is.object.of,
