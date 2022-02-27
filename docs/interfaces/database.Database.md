@@ -917,7 +917,7 @@ ___
 
 ### subscribe
 
-▸ `Readonly` **subscribe**(`handler`): `Promise`<`Symbol`\>
+▸ `Readonly` **subscribe**(`handler`): \`subscription-id-${string}\`
 
 Subscribes to changes.
 
@@ -929,7 +929,7 @@ Subscribes to changes.
 
 #### Returns
 
-`Promise`<`Symbol`\>
+\`subscription-id-${string}\`
 
 Subscription ID.
 
@@ -937,7 +937,7 @@ ___
 
 ### subscribeAttached
 
-▸ `Readonly` **subscribeAttached**(`handler`): `Promise`<`Symbol`\>
+▸ `Readonly` **subscribeAttached**(`handler`): \`attached-subscription-id-${string}\`
 
 Subscribes to changes.
 
@@ -949,7 +949,7 @@ Subscribes to changes.
 
 #### Returns
 
-`Promise`<`Symbol`\>
+\`attached-subscription-id-${string}\`
 
 Subscription ID.
 
@@ -998,7 +998,7 @@ ___
 
 ### unsubscribe
 
-▸ `Readonly` **unsubscribe**(`id`): `Promise`<`void`\>
+▸ `Readonly` **unsubscribe**(`id`): `void`
 
 Unsubscribes from changes.
 
@@ -1006,11 +1006,11 @@ Unsubscribes from changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | `Symbol` | Subscription ID. |
+| `id` | \`subscription-id-${string}\` | Subscription ID. |
 
 #### Returns
 
-`Promise`<`void`\>
+`void`
 
 Promise.
 
@@ -1018,7 +1018,7 @@ ___
 
 ### unsubscribeAttached
 
-▸ `Readonly` **unsubscribeAttached**(`id`): `Promise`<`void`\>
+▸ `Readonly` **unsubscribeAttached**(`id`): `void`
 
 Unsubscribes from changes.
 
@@ -1026,10 +1026,10 @@ Unsubscribes from changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | `Symbol` | Subscription ID. |
+| `id` | \`attached-subscription-id-${string}\` | Subscription ID. |
 
 #### Returns
 
-`Promise`<`void`\>
+`void`
 
 Promise.

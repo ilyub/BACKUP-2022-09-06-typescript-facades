@@ -32,6 +32,7 @@
 
 ### Type aliases
 
+- [AttachedSubscriptionId](database.md#attachedsubscriptionid)
 - [Conditions](database.md#conditions)
 - [ExistingAttachedDocuments](database.md#existingattacheddocuments)
 - [ExistingDocuments](database.md#existingdocuments)
@@ -42,6 +43,7 @@
 - [PutResponses](database.md#putresponses)
 - [ReactiveResponse](database.md#reactiveresponse)
 - [StoredAttachedDocuments](database.md#storedattacheddocuments)
+- [SubscriptionId](database.md#subscriptionid)
 
 ### Variables
 
@@ -53,8 +55,16 @@
 - [isConditions](database.md#isconditions)
 - [isStoredAttachedDocument](database.md#isstoredattacheddocument)
 - [isStoredAttachedDocuments](database.md#isstoredattacheddocuments)
+- [uniqueAttachedSubscriptionId](database.md#uniqueattachedsubscriptionid)
+- [uniqueSubscriptionId](database.md#uniquesubscriptionid)
 
 ## Type aliases
+
+### AttachedSubscriptionId
+
+Ƭ **AttachedSubscriptionId**: \`attached-subscription-id-${string}\`
+
+___
 
 ### Conditions
 
@@ -106,7 +116,7 @@ ___
 
 ### ReactiveResponse
 
-Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseAsync`](../interfaces/database.ReactiveResponseAsync.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)<`T`\>
+Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseAsync`](../interfaces/database.ReactiveResponseAsync.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)
 
 #### Type parameters
 
@@ -119,6 +129,12 @@ ___
 ### StoredAttachedDocuments
 
 Ƭ **StoredAttachedDocuments**: readonly [`StoredAttachedDocument`](../interfaces/database.StoredAttachedDocument.md)[]
+
+___
+
+### SubscriptionId
+
+Ƭ **SubscriptionId**: \`subscription-id-${string}\`
 
 ## Variables
 
@@ -189,3 +205,31 @@ ___
 #### Returns
 
 value is readonly (Partial<unknown\> & Required<Object\>)[]
+
+___
+
+### uniqueAttachedSubscriptionId
+
+▸ **uniqueAttachedSubscriptionId**(): [`AttachedSubscriptionId`](database.md#attachedsubscriptionid)
+
+Generates unique attached subscription ID.
+
+#### Returns
+
+[`AttachedSubscriptionId`](database.md#attachedsubscriptionid)
+
+Attached subscription ID.
+
+___
+
+### uniqueSubscriptionId
+
+▸ **uniqueSubscriptionId**(): [`SubscriptionId`](database.md#subscriptionid)
+
+Generates unique subscription ID.
+
+#### Returns
+
+[`SubscriptionId`](database.md#subscriptionid)
+
+Subscription ID.

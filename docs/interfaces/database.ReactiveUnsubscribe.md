@@ -8,10 +8,10 @@
 
 ### ReactiveUnsubscribe
 
-▸ **ReactiveUnsubscribe**(): `Promise`<`void`\>
+▸ **ReactiveUnsubscribe**(): `void`
 
 Unsubscribes from reactive query.
 
 #### Returns
 
-`Promise`<`void`\>
+`void`

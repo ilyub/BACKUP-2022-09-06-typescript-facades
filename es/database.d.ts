@@ -328,14 +328,14 @@ export interface Database {
      * @param handler - Handler.
      * @returns Subscription ID.
      */
-    readonly subscribe: (handler: ChangesHandler) => Promise<Symbol>;
+    readonly subscribe: (handler: ChangesHandler) => SubscriptionId;
     /**
      * Subscribes to changes.
      *
      * @param handler - Handler.
      * @returns Subscription ID.
      */
-    readonly subscribeAttached: (handler: AttachedChangesHandler) => Promise<Symbol>;
+    readonly subscribeAttached: (handler: AttachedChangesHandler) => AttachedSubscriptionId;
     /**
      * Returns the number of unsettled documents.
      *
@@ -357,14 +357,14 @@ export interface Database {
      * @param id - Subscription ID.
      * @returns Promise.
      */
-    readonly unsubscribe: (id: Symbol) => Promise<void>;
+    readonly unsubscribe: (id: SubscriptionId) => void;
     /**
      * Unsubscribes from changes.
      *
      * @param id - Subscription ID.
      * @returns Promise.
      */
-    readonly unsubscribeAttached: (id: Symbol) => Promise<void>;
+    readonly unsubscribeAttached: (id: AttachedSubscriptionId) => void;
 }
 export interface AttachedChangesHandler {
     /**
@@ -374,6 +374,7 @@ export interface AttachedChangesHandler {
      */
     (doc: ExistingAttachedDocument): void;
 }
+export declare type AttachedSubscriptionId = `attached-subscription-id-${string}`;
 export interface ChangesHandler {
     /**
      * Changes handler.
@@ -469,18 +470,17 @@ export interface ReactiveConfigAttached {
     readonly updateFn?: ReactiveUpdateFn<ExistingAttachedDocument>;
     readonly updateInterval?: number;
 }
-export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading<T>;
+export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading;
 export interface ReactiveResponseAsync<T> {
     readonly loaded: true;
     readonly loading: boolean;
     readonly unsubscribe: ReactiveUnsubscribe;
     readonly value: T;
 }
-export interface ReactiveResponseLoading<T> {
+export interface ReactiveResponseLoading {
     readonly loaded: false;
     readonly loading: true;
-    readonly unsubscribe?: ReactiveUnsubscribe;
-    readonly value?: T;
+    readonly unsubscribe: ReactiveUnsubscribe;
 }
 export interface ReactiveUpdateFn<T> {
     /**
@@ -495,7 +495,7 @@ export interface ReactiveUnsubscribe {
     /**
      * Unsubscribes from reactive query.
      */
-    (): Promise<void>;
+    (): void;
 }
 export interface ResetCallback {
     /**
@@ -510,6 +510,7 @@ export interface StoredAttachedDocument extends PutAttachedDocument {
     readonly _rev: number;
 }
 export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
+export declare type SubscriptionId = `subscription-id-${string}`;
 export declare const isCondition: is.Guard<Condition>;
 export declare const isConditions: is.Guard<Readonly<import("@skylib/functions/es/types/core").IndexedObject<Condition>>>;
 export declare const isStoredAttachedDocument: is.Guard<Partial<unknown> & Required<{
@@ -520,4 +521,16 @@ export declare const isStoredAttachedDocuments: is.Guard<readonly (Partial<unkno
     _id: number;
     _rev: number;
 }>)[]>;
+/**
+ * Generates unique attached subscription ID.
+ *
+ * @returns Attached subscription ID.
+ */
+export declare function uniqueAttachedSubscriptionId(): AttachedSubscriptionId;
+/**
+ * Generates unique subscription ID.
+ *
+ * @returns Subscription ID.
+ */
+export declare function uniqueSubscriptionId(): SubscriptionId;
 //# sourceMappingURL=database.d.ts.map
