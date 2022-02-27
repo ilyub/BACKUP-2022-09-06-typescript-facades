@@ -413,16 +413,14 @@ export interface Database {
    * @param handler - Handler.
    * @returns Subscription ID.
    */
-  readonly subscribe: (handler: ChangesHandler) => Promise<Symbol>;
+  readonly subscribe: (handler: ChangesHandler) => Symbol;
   /**
    * Subscribes to changes.
    *
    * @param handler - Handler.
    * @returns Subscription ID.
    */
-  readonly subscribeAttached: (
-    handler: AttachedChangesHandler
-  ) => Promise<Symbol>;
+  readonly subscribeAttached: (handler: AttachedChangesHandler) => Symbol;
   /**
    * Returns the number of unsettled documents.
    *
@@ -447,14 +445,14 @@ export interface Database {
    * @param id - Subscription ID.
    * @returns Promise.
    */
-  readonly unsubscribe: (id: Symbol) => Promise<void>;
+  readonly unsubscribe: (id: Symbol) => void;
   /**
    * Unsubscribes from changes.
    *
    * @param id - Subscription ID.
    * @returns Promise.
    */
-  readonly unsubscribeAttached: (id: Symbol) => Promise<void>;
+  readonly unsubscribeAttached: (id: Symbol) => void;
 }
 
 export interface AttachedChangesHandler {
