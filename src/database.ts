@@ -589,7 +589,7 @@ export interface ReactiveConfigAttached {
 
 export type ReactiveResponse<T> =
   | ReactiveResponseAsync<T>
-  | ReactiveResponseLoading<T>;
+  | ReactiveResponseLoading;
 
 export interface ReactiveResponseAsync<T> {
   readonly loaded: true;
@@ -598,11 +598,10 @@ export interface ReactiveResponseAsync<T> {
   readonly value: T;
 }
 
-export interface ReactiveResponseLoading<T> {
+export interface ReactiveResponseLoading {
   readonly loaded: false;
   readonly loading: true;
-  readonly unsubscribe?: ReactiveUnsubscribe;
-  readonly value?: T;
+  readonly unsubscribe: ReactiveUnsubscribe;
 }
 
 export interface ReactiveUpdateFn<T> {
@@ -619,7 +618,7 @@ export interface ReactiveUnsubscribe {
   /**
    * Unsubscribes from reactive query.
    */
-  (): Promise<void>;
+  (): void;
 }
 
 export interface ResetCallback {
