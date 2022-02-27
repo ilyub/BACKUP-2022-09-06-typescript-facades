@@ -6,6 +6,8 @@ import type {
   ReadonlyRecord
 } from "@skylib/functions/dist/types/core";
 
+import { uniqueId } from "./uniqueId";
+
 export const database = createFacade<Facade>("database", {});
 
 export interface Facade {
@@ -413,14 +415,16 @@ export interface Database {
    * @param handler - Handler.
    * @returns Subscription ID.
    */
-  readonly subscribe: (handler: ChangesHandler) => Symbol;
+  readonly subscribe: (handler: ChangesHandler) => SubscriptionId;
   /**
    * Subscribes to changes.
    *
    * @param handler - Handler.
    * @returns Subscription ID.
    */
-  readonly subscribeAttached: (handler: AttachedChangesHandler) => Symbol;
+  readonly subscribeAttached: (
+    handler: AttachedChangesHandler
+  ) => AttachedSubscriptionId;
   /**
    * Returns the number of unsettled documents.
    *
@@ -445,14 +449,14 @@ export interface Database {
    * @param id - Subscription ID.
    * @returns Promise.
    */
-  readonly unsubscribe: (id: Symbol) => void;
+  readonly unsubscribe: (id: SubscriptionId) => void;
   /**
    * Unsubscribes from changes.
    *
    * @param id - Subscription ID.
    * @returns Promise.
    */
-  readonly unsubscribeAttached: (id: Symbol) => void;
+  readonly unsubscribeAttached: (id: AttachedSubscriptionId) => void;
 }
 
 export interface AttachedChangesHandler {
@@ -463,6 +467,8 @@ export interface AttachedChangesHandler {
    */
   (doc: ExistingAttachedDocument): void;
 }
+
+export type AttachedSubscriptionId = `attached-subscription-id-${string}`;
 
 export interface ChangesHandler {
   /**
@@ -632,6 +638,8 @@ export interface StoredAttachedDocument extends PutAttachedDocument {
 
 export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 
+export type SubscriptionId = `subscription-id-${string}`;
+
 export const isCondition: is.Guard<Condition> = is.factory(
   is.object.of,
   {},
@@ -659,3 +667,21 @@ export const isStoredAttachedDocuments = is.factory(
   is.array.of,
   isStoredAttachedDocument
 );
+
+/**
+ * Generates unique attached subscription ID.
+ *
+ * @returns Attached subscription ID.
+ */
+export function uniqueAttachedSubscriptionId(): AttachedSubscriptionId {
+  return `attached-subscription-id-${uniqueId()}`;
+}
+
+/**
+ * Generates unique subscription ID.
+ *
+ * @returns Subscription ID.
+ */
+export function uniqueSubscriptionId(): SubscriptionId {
+  return `subscription-id-${uniqueId()}`;
+}
