@@ -1,6 +1,6 @@
 import { createFacade } from "@skylib/functions/dist/helpers";
 
-export const faker = createFacade<Facade>("facebook", {});
+export const faker = createFacade<Facade>("faker", {});
 
 export interface Facade {
   /**
