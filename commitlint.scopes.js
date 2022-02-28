@@ -3,6 +3,7 @@ module.exports = [
   "database",
   "datetime",
   "facebook",
+  "faker",
   "google",
   "handlePromise",
   "httpRequest",

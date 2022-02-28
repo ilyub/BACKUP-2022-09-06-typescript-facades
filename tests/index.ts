@@ -4,6 +4,7 @@ import { compare } from "@/compare";
 import { database } from "@/database";
 import { datetime } from "@/datetime";
 import { facebook } from "@/facebook";
+import { faker } from "@/faker";
 import { google } from "@/google";
 import { handlePromise } from "@/handlePromise";
 import { httpRequest } from "@/httpRequest";
@@ -25,6 +26,7 @@ test("facades", () => {
     database,
     datetime,
     facebook,
+    faker,
     google,
     handlePromise,
     httpRequest,

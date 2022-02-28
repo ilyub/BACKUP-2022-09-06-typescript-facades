@@ -8,6 +8,7 @@ Facades represent a layer between main program and facade implementations.
 - Modules
   - [datetime](https://ilyub.github.io/typescript-facades/modules/datetime.html) - Date/time service.
   - [facebook](https://ilyub.github.io/typescript-facades/modules/facebook.html) - Facebook login.
+  - [faker](https://ilyub.github.io/typescript-facades/modules/faker.html) - Faker.
   - [google](https://ilyub.github.io/typescript-facades/modules/google.html) - Google login.
   - [handlePromise](https://ilyub.github.io/typescript-facades/modules/handlepromise.html) - Handles promise.
   - [httpRequest](https://ilyub.github.io/typescript-facades/modules/httprequest.html) - Sends HTTP request.
