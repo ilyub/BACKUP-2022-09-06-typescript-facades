@@ -10,6 +10,7 @@
 - [database](modules/database.md)
 - [datetime](modules/datetime.md)
 - [facebook](modules/facebook.md)
+- [faker](modules/faker.md)
 - [google](modules/google.md)
 - [handlePromise](modules/handlePromise.md)
 - [httpRequest](modules/httpRequest.md)
