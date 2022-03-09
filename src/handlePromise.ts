@@ -1,7 +1,37 @@
+import * as fn from "@skylib/functions/dist/function";
+import * as is from "@skylib/functions/dist/guards";
 import { createFacade } from "@skylib/functions/dist/helpers";
-import type { PromiseAsync } from "@skylib/functions/dist/types/core";
+import type {
+  PromiseAsync,
+  ValidationObject
+} from "@skylib/functions/dist/types/core";
+import { createValidationObject } from "@skylib/functions/dist/types/core";
 
-export const handlePromise = createFacade<Facade>("handlePromise", {});
+export const handlePromise = fn.run(() => {
+  const TaskTypeVO = createValidationObject<TaskType>({
+    createDb: "createDb",
+    dbRequest: "dbRequest",
+    destroyDb: "destroyDb",
+    httpRequest: "httpRequest",
+    navigation: "navigation"
+  });
+
+  const isTaskType = is.factory(is.enumeration, TaskTypeVO);
+
+  const isTaskTypeU = is.or.factory(isTaskType, is.undefined);
+
+  return createFacade<Facade, Extension>("handlePromise", {
+    TaskTypeVO,
+    isTaskType,
+    isTaskTypeU
+  });
+});
+
+export interface Extension {
+  TaskTypeVO: ValidationObject<TaskType>;
+  isTaskType: is.Guard<TaskType>;
+  isTaskTypeU: is.Guard<TaskType | undefined>;
+}
 
 export interface Facade {
   /**
