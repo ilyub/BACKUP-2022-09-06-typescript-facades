@@ -480,11 +480,14 @@ export interface ChangesHandler {
 }
 
 export interface Condition {
-  readonly dgt?: number;
-  readonly dlt?: number;
+  readonly dateGt?: string;
+  readonly dateGte?: string;
+  readonly dateLt?: string;
+  readonly dateLte?: string;
   readonly eq?: unknown;
   readonly gt?: NumStr;
   readonly gte?: NumStr;
+  readonly isSet?: boolean;
   readonly lt?: NumStr;
   readonly lte?: NumStr;
   readonly neq?: unknown;
@@ -643,11 +646,14 @@ export const isCondition: is.Guard<Condition> = is.factory(
   is.object.of,
   {},
   {
-    dgt: is.number,
-    dlt: is.number,
+    dateGt: is.string,
+    dateGte: is.string,
+    dateLt: is.string,
+    dateLte: is.string,
     eq: is.unknown,
     gt: is.numStr,
     gte: is.numStr,
+    isSet: is.boolean,
     lt: is.numStr,
     lte: is.numStr,
     neq: is.unknown
