@@ -608,6 +608,7 @@ export type ReactiveResponse<T> =
 export interface ReactiveResponseAsync<T> {
   readonly loaded: true;
   readonly loading: boolean;
+  readonly refresh: ReactiveRefresh;
   readonly unsubscribe: ReactiveUnsubscribe;
   readonly value: T;
 }
@@ -615,6 +616,7 @@ export interface ReactiveResponseAsync<T> {
 export interface ReactiveResponseLoading {
   readonly loaded: false;
   readonly loading: true;
+  readonly refresh: ReactiveRefresh;
   readonly unsubscribe: ReactiveUnsubscribe;
 }
 
@@ -626,6 +628,13 @@ export interface ReactiveUpdateFn<T> {
    * @returns _True_ if query should be updated after receiving document, _false_ otherwise.
    */
   (doc: T): boolean;
+}
+
+export interface ReactiveRefresh {
+  /**
+   * Refreshes from reactive query.
+   */
+  (): Promise<void>;
 }
 
 export interface ReactiveUnsubscribe {
