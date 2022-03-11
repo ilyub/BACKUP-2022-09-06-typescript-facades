@@ -493,11 +493,18 @@ export interface FieldConditions {
   readonly neq?: unknown;
 }
 
-export type ConditionsGroup = ReadonlyRecord<string, FieldConditions>;
+export type ConditionsGroup<T extends string = string> = ReadonlyRecord<
+  T,
+  FieldConditions
+>;
 
-export type ConditionsGroups = readonly ConditionsGroup[];
+export type ConditionsGroups<T extends string = string> = ReadonlyArray<
+  ConditionsGroup<T>
+>;
 
-export type Conditions = ConditionsGroup | ConditionsGroups;
+export type Conditions<T extends string = string> =
+  | ConditionsGroup<T>
+  | ConditionsGroups<T>;
 
 export interface DatabaseOptions {
   readonly caseSensitiveSorting?: boolean;
@@ -537,7 +544,7 @@ export interface MigrationCallback {
 }
 
 export interface PutAttachedDocument {
-  readonly [key: string]: unknown;
+  readonly [K: string]: unknown;
   readonly _deleted?: true;
   readonly _id?: number;
   readonly _rev?: number;
@@ -555,7 +562,7 @@ export interface PutAttachedResponse {
 export type PutAttachedResponses = readonly PutAttachedResponse[];
 
 export interface PutDocument {
-  readonly [key: string]: unknown;
+  readonly [K: string]: unknown;
   readonly _deleted?: true;
   readonly _id?: string;
   readonly _rev?: string;
@@ -664,9 +671,19 @@ export const isFieldConditions: is.Guard<FieldConditions> = is.factory(
   }
 );
 
-export const isConditionsGroup = is.factory(
+export const isConditionsGroup: is.Guard<ConditionsGroup> = is.factory(
   is.indexedObject.of,
   isFieldConditions
+);
+
+export const isConditionsGroups: is.Guard<ConditionsGroups> = is.factory(
+  is.array.of,
+  isConditionsGroup
+);
+
+export const isConditions: is.Guard<Conditions> = is.or.factory(
+  isConditionsGroup,
+  isConditionsGroups
 );
 
 export const isStoredAttachedDocument = is.factory(
@@ -679,6 +696,54 @@ export const isStoredAttachedDocuments = is.factory(
   is.array.of,
   isStoredAttachedDocument
 );
+
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export function isFieldConditionsFactory<T extends string>(
+  _guard: is.Guard<T>
+): is.Guard<FieldConditions> {
+  return isFieldConditions;
+}
+
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export function isConditionsGroupFactory<T extends string>(
+  _guard: is.Guard<T>
+): is.Guard<ConditionsGroup> {
+  return isConditionsGroup;
+}
+
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export function isConditionsGroupsFactory<T extends string>(
+  _guard: is.Guard<T>
+): is.Guard<ConditionsGroups> {
+  return isConditionsGroups;
+}
+
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export function isConditionsFactory<T extends string>(
+  _guard: is.Guard<T>
+): is.Guard<Conditions> {
+  return isConditions;
+}
 
 /**
  * Generates unique attached subscription ID.
