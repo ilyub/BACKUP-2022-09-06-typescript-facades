@@ -479,7 +479,7 @@ export interface ChangesHandler {
   (doc: ExistingDocument): void;
 }
 
-export interface Condition {
+export interface FieldConditions {
   readonly dateGt?: string;
   readonly dateGte?: string;
   readonly dateLt?: string;
@@ -493,7 +493,11 @@ export interface Condition {
   readonly neq?: unknown;
 }
 
-export type Conditions = ReadonlyRecord<string, Condition>;
+export type ConditionsGroup = ReadonlyRecord<string, FieldConditions>;
+
+export type ConditionsGroups = readonly ConditionsGroup[];
+
+export type Conditions = ConditionsGroup | ConditionsGroups;
 
 export interface DatabaseOptions {
   readonly caseSensitiveSorting?: boolean;
@@ -642,7 +646,7 @@ export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 
 export type SubscriptionId = `subscription-id-${string}`;
 
-export const isCondition: is.Guard<Condition> = is.factory(
+export const isFieldConditions: is.Guard<FieldConditions> = is.factory(
   is.object.of,
   {},
   {
@@ -660,7 +664,10 @@ export const isCondition: is.Guard<Condition> = is.factory(
   }
 );
 
-export const isConditions = is.factory(is.indexedObject.of, isCondition);
+export const isConditionsGroup = is.factory(
+  is.indexedObject.of,
+  isFieldConditions
+);
 
 export const isStoredAttachedDocument = is.factory(
   is.object.of,
