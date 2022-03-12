@@ -480,10 +480,10 @@ export interface ChangesHandler {
 }
 
 export interface FieldConditions {
-  readonly dateGt?: string;
-  readonly dateGte?: string;
-  readonly dateLt?: string;
-  readonly dateLte?: string;
+  readonly dateGt?: DateCondition;
+  readonly dateGte?: DateCondition;
+  readonly dateLt?: DateCondition;
+  readonly dateLte?: DateCondition;
   readonly eq?: unknown;
   readonly gt?: NumStr;
   readonly gte?: NumStr;
@@ -492,6 +492,32 @@ export interface FieldConditions {
   readonly lte?: NumStr;
   readonly neq?: unknown;
 }
+
+export type DateCondition =
+  | string
+  | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit]
+  | readonly [DateConditionType];
+
+export type DateConditionSign = "-" | "+";
+
+export type DateConditionType =
+  | "endOfDay"
+  | "endOfHour"
+  | "endOfMonth"
+  | "endOfWeek"
+  | "now"
+  | "startOfDay"
+  | "startOfHour"
+  | "startOfMonth"
+  | "startOfWeek";
+
+export type DateConditionUnit =
+  | "day"
+  | "days"
+  | "hour"
+  | "hours"
+  | "minute"
+  | "minutes";
 
 export type ConditionsGroup<T extends string = string> = ReadonlyRecord<
   T,
