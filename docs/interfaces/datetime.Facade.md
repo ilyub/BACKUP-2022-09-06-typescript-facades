@@ -11,6 +11,7 @@
 - [create](datetime.Facade.md#create)
 - [now](datetime.Facade.md#now)
 - [time](datetime.Facade.md#time)
+- [timeSec](datetime.Facade.md#timesec)
 - [validate](datetime.Facade.md#validate)
 
 ## Methods
@@ -52,6 +53,20 @@ ___
 ### time
 
 ▸ `Readonly` **time**(): `number`
+
+Returns current date/time as a number of milliseconds.
+
+#### Returns
+
+`number`
+
+Current date/time.
+
+___
+
+### timeSec
+
+▸ `Readonly` **timeSec**(): `number`
 
 Returns current date/time as a number of seconds.
 

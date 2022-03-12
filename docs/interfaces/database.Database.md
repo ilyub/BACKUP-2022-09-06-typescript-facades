@@ -130,7 +130,7 @@ Counts documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Conditions. |
 
 #### Returns
 
@@ -150,8 +150,8 @@ Counts attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
-| `parentConditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Parent conditions. |
+| `conditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Conditions. |
+| `parentConditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Parent conditions. |
 
 #### Returns
 
@@ -376,7 +376,7 @@ Queries database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Conditions. |
 | `options?` | [`QueryOptions`](database.QueryOptions.md) | Options. |
 
 #### Returns
@@ -397,8 +397,8 @@ Queries database.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
-| `parentConditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Parent conditions. |
+| `conditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Conditions. |
+| `parentConditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Parent conditions. |
 | `options?` | [`QueryOptions`](database.QueryOptions.md) | Options. |
 
 #### Returns
@@ -965,7 +965,7 @@ Returns the number of unsettled documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
+| `conditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Conditions. |
 
 #### Returns
 
@@ -985,8 +985,8 @@ Returns the number of unsettled attached documents.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `conditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Conditions. |
-| `parentConditions?` | `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\> | Parent conditions. |
+| `conditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Conditions. |
+| `parentConditions?` | [`Conditions`](../modules/database.md#conditions)<`string`\> | Parent conditions. |
 
 #### Returns
 

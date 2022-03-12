@@ -8,9 +8,15 @@
 
 ### MigrationCallback
 
-▸ **MigrationCallback**(): `Promise`<`void`\>
+▸ **MigrationCallback**(`this`): `Promise`<`void`\>
 
 Migration callback.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `this` | [`Database`](database.Database.md) | Database. |
 
 #### Returns
 

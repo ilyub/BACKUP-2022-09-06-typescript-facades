@@ -8,9 +8,15 @@
 
 ### ResetCallback
 
-▸ **ResetCallback**(): `Promise`<`void`\>
+▸ **ResetCallback**(`this`): `Promise`<`void`\>
 
 Reset callback.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `this` | [`Database`](database.Database.md) | Database. |
 
 #### Returns
 

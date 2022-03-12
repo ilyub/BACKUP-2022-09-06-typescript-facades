@@ -1,5 +1,11 @@
-import type { PromiseAsync } from "@skylib/functions/es/types/core";
-export declare const handlePromise: import("@skylib/functions/es/helpers").Facade<Facade, unknown>;
+import * as is from "@skylib/functions/es/guards";
+import type { PromiseAsync, ValidationObject } from "@skylib/functions/es/types/core";
+export declare const handlePromise: import("@skylib/functions/es/helpers").Facade<Facade, Extension>;
+export interface Extension {
+    TaskTypeVO: ValidationObject<TaskType>;
+    isTaskType: is.Guard<TaskType>;
+    isTaskTypeU: is.Guard<TaskType | undefined>;
+}
 export interface Facade {
     /**
      * Waits for all active promises.

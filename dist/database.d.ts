@@ -383,17 +383,26 @@ export interface ChangesHandler {
      */
     (doc: ExistingDocument): void;
 }
-export interface Condition {
-    readonly dgt?: number;
-    readonly dlt?: number;
+export interface FieldConditions {
+    readonly dateGt?: DateCondition;
+    readonly dateGte?: DateCondition;
+    readonly dateLt?: DateCondition;
+    readonly dateLte?: DateCondition;
     readonly eq?: unknown;
     readonly gt?: NumStr;
     readonly gte?: NumStr;
+    readonly isSet?: boolean;
     readonly lt?: NumStr;
     readonly lte?: NumStr;
     readonly neq?: unknown;
 }
-export declare type Conditions = ReadonlyRecord<string, Condition>;
+export declare type DateCondition = string | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit] | readonly [DateConditionType];
+export declare type DateConditionSign = "-" | "+";
+export declare type DateConditionType = "endOfDay" | "endOfHour" | "endOfMonth" | "endOfWeek" | "now" | "startOfDay" | "startOfHour" | "startOfMonth" | "startOfWeek";
+export declare type DateConditionUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
+export declare type ConditionsGroup<T extends string = string> = ReadonlyRecord<T, FieldConditions>;
+export declare type ConditionsGroups<T extends string = string> = ReadonlyArray<ConditionsGroup<T>>;
+export declare type Conditions<T extends string = string> = ConditionsGroup<T> | ConditionsGroups<T>;
 export interface DatabaseOptions {
     readonly caseSensitiveSorting?: boolean;
     readonly migrations?: Migrations;
@@ -424,7 +433,7 @@ export interface MigrationCallback {
     (this: Database): Promise<void>;
 }
 export interface PutAttachedDocument {
-    readonly [key: string]: unknown;
+    readonly [K: string]: unknown;
     readonly _deleted?: true;
     readonly _id?: number;
     readonly _rev?: number;
@@ -438,7 +447,7 @@ export interface PutAttachedResponse {
 }
 export declare type PutAttachedResponses = readonly PutAttachedResponse[];
 export interface PutDocument {
-    readonly [key: string]: unknown;
+    readonly [K: string]: unknown;
     readonly _deleted?: true;
     readonly _id?: string;
     readonly _rev?: string;
@@ -474,12 +483,14 @@ export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveRes
 export interface ReactiveResponseAsync<T> {
     readonly loaded: true;
     readonly loading: boolean;
+    readonly refresh: ReactiveRefresh;
     readonly unsubscribe: ReactiveUnsubscribe;
     readonly value: T;
 }
 export interface ReactiveResponseLoading {
     readonly loaded: false;
     readonly loading: true;
+    readonly refresh: ReactiveRefresh;
     readonly unsubscribe: ReactiveUnsubscribe;
 }
 export interface ReactiveUpdateFn<T> {
@@ -490,6 +501,12 @@ export interface ReactiveUpdateFn<T> {
      * @returns _True_ if query should be updated after receiving document, _false_ otherwise.
      */
     (doc: T): boolean;
+}
+export interface ReactiveRefresh {
+    /**
+     * Refreshes from reactive query.
+     */
+    (): Promise<void>;
 }
 export interface ReactiveUnsubscribe {
     /**
@@ -511,8 +528,10 @@ export interface StoredAttachedDocument extends PutAttachedDocument {
 }
 export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 export declare type SubscriptionId = `subscription-id-${string}`;
-export declare const isCondition: is.Guard<Condition>;
-export declare const isConditions: is.Guard<Readonly<import("@skylib/functions/dist/types/core").IndexedObject<Condition>>>;
+export declare const isFieldConditions: is.Guard<FieldConditions>;
+export declare const isConditionsGroup: is.Guard<ConditionsGroup>;
+export declare const isConditionsGroups: is.Guard<ConditionsGroups>;
+export declare const isConditions: is.Guard<Conditions>;
 export declare const isStoredAttachedDocument: is.Guard<Partial<unknown> & Required<{
     _id: number;
     _rev: number;
@@ -521,6 +540,34 @@ export declare const isStoredAttachedDocuments: is.Guard<readonly (Partial<unkno
     _id: number;
     _rev: number;
 }>)[]>;
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export declare function isFieldConditionsFactory<T extends string>(_guard: is.Guard<T>): is.Guard<FieldConditions>;
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export declare function isConditionsGroupFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsGroup>;
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export declare function isConditionsGroupsFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsGroups>;
+/**
+ * Creates conditions guard.
+ *
+ * @param _guard - Guard.
+ * @returns Conditions guard.
+ */
+export declare function isConditionsFactory<T extends string>(_guard: is.Guard<T>): is.Guard<Conditions>;
 /**
  * Generates unique attached subscription ID.
  *

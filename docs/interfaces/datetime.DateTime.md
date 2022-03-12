@@ -27,6 +27,9 @@
 - [setHours](datetime.DateTime.md#sethours)
 - [setMinutes](datetime.DateTime.md#setminutes)
 - [setMonth](datetime.DateTime.md#setmonth)
+- [setStartOfDay](datetime.DateTime.md#setstartofday)
+- [setStartOfHour](datetime.DateTime.md#setstartofhour)
+- [setStartOfMonth](datetime.DateTime.md#setstartofmonth)
 - [setStartOfWeek](datetime.DateTime.md#setstartofweek)
 - [setStartOfWeekLocale](datetime.DateTime.md#setstartofweeklocale)
 - [setYear](datetime.DateTime.md#setyear)
@@ -34,6 +37,7 @@
 - [toDate](datetime.DateTime.md#todate)
 - [toString](datetime.DateTime.md#tostring)
 - [toTime](datetime.DateTime.md#totime)
+- [toTimeSec](datetime.DateTime.md#totimesec)
 - [year](datetime.DateTime.md#year)
 
 ## Methods
@@ -387,11 +391,53 @@ Self.
 
 ___
 
+### setStartOfDay
+
+▸ `Readonly` **setStartOfDay**(): [`DateTime`](datetime.DateTime.md)
+
+Sets date to start of day.
+
+#### Returns
+
+[`DateTime`](datetime.DateTime.md)
+
+Self.
+
+___
+
+### setStartOfHour
+
+▸ `Readonly` **setStartOfHour**(): [`DateTime`](datetime.DateTime.md)
+
+Sets date to start of hour.
+
+#### Returns
+
+[`DateTime`](datetime.DateTime.md)
+
+Self.
+
+___
+
+### setStartOfMonth
+
+▸ `Readonly` **setStartOfMonth**(): [`DateTime`](datetime.DateTime.md)
+
+Sets date to start of month.
+
+#### Returns
+
+[`DateTime`](datetime.DateTime.md)
+
+Self.
+
+___
+
 ### setStartOfWeek
 
 ▸ `Readonly` **setStartOfWeek**(`weekStartsOn`): [`DateTime`](datetime.DateTime.md)
 
-Sets day of week to start of week.
+Sets date to start of week.
 
 #### Parameters
 
@@ -411,7 +457,7 @@ ___
 
 ▸ `Readonly` **setStartOfWeekLocale**(): [`DateTime`](datetime.DateTime.md)
 
-Sets day of week to start of week.
+Sets date to start of week.
 
 #### Returns
 
@@ -493,6 +539,20 @@ ___
 ### toTime
 
 ▸ `Readonly` **toTime**(): `number`
+
+Returns date/time as a number of milliseconds.
+
+#### Returns
+
+`number`
+
+Number of milliseconds.
+
+___
+
+### toTimeSec
+
+▸ `Readonly` **toTimeSec**(): `number`
 
 Returns date/time as a number of seconds.
 

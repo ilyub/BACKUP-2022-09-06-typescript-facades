@@ -16,6 +16,7 @@
 
 - [loaded](database.ReactiveResponseAsync.md#loaded)
 - [loading](database.ReactiveResponseAsync.md#loading)
+- [refresh](database.ReactiveResponseAsync.md#refresh)
 - [unsubscribe](database.ReactiveResponseAsync.md#unsubscribe)
 - [value](database.ReactiveResponseAsync.md#value)
 
@@ -30,6 +31,12 @@ ___
 ### loading
 
 • `Readonly` **loading**: `boolean`
+
+___
+
+### refresh
+
+• `Readonly` **refresh**: [`ReactiveRefresh`](database.ReactiveRefresh.md)
 
 ___
 

@@ -133,14 +133,32 @@ export interface DateTime {
      */
     readonly setMonth: (month: number) => DateTime;
     /**
-     * Sets day of week to start of week.
+     * Sets date to start of day.
+     *
+     * @returns Self.
+     */
+    readonly setStartOfDay: () => DateTime;
+    /**
+     * Sets date to start of hour.
+     *
+     * @returns Self.
+     */
+    readonly setStartOfHour: () => DateTime;
+    /**
+     * Sets date to start of month.
+     *
+     * @returns Self.
+     */
+    readonly setStartOfMonth: () => DateTime;
+    /**
+     * Sets date to start of week.
      *
      * @param weekStartsOn - Start of week (Sunday = 0, Monday = 1).
      * @returns Self.
      */
     readonly setStartOfWeek: (weekStartsOn: 0 | 1) => DateTime;
     /**
-     * Sets day of week to start of week.
+     * Sets date to start of week.
      *
      * @returns Self.
      */
@@ -173,11 +191,17 @@ export interface DateTime {
      */
     readonly toString: () => string;
     /**
+     * Returns date/time as a number of milliseconds.
+     *
+     * @returns Number of milliseconds.
+     */
+    readonly toTime: () => number;
+    /**
      * Returns date/time as a number of seconds.
      *
      * @returns Number of seconds.
      */
-    readonly toTime: () => number;
+    readonly toTimeSec: () => number;
     /**
      * Returns year.
      *
@@ -200,11 +224,17 @@ export interface Facade {
      */
     readonly now: () => string;
     /**
-     * Returns current date/time as a number of seconds.
+     * Returns current date/time as a number of milliseconds.
      *
      * @returns Current date/time.
      */
     readonly time: () => number;
+    /**
+     * Returns current date/time as a number of seconds.
+     *
+     * @returns Current date/time.
+     */
+    readonly timeSec: () => number;
     /**
      * Validates date string.
      *

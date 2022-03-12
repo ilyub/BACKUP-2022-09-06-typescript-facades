@@ -18,7 +18,7 @@
 
 ### conditions
 
-• `Optional` `Readonly` **conditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+• `Optional` `Readonly` **conditions**: [`Conditions`](../modules/database.md#conditions)<`string`\>
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 ### parentConditions
 
-• `Optional` `Readonly` **parentConditions**: `Readonly`<`Record`<`string`, [`Condition`](database.Condition.md)\>\>
+• `Optional` `Readonly` **parentConditions**: [`Conditions`](../modules/database.md#conditions)<`string`\>
 
 ___
 

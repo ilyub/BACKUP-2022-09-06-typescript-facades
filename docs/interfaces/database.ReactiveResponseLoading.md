@@ -10,6 +10,7 @@
 
 - [loaded](database.ReactiveResponseLoading.md#loaded)
 - [loading](database.ReactiveResponseLoading.md#loading)
+- [refresh](database.ReactiveResponseLoading.md#refresh)
 - [unsubscribe](database.ReactiveResponseLoading.md#unsubscribe)
 
 ## Properties
@@ -23,6 +24,12 @@ ___
 ### loading
 
 • `Readonly` **loading**: ``true``
+
+___
+
+### refresh
+
+• `Readonly` **refresh**: [`ReactiveRefresh`](database.ReactiveRefresh.md)
 
 ___
 

@@ -8,12 +8,12 @@
 
 - [AttachedChangesHandler](../interfaces/database.AttachedChangesHandler.md)
 - [ChangesHandler](../interfaces/database.ChangesHandler.md)
-- [Condition](../interfaces/database.Condition.md)
 - [Database](../interfaces/database.Database.md)
 - [DatabaseOptions](../interfaces/database.DatabaseOptions.md)
 - [ExistingAttachedDocument](../interfaces/database.ExistingAttachedDocument.md)
 - [ExistingDocument](../interfaces/database.ExistingDocument.md)
 - [Facade](../interfaces/database.Facade.md)
+- [FieldConditions](../interfaces/database.FieldConditions.md)
 - [Migration](../interfaces/database.Migration.md)
 - [MigrationCallback](../interfaces/database.MigrationCallback.md)
 - [PutAttachedDocument](../interfaces/database.PutAttachedDocument.md)
@@ -23,6 +23,7 @@
 - [QueryOptions](../interfaces/database.QueryOptions.md)
 - [ReactiveConfig](../interfaces/database.ReactiveConfig.md)
 - [ReactiveConfigAttached](../interfaces/database.ReactiveConfigAttached.md)
+- [ReactiveRefresh](../interfaces/database.ReactiveRefresh.md)
 - [ReactiveResponseAsync](../interfaces/database.ReactiveResponseAsync.md)
 - [ReactiveResponseLoading](../interfaces/database.ReactiveResponseLoading.md)
 - [ReactiveUnsubscribe](../interfaces/database.ReactiveUnsubscribe.md)
@@ -34,6 +35,12 @@
 
 - [AttachedSubscriptionId](database.md#attachedsubscriptionid)
 - [Conditions](database.md#conditions)
+- [ConditionsGroup](database.md#conditionsgroup)
+- [ConditionsGroups](database.md#conditionsgroups)
+- [DateCondition](database.md#datecondition)
+- [DateConditionSign](database.md#dateconditionsign)
+- [DateConditionType](database.md#dateconditiontype)
+- [DateConditionUnit](database.md#dateconditionunit)
 - [ExistingAttachedDocuments](database.md#existingattacheddocuments)
 - [ExistingDocuments](database.md#existingdocuments)
 - [Migrations](database.md#migrations)
@@ -51,8 +58,14 @@
 
 ### Functions
 
-- [isCondition](database.md#iscondition)
 - [isConditions](database.md#isconditions)
+- [isConditionsFactory](database.md#isconditionsfactory)
+- [isConditionsGroup](database.md#isconditionsgroup)
+- [isConditionsGroupFactory](database.md#isconditionsgroupfactory)
+- [isConditionsGroups](database.md#isconditionsgroups)
+- [isConditionsGroupsFactory](database.md#isconditionsgroupsfactory)
+- [isFieldConditions](database.md#isfieldconditions)
+- [isFieldConditionsFactory](database.md#isfieldconditionsfactory)
 - [isStoredAttachedDocument](database.md#isstoredattacheddocument)
 - [isStoredAttachedDocuments](database.md#isstoredattacheddocuments)
 - [uniqueAttachedSubscriptionId](database.md#uniqueattachedsubscriptionid)
@@ -68,7 +81,61 @@ ___
 
 ### Conditions
 
-Ƭ **Conditions**: `ReadonlyRecord`<`string`, [`Condition`](../interfaces/database.Condition.md)\>
+Ƭ **Conditions**<`T`\>: [`ConditionsGroup`](database.md#conditionsgroup)<`T`\> \| [`ConditionsGroups`](database.md#conditionsgroups)<`T`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` = `string` |
+
+___
+
+### ConditionsGroup
+
+Ƭ **ConditionsGroup**<`T`\>: `ReadonlyRecord`<`T`, [`FieldConditions`](../interfaces/database.FieldConditions.md)\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` = `string` |
+
+___
+
+### ConditionsGroups
+
+Ƭ **ConditionsGroups**<`T`\>: `ReadonlyArray`<[`ConditionsGroup`](database.md#conditionsgroup)<`T`\>\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` = `string` |
+
+___
+
+### DateCondition
+
+Ƭ **DateCondition**: `string` \| readonly [[`DateConditionType`](database.md#dateconditiontype), [`DateConditionSign`](database.md#dateconditionsign), `number`, [`DateConditionUnit`](database.md#dateconditionunit)] \| readonly [[`DateConditionType`](database.md#dateconditiontype)]
+
+___
+
+### DateConditionSign
+
+Ƭ **DateConditionSign**: ``"-"`` \| ``"+"``
+
+___
+
+### DateConditionType
+
+Ƭ **DateConditionType**: ``"endOfDay"`` \| ``"endOfHour"`` \| ``"endOfMonth"`` \| ``"endOfWeek"`` \| ``"now"`` \| ``"startOfDay"`` \| ``"startOfHour"`` \| ``"startOfMonth"`` \| ``"startOfWeek"``
+
+___
+
+### DateConditionUnit
+
+Ƭ **DateConditionUnit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"``
 
 ___
 
@@ -144,9 +211,9 @@ ___
 
 ## Functions
 
-### isCondition
+### isConditions
 
-▸ **isCondition**(`value`): value is Condition
+▸ **isConditions**(`value`): value is Conditions<string\>
 
 #### Parameters
 
@@ -156,13 +223,39 @@ ___
 
 #### Returns
 
-value is Condition
+value is Conditions<string\>
 
 ___
 
-### isConditions
+### isConditionsFactory
 
-▸ **isConditions**(`value`): value is Readonly<IndexedObject<Condition\>\>
+▸ **isConditionsFactory**<`T`\>(`_guard`): `is.Guard`<[`Conditions`](database.md#conditions)\>
+
+Creates conditions guard.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `_guard` | `Guard`<`T`\> | Guard. |
+
+#### Returns
+
+`is.Guard`<[`Conditions`](database.md#conditions)\>
+
+Conditions guard.
+
+___
+
+### isConditionsGroup
+
+▸ **isConditionsGroup**(`value`): value is Readonly<Record<string, FieldConditions\>\>
 
 #### Parameters
 
@@ -172,7 +265,117 @@ ___
 
 #### Returns
 
-value is Readonly<IndexedObject<Condition\>\>
+value is Readonly<Record<string, FieldConditions\>\>
+
+___
+
+### isConditionsGroupFactory
+
+▸ **isConditionsGroupFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsGroup`](database.md#conditionsgroup)\>
+
+Creates conditions guard.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `_guard` | `Guard`<`T`\> | Guard. |
+
+#### Returns
+
+`is.Guard`<[`ConditionsGroup`](database.md#conditionsgroup)\>
+
+Conditions guard.
+
+___
+
+### isConditionsGroups
+
+▸ **isConditionsGroups**(`value`): value is ConditionsGroups<string\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is ConditionsGroups<string\>
+
+___
+
+### isConditionsGroupsFactory
+
+▸ **isConditionsGroupsFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsGroups`](database.md#conditionsgroups)\>
+
+Creates conditions guard.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `_guard` | `Guard`<`T`\> | Guard. |
+
+#### Returns
+
+`is.Guard`<[`ConditionsGroups`](database.md#conditionsgroups)\>
+
+Conditions guard.
+
+___
+
+### isFieldConditions
+
+▸ **isFieldConditions**(`value`): value is FieldConditions
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is FieldConditions
+
+___
+
+### isFieldConditionsFactory
+
+▸ **isFieldConditionsFactory**<`T`\>(`_guard`): `is.Guard`<[`FieldConditions`](../interfaces/database.FieldConditions.md)\>
+
+Creates conditions guard.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `_guard` | `Guard`<`T`\> | Guard. |
+
+#### Returns
+
+`is.Guard`<[`FieldConditions`](../interfaces/database.FieldConditions.md)\>
+
+Conditions guard.
 
 ___
 

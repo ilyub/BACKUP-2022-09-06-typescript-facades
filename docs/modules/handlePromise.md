@@ -6,6 +6,7 @@
 
 ### Interfaces
 
+- [Extension](../interfaces/handlePromise.Extension.md)
 - [Facade](../interfaces/handlePromise.Facade.md)
 
 ### Type aliases
@@ -26,4 +27,4 @@
 
 ### handlePromise
 
-• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), `unknown`\>
+• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), [`Extension`](../interfaces/handlePromise.Extension.md)\>

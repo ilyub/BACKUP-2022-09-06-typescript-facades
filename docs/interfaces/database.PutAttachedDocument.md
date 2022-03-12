@@ -14,7 +14,7 @@
 
 ## Indexable
 
-▪ [key: `string`]: `unknown`
+▪ [K: `string`]: `unknown`
 
 ## Table of contents
 
