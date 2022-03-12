@@ -136,14 +136,32 @@ export interface DateTime {
    */
   readonly setMonth: (month: number) => DateTime;
   /**
-   * Sets day of week to start of week.
+   * Sets date to start of day.
+   *
+   * @returns Self.
+   */
+  readonly setStartOfDay: () => DateTime;
+  /**
+   * Sets date to start of hour.
+   *
+   * @returns Self.
+   */
+  readonly setStartOfHour: () => DateTime;
+  /**
+   * Sets date to start of month.
+   *
+   * @returns Self.
+   */
+  readonly setStartOfMonth: () => DateTime;
+  /**
+   * Sets date to start of week.
    *
    * @param weekStartsOn - Start of week (Sunday = 0, Monday = 1).
    * @returns Self.
    */
   readonly setStartOfWeek: (weekStartsOn: 0 | 1) => DateTime;
   /**
-   * Sets day of week to start of week.
+   * Sets date to start of week.
    *
    * @returns Self.
    */
