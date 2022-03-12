@@ -3,7 +3,7 @@ import { createFacade } from "@skylib/functions/dist/helpers";
 import type {
   numbers,
   NumStr,
-  ReadonlyRecord
+  ReadonlyPartialRecord
 } from "@skylib/functions/dist/types/core";
 import { createValidationObject } from "@skylib/functions/dist/types/core";
 
@@ -480,22 +480,6 @@ export interface ChangesHandler {
   (doc: ExistingDocument): void;
 }
 
-export interface FieldConditions {
-  readonly dateEq?: DateCondition;
-  readonly dateGt?: DateCondition;
-  readonly dateGte?: DateCondition;
-  readonly dateLt?: DateCondition;
-  readonly dateLte?: DateCondition;
-  readonly dateNeq?: DateCondition;
-  readonly eq?: unknown;
-  readonly gt?: NumStr;
-  readonly gte?: NumStr;
-  readonly isSet?: boolean;
-  readonly lt?: NumStr;
-  readonly lte?: NumStr;
-  readonly neq?: unknown;
-}
-
 export type DateCondition =
   | string
   | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit]
@@ -522,18 +506,34 @@ export type DateConditionUnit =
   | "minute"
   | "minutes";
 
-export type ConditionsGroup<T extends string = string> = ReadonlyRecord<
+export interface FieldConditions {
+  readonly dateEq?: DateCondition;
+  readonly dateGt?: DateCondition;
+  readonly dateGte?: DateCondition;
+  readonly dateLt?: DateCondition;
+  readonly dateLte?: DateCondition;
+  readonly dateNeq?: DateCondition;
+  readonly eq?: unknown;
+  readonly gt?: NumStr;
+  readonly gte?: NumStr;
+  readonly isSet?: boolean;
+  readonly lt?: NumStr;
+  readonly lte?: NumStr;
+  readonly neq?: unknown;
+}
+
+export type Conditions<T extends string = string> =
+  | ConditionsArray<T>
+  | ConditionsRecord<T>;
+
+export type ConditionsArray<T extends string = string> = ReadonlyArray<
+  ConditionsRecord<T>
+>;
+
+export type ConditionsRecord<T extends string = string> = ReadonlyPartialRecord<
   T,
   FieldConditions
 >;
-
-export type ConditionsGroups<T extends string = string> = ReadonlyArray<
-  ConditionsGroup<T>
->;
-
-export type Conditions<T extends string = string> =
-  | ConditionsGroup<T>
-  | ConditionsGroups<T>;
 
 export interface DatabaseOptions {
   readonly caseSensitiveSorting?: boolean;
@@ -763,19 +763,19 @@ export const isFieldConditions: is.Guard<FieldConditions> = is.factory(
   }
 );
 
-export const isConditionsGroup: is.Guard<ConditionsGroup> = is.factory(
+export const isConditionsRecord: is.Guard<ConditionsRecord> = is.factory(
   is.indexedObject.of,
   isFieldConditions
 );
 
-export const isConditionsGroups: is.Guard<ConditionsGroups> = is.factory(
+export const isConditionsArray: is.Guard<ConditionsArray> = is.factory(
   is.array.of,
-  isConditionsGroup
+  isConditionsRecord
 );
 
 export const isConditions: is.Guard<Conditions> = is.or.factory(
-  isConditionsGroup,
-  isConditionsGroups
+  isConditionsRecord,
+  isConditionsArray
 );
 
 export const isStoredAttachedDocument = is.factory(
@@ -807,10 +807,10 @@ export function isFieldConditionsFactory<T extends string>(
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-export function isConditionsGroupFactory<T extends string>(
+export function isConditionsRecordFactory<T extends string>(
   _guard: is.Guard<T>
-): is.Guard<ConditionsGroup> {
-  return isConditionsGroup;
+): is.Guard<ConditionsRecord> {
+  return isConditionsRecord;
 }
 
 /**
@@ -819,10 +819,10 @@ export function isConditionsGroupFactory<T extends string>(
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-export function isConditionsGroupsFactory<T extends string>(
+export function isConditionsArrayFactory<T extends string>(
   _guard: is.Guard<T>
-): is.Guard<ConditionsGroups> {
-  return isConditionsGroups;
+): is.Guard<ConditionsArray> {
+  return isConditionsArray;
 }
 
 /**

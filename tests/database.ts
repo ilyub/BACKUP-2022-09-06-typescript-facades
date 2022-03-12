@@ -1,9 +1,9 @@
 import * as is from "@skylib/functions/dist/guards";
 
 import {
+  isConditionsArrayFactory,
   isConditionsFactory,
-  isConditionsGroupFactory,
-  isConditionsGroupsFactory,
+  isConditionsRecordFactory,
   isFieldConditionsFactory,
   uniqueAttachedSubscriptionId,
   uniqueSubscriptionId
@@ -12,20 +12,20 @@ import { uniqueId } from "@/uniqueId";
 
 uniqueId.setImplementation(() => "unique");
 
-test("isFieldConditionsFactory", () => {
-  expect(typeof isFieldConditionsFactory(is.string)).toBe("function");
-});
-
-test("isConditionsGroupFactory", () => {
-  expect(typeof isConditionsGroupFactory(is.string)).toBe("function");
-});
-
-test("isConditionsGroupsFactory", () => {
-  expect(typeof isConditionsGroupsFactory(is.string)).toBe("function");
+test("isConditionsArrayFactory", () => {
+  expect(typeof isConditionsArrayFactory(is.string)).toBe("function");
 });
 
 test("isConditionsFactory", () => {
   expect(typeof isConditionsFactory(is.string)).toBe("function");
+});
+
+test("isConditionsRecordFactory", () => {
+  expect(typeof isConditionsRecordFactory(is.string)).toBe("function");
+});
+
+test("isFieldConditionsFactory", () => {
+  expect(typeof isFieldConditionsFactory(is.string)).toBe("function");
 });
 
 test("uniqueAttachedSubscriptionId", () => {
