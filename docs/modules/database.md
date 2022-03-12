@@ -54,6 +54,9 @@
 
 ### Variables
 
+- [DateConditionSignVO](database.md#dateconditionsignvo)
+- [DateConditionTypeVO](database.md#dateconditiontypevo)
+- [DateConditionUnitVO](database.md#dateconditionunitvo)
 - [database](database.md#database)
 
 ### Functions
@@ -64,6 +67,10 @@
 - [isConditionsGroupFactory](database.md#isconditionsgroupfactory)
 - [isConditionsGroups](database.md#isconditionsgroups)
 - [isConditionsGroupsFactory](database.md#isconditionsgroupsfactory)
+- [isDateCondition](database.md#isdatecondition)
+- [isDateConditionSign](database.md#isdateconditionsign)
+- [isDateConditionType](database.md#isdateconditiontype)
+- [isDateConditionUnit](database.md#isdateconditionunit)
 - [isFieldConditions](database.md#isfieldconditions)
 - [isFieldConditionsFactory](database.md#isfieldconditionsfactory)
 - [isStoredAttachedDocument](database.md#isstoredattacheddocument)
@@ -205,6 +212,24 @@ ___
 
 ## Variables
 
+### DateConditionSignVO
+
+• `Const` **DateConditionSignVO**: `ValidationObject`<[`DateConditionSign`](database.md#dateconditionsign)\>
+
+___
+
+### DateConditionTypeVO
+
+• `Const` **DateConditionTypeVO**: `ValidationObject`<[`DateConditionType`](database.md#dateconditiontype)\>
+
+___
+
+### DateConditionUnitVO
+
+• `Const` **DateConditionUnitVO**: `ValidationObject`<[`DateConditionUnit`](database.md#dateconditionunit)\>
+
+___
+
 ### database
 
 • `Const` **database**: `Facade`<[`Facade`](../interfaces/database.Facade.md), `unknown`\>
@@ -334,6 +359,70 @@ Creates conditions guard.
 `is.Guard`<[`ConditionsGroups`](database.md#conditionsgroups)\>
 
 Conditions guard.
+
+___
+
+### isDateCondition
+
+▸ **isDateCondition**(`value`): value is DateCondition
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is DateCondition
+
+___
+
+### isDateConditionSign
+
+▸ **isDateConditionSign**(`value`): value is DateConditionSign
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is DateConditionSign
+
+___
+
+### isDateConditionType
+
+▸ **isDateConditionType**(`value`): value is DateConditionType
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is DateConditionType
+
+___
+
+### isDateConditionUnit
+
+▸ **isDateConditionUnit**(`value`): value is DateConditionUnit
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is DateConditionUnit
 
 ___
 

@@ -1,12 +1,42 @@
 import * as is from "@skylib/functions/es/guards";
 import { createFacade } from "@skylib/functions/es/helpers";
+import { createValidationObject } from "@skylib/functions/es/types/core";
 import { uniqueId } from "./uniqueId";
 export const database = createFacade("database", {});
+export const DateConditionSignVO = createValidationObject({
+    "+": "+",
+    "-": "-"
+});
+export const DateConditionTypeVO = createValidationObject({
+    endOfDay: "endOfDay",
+    endOfHour: "endOfHour",
+    endOfMonth: "endOfMonth",
+    endOfWeek: "endOfWeek",
+    now: "now",
+    startOfDay: "startOfDay",
+    startOfHour: "startOfHour",
+    startOfMonth: "startOfMonth",
+    startOfWeek: "startOfWeek"
+});
+export const DateConditionUnitVO = createValidationObject({
+    day: "day",
+    days: "days",
+    hour: "hour",
+    hours: "hours",
+    minute: "minute",
+    minutes: "minutes"
+});
+export const isDateConditionSign = is.factory(is.enumeration, DateConditionSignVO);
+export const isDateConditionType = is.factory(is.enumeration, DateConditionTypeVO);
+export const isDateConditionUnit = is.factory(is.enumeration, DateConditionUnitVO);
+export const isDateCondition = is.or.factory(is.string, is.tuple.factory(isDateConditionType), is.tuple.factory(isDateConditionType, isDateConditionSign, is.number, isDateConditionUnit));
 export const isFieldConditions = is.factory(is.object.of, {}, {
-    dateGt: is.string,
-    dateGte: is.string,
-    dateLt: is.string,
-    dateLte: is.string,
+    dateEq: isDateCondition,
+    dateGt: isDateCondition,
+    dateGte: isDateCondition,
+    dateLt: isDateCondition,
+    dateLte: isDateCondition,
+    dateNeq: isDateCondition,
     eq: is.unknown,
     gt: is.numStr,
     gte: is.numStr,

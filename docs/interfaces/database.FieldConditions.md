@@ -8,10 +8,12 @@
 
 ### Properties
 
+- [dateEq](database.FieldConditions.md#dateeq)
 - [dateGt](database.FieldConditions.md#dategt)
 - [dateGte](database.FieldConditions.md#dategte)
 - [dateLt](database.FieldConditions.md#datelt)
 - [dateLte](database.FieldConditions.md#datelte)
+- [dateNeq](database.FieldConditions.md#dateneq)
 - [eq](database.FieldConditions.md#eq)
 - [gt](database.FieldConditions.md#gt)
 - [gte](database.FieldConditions.md#gte)
@@ -21,6 +23,12 @@
 - [neq](database.FieldConditions.md#neq)
 
 ## Properties
+
+### dateEq
+
+• `Optional` `Readonly` **dateEq**: [`DateCondition`](../modules/database.md#datecondition)
+
+___
 
 ### dateGt
 
@@ -43,6 +51,12 @@ ___
 ### dateLte
 
 • `Optional` `Readonly` **dateLte**: [`DateCondition`](../modules/database.md#datecondition)
+
+___
+
+### dateNeq
+
+• `Optional` `Readonly` **dateNeq**: [`DateCondition`](../modules/database.md#datecondition)
 
 ___
 

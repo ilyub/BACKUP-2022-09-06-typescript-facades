@@ -384,10 +384,12 @@ export interface ChangesHandler {
     (doc: ExistingDocument): void;
 }
 export interface FieldConditions {
+    readonly dateEq?: DateCondition;
     readonly dateGt?: DateCondition;
     readonly dateGte?: DateCondition;
     readonly dateLt?: DateCondition;
     readonly dateLte?: DateCondition;
+    readonly dateNeq?: DateCondition;
     readonly eq?: unknown;
     readonly gt?: NumStr;
     readonly gte?: NumStr;
@@ -528,6 +530,13 @@ export interface StoredAttachedDocument extends PutAttachedDocument {
 }
 export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 export declare type SubscriptionId = `subscription-id-${string}`;
+export declare const DateConditionSignVO: import("@skylib/functions/dist/types/core").ValidationObject<DateConditionSign>;
+export declare const DateConditionTypeVO: import("@skylib/functions/dist/types/core").ValidationObject<DateConditionType>;
+export declare const DateConditionUnitVO: import("@skylib/functions/dist/types/core").ValidationObject<DateConditionUnit>;
+export declare const isDateConditionSign: is.Guard<DateConditionSign>;
+export declare const isDateConditionType: is.Guard<DateConditionType>;
+export declare const isDateConditionUnit: is.Guard<DateConditionUnit>;
+export declare const isDateCondition: is.Guard<DateCondition>;
 export declare const isFieldConditions: is.Guard<FieldConditions>;
 export declare const isConditionsGroup: is.Guard<ConditionsGroup>;
 export declare const isConditionsGroups: is.Guard<ConditionsGroups>;
