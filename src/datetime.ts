@@ -194,11 +194,17 @@ export interface DateTime {
    */
   readonly toString: () => string;
   /**
+   * Returns date/time as a number of milliseconds.
+   *
+   * @returns Number of milliseconds.
+   */
+  readonly toTime: () => number;
+  /**
    * Returns date/time as a number of seconds.
    *
    * @returns Number of seconds.
    */
-  readonly toTime: () => number;
+  readonly toTimeSec: () => number;
   /**
    * Returns year.
    *
@@ -222,11 +228,17 @@ export interface Facade {
    */
   readonly now: () => string;
   /**
-   * Returns current date/time as a number of seconds.
+   * Returns current date/time as a number of milliseconds.
    *
    * @returns Current date/time.
    */
   readonly time: () => number;
+  /**
+   * Returns current date/time as a number of seconds.
+   *
+   * @returns Current date/time.
+   */
+  readonly timeSec: () => number;
   /**
    * Validates date string.
    *
