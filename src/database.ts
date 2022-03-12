@@ -5,6 +5,7 @@ import type {
   NumStr,
   ReadonlyRecord
 } from "@skylib/functions/dist/types/core";
+import { createValidationObject } from "@skylib/functions/dist/types/core";
 
 import { uniqueId } from "./uniqueId";
 
@@ -480,10 +481,12 @@ export interface ChangesHandler {
 }
 
 export interface FieldConditions {
+  readonly dateEq?: DateCondition;
   readonly dateGt?: DateCondition;
   readonly dateGte?: DateCondition;
   readonly dateLt?: DateCondition;
   readonly dateLte?: DateCondition;
+  readonly dateNeq?: DateCondition;
   readonly eq?: unknown;
   readonly gt?: NumStr;
   readonly gte?: NumStr;
@@ -688,14 +691,68 @@ export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 
 export type SubscriptionId = `subscription-id-${string}`;
 
+export const DateConditionSignVO = createValidationObject<DateConditionSign>({
+  "+": "+",
+  "-": "-"
+});
+
+export const DateConditionTypeVO = createValidationObject<DateConditionType>({
+  endOfDay: "endOfDay",
+  endOfHour: "endOfHour",
+  endOfMonth: "endOfMonth",
+  endOfWeek: "endOfWeek",
+  now: "now",
+  startOfDay: "startOfDay",
+  startOfHour: "startOfHour",
+  startOfMonth: "startOfMonth",
+  startOfWeek: "startOfWeek"
+});
+
+export const DateConditionUnitVO = createValidationObject<DateConditionUnit>({
+  day: "day",
+  days: "days",
+  hour: "hour",
+  hours: "hours",
+  minute: "minute",
+  minutes: "minutes"
+});
+
+export const isDateConditionSign = is.factory(
+  is.enumeration,
+  DateConditionSignVO
+);
+
+export const isDateConditionType = is.factory(
+  is.enumeration,
+  DateConditionTypeVO
+);
+
+export const isDateConditionUnit = is.factory(
+  is.enumeration,
+  DateConditionUnitVO
+);
+
+export const isDateCondition: is.Guard<DateCondition> = is.or.factory(
+  is.string,
+  is.tuple.factory(isDateConditionType),
+  is.tuple.factory(
+    isDateConditionType,
+    isDateConditionSign,
+    is.number,
+    isDateConditionUnit
+  )
+);
+
 export const isFieldConditions: is.Guard<FieldConditions> = is.factory(
   is.object.of,
   {},
   {
-    dateGt: is.string,
-    dateGte: is.string,
-    dateLt: is.string,
-    dateLte: is.string,
+    dateEq: isDateCondition,
+    dateGt: isDateCondition,
+    dateGte: isDateCondition,
+    dateLt: isDateCondition,
+    dateLte: isDateCondition,
+    dateNeq: isDateCondition,
     eq: is.unknown,
     gt: is.numStr,
     gte: is.numStr,
