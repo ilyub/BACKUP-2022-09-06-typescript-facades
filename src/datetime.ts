@@ -220,7 +220,7 @@ export interface Facade {
    * @param dt - Date/time.
    * @returns DateTime instance.
    */
-  readonly create: (dt?: Date | DateTime | string) => DateTime;
+  readonly create: (dt?: Date | DateTime | number | string) => DateTime;
   /**
    * Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
    *
