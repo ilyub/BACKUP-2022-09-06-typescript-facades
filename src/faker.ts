@@ -4,6 +4,45 @@ export const faker = createFacade<Facade>("faker", {});
 
 export interface Facade {
   /**
+   * Generates random boolean.
+   *
+   * @param trueWeight - Weight.
+   * @param falseWeight - Weight.
+   * @returns Random boolean.
+   */
+  readonly boolean: (trueWeight?: number, falseWeight?: number) => boolean;
+  /**
+   * Generates random date.
+   *
+   * @param from - Min date.
+   * @param to - Max date.
+   * @param step - Step.
+   * @param unit - Step unit.
+   * @returns Random date.
+   */
+  readonly date: (
+    from: string | readonly [number, Unit],
+    to: string | readonly [number, Unit],
+    step?: number,
+    unit?: Unit
+  ) => string;
+  /**
+   * Generates random number.
+   *
+   * @param from - Min value.
+   * @param to - Max value.
+   * @param step - Step.
+   * @returns Random number.
+   */
+  readonly number: (from: number, to: number, step?: number) => number;
+  /**
+   * Returns random element from an array.
+   *
+   * @param values - Values.
+   * @returns Random element.
+   */
+  readonly oneOf: <T>(values: readonly T[]) => T;
+  /**
    * Generates random paragraph.
    *
    * @param minSentences - Min sentences.
@@ -41,3 +80,5 @@ export interface Facade {
    */
   readonly word: () => string;
 }
+
+export type Unit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
