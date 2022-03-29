@@ -1,3 +1,7 @@
 module.exports = {
-  readonlyIgnoreTypes: ["Date"]
+  extends: [
+    require("@skylib/functions/src/configs/eslintrc.options")(
+      "@skylib/functions/dist/"
+    )
+  ]
 };
