@@ -41,7 +41,7 @@ export interface Facade {
    */
   readonly runAll: () => Promise<void>;
   /**
-   * Checks if there are active promises.
+   * Checks that there are active promises.
    *
    * @returns _True_ if there are active promises, _false_ otherwise.
    */

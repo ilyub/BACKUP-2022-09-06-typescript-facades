@@ -69,14 +69,14 @@ export interface Database {
     parentConditions?: Conditions
   ) => Promise<number>;
   /**
-   * Checks if document exists.
+   * Checks that document exists.
    *
    * @param id - ID.
    * @returns _True_ if document exists, _false_ otherwise.
    */
   readonly exists: (id: string) => Promise<boolean>;
   /**
-   * Checks if attached document exists.
+   * Checks that attached document exists.
    *
    * @param id - ID.
    * @param parentId - Parent ID.
@@ -216,14 +216,14 @@ export interface Database {
     config: ReactiveConfigAttached
   ) => Promise<ReactiveResponseAsync<number>>;
   /**
-   * Checks if document exists.
+   * Checks that document exists.
    *
    * @param id - ID.
    * @returns _True_ if document exists, _false_ otherwise.
    */
   readonly reactiveExists: (id: string) => ReactiveResponse<boolean>;
   /**
-   * Checks if document exists.
+   * Checks that document exists.
    *
    * @param id - ID.
    * @returns _True_ if document exists, _false_ otherwise.
@@ -232,7 +232,7 @@ export interface Database {
     id: string
   ) => Promise<ReactiveResponseAsync<boolean>>;
   /**
-   * Checks if attached document exists.
+   * Checks that attached document exists.
    *
    * @param id - ID.
    * @param parentId - Parent ID.
@@ -243,7 +243,7 @@ export interface Database {
     parentId: string
   ) => ReactiveResponse<boolean>;
   /**
-   * Checks if attached document exists.
+   * Checks that attached document exists.
    *
    * @param id - ID.
    * @param parentId - Parent ID.

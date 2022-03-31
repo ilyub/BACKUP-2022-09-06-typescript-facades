@@ -31,7 +31,7 @@ export interface Dictionary {
    */
   readonly get: (key: string) => string;
   /**
-   * Checks if word exists.
+   * Checks that word exists.
    *
    * @param key - Word ID.
    * @returns _True_ if word exists, _false_ otherwise.
