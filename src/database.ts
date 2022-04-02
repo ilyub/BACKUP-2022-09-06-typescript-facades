@@ -746,8 +746,7 @@ export const isDateCondition: is.Guard<DateCondition> = is.or.factory(
   )
 );
 
-export const isFieldConditions: is.Guard<FieldConditions> = is.factory(
-  is.object.of,
+export const isFieldConditions = is.object.of.factory<FieldConditions>(
   {},
   {
     dateEq: isDateCondition,
@@ -781,11 +780,11 @@ export const isConditions: is.Guard<Conditions> = is.or.factory(
   isConditionsArray
 );
 
-export const isStoredAttachedDocument = is.factory(
-  is.object.of,
-  { _id: is.number, _rev: is.number } as const,
-  {}
-);
+export const isStoredAttachedDocument =
+  is.object.of.factory<StoredAttachedDocument>(
+    { _id: is.number, _rev: is.number } as const,
+    {}
+  );
 
 export const isStoredAttachedDocuments = is.factory(
   is.array.of,
