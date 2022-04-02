@@ -1,3 +1,4 @@
+import * as o from "@skylib/functions/dist/object";
 import * as reflect from "@skylib/functions/dist/reflect";
 
 import { compare } from "@/compare";
@@ -41,7 +42,7 @@ test("facades", () => {
     uniqueId
   };
 
-  for (const [name, facade] of Object.entries(facades))
+  for (const [name, facade] of o.entries(facades))
     expect(() => reflect.get(facade, "a")).toThrow(
       new Error(`Missing facade implementation: ${name}`)
     );

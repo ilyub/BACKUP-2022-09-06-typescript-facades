@@ -1,9 +1,11 @@
-import { createFacade } from "@skylib/functions/dist/helpers";
+import {
+  createFacade,
+  createValidationObject
+} from "@skylib/functions/dist/helpers";
 import type {
-  ReadonlyIndexedObject,
-  ReadonlyPartialRecord
+  IndexedObject,
+  TypedObject
 } from "@skylib/functions/dist/types/core";
-import { createValidationObject } from "@skylib/functions/dist/types/core";
 
 export const httpRequest = createFacade<Facade>("httpRequest", {});
 
@@ -20,7 +22,7 @@ export interface Facade {
   readonly send: (
     url: string,
     method?: HttpRequestMethod,
-    data?: ReadonlyIndexedObject,
+    data?: IndexedObject,
     headers?: HttpHeaders
   ) => Promise<unknown>;
 }
@@ -38,7 +40,7 @@ export const HttpHeaderVO = createValidationObject<HttpHeader>({
   "Content-Type": "Content-Type"
 });
 
-export type HttpHeaders = ReadonlyPartialRecord<HttpHeader, string>;
+export type HttpHeaders = TypedObject<HttpHeader, string>;
 
 export type HttpRequestMethod = "delete" | "get" | "post";
 

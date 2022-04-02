@@ -1,4 +1,5 @@
 import { createFacade } from "@skylib/functions/dist/helpers";
+import type { NumStr } from "@skylib/functions/dist/types/core";
 
 export const datetime = createFacade<Facade>("datetime", {});
 
@@ -220,7 +221,7 @@ export interface Facade {
    * @param dt - Date/time.
    * @returns DateTime instance.
    */
-  readonly create: (dt?: Date | DateTime | number | string) => DateTime;
+  readonly create: (dt?: Date | DateTime | NumStr) => DateTime;
   /**
    * Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
    *

@@ -1,11 +1,11 @@
 import * as fn from "@skylib/functions/dist/function";
 import * as is from "@skylib/functions/dist/guards";
-import { createFacade } from "@skylib/functions/dist/helpers";
-import type {
-  PromiseAsync,
-  ValidationObject
-} from "@skylib/functions/dist/types/core";
-import { createValidationObject } from "@skylib/functions/dist/types/core";
+import type { ValidationObject } from "@skylib/functions/dist/helpers";
+import {
+  createFacade,
+  createValidationObject
+} from "@skylib/functions/dist/helpers";
+import type { AsyncPromise } from "@skylib/functions/dist/types/function";
 
 export const handlePromise = fn.run(() => {
   const TaskTypeVO = createValidationObject<TaskType>({
@@ -53,7 +53,7 @@ export interface Facade {
    * @param errorMessage - Error message (used to alert user on error).
    */
   readonly silent: <T>(
-    promiseAsync: PromiseAsync<T>,
+    promiseAsync: AsyncPromise<T>,
     errorMessage?: string
   ) => void;
   /**
@@ -64,7 +64,7 @@ export interface Facade {
    * @param errorMessage - Error message (used to alert user on error).
    */
   readonly verbose: <T>(
-    promiseAsync: PromiseAsync<T>,
+    promiseAsync: AsyncPromise<T>,
     type: TaskType,
     errorMessage?: string
   ) => void;

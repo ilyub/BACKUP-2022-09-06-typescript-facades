@@ -1,5 +1,5 @@
 import { createFacade } from "@skylib/functions/dist/helpers";
-import type { ReadonlyRecord } from "@skylib/functions/dist/types/core";
+import type { TypedObject } from "@skylib/functions/dist/types/core";
 
 declare global {
   namespace facades {
@@ -15,4 +15,4 @@ export type Facade = facades.icons.Facade;
 
 export type Icon = keyof Facade;
 
-export type Icons<T extends Icon> = ReadonlyRecord<T, string>;
+export type Icons<T extends Icon> = TypedObject<T, string>;

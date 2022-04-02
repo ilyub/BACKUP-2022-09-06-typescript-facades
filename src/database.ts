@@ -1,11 +1,13 @@
 import * as is from "@skylib/functions/dist/guards";
-import { createFacade } from "@skylib/functions/dist/helpers";
+import {
+  createFacade,
+  createValidationObject
+} from "@skylib/functions/dist/helpers";
 import type {
   numbers,
   NumStr,
-  ReadonlyPartialRecord
+  PartialTypedObject
 } from "@skylib/functions/dist/types/core";
-import { createValidationObject } from "@skylib/functions/dist/types/core";
 
 import { uniqueId } from "./uniqueId";
 
@@ -530,7 +532,7 @@ export type ConditionsArray<T extends string = string> = ReadonlyArray<
   ConditionsRecord<T>
 >;
 
-export type ConditionsRecord<T extends string = string> = ReadonlyPartialRecord<
+export type ConditionsRecord<T extends string = string> = PartialTypedObject<
   T,
   FieldConditions
 >;
