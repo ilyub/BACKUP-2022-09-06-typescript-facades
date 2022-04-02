@@ -1,8 +1,14 @@
 [Typescript facades](../index.md) / [Exports](../modules.md) / [database](../modules/database.md) / ReactiveResponseLoading
 
-# Interface: ReactiveResponseLoading
+# Interface: ReactiveResponseLoading<T\>
 
 [database](../modules/database.md).ReactiveResponseLoading
+
+## Type parameters
+
+| Name |
+| :------ |
+| `T` |
 
 ## Table of contents
 
@@ -12,6 +18,7 @@
 - [loading](database.ReactiveResponseLoading.md#loading)
 - [refresh](database.ReactiveResponseLoading.md#refresh)
 - [unsubscribe](database.ReactiveResponseLoading.md#unsubscribe)
+- [value](database.ReactiveResponseLoading.md#value)
 
 ## Properties
 
@@ -36,3 +43,9 @@ ___
 ### unsubscribe
 
 • `Readonly` **unsubscribe**: [`ReactiveUnsubscribe`](database.ReactiveUnsubscribe.md)
+
+___
+
+### value
+
+• `Optional` `Readonly` **value**: `T`

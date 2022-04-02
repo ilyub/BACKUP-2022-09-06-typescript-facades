@@ -30,7 +30,7 @@ ___
 
 ### Icons
 
-Ƭ **Icons**<`T`\>: `ReadonlyRecord`<`T`, `string`\>
+Ƭ **Icons**<`T`\>: `TypedObject`<`T`, `string`\>
 
 #### Type parameters
 

@@ -1,6 +1,5 @@
 import * as is from "@skylib/functions/es/guards";
-import { createFacade } from "@skylib/functions/es/helpers";
-import { createValidationObject } from "@skylib/functions/es/types/core";
+import { createFacade, createValidationObject } from "@skylib/functions/es/helpers";
 import { uniqueId } from "./uniqueId";
 export const database = createFacade("database", {});
 export const DateConditionSignVO = createValidationObject({
@@ -45,9 +44,9 @@ export const isFieldConditions = is.factory(is.object.of, {}, {
     lte: is.numStr,
     neq: is.unknown
 });
-export const isConditionsGroup = is.factory(is.indexedObject.of, isFieldConditions);
-export const isConditionsGroups = is.factory(is.array.of, isConditionsGroup);
-export const isConditions = is.or.factory(isConditionsGroup, isConditionsGroups);
+export const isConditionsRecord = is.factory(is.indexedObject.of, isFieldConditions);
+export const isConditionsArray = is.factory(is.array.of, isConditionsRecord);
+export const isConditions = is.or.factory(isConditionsRecord, isConditionsArray);
 export const isStoredAttachedDocument = is.factory(is.object.of, { _id: is.number, _rev: is.number }, {});
 export const isStoredAttachedDocuments = is.factory(is.array.of, isStoredAttachedDocument);
 /**
@@ -65,8 +64,8 @@ export function isFieldConditionsFactory(_guard) {
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-export function isConditionsGroupFactory(_guard) {
-    return isConditionsGroup;
+export function isConditionsRecordFactory(_guard) {
+    return isConditionsRecord;
 }
 /**
  * Creates conditions guard.
@@ -74,8 +73,8 @@ export function isConditionsGroupFactory(_guard) {
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-export function isConditionsGroupsFactory(_guard) {
-    return isConditionsGroups;
+export function isConditionsArrayFactory(_guard) {
+    return isConditionsArray;
 }
 /**
  * Creates conditions guard.

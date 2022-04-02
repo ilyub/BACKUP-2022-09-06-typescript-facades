@@ -26,7 +26,7 @@ Creates DateTime instance.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt?` | `string` \| [`DateTime`](datetime.DateTime.md) \| `Date` | Date/time. |
+| `dt?` | `NumStr` \| [`DateTime`](datetime.DateTime.md) \| `Date` | Date/time. |
 
 #### Returns
 

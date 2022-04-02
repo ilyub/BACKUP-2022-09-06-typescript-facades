@@ -8,9 +8,19 @@
 
 - [Facade](../interfaces/faker.Facade.md)
 
+### Type aliases
+
+- [Unit](faker.md#unit)
+
 ### Variables
 
 - [faker](faker.md#faker)
+
+## Type aliases
+
+### Unit
+
+Ƭ **Unit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"``
 
 ## Variables
 

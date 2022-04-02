@@ -1,17 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.uniqueSubscriptionId = exports.uniqueAttachedSubscriptionId = exports.isConditionsFactory = exports.isConditionsGroupsFactory = exports.isConditionsGroupFactory = exports.isFieldConditionsFactory = exports.isStoredAttachedDocuments = exports.isStoredAttachedDocument = exports.isConditions = exports.isConditionsGroups = exports.isConditionsGroup = exports.isFieldConditions = exports.isDateCondition = exports.isDateConditionUnit = exports.isDateConditionType = exports.isDateConditionSign = exports.DateConditionUnitVO = exports.DateConditionTypeVO = exports.DateConditionSignVO = exports.database = void 0;
+exports.uniqueSubscriptionId = exports.uniqueAttachedSubscriptionId = exports.isConditionsFactory = exports.isConditionsArrayFactory = exports.isConditionsRecordFactory = exports.isFieldConditionsFactory = exports.isStoredAttachedDocuments = exports.isStoredAttachedDocument = exports.isConditions = exports.isConditionsArray = exports.isConditionsRecord = exports.isFieldConditions = exports.isDateCondition = exports.isDateConditionUnit = exports.isDateConditionType = exports.isDateConditionSign = exports.DateConditionUnitVO = exports.DateConditionTypeVO = exports.DateConditionSignVO = exports.database = void 0;
 const tslib_1 = require("tslib");
 const is = tslib_1.__importStar(require("@skylib/functions/dist/guards"));
 const helpers_1 = require("@skylib/functions/dist/helpers");
-const core_1 = require("@skylib/functions/dist/types/core");
 const uniqueId_1 = require("./uniqueId");
 exports.database = (0, helpers_1.createFacade)("database", {});
-exports.DateConditionSignVO = (0, core_1.createValidationObject)({
+exports.DateConditionSignVO = (0, helpers_1.createValidationObject)({
     "+": "+",
     "-": "-"
 });
-exports.DateConditionTypeVO = (0, core_1.createValidationObject)({
+exports.DateConditionTypeVO = (0, helpers_1.createValidationObject)({
     endOfDay: "endOfDay",
     endOfHour: "endOfHour",
     endOfMonth: "endOfMonth",
@@ -22,7 +21,7 @@ exports.DateConditionTypeVO = (0, core_1.createValidationObject)({
     startOfMonth: "startOfMonth",
     startOfWeek: "startOfWeek"
 });
-exports.DateConditionUnitVO = (0, core_1.createValidationObject)({
+exports.DateConditionUnitVO = (0, helpers_1.createValidationObject)({
     day: "day",
     days: "days",
     hour: "hour",
@@ -49,9 +48,9 @@ exports.isFieldConditions = is.factory(is.object.of, {}, {
     lte: is.numStr,
     neq: is.unknown
 });
-exports.isConditionsGroup = is.factory(is.indexedObject.of, exports.isFieldConditions);
-exports.isConditionsGroups = is.factory(is.array.of, exports.isConditionsGroup);
-exports.isConditions = is.or.factory(exports.isConditionsGroup, exports.isConditionsGroups);
+exports.isConditionsRecord = is.factory(is.indexedObject.of, exports.isFieldConditions);
+exports.isConditionsArray = is.factory(is.array.of, exports.isConditionsRecord);
+exports.isConditions = is.or.factory(exports.isConditionsRecord, exports.isConditionsArray);
 exports.isStoredAttachedDocument = is.factory(is.object.of, { _id: is.number, _rev: is.number }, {});
 exports.isStoredAttachedDocuments = is.factory(is.array.of, exports.isStoredAttachedDocument);
 /**
@@ -70,20 +69,20 @@ exports.isFieldConditionsFactory = isFieldConditionsFactory;
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-function isConditionsGroupFactory(_guard) {
-    return exports.isConditionsGroup;
+function isConditionsRecordFactory(_guard) {
+    return exports.isConditionsRecord;
 }
-exports.isConditionsGroupFactory = isConditionsGroupFactory;
+exports.isConditionsRecordFactory = isConditionsRecordFactory;
 /**
  * Creates conditions guard.
  *
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-function isConditionsGroupsFactory(_guard) {
-    return exports.isConditionsGroups;
+function isConditionsArrayFactory(_guard) {
+    return exports.isConditionsArray;
 }
-exports.isConditionsGroupsFactory = isConditionsGroupsFactory;
+exports.isConditionsArrayFactory = isConditionsArrayFactory;
 /**
  * Creates conditions guard.
  *

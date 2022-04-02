@@ -1,7 +1,6 @@
 import * as fn from "@skylib/functions/es/function";
 import * as is from "@skylib/functions/es/guards";
-import { createFacade } from "@skylib/functions/es/helpers";
-import { createValidationObject } from "@skylib/functions/es/types/core";
+import { createFacade, createValidationObject } from "@skylib/functions/es/helpers";
 export const handlePromise = fn.run(() => {
     const TaskTypeVO = createValidationObject({
         createDb: "createDb",

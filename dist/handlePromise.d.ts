@@ -1,5 +1,6 @@
 import * as is from "@skylib/functions/dist/guards";
-import type { PromiseAsync, ValidationObject } from "@skylib/functions/dist/types/core";
+import type { ValidationObject } from "@skylib/functions/dist/helpers";
+import type { AsyncPromise } from "@skylib/functions/dist/types/function";
 export declare const handlePromise: import("@skylib/functions/dist/helpers").Facade<Facade, Extension>;
 export interface Extension {
     TaskTypeVO: ValidationObject<TaskType>;
@@ -14,7 +15,7 @@ export interface Facade {
      */
     readonly runAll: () => Promise<void>;
     /**
-     * Checks if there are active promises.
+     * Checks that there are active promises.
      *
      * @returns _True_ if there are active promises, _false_ otherwise.
      */
@@ -25,7 +26,7 @@ export interface Facade {
      * @param promiseAsync - Promise or asynchronous function.
      * @param errorMessage - Error message (used to alert user on error).
      */
-    readonly silent: <T>(promiseAsync: PromiseAsync<T>, errorMessage?: string) => void;
+    readonly silent: <T>(promiseAsync: AsyncPromise<T>, errorMessage?: string) => void;
     /**
      * Handles promise with progress reporting.
      *
@@ -33,7 +34,7 @@ export interface Facade {
      * @param type - Type (determines expected duration for progress reporting).
      * @param errorMessage - Error message (used to alert user on error).
      */
-    readonly verbose: <T>(promiseAsync: PromiseAsync<T>, type: TaskType, errorMessage?: string) => void;
+    readonly verbose: <T>(promiseAsync: AsyncPromise<T>, type: TaskType, errorMessage?: string) => void;
 }
 export declare type TaskType = "createDb" | "dbRequest" | "destroyDb" | "httpRequest" | "navigation";
 //# sourceMappingURL=handlePromise.d.ts.map

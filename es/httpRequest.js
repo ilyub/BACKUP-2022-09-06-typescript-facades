@@ -1,5 +1,4 @@
-import { createFacade } from "@skylib/functions/es/helpers";
-import { createValidationObject } from "@skylib/functions/es/types/core";
+import { createFacade, createValidationObject } from "@skylib/functions/es/helpers";
 export const httpRequest = createFacade("httpRequest", {});
 export const HttpHeaderVO = createValidationObject({
     "Accept": "Accept",

@@ -30,7 +30,7 @@ ___
 
 ### HttpHeaders
 
-Ƭ **HttpHeaders**: `ReadonlyPartialRecord`<[`HttpHeader`](httpRequest.md#httpheader), `string`\>
+Ƭ **HttpHeaders**: `TypedObject`<[`HttpHeader`](httpRequest.md#httpheader), `string`\>
 
 ___
 

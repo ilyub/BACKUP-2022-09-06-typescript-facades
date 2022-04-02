@@ -5,9 +5,8 @@ const tslib_1 = require("tslib");
 const fn = tslib_1.__importStar(require("@skylib/functions/dist/function"));
 const is = tslib_1.__importStar(require("@skylib/functions/dist/guards"));
 const helpers_1 = require("@skylib/functions/dist/helpers");
-const core_1 = require("@skylib/functions/dist/types/core");
 exports.handlePromise = fn.run(() => {
-    const TaskTypeVO = (0, core_1.createValidationObject)({
+    const TaskTypeVO = (0, helpers_1.createValidationObject)({
         createDb: "createDb",
         dbRequest: "dbRequest",
         destroyDb: "destroyDb",

@@ -35,8 +35,8 @@
 
 - [AttachedSubscriptionId](database.md#attachedsubscriptionid)
 - [Conditions](database.md#conditions)
-- [ConditionsGroup](database.md#conditionsgroup)
-- [ConditionsGroups](database.md#conditionsgroups)
+- [ConditionsArray](database.md#conditionsarray)
+- [ConditionsRecord](database.md#conditionsrecord)
 - [DateCondition](database.md#datecondition)
 - [DateConditionSign](database.md#dateconditionsign)
 - [DateConditionType](database.md#dateconditiontype)
@@ -62,11 +62,11 @@
 ### Functions
 
 - [isConditions](database.md#isconditions)
+- [isConditionsArray](database.md#isconditionsarray)
+- [isConditionsArrayFactory](database.md#isconditionsarrayfactory)
 - [isConditionsFactory](database.md#isconditionsfactory)
-- [isConditionsGroup](database.md#isconditionsgroup)
-- [isConditionsGroupFactory](database.md#isconditionsgroupfactory)
-- [isConditionsGroups](database.md#isconditionsgroups)
-- [isConditionsGroupsFactory](database.md#isconditionsgroupsfactory)
+- [isConditionsRecord](database.md#isconditionsrecord)
+- [isConditionsRecordFactory](database.md#isconditionsrecordfactory)
 - [isDateCondition](database.md#isdatecondition)
 - [isDateConditionSign](database.md#isdateconditionsign)
 - [isDateConditionType](database.md#isdateconditiontype)
@@ -88,7 +88,7 @@ ___
 
 ### Conditions
 
-Ƭ **Conditions**<`T`\>: [`ConditionsGroup`](database.md#conditionsgroup)<`T`\> \| [`ConditionsGroups`](database.md#conditionsgroups)<`T`\>
+Ƭ **Conditions**<`T`\>: [`ConditionsArray`](database.md#conditionsarray)<`T`\> \| [`ConditionsRecord`](database.md#conditionsrecord)<`T`\>
 
 #### Type parameters
 
@@ -98,9 +98,9 @@ ___
 
 ___
 
-### ConditionsGroup
+### ConditionsArray
 
-Ƭ **ConditionsGroup**<`T`\>: `ReadonlyRecord`<`T`, [`FieldConditions`](../interfaces/database.FieldConditions.md)\>
+Ƭ **ConditionsArray**<`T`\>: `ReadonlyArray`<[`ConditionsRecord`](database.md#conditionsrecord)<`T`\>\>
 
 #### Type parameters
 
@@ -110,9 +110,9 @@ ___
 
 ___
 
-### ConditionsGroups
+### ConditionsRecord
 
-Ƭ **ConditionsGroups**<`T`\>: `ReadonlyArray`<[`ConditionsGroup`](database.md#conditionsgroup)<`T`\>\>
+Ƭ **ConditionsRecord**<`T`\>: `PartialTypedObject`<`T`, [`FieldConditions`](../interfaces/database.FieldConditions.md)\>
 
 #### Type parameters
 
@@ -190,7 +190,7 @@ ___
 
 ### ReactiveResponse
 
-Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseAsync`](../interfaces/database.ReactiveResponseAsync.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)
+Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseAsync`](../interfaces/database.ReactiveResponseAsync.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)<`T`\>
 
 #### Type parameters
 
@@ -252,6 +252,48 @@ value is Conditions<string\>
 
 ___
 
+### isConditionsArray
+
+▸ **isConditionsArray**(`value`): value is ConditionsArray<string\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `value` | `unknown` |
+
+#### Returns
+
+value is ConditionsArray<string\>
+
+___
+
+### isConditionsArrayFactory
+
+▸ **isConditionsArrayFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsArray`](database.md#conditionsarray)\>
+
+Creates conditions guard.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `string` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `_guard` | `Guard`<`T`\> | Guard. |
+
+#### Returns
+
+`is.Guard`<[`ConditionsArray`](database.md#conditionsarray)\>
+
+Conditions guard.
+
+___
+
 ### isConditionsFactory
 
 ▸ **isConditionsFactory**<`T`\>(`_guard`): `is.Guard`<[`Conditions`](database.md#conditions)\>
@@ -278,9 +320,9 @@ Conditions guard.
 
 ___
 
-### isConditionsGroup
+### isConditionsRecord
 
-▸ **isConditionsGroup**(`value`): value is Readonly<Record<string, FieldConditions\>\>
+▸ **isConditionsRecord**(`value`): value is ConditionsRecord<string\>
 
 #### Parameters
 
@@ -290,13 +332,13 @@ ___
 
 #### Returns
 
-value is Readonly<Record<string, FieldConditions\>\>
+value is ConditionsRecord<string\>
 
 ___
 
-### isConditionsGroupFactory
+### isConditionsRecordFactory
 
-▸ **isConditionsGroupFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsGroup`](database.md#conditionsgroup)\>
+▸ **isConditionsRecordFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsRecord`](database.md#conditionsrecord)\>
 
 Creates conditions guard.
 
@@ -314,49 +356,7 @@ Creates conditions guard.
 
 #### Returns
 
-`is.Guard`<[`ConditionsGroup`](database.md#conditionsgroup)\>
-
-Conditions guard.
-
-___
-
-### isConditionsGroups
-
-▸ **isConditionsGroups**(`value`): value is ConditionsGroups<string\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is ConditionsGroups<string\>
-
-___
-
-### isConditionsGroupsFactory
-
-▸ **isConditionsGroupsFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsGroups`](database.md#conditionsgroups)\>
-
-Creates conditions guard.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `_guard` | `Guard`<`T`\> | Guard. |
-
-#### Returns
-
-`is.Guard`<[`ConditionsGroups`](database.md#conditionsgroups)\>
+`is.Guard`<[`ConditionsRecord`](database.md#conditionsrecord)\>
 
 Conditions guard.
 
@@ -470,7 +470,7 @@ ___
 
 ### isStoredAttachedDocument
 
-▸ **isStoredAttachedDocument**(`value`): value is Partial<unknown\> & Required<Object\>
+▸ **isStoredAttachedDocument**(`value`): value is object
 
 #### Parameters
 
@@ -480,13 +480,13 @@ ___
 
 #### Returns
 
-value is Partial<unknown\> & Required<Object\>
+value is object
 
 ___
 
 ### isStoredAttachedDocuments
 
-▸ **isStoredAttachedDocuments**(`value`): value is readonly (Partial<unknown\> & Required<Object\>)[]
+▸ **isStoredAttachedDocuments**(`value`): value is readonly object[]
 
 #### Parameters
 
@@ -496,7 +496,7 @@ ___
 
 #### Returns
 
-value is readonly (Partial<unknown\> & Required<Object\>)[]
+value is readonly object[]
 
 ___
 

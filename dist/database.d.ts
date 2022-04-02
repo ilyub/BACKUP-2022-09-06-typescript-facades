@@ -1,5 +1,5 @@
 import * as is from "@skylib/functions/dist/guards";
-import type { numbers, NumStr, ReadonlyRecord } from "@skylib/functions/dist/types/core";
+import type { numbers, NumStr, PartialTypedObject } from "@skylib/functions/dist/types/core";
 export declare const database: import("@skylib/functions/dist/helpers").Facade<Facade, unknown>;
 export interface Facade {
     /**
@@ -50,14 +50,14 @@ export interface Database {
      */
     readonly countAttached: (conditions?: Conditions, parentConditions?: Conditions) => Promise<number>;
     /**
-     * Checks if document exists.
+     * Checks that document exists.
      *
      * @param id - ID.
      * @returns _True_ if document exists, _false_ otherwise.
      */
     readonly exists: (id: string) => Promise<boolean>;
     /**
-     * Checks if attached document exists.
+     * Checks that attached document exists.
      *
      * @param id - ID.
      * @param parentId - Parent ID.
@@ -170,21 +170,21 @@ export interface Database {
      */
     readonly reactiveCountAttachedAsync: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAsync<number>>;
     /**
-     * Checks if document exists.
+     * Checks that document exists.
      *
      * @param id - ID.
      * @returns _True_ if document exists, _false_ otherwise.
      */
     readonly reactiveExists: (id: string) => ReactiveResponse<boolean>;
     /**
-     * Checks if document exists.
+     * Checks that document exists.
      *
      * @param id - ID.
      * @returns _True_ if document exists, _false_ otherwise.
      */
     readonly reactiveExistsAsync: (id: string) => Promise<ReactiveResponseAsync<boolean>>;
     /**
-     * Checks if attached document exists.
+     * Checks that attached document exists.
      *
      * @param id - ID.
      * @param parentId - Parent ID.
@@ -192,7 +192,7 @@ export interface Database {
      */
     readonly reactiveExistsAttached: (id: number, parentId: string) => ReactiveResponse<boolean>;
     /**
-     * Checks if attached document exists.
+     * Checks that attached document exists.
      *
      * @param id - ID.
      * @param parentId - Parent ID.
@@ -383,6 +383,10 @@ export interface ChangesHandler {
      */
     (doc: ExistingDocument): void;
 }
+export declare type DateCondition = string | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit] | readonly [DateConditionType];
+export declare type DateConditionSign = "-" | "+";
+export declare type DateConditionType = "endOfDay" | "endOfHour" | "endOfMonth" | "endOfWeek" | "now" | "startOfDay" | "startOfHour" | "startOfMonth" | "startOfWeek";
+export declare type DateConditionUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
 export interface FieldConditions {
     readonly dateEq?: DateCondition;
     readonly dateGt?: DateCondition;
@@ -398,13 +402,9 @@ export interface FieldConditions {
     readonly lte?: NumStr;
     readonly neq?: unknown;
 }
-export declare type DateCondition = string | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit] | readonly [DateConditionType];
-export declare type DateConditionSign = "-" | "+";
-export declare type DateConditionType = "endOfDay" | "endOfHour" | "endOfMonth" | "endOfWeek" | "now" | "startOfDay" | "startOfHour" | "startOfMonth" | "startOfWeek";
-export declare type DateConditionUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
-export declare type ConditionsGroup<T extends string = string> = ReadonlyRecord<T, FieldConditions>;
-export declare type ConditionsGroups<T extends string = string> = ReadonlyArray<ConditionsGroup<T>>;
-export declare type Conditions<T extends string = string> = ConditionsGroup<T> | ConditionsGroups<T>;
+export declare type Conditions<T extends string = string> = ConditionsArray<T> | ConditionsRecord<T>;
+export declare type ConditionsArray<T extends string = string> = ReadonlyArray<ConditionsRecord<T>>;
+export declare type ConditionsRecord<T extends string = string> = PartialTypedObject<T, FieldConditions>;
 export interface DatabaseOptions {
     readonly caseSensitiveSorting?: boolean;
     readonly migrations?: Migrations;
@@ -481,7 +481,7 @@ export interface ReactiveConfigAttached {
     readonly updateFn?: ReactiveUpdateFn<ExistingAttachedDocument>;
     readonly updateInterval?: number;
 }
-export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading;
+export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading<T>;
 export interface ReactiveResponseAsync<T> {
     readonly loaded: true;
     readonly loading: boolean;
@@ -489,11 +489,12 @@ export interface ReactiveResponseAsync<T> {
     readonly unsubscribe: ReactiveUnsubscribe;
     readonly value: T;
 }
-export interface ReactiveResponseLoading {
+export interface ReactiveResponseLoading<T> {
     readonly loaded: false;
     readonly loading: true;
     readonly refresh: ReactiveRefresh;
     readonly unsubscribe: ReactiveUnsubscribe;
+    readonly value?: T;
 }
 export interface ReactiveUpdateFn<T> {
     /**
@@ -530,25 +531,19 @@ export interface StoredAttachedDocument extends PutAttachedDocument {
 }
 export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 export declare type SubscriptionId = `subscription-id-${string}`;
-export declare const DateConditionSignVO: import("@skylib/functions/dist/types/core").ValidationObject<DateConditionSign>;
-export declare const DateConditionTypeVO: import("@skylib/functions/dist/types/core").ValidationObject<DateConditionType>;
-export declare const DateConditionUnitVO: import("@skylib/functions/dist/types/core").ValidationObject<DateConditionUnit>;
+export declare const DateConditionSignVO: import("@skylib/functions/dist/helpers").ValidationObject<DateConditionSign>;
+export declare const DateConditionTypeVO: import("@skylib/functions/dist/helpers").ValidationObject<DateConditionType>;
+export declare const DateConditionUnitVO: import("@skylib/functions/dist/helpers").ValidationObject<DateConditionUnit>;
 export declare const isDateConditionSign: is.Guard<DateConditionSign>;
 export declare const isDateConditionType: is.Guard<DateConditionType>;
 export declare const isDateConditionUnit: is.Guard<DateConditionUnit>;
 export declare const isDateCondition: is.Guard<DateCondition>;
 export declare const isFieldConditions: is.Guard<FieldConditions>;
-export declare const isConditionsGroup: is.Guard<ConditionsGroup>;
-export declare const isConditionsGroups: is.Guard<ConditionsGroups>;
+export declare const isConditionsRecord: is.Guard<ConditionsRecord>;
+export declare const isConditionsArray: is.Guard<ConditionsArray>;
 export declare const isConditions: is.Guard<Conditions>;
-export declare const isStoredAttachedDocument: is.Guard<Partial<unknown> & Required<{
-    _id: number;
-    _rev: number;
-}>>;
-export declare const isStoredAttachedDocuments: is.Guard<readonly (Partial<unknown> & Required<{
-    _id: number;
-    _rev: number;
-}>)[]>;
+export declare const isStoredAttachedDocument: is.Guard<object>;
+export declare const isStoredAttachedDocuments: is.Guard<readonly object[]>;
 /**
  * Creates conditions guard.
  *
@@ -562,14 +557,14 @@ export declare function isFieldConditionsFactory<T extends string>(_guard: is.Gu
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-export declare function isConditionsGroupFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsGroup>;
+export declare function isConditionsRecordFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsRecord>;
 /**
  * Creates conditions guard.
  *
  * @param _guard - Guard.
  * @returns Conditions guard.
  */
-export declare function isConditionsGroupsFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsGroups>;
+export declare function isConditionsArrayFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsArray>;
 /**
  * Creates conditions guard.
  *

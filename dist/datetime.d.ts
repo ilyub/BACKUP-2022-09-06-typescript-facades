@@ -1,3 +1,4 @@
+import type { NumStr } from "@skylib/functions/dist/types/core";
 export declare const datetime: import("@skylib/functions/dist/helpers").Facade<Facade, unknown>;
 export interface DateTime {
     /**
@@ -216,7 +217,7 @@ export interface Facade {
      * @param dt - Date/time.
      * @returns DateTime instance.
      */
-    readonly create: (dt?: Date | DateTime | string) => DateTime;
+    readonly create: (dt?: Date | DateTime | NumStr) => DateTime;
     /**
      * Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
      *

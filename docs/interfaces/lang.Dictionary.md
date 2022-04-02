@@ -60,7 +60,7 @@ ___
 
 ▸ `Readonly` **has**(`key`): key is never
 
-Checks if word exists.
+Checks that word exists.
 
 #### Parameters
 
