@@ -542,8 +542,8 @@ export declare const isFieldConditions: is.Guard<FieldConditions>;
 export declare const isConditionsRecord: is.Guard<ConditionsRecord>;
 export declare const isConditionsArray: is.Guard<ConditionsArray>;
 export declare const isConditions: is.Guard<Conditions>;
-export declare const isStoredAttachedDocument: is.Guard<object>;
-export declare const isStoredAttachedDocuments: is.Guard<readonly object[]>;
+export declare const isStoredAttachedDocument: is.Guard<StoredAttachedDocument>;
+export declare const isStoredAttachedDocuments: is.Guard<readonly StoredAttachedDocument[]>;
 /**
  * Creates conditions guard.
  *

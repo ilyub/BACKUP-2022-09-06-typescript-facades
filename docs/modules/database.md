@@ -470,7 +470,7 @@ ___
 
 ### isStoredAttachedDocument
 
-▸ **isStoredAttachedDocument**(`value`): value is object
+▸ **isStoredAttachedDocument**(`value`): value is StoredAttachedDocument
 
 #### Parameters
 
@@ -480,13 +480,13 @@ ___
 
 #### Returns
 
-value is object
+value is StoredAttachedDocument
 
 ___
 
 ### isStoredAttachedDocuments
 
-▸ **isStoredAttachedDocuments**(`value`): value is readonly object[]
+▸ **isStoredAttachedDocuments**(`value`): value is readonly StoredAttachedDocument[]
 
 #### Parameters
 
@@ -496,7 +496,7 @@ ___
 
 #### Returns
 
-value is readonly object[]
+value is readonly StoredAttachedDocument[]
 
 ___
 
