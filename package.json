@@ -102,7 +102,7 @@
     "vue-eslint-parser": "^8.3.0"
   },
   "peerDependencies": {
-    "@skylib/functions": "^0.1.28",
+    "@skylib/functions": "^0.1.29",
     "@skylib/typescript-types": "^0.1.2",
     "tslib": "^2.3.1"
   },
