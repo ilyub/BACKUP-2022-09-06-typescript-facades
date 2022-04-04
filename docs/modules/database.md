@@ -112,7 +112,7 @@ ___
 
 ### ConditionsRecord
 
-Ƭ **ConditionsRecord**<`T`\>: `PartialTypedObject`<`T`, [`FieldConditions`](../interfaces/database.FieldConditions.md)\>
+Ƭ **ConditionsRecord**<`T`\>: `PartialRecord`<`T`, [`FieldConditions`](../interfaces/database.FieldConditions.md)\>
 
 #### Type parameters
 

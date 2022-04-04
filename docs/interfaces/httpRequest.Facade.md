@@ -24,7 +24,7 @@ Sends HTTP request.
 | :------ | :------ | :------ |
 | `url` | `string` | URL. |
 | `method?` | [`HttpRequestMethod`](../modules/httpRequest.md#httprequestmethod) | HTTP method. |
-| `data?` | `Readonly`<`TypedObject`<`PropertyKey`, `unknown`\>\> | Data. |
+| `data?` | `IndexedObject`<`unknown`\> | Data. |
 | `headers?` | [`HttpHeaders`](../modules/httpRequest.md#httpheaders) | Headers. |
 
 #### Returns

@@ -1,5 +1,5 @@
 import * as is from "@skylib/functions/es/guards";
-import type { numbers, NumStr, PartialTypedObject } from "@skylib/functions/es/types/core";
+import type { numbers, NumStr, PartialRecord } from "@skylib/functions/es/types/core";
 export declare const database: import("@skylib/functions/es/helpers").Facade<Facade, unknown>;
 export interface Facade {
     /**
@@ -404,7 +404,7 @@ export interface FieldConditions {
 }
 export declare type Conditions<T extends string = string> = ConditionsArray<T> | ConditionsRecord<T>;
 export declare type ConditionsArray<T extends string = string> = ReadonlyArray<ConditionsRecord<T>>;
-export declare type ConditionsRecord<T extends string = string> = PartialTypedObject<T, FieldConditions>;
+export declare type ConditionsRecord<T extends string = string> = PartialRecord<T, FieldConditions>;
 export interface DatabaseOptions {
     readonly caseSensitiveSorting?: boolean;
     readonly migrations?: Migrations;

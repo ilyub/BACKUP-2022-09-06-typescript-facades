@@ -30,7 +30,7 @@ ___
 
 ### DictionaryAndWords
 
-Ƭ **DictionaryAndWords**<`T`\>: [`Dictionary`](../interfaces/lang.Dictionary.md) & `TypedObject`<[`Transforms`](lang.md#transforms)<`T`\>, `string`\>
+Ƭ **DictionaryAndWords**<`T`\>: [`Dictionary`](../interfaces/lang.Dictionary.md) & `Rec`<[`Transforms`](lang.md#transforms)<`T`\>, `string`\>
 
 #### Type parameters
 

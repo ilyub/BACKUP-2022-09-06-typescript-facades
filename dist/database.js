@@ -33,7 +33,7 @@ exports.isDateConditionSign = is.factory(is.enumeration, exports.DateConditionSi
 exports.isDateConditionType = is.factory(is.enumeration, exports.DateConditionTypeVO);
 exports.isDateConditionUnit = is.factory(is.enumeration, exports.DateConditionUnitVO);
 exports.isDateCondition = is.or.factory(is.string, is.tuple.factory(exports.isDateConditionType), is.tuple.factory(exports.isDateConditionType, exports.isDateConditionSign, is.number, exports.isDateConditionUnit));
-exports.isFieldConditions = is.object.of.factory({}, {
+exports.isFieldConditions = is.object.factory({}, {
     dateEq: exports.isDateCondition,
     dateGt: exports.isDateCondition,
     dateGte: exports.isDateCondition,
@@ -51,7 +51,7 @@ exports.isFieldConditions = is.object.of.factory({}, {
 exports.isConditionsRecord = is.factory(is.indexedObject.of, exports.isFieldConditions);
 exports.isConditionsArray = is.factory(is.array.of, exports.isConditionsRecord);
 exports.isConditions = is.or.factory(exports.isConditionsRecord, exports.isConditionsArray);
-exports.isStoredAttachedDocument = is.object.of.factory({ _id: is.number, _rev: is.number }, {});
+exports.isStoredAttachedDocument = is.object.factory({ _id: is.number, _rev: is.number }, {});
 exports.isStoredAttachedDocuments = is.factory(is.array.of, exports.isStoredAttachedDocument);
 /**
  * Creates conditions guard.

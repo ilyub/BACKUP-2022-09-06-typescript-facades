@@ -30,7 +30,7 @@ ___
 
 ### Icons
 
-Ƭ **Icons**<`T`\>: `TypedObject`<`T`, `string`\>
+Ƭ **Icons**<`T`\>: `Rec`<`T`, `string`\>
 
 #### Type parameters
 

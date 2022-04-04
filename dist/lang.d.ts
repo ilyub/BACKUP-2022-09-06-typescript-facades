@@ -1,4 +1,4 @@
-import type { NumStr, TypedObject } from "@skylib/functions/dist/types/core";
+import type { NumStr, Rec } from "@skylib/functions/dist/types/core";
 declare global {
     namespace facades {
         namespace lang {
@@ -49,7 +49,7 @@ export interface Dictionary {
      */
     readonly with: (search: string, replace: NumStr) => Facade;
 }
-export declare type DictionaryAndWords<T extends Word> = Dictionary & TypedObject<Transforms<T>, string>;
+export declare type DictionaryAndWords<T extends Word> = Dictionary & Rec<Transforms<T>, string>;
 export declare type Facade = DictionaryAndWords<Word>;
 export declare type Transforms<T extends string> = Capitalize<T> | Lowercase<T> | Uncapitalize<T> | Uppercase<T>;
 export declare type Word = keyof facades.lang.Word;

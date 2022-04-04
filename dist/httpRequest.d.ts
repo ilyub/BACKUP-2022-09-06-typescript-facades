@@ -1,4 +1,4 @@
-import type { IndexedObject, PartialTypedObject } from "@skylib/functions/dist/types/core";
+import type { IndexedObject, PartialRecord } from "@skylib/functions/dist/types/core";
 export declare const httpRequest: import("@skylib/functions/dist/helpers").Facade<Facade, unknown>;
 export interface Facade {
     /**
@@ -14,7 +14,7 @@ export interface Facade {
 }
 export declare type HttpHeader = "Accept-Language" | "Accept" | "Authorization" | "Content-Type";
 export declare const HttpHeaderVO: import("@skylib/functions/dist/helpers").ValidationObject<HttpHeader>;
-export declare type HttpHeaders = PartialTypedObject<HttpHeader, string>;
+export declare type HttpHeaders = PartialRecord<HttpHeader, string>;
 export declare type HttpRequestMethod = "delete" | "get" | "post";
 export declare const HttpRequestMethodVO: import("@skylib/functions/dist/helpers").ValidationObject<HttpRequestMethod>;
 //# sourceMappingURL=httpRequest.d.ts.map

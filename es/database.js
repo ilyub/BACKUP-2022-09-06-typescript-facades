@@ -29,7 +29,7 @@ export const isDateConditionSign = is.factory(is.enumeration, DateConditionSignV
 export const isDateConditionType = is.factory(is.enumeration, DateConditionTypeVO);
 export const isDateConditionUnit = is.factory(is.enumeration, DateConditionUnitVO);
 export const isDateCondition = is.or.factory(is.string, is.tuple.factory(isDateConditionType), is.tuple.factory(isDateConditionType, isDateConditionSign, is.number, isDateConditionUnit));
-export const isFieldConditions = is.object.of.factory({}, {
+export const isFieldConditions = is.object.factory({}, {
     dateEq: isDateCondition,
     dateGt: isDateCondition,
     dateGte: isDateCondition,
@@ -47,7 +47,7 @@ export const isFieldConditions = is.object.of.factory({}, {
 export const isConditionsRecord = is.factory(is.indexedObject.of, isFieldConditions);
 export const isConditionsArray = is.factory(is.array.of, isConditionsRecord);
 export const isConditions = is.or.factory(isConditionsRecord, isConditionsArray);
-export const isStoredAttachedDocument = is.object.of.factory({ _id: is.number, _rev: is.number }, {});
+export const isStoredAttachedDocument = is.object.factory({ _id: is.number, _rev: is.number }, {});
 export const isStoredAttachedDocuments = is.factory(is.array.of, isStoredAttachedDocument);
 /**
  * Creates conditions guard.
