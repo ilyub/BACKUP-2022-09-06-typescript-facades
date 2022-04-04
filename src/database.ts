@@ -6,7 +6,7 @@ import {
 import type {
   numbers,
   NumStr,
-  PartialTypedObject
+  PartialRecord
 } from "@skylib/functions/dist/types/core";
 
 import { uniqueId } from "./uniqueId";
@@ -532,7 +532,7 @@ export type ConditionsArray<T extends string = string> = ReadonlyArray<
   ConditionsRecord<T>
 >;
 
-export type ConditionsRecord<T extends string = string> = PartialTypedObject<
+export type ConditionsRecord<T extends string = string> = PartialRecord<
   T,
   FieldConditions
 >;
@@ -746,7 +746,7 @@ export const isDateCondition: is.Guard<DateCondition> = is.or.factory(
   )
 );
 
-export const isFieldConditions = is.object.of.factory<FieldConditions>(
+export const isFieldConditions = is.object.factory<FieldConditions>(
   {},
   {
     dateEq: isDateCondition,
@@ -781,7 +781,7 @@ export const isConditions: is.Guard<Conditions> = is.or.factory(
 );
 
 export const isStoredAttachedDocument =
-  is.object.of.factory<StoredAttachedDocument>(
+  is.object.factory<StoredAttachedDocument>(
     { _id: is.number, _rev: is.number } as const,
     {}
   );

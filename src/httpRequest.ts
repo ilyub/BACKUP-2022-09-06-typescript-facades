@@ -4,7 +4,7 @@ import {
 } from "@skylib/functions/dist/helpers";
 import type {
   IndexedObject,
-  PartialTypedObject
+  PartialRecord
 } from "@skylib/functions/dist/types/core";
 
 export const httpRequest = createFacade<Facade>("httpRequest", {});
@@ -40,7 +40,7 @@ export const HttpHeaderVO = createValidationObject<HttpHeader>({
   "Content-Type": "Content-Type"
 });
 
-export type HttpHeaders = PartialTypedObject<HttpHeader, string>;
+export type HttpHeaders = PartialRecord<HttpHeader, string>;
 
 export type HttpRequestMethod = "delete" | "get" | "post";
 

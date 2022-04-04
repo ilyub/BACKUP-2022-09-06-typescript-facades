@@ -1,5 +1,5 @@
 import { createFacade } from "@skylib/functions/dist/helpers";
-import type { NumStr, TypedObject } from "@skylib/functions/dist/types/core";
+import type { NumStr, Rec } from "@skylib/functions/dist/types/core";
 
 declare global {
   namespace facades {
@@ -55,7 +55,7 @@ export interface Dictionary {
 }
 
 export type DictionaryAndWords<T extends Word> = Dictionary &
-  TypedObject<Transforms<T>, string>;
+  Rec<Transforms<T>, string>;
 
 export type Facade = DictionaryAndWords<Word>;
 
