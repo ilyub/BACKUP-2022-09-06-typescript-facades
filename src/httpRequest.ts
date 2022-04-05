@@ -1,7 +1,4 @@
-import {
-  createFacade,
-  createValidationObject
-} from "@skylib/functions/dist/helpers";
+import { createFacade } from "@skylib/functions/dist/helpers";
 import type {
   IndexedObject,
   PartialRecord
@@ -33,19 +30,6 @@ export type HttpHeader =
   | "Authorization"
   | "Content-Type";
 
-export const HttpHeaderVO = createValidationObject<HttpHeader>({
-  "Accept": "Accept",
-  "Accept-Language": "Accept-Language",
-  "Authorization": "Authorization",
-  "Content-Type": "Content-Type"
-});
-
 export type HttpHeaders = PartialRecord<HttpHeader, string>;
 
 export type HttpRequestMethod = "delete" | "get" | "post";
-
-export const HttpRequestMethodVO = createValidationObject<HttpRequestMethod>({
-  delete: "delete",
-  get: "get",
-  post: "post"
-});

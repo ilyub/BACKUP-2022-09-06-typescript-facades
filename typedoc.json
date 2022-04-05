@@ -2,7 +2,8 @@
   "extends": "node_modules/@skylib/config/src/typedoc",
   "intentionallyNotExported": [
     "Context",
-    "Facade",
+    "Icon",
+    "Observer",
     "Word"
   ],
   "name": "Typescript facades",

@@ -19,31 +19,32 @@ import { showConfirm } from "@/showConfirm";
 import { testDelay } from "@/testDelay";
 import { uniqueId } from "@/uniqueId";
 
-test("facades", () => {
-  expect.hasAssertions();
-
-  const facades = {
-    compare,
-    database,
-    datetime,
-    facebook,
-    faker,
-    google,
-    handlePromise,
-    httpRequest,
-    icons,
-    inlineSearch,
-    lang,
-    progressReporter,
-    reactiveStorage,
-    showAlert,
-    showConfirm,
-    testDelay,
-    uniqueId
-  };
-
-  for (const [name, facade] of o.entries(facades))
-    expect(() => reflect.get(facade, "a")).toThrow(
-      new Error(`Missing facade implementation: ${name}`)
-    );
+test.each(
+  o
+    .entries<string, object>({
+      compare,
+      database,
+      datetime,
+      facebook,
+      faker,
+      google,
+      handlePromise,
+      httpRequest,
+      icons,
+      inlineSearch,
+      lang,
+      progressReporter,
+      reactiveStorage,
+      showAlert,
+      showConfirm,
+      testDelay,
+      uniqueId
+    })
+    .map(([name, facade]) => {
+      return { facade, name };
+    })
+)("facades", ({ facade, name }) => {
+  expect(() => reflect.get(facade, "a")).toThrow(
+    new Error(`Missing facade implementation: ${name}`)
+  );
 });

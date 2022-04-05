@@ -6,8 +6,8 @@ export interface Facade {
   /**
    * Generates random boolean.
    *
-   * @param trueWeight - Weight.
-   * @param falseWeight - Weight.
+   * @param trueWeight - Weight of the _true_ value.
+   * @param falseWeight - Weight of the _false_ value.
    * @returns Random boolean.
    */
   readonly boolean: (trueWeight?: number, falseWeight?: number) => boolean;

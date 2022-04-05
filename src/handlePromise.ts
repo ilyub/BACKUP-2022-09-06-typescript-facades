@@ -1,41 +1,11 @@
-import * as fn from "@skylib/functions/dist/function";
-import * as is from "@skylib/functions/dist/guards";
-import type { ValidationObject } from "@skylib/functions/dist/helpers";
-import {
-  createFacade,
-  createValidationObject
-} from "@skylib/functions/dist/helpers";
+import { createFacade } from "@skylib/functions/dist/helpers";
 import type { AsyncPromise } from "@skylib/functions/dist/types/function";
 
-export const handlePromise = fn.run(() => {
-  const TaskTypeVO = createValidationObject<TaskType>({
-    createDb: "createDb",
-    dbRequest: "dbRequest",
-    destroyDb: "destroyDb",
-    httpRequest: "httpRequest",
-    navigation: "navigation"
-  });
-
-  const isTaskType = is.factory(is.enumeration, TaskTypeVO);
-
-  const isTaskTypeU = is.or.factory(isTaskType, is.undefined);
-
-  return createFacade<Facade, Extension>("handlePromise", {
-    TaskTypeVO,
-    isTaskType,
-    isTaskTypeU
-  });
-});
-
-export interface Extension {
-  TaskTypeVO: ValidationObject<TaskType>;
-  isTaskType: is.Guard<TaskType>;
-  isTaskTypeU: is.Guard<TaskType | undefined>;
-}
+export const handlePromise = createFacade<Facade>("handlePromise", {});
 
 export interface Facade {
   /**
-   * Waits for all active promises.
+   * Waits for all promises.
    *
    * @returns Promise.
    */
@@ -49,7 +19,7 @@ export interface Facade {
   /**
    * Handles promise.
    *
-   * @param promiseAsync - Promise or asynchronous function.
+   * @param promiseAsync - Promise or async function.
    * @param errorMessage - Error message (used to alert user on error).
    */
   readonly silent: <T>(
@@ -59,18 +29,18 @@ export interface Facade {
   /**
    * Handles promise with progress reporting.
    *
-   * @param promiseAsync - Promise or asynchronous function.
+   * @param promiseAsync - Promise or async function.
    * @param type - Type (determines expected duration for progress reporting).
    * @param errorMessage - Error message (used to alert user on error).
    */
   readonly verbose: <T>(
     promiseAsync: AsyncPromise<T>,
-    type: TaskType,
+    type: Type,
     errorMessage?: string
   ) => void;
 }
 
-export type TaskType =
+export type Type =
   | "createDb"
   | "dbRequest"
   | "destroyDb"

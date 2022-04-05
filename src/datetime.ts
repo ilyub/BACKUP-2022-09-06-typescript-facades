@@ -13,9 +13,9 @@ export interface DateTime {
    */
   readonly add: (amount: number, unit: Unit) => DateTime;
   /**
-   * Self-clones.
+   * Clones self.
    *
-   * @returns Cloned DateTime instance.
+   * @returns DateTime instance.
    */
   readonly clone: () => DateTime;
   /**
@@ -31,13 +31,10 @@ export interface DateTime {
    */
   readonly dayOfWeek: () => number;
   /**
-   * Formats date/time. Extended date-fns notation:
-   * - HHHH = hh or HH depending on locale.
-   * - HHH = h or H depending on locale.
-   * - A = a or empty string depending on locale.
+   * Formats date.
    *
    * @param fmt - Format.
-   * @returns - Date/time as formatted string.
+   * @returns Formatted string.
    */
   readonly format: (fmt: string) => string;
   /**
@@ -47,40 +44,40 @@ export interface DateTime {
    */
   readonly hours: () => number;
   /**
-   * Compares two DateTime instances up to day of month.
+   * Compares two dates up to day of month.
    *
-   * @param dt - Date/time.
-   * @returns _True_ if DateTime instances are equal, _false_ otherwise.
+   * @param date - Date.
+   * @returns _True_ if dates are equal, _false_ otherwise.
    */
-  readonly isSameDayOfMonth: (dt: DateTime) => boolean;
+  readonly isSameDayOfMonth: (date: DateTime) => boolean;
   /**
-   * Compares two DateTime instances up to hours.
+   * Compares two dates up to hours.
    *
-   * @param dt - Date/time.
-   * @returns _True_ if DateTime instances are equal, _false_ otherwise.
+   * @param date - Date.
+   * @returns _True_ if dates are equal, _false_ otherwise.
    */
-  readonly isSameHour: (dt: DateTime) => boolean;
+  readonly isSameHour: (date: DateTime) => boolean;
   /**
-   * Compares two DateTime instances up to minutes.
+   * Compares two dates up to minutes.
    *
-   * @param dt - Date/time.
-   * @returns _True_ if DateTime instances are equal, _false_ otherwise.
+   * @param date - Date.
+   * @returns _True_ if dates are equal, _false_ otherwise.
    */
-  readonly isSameMinute: (dt: DateTime) => boolean;
+  readonly isSameMinute: (date: DateTime) => boolean;
   /**
-   * Compares two DateTime instances up to month.
+   * Compares two dates up to month.
    *
-   * @param dt - Date/time.
-   * @returns _True_ if DateTime instances are equal, _false_ otherwise.
+   * @param date - Date.
+   * @returns _True_ if dates are equal, _false_ otherwise.
    */
-  readonly isSameMonth: (dt: DateTime) => boolean;
+  readonly isSameMonth: (date: DateTime) => boolean;
   /**
-   * Compares two DateTime instances up to year.
+   * Compares two dates up to year.
    *
-   * @param dt - Date/time.
-   * @returns _True_ if DateTime instances are equal, _false_ otherwise.
+   * @param date - Date.
+   * @returns _True_ if dates are equal, _false_ otherwise.
    */
-  readonly isSameYear: (dt: DateTime) => boolean;
+  readonly isSameYear: (date: DateTime) => boolean;
   /**
    * Returns minutes.
    *
@@ -137,36 +134,48 @@ export interface DateTime {
    */
   readonly setMonth: (month: number) => DateTime;
   /**
-   * Sets date to start of day.
+   * Sets date to the start of day.
    *
    * @returns Self.
    */
   readonly setStartOfDay: () => DateTime;
   /**
-   * Sets date to start of hour.
+   * Sets date to the start of hour.
    *
    * @returns Self.
    */
   readonly setStartOfHour: () => DateTime;
   /**
-   * Sets date to start of month.
+   * Sets date to the start of minute.
+   *
+   * @returns Self.
+   */
+  readonly setStartOfMinute: () => DateTime;
+  /**
+   * Sets date to the start of month.
    *
    * @returns Self.
    */
   readonly setStartOfMonth: () => DateTime;
   /**
-   * Sets date to start of week.
+   * Sets date to the start of week.
    *
    * @param weekStartsOn - Start of week (Sunday = 0, Monday = 1).
    * @returns Self.
    */
   readonly setStartOfWeek: (weekStartsOn: 0 | 1) => DateTime;
   /**
-   * Sets date to start of week.
+   * Sets date to the start of week.
    *
    * @returns Self.
    */
   readonly setStartOfWeekLocale: () => DateTime;
+  /**
+   * Sets date to the start of year.
+   *
+   * @returns Self.
+   */
+  readonly setStartOfYear: () => DateTime;
   /**
    * Sets year.
    *
@@ -183,25 +192,25 @@ export interface DateTime {
    */
   readonly sub: (amount: number, unit: Unit) => DateTime;
   /**
-   * Returns date/time as a Date object.
+   * Returns date as a Date object.
    *
    * @returns Date object.
    */
   readonly toDate: () => Date;
   /**
-   * Returns date/time as "yyyy-MM-dd HH:mm:ss" formatted string.
+   * Returns date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
    *
    * @returns Formatted string.
    */
   readonly toString: () => string;
   /**
-   * Returns date/time as a number of milliseconds.
+   * Returns date as a number of milliseconds.
    *
    * @returns Number of milliseconds.
    */
   readonly toTime: () => number;
   /**
-   * Returns date/time as a number of seconds.
+   * Returns date as a number of seconds.
    *
    * @returns Number of seconds.
    */
@@ -218,35 +227,35 @@ export interface Facade {
   /**
    * Creates DateTime instance.
    *
-   * @param dt - Date/time.
+   * @param date - Date.
    * @returns DateTime instance.
    */
-  readonly create: (dt?: Date | DateTime | NumStr) => DateTime;
+  readonly create: (date?: Date | DateTime | NumStr) => DateTime;
   /**
-   * Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
+   * Returns current date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
    *
-   * @returns Current date/time.
+   * @returns Formatted string.
    */
   readonly now: () => string;
   /**
-   * Returns current date/time as a number of milliseconds.
+   * Returns current date as a number of milliseconds.
    *
-   * @returns Current date/time.
+   * @returns Number of milliseconds.
    */
   readonly time: () => number;
   /**
-   * Returns current date/time as a number of seconds.
+   * Returns current date as a number of seconds.
    *
-   * @returns Current date/time.
+   * @returns Number of seconds.
    */
   readonly timeSec: () => number;
   /**
    * Validates date string.
    *
-   * @param dt - Date/time.
-   * @returns _True_ if date/time is valid, _false_ otherwise.
+   * @param date - Date.
+   * @returns _True_ if date is valid, _false_ otherwise.
    */
-  readonly validate: (dt: string) => boolean;
+  readonly validate: (date: string) => boolean;
 }
 
 export type Unit =
