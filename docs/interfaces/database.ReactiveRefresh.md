@@ -10,7 +10,7 @@
 
 ▸ **ReactiveRefresh**(): `Promise`<`void`\>
 
-Refreshes from reactive query.
+Refreshes reactive query.
 
 #### Returns
 

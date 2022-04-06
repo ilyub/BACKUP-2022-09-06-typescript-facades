@@ -16,8 +16,6 @@
 
 ### Variables
 
-- [HttpHeaderVO](httpRequest.md#httpheadervo)
-- [HttpRequestMethodVO](httpRequest.md#httprequestmethodvo)
 - [httpRequest](httpRequest.md#httprequest)
 
 ## Type aliases
@@ -39,18 +37,6 @@ ___
 Ƭ **HttpRequestMethod**: ``"delete"`` \| ``"get"`` \| ``"post"``
 
 ## Variables
-
-### HttpHeaderVO
-
-• `Const` **HttpHeaderVO**: `ValidationObject`<[`HttpHeader`](httpRequest.md#httpheader)\>
-
-___
-
-### HttpRequestMethodVO
-
-• `Const` **HttpRequestMethodVO**: `ValidationObject`<[`HttpRequestMethod`](httpRequest.md#httprequestmethod)\>
-
-___
 
 ### httpRequest
 

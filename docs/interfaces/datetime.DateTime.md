@@ -29,9 +29,11 @@
 - [setMonth](datetime.DateTime.md#setmonth)
 - [setStartOfDay](datetime.DateTime.md#setstartofday)
 - [setStartOfHour](datetime.DateTime.md#setstartofhour)
+- [setStartOfMinute](datetime.DateTime.md#setstartofminute)
 - [setStartOfMonth](datetime.DateTime.md#setstartofmonth)
 - [setStartOfWeek](datetime.DateTime.md#setstartofweek)
 - [setStartOfWeekLocale](datetime.DateTime.md#setstartofweeklocale)
+- [setStartOfYear](datetime.DateTime.md#setstartofyear)
 - [setYear](datetime.DateTime.md#setyear)
 - [sub](datetime.DateTime.md#sub)
 - [toDate](datetime.DateTime.md#todate)
@@ -67,13 +69,13 @@ ___
 
 ▸ `Readonly` **clone**(): [`DateTime`](datetime.DateTime.md)
 
-Self-clones.
+Clones self.
 
 #### Returns
 
 [`DateTime`](datetime.DateTime.md)
 
-Cloned DateTime instance.
+DateTime instance.
 
 ___
 
@@ -109,10 +111,7 @@ ___
 
 ▸ `Readonly` **format**(`fmt`): `string`
 
-Formats date/time. Extended date-fns notation:
-- HHHH = hh or HH depending on locale.
-- HHH = h or H depending on locale.
-- A = a or empty string depending on locale.
+Formats date.
 
 #### Parameters
 
@@ -124,7 +123,7 @@ Formats date/time. Extended date-fns notation:
 
 `string`
 
-- Date/time as formatted string.
+Formatted string.
 
 ___
 
@@ -144,101 +143,101 @@ ___
 
 ### isSameDayOfMonth
 
-▸ `Readonly` **isSameDayOfMonth**(`dt`): `boolean`
+▸ `Readonly` **isSameDayOfMonth**(`date`): `boolean`
 
-Compares two DateTime instances up to day of month.
+Compares two dates up to day of month.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt` | [`DateTime`](datetime.DateTime.md) | Date/time. |
+| `date` | [`DateTime`](datetime.DateTime.md) | Date. |
 
 #### Returns
 
 `boolean`
 
-_True_ if DateTime instances are equal, _false_ otherwise.
+_True_ if dates are equal, _false_ otherwise.
 
 ___
 
 ### isSameHour
 
-▸ `Readonly` **isSameHour**(`dt`): `boolean`
+▸ `Readonly` **isSameHour**(`date`): `boolean`
 
-Compares two DateTime instances up to hours.
+Compares two dates up to hours.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt` | [`DateTime`](datetime.DateTime.md) | Date/time. |
+| `date` | [`DateTime`](datetime.DateTime.md) | Date. |
 
 #### Returns
 
 `boolean`
 
-_True_ if DateTime instances are equal, _false_ otherwise.
+_True_ if dates are equal, _false_ otherwise.
 
 ___
 
 ### isSameMinute
 
-▸ `Readonly` **isSameMinute**(`dt`): `boolean`
+▸ `Readonly` **isSameMinute**(`date`): `boolean`
 
-Compares two DateTime instances up to minutes.
+Compares two dates up to minutes.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt` | [`DateTime`](datetime.DateTime.md) | Date/time. |
+| `date` | [`DateTime`](datetime.DateTime.md) | Date. |
 
 #### Returns
 
 `boolean`
 
-_True_ if DateTime instances are equal, _false_ otherwise.
+_True_ if dates are equal, _false_ otherwise.
 
 ___
 
 ### isSameMonth
 
-▸ `Readonly` **isSameMonth**(`dt`): `boolean`
+▸ `Readonly` **isSameMonth**(`date`): `boolean`
 
-Compares two DateTime instances up to month.
+Compares two dates up to month.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt` | [`DateTime`](datetime.DateTime.md) | Date/time. |
+| `date` | [`DateTime`](datetime.DateTime.md) | Date. |
 
 #### Returns
 
 `boolean`
 
-_True_ if DateTime instances are equal, _false_ otherwise.
+_True_ if dates are equal, _false_ otherwise.
 
 ___
 
 ### isSameYear
 
-▸ `Readonly` **isSameYear**(`dt`): `boolean`
+▸ `Readonly` **isSameYear**(`date`): `boolean`
 
-Compares two DateTime instances up to year.
+Compares two dates up to year.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt` | [`DateTime`](datetime.DateTime.md) | Date/time. |
+| `date` | [`DateTime`](datetime.DateTime.md) | Date. |
 
 #### Returns
 
 `boolean`
 
-_True_ if DateTime instances are equal, _false_ otherwise.
+_True_ if dates are equal, _false_ otherwise.
 
 ___
 
@@ -395,7 +394,7 @@ ___
 
 ▸ `Readonly` **setStartOfDay**(): [`DateTime`](datetime.DateTime.md)
 
-Sets date to start of day.
+Sets date to the start of day.
 
 #### Returns
 
@@ -409,7 +408,21 @@ ___
 
 ▸ `Readonly` **setStartOfHour**(): [`DateTime`](datetime.DateTime.md)
 
-Sets date to start of hour.
+Sets date to the start of hour.
+
+#### Returns
+
+[`DateTime`](datetime.DateTime.md)
+
+Self.
+
+___
+
+### setStartOfMinute
+
+▸ `Readonly` **setStartOfMinute**(): [`DateTime`](datetime.DateTime.md)
+
+Sets date to the start of minute.
 
 #### Returns
 
@@ -423,7 +436,7 @@ ___
 
 ▸ `Readonly` **setStartOfMonth**(): [`DateTime`](datetime.DateTime.md)
 
-Sets date to start of month.
+Sets date to the start of month.
 
 #### Returns
 
@@ -437,7 +450,7 @@ ___
 
 ▸ `Readonly` **setStartOfWeek**(`weekStartsOn`): [`DateTime`](datetime.DateTime.md)
 
-Sets date to start of week.
+Sets date to the start of week.
 
 #### Parameters
 
@@ -457,7 +470,21 @@ ___
 
 ▸ `Readonly` **setStartOfWeekLocale**(): [`DateTime`](datetime.DateTime.md)
 
-Sets date to start of week.
+Sets date to the start of week.
+
+#### Returns
+
+[`DateTime`](datetime.DateTime.md)
+
+Self.
+
+___
+
+### setStartOfYear
+
+▸ `Readonly` **setStartOfYear**(): [`DateTime`](datetime.DateTime.md)
+
+Sets date to the start of year.
 
 #### Returns
 
@@ -512,7 +539,7 @@ ___
 
 ▸ `Readonly` **toDate**(): `Date`
 
-Returns date/time as a Date object.
+Returns date as a Date object.
 
 #### Returns
 
@@ -526,7 +553,7 @@ ___
 
 ▸ `Readonly` **toString**(): `string`
 
-Returns date/time as "yyyy-MM-dd HH:mm:ss" formatted string.
+Returns date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
 
 #### Returns
 
@@ -540,7 +567,7 @@ ___
 
 ▸ `Readonly` **toTime**(): `number`
 
-Returns date/time as a number of milliseconds.
+Returns date as a number of milliseconds.
 
 #### Returns
 
@@ -554,7 +581,7 @@ ___
 
 ▸ `Readonly` **toTimeSec**(): `number`
 
-Returns date/time as a number of seconds.
+Returns date as a number of seconds.
 
 #### Returns
 

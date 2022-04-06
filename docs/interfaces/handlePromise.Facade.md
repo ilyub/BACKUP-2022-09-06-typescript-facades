@@ -19,7 +19,7 @@
 
 ▸ `Readonly` **runAll**(): `Promise`<`void`\>
 
-Waits for all active promises.
+Waits for all promises.
 
 #### Returns
 
@@ -59,7 +59,7 @@ Handles promise.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `promiseAsync` | `AsyncPromise`<`T`, `nevers`\> | Promise or asynchronous function. |
+| `promiseAsync` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 
 #### Returns
@@ -84,8 +84,8 @@ Handles promise with progress reporting.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `promiseAsync` | `AsyncPromise`<`T`, `nevers`\> | Promise or asynchronous function. |
-| `type` | [`TaskType`](../modules/handlePromise.md#tasktype) | Type (determines expected duration for progress reporting). |
+| `promiseAsync` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
+| `type` | [`Type`](../modules/handlePromise.md#type) | Type (determines expected duration for progress reporting). |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 
 #### Returns

@@ -1,25 +1,59 @@
-import * as is from "@skylib/functions/es/guards";
 import type { numbers, NumStr, PartialRecord } from "@skylib/functions/es/types/core";
 export declare const database: import("@skylib/functions/es/helpers").Facade<Facade, unknown>;
-export interface Facade {
+export interface AttachedChangesHandler {
     /**
-     * Creates database.
+     * Changes handler.
      *
-     * @param name - Database name.
-     * @param options - Options.
-     * @returns Database.
+     * @param doc - Changed document.
      */
-    readonly create: (name: string, options?: DatabaseOptions) => Database;
+    (doc: ExistingAttachedDocument): void;
 }
-export interface Database {
+export declare type AttachedSubscriptionId = `attached-subscription-id-${string}`;
+export interface BaseBulkAttachedDocument extends BasePutAttachedDocument {
+    readonly parentDoc: ExistingDocument;
+}
+export interface BaseExistingAttachedDocument extends BasePutAttachedDocument {
+    readonly _id: number;
+    readonly _rev: number;
+    readonly parentDoc: ExistingDocument;
+}
+export interface BaseExistingDocument extends BasePutDocument {
+    readonly _id: string;
+    readonly _rev: string;
+}
+export interface BasePutAttachedDocument {
+    readonly _deleted?: true;
+    readonly _id?: number;
+    readonly _rev?: number;
+    readonly parentDoc?: ExistingDocument;
+}
+export interface BasePutDocument {
+    readonly _deleted?: true;
+    readonly _id?: string;
+    readonly _rev?: string;
+    readonly attachedDocs?: StoredAttachedDocuments;
+    readonly lastAttachedDocs?: numbers;
+}
+export interface BaseStoredAttachedDocument extends BasePutAttachedDocument {
+    readonly _id: number;
+    readonly _rev: number;
+}
+export interface BulkAttachedDocument extends BaseBulkAttachedDocument {
+    readonly [K: string]: unknown;
+}
+export declare type BulkAttachedDocuments = readonly BulkAttachedDocument[];
+export interface ChangesHandler {
     /**
-     * Creates or updates multiple attached documents.
+     * Changes handler.
      *
-     * @param parentId - Parent ID.
-     * @param docs - Attached documents.
-     * @returns Responses.
+     * @param doc - Changed document.
      */
-    readonly bulkAttachedDocs: (parentId: string, docs: PutAttachedDocuments) => Promise<PutAttachedResponses>;
+    (doc: ExistingDocument): void;
+}
+export declare type Conditions<T extends string = string> = ConditionsArray<T> | ConditionsRecord<T>;
+export declare type ConditionsArray<T extends string = string> = ReadonlyArray<ConditionsRecord<T>>;
+export declare type ConditionsRecord<T extends string = string> = PartialRecord<T, FieldConditions>;
+export interface Database {
     /**
      * Creates or updates multiple documents.
      *
@@ -28,12 +62,12 @@ export interface Database {
      */
     readonly bulkDocs: (docs: PutDocuments) => Promise<PutResponses>;
     /**
-     * Updates multiple attached documents.
+     * Creates or updates multiple attached documents.
      *
      * @param docs - Attached documents.
      * @returns Responses.
      */
-    readonly bulkExistingAttachedDocs: (docs: ExistingAttachedDocuments) => Promise<PutAttachedResponses>;
+    readonly bulkDocsAttached: (docs: BulkAttachedDocuments) => Promise<PutAttachedResponses>;
     /**
      * Counts documents.
      *
@@ -80,20 +114,20 @@ export interface Database {
      */
     readonly getAttached: (id: number, parentId: string) => Promise<ExistingAttachedDocument>;
     /**
-     * Fetches attached document if exists.
-     *
-     * @param id - ID.
-     * @param parentId - Parent ID.
-     * @returns Attached document if exists, _undefined_ otherwise.
-     */
-    readonly getAttachedIfExists: (id: number, parentId: string) => Promise<ExistingAttachedDocument | undefined>;
-    /**
      * Fetches document if exists.
      *
      * @param id - ID.
      * @returns Document if exists, _undefined_ otherwise.
      */
     readonly getIfExists: (id: string) => Promise<ExistingDocument | undefined>;
+    /**
+     * Fetches attached document if exists.
+     *
+     * @param id - ID.
+     * @param parentId - Parent ID.
+     * @returns Attached document if exists, _undefined_ otherwise.
+     */
+    readonly getIfExistsAttached: (id: number, parentId: string) => Promise<ExistingAttachedDocument | undefined>;
     /**
      * Puts document.
      *
@@ -110,13 +144,13 @@ export interface Database {
      */
     readonly putAttached: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse>;
     /**
-     * Puts attached document if not exists.
+     * Puts attached documents.
      *
      * @param parentId - Parent ID.
-     * @param doc - Attached document.
-     * @returns Response.
+     * @param docs - Attached documents.
+     * @returns Responses.
      */
-    readonly putAttachedIfNotExists: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse | undefined>;
+    readonly putAttachedBulk: (parentId: string, docs: PutAttachedDocuments) => Promise<PutAttachedResponses>;
     /**
      * Puts document if not exists.
      *
@@ -124,6 +158,14 @@ export interface Database {
      * @returns Response.
      */
     readonly putIfNotExists: (doc: PutDocument) => Promise<PutResponse | undefined>;
+    /**
+     * Puts attached document if not exists.
+     *
+     * @param parentId - Parent ID.
+     * @param doc - Attached document.
+     * @returns Response.
+     */
+    readonly putIfNotExistsAttached: (parentId: string, doc: PutAttachedDocument) => Promise<PutAttachedResponse | undefined>;
     /**
      * Queries database.
      *
@@ -149,13 +191,6 @@ export interface Database {
      */
     readonly reactiveCount: (config: ReactiveConfig) => ReactiveResponse<number>;
     /**
-     * Counts documents.
-     *
-     * @param config - Configuration.
-     * @returns The number of documents.
-     */
-    readonly reactiveCountAsync: (config: ReactiveConfig) => Promise<ReactiveResponseAsync<number>>;
-    /**
      * Counts attached documents.
      *
      * @param config - Configuration.
@@ -163,26 +198,12 @@ export interface Database {
      */
     readonly reactiveCountAttached: (config: ReactiveConfigAttached) => ReactiveResponse<number>;
     /**
-     * Counts attached documents.
-     *
-     * @param config - Configuration.
-     * @returns The number of attached documents.
-     */
-    readonly reactiveCountAttachedAsync: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAsync<number>>;
-    /**
      * Checks that document exists.
      *
      * @param id - ID.
      * @returns _True_ if document exists, _false_ otherwise.
      */
     readonly reactiveExists: (id: string) => ReactiveResponse<boolean>;
-    /**
-     * Checks that document exists.
-     *
-     * @param id - ID.
-     * @returns _True_ if document exists, _false_ otherwise.
-     */
-    readonly reactiveExistsAsync: (id: string) => Promise<ReactiveResponseAsync<boolean>>;
     /**
      * Checks that attached document exists.
      *
@@ -192,27 +213,12 @@ export interface Database {
      */
     readonly reactiveExistsAttached: (id: number, parentId: string) => ReactiveResponse<boolean>;
     /**
-     * Checks that attached document exists.
-     *
-     * @param id - ID.
-     * @param parentId - Parent ID.
-     * @returns _True_ if attached document exists, _false_ otherwise.
-     */
-    readonly reactiveExistsAttachedAsync: (id: number, parentId: string) => Promise<ReactiveResponseAsync<boolean>>;
-    /**
      * Fetches document.
      *
      * @param id - ID.
      * @returns Document.
      */
     readonly reactiveGet: (id: string) => ReactiveResponse<ExistingDocument>;
-    /**
-     * Fetches document.
-     *
-     * @param id - ID.
-     * @returns Document.
-     */
-    readonly reactiveGetAsync: (id: string) => Promise<ReactiveResponseAsync<ExistingDocument>>;
     /**
      * Fetches attached document.
      *
@@ -222,30 +228,6 @@ export interface Database {
      */
     readonly reactiveGetAttached: (id: number, parentId: string) => ReactiveResponse<ExistingAttachedDocument>;
     /**
-     * Fetches attached document.
-     *
-     * @param id - ID.
-     * @param parentId - Parent ID.
-     * @returns Attached document.
-     */
-    readonly reactiveGetAttachedAsync: (id: number, parentId: string) => Promise<ReactiveResponseAsync<ExistingAttachedDocument>>;
-    /**
-     * Fetches attached document if exists.
-     *
-     * @param id - ID.
-     * @param parentId - Parent ID.
-     * @returns Attached document if exists, _undefined_ otherwise.
-     */
-    readonly reactiveGetAttachedIfExists: (id: number, parentId: string) => ReactiveResponse<ExistingAttachedDocument | undefined>;
-    /**
-     * Fetches attached document if exists.
-     *
-     * @param id - ID.
-     * @param parentId - Parent ID.
-     * @returns Attached document if exists, _undefined_ otherwise.
-     */
-    readonly reactiveGetAttachedIfExistsAsync: (id: number, parentId: string) => Promise<ReactiveResponseAsync<ExistingAttachedDocument | undefined>>;
-    /**
      * Fetches document if exists.
      *
      * @param id - ID.
@@ -253,12 +235,13 @@ export interface Database {
      */
     readonly reactiveGetIfExists: (id: string) => ReactiveResponse<ExistingDocument | undefined>;
     /**
-     * Fetches document if exists.
+     * Fetches attached document if exists.
      *
      * @param id - ID.
-     * @returns Document if exists, _undefined_ otherwise.
+     * @param parentId - Parent ID.
+     * @returns Attached document if exists, _undefined_ otherwise.
      */
-    readonly reactiveGetIfExistsAsync: (id: string) => Promise<ReactiveResponseAsync<ExistingDocument | undefined>>;
+    readonly reactiveGetIfExistsAttached: (id: number, parentId: string) => ReactiveResponse<ExistingAttachedDocument | undefined>;
     /**
      * Queries database.
      *
@@ -270,23 +253,9 @@ export interface Database {
      * Queries database.
      *
      * @param config - Configuration.
-     * @returns Documents.
-     */
-    readonly reactiveQueryAsync: (config: ReactiveConfig) => Promise<ReactiveResponseAsync<ExistingDocuments>>;
-    /**
-     * Queries database.
-     *
-     * @param config - Configuration.
      * @returns Attached documents.
      */
     readonly reactiveQueryAttached: (config: ReactiveConfigAttached) => ReactiveResponse<ExistingAttachedDocuments>;
-    /**
-     * Queries database.
-     *
-     * @param config - Configuration.
-     * @returns Attached documents.
-     */
-    readonly reactiveQueryAttachedAsync: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAsync<ExistingAttachedDocuments>>;
     /**
      * Returns the number of unsettled documents.
      *
@@ -295,26 +264,12 @@ export interface Database {
      */
     readonly reactiveUnsettled: (config: ReactiveConfig) => ReactiveResponse<number>;
     /**
-     * Returns the number of unsettled documents.
-     *
-     * @param config - Configuration.
-     * @returns The number of unsettled documents.
-     */
-    readonly reactiveUnsettledAsync: (config: ReactiveConfig) => Promise<ReactiveResponseAsync<number>>;
-    /**
      * Returns the number of unsettled attached documents.
      *
      * @param config - Configuration.
      * @returns The number of unsettled attached documents.
      */
     readonly reactiveUnsettledAttached: (config: ReactiveConfigAttached) => ReactiveResponse<number>;
-    /**
-     * Returns the number of unsettled attached documents.
-     *
-     * @param config - Configuration.
-     * @returns The number of unsettled attached documents.
-     */
-    readonly reactiveUnsettledAttachedAsync: (config: ReactiveConfigAttached) => Promise<ReactiveResponseAsync<number>>;
     /**
      * Resets database.
      *
@@ -366,27 +321,33 @@ export interface Database {
      */
     readonly unsubscribeAttached: (id: AttachedSubscriptionId) => void;
 }
-export interface AttachedChangesHandler {
-    /**
-     * Changes handler.
-     *
-     * @param doc - Changed document.
-     */
-    (doc: ExistingAttachedDocument): void;
-}
-export declare type AttachedSubscriptionId = `attached-subscription-id-${string}`;
-export interface ChangesHandler {
-    /**
-     * Changes handler.
-     *
-     * @param doc - Changed document.
-     */
-    (doc: ExistingDocument): void;
+export interface DatabaseOptions {
+    readonly caseSensitiveSorting?: boolean;
+    readonly migrations?: Migrations;
+    readonly retries?: number;
 }
 export declare type DateCondition = string | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit] | readonly [DateConditionType];
 export declare type DateConditionSign = "-" | "+";
 export declare type DateConditionType = "endOfDay" | "endOfHour" | "endOfMonth" | "endOfWeek" | "now" | "startOfDay" | "startOfHour" | "startOfMonth" | "startOfWeek";
 export declare type DateConditionUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
+export interface ExistingAttachedDocument extends BaseExistingAttachedDocument {
+    readonly [K: string]: unknown;
+}
+export declare type ExistingAttachedDocuments = readonly ExistingAttachedDocument[];
+export interface ExistingDocument extends BaseExistingDocument {
+    readonly [K: string]: unknown;
+}
+export declare type ExistingDocuments = readonly ExistingDocument[];
+export interface Facade {
+    /**
+     * Creates database.
+     *
+     * @param name - Database name.
+     * @param options - Options.
+     * @returns Database.
+     */
+    readonly create: (name: string, options?: DatabaseOptions) => Database;
+}
 export interface FieldConditions {
     readonly dateEq?: DateCondition;
     readonly dateGt?: DateCondition;
@@ -402,30 +363,10 @@ export interface FieldConditions {
     readonly lte?: NumStr;
     readonly neq?: unknown;
 }
-export declare type Conditions<T extends string = string> = ConditionsArray<T> | ConditionsRecord<T>;
-export declare type ConditionsArray<T extends string = string> = ReadonlyArray<ConditionsRecord<T>>;
-export declare type ConditionsRecord<T extends string = string> = PartialRecord<T, FieldConditions>;
-export interface DatabaseOptions {
-    readonly caseSensitiveSorting?: boolean;
-    readonly migrations?: Migrations;
-    readonly retries?: number;
-}
-export interface ExistingAttachedDocument extends PutAttachedDocument {
-    readonly _id: number;
-    readonly _rev: number;
-    readonly parentDoc: ExistingDocument;
-}
-export declare type ExistingAttachedDocuments = readonly ExistingAttachedDocument[];
-export interface ExistingDocument extends PutDocument {
-    readonly _id: string;
-    readonly _rev: string;
-}
-export declare type ExistingDocuments = readonly ExistingDocument[];
 export interface Migration {
     readonly callback: MigrationCallback;
     readonly id: string;
 }
-export declare type Migrations = readonly Migration[];
 export interface MigrationCallback {
     /**
      * Migration callback.
@@ -434,11 +375,9 @@ export interface MigrationCallback {
      */
     (this: Database): Promise<void>;
 }
-export interface PutAttachedDocument {
+export declare type Migrations = readonly Migration[];
+export interface PutAttachedDocument extends BasePutAttachedDocument {
     readonly [K: string]: unknown;
-    readonly _deleted?: true;
-    readonly _id?: number;
-    readonly _rev?: number;
 }
 export declare type PutAttachedDocuments = readonly PutAttachedDocument[];
 export interface PutAttachedResponse {
@@ -448,13 +387,8 @@ export interface PutAttachedResponse {
     readonly rev: number;
 }
 export declare type PutAttachedResponses = readonly PutAttachedResponse[];
-export interface PutDocument {
+export interface PutDocument extends BasePutDocument {
     readonly [K: string]: unknown;
-    readonly _deleted?: true;
-    readonly _id?: string;
-    readonly _rev?: string;
-    readonly attachedDocs?: StoredAttachedDocuments;
-    readonly lastAttachedDocs?: numbers;
 }
 export declare type PutDocuments = readonly PutDocument[];
 export interface PutResponse {
@@ -471,51 +405,52 @@ export interface QueryOptions {
 export interface ReactiveConfig {
     readonly conditions?: Conditions;
     readonly options?: QueryOptions;
-    readonly updateFn?: ReactiveUpdateFn<ExistingDocument>;
+    readonly update?: ReactiveUpdate<ExistingDocument>;
     readonly updateInterval?: number;
 }
 export interface ReactiveConfigAttached {
     readonly conditions?: Conditions;
     readonly options?: QueryOptions;
     readonly parentConditions?: Conditions;
-    readonly updateFn?: ReactiveUpdateFn<ExistingAttachedDocument>;
+    readonly update?: ReactiveUpdate<ExistingAttachedDocument>;
     readonly updateInterval?: number;
 }
-export declare type ReactiveResponse<T> = ReactiveResponseAsync<T> | ReactiveResponseLoading<T>;
-export interface ReactiveResponseAsync<T> {
-    readonly loaded: true;
-    readonly loading: boolean;
-    readonly refresh: ReactiveRefresh;
-    readonly unsubscribe: ReactiveUnsubscribe;
-    readonly value: T;
+export interface ReactiveRefresh {
+    /**
+     * Refreshes reactive query.
+     */
+    (): Promise<void>;
 }
-export interface ReactiveResponseLoading<T> {
-    readonly loaded: false;
-    readonly loading: true;
+export declare type ReactiveResponse<T> = ReactiveResponseLoaded<T> | ReactiveResponseLoading<T>;
+export interface ReactiveResponseBase<T> {
+    readonly loaded: boolean;
+    readonly loading: boolean;
     readonly refresh: ReactiveRefresh;
     readonly unsubscribe: ReactiveUnsubscribe;
     readonly value?: T;
 }
-export interface ReactiveUpdateFn<T> {
-    /**
-     * Determines whether reactive query should be updated.
-     *
-     * @param doc - Received document.
-     * @returns _True_ if query should be updated after receiving document, _false_ otherwise.
-     */
-    (doc: T): boolean;
+export interface ReactiveResponseLoaded<T> extends ReactiveResponseBase<T> {
+    readonly loaded: true;
+    readonly value: T;
 }
-export interface ReactiveRefresh {
-    /**
-     * Refreshes from reactive query.
-     */
-    (): Promise<void>;
+export interface ReactiveResponseLoading<T> extends ReactiveResponseBase<T> {
+    readonly loaded: false;
+    readonly loading: true;
 }
 export interface ReactiveUnsubscribe {
     /**
      * Unsubscribes from reactive query.
      */
     (): void;
+}
+export interface ReactiveUpdate<T> {
+    /**
+     * Triggers reactive query update.
+     *
+     * @param doc - Document received.
+     * @returns _True_ to trigger update, _false_ otherwise.
+     */
+    (doc: T): boolean;
 }
 export interface ResetCallback {
     /**
@@ -525,53 +460,11 @@ export interface ResetCallback {
      */
     (this: Database): Promise<void>;
 }
-export interface StoredAttachedDocument extends PutAttachedDocument {
-    readonly _id: number;
-    readonly _rev: number;
+export interface StoredAttachedDocument extends BaseStoredAttachedDocument {
+    readonly [K: string]: unknown;
 }
 export declare type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 export declare type SubscriptionId = `subscription-id-${string}`;
-export declare const DateConditionSignVO: import("@skylib/functions/es/helpers").ValidationObject<DateConditionSign>;
-export declare const DateConditionTypeVO: import("@skylib/functions/es/helpers").ValidationObject<DateConditionType>;
-export declare const DateConditionUnitVO: import("@skylib/functions/es/helpers").ValidationObject<DateConditionUnit>;
-export declare const isDateConditionSign: is.Guard<DateConditionSign>;
-export declare const isDateConditionType: is.Guard<DateConditionType>;
-export declare const isDateConditionUnit: is.Guard<DateConditionUnit>;
-export declare const isDateCondition: is.Guard<DateCondition>;
-export declare const isFieldConditions: is.Guard<FieldConditions>;
-export declare const isConditionsRecord: is.Guard<ConditionsRecord>;
-export declare const isConditionsArray: is.Guard<ConditionsArray>;
-export declare const isConditions: is.Guard<Conditions>;
-export declare const isStoredAttachedDocument: is.Guard<StoredAttachedDocument>;
-export declare const isStoredAttachedDocuments: is.Guard<readonly StoredAttachedDocument[]>;
-/**
- * Creates conditions guard.
- *
- * @param _guard - Guard.
- * @returns Conditions guard.
- */
-export declare function isFieldConditionsFactory<T extends string>(_guard: is.Guard<T>): is.Guard<FieldConditions>;
-/**
- * Creates conditions guard.
- *
- * @param _guard - Guard.
- * @returns Conditions guard.
- */
-export declare function isConditionsRecordFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsRecord>;
-/**
- * Creates conditions guard.
- *
- * @param _guard - Guard.
- * @returns Conditions guard.
- */
-export declare function isConditionsArrayFactory<T extends string>(_guard: is.Guard<T>): is.Guard<ConditionsArray>;
-/**
- * Creates conditions guard.
- *
- * @param _guard - Guard.
- * @returns Conditions guard.
- */
-export declare function isConditionsFactory<T extends string>(_guard: is.Guard<T>): is.Guard<Conditions>;
 /**
  * Generates unique attached subscription ID.
  *

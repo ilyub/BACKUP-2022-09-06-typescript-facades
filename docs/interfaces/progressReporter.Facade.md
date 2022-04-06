@@ -50,4 +50,4 @@ Starts new process.
 
 [`Process`](progressReporter.Process.md)
 
-Process instance.
+Process.

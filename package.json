@@ -1,6 +1,6 @@
 {
   "name": "@skylib/facades",
-  "version": "0.1.34",
+  "version": "1.0.0",
   "private": false,
   "description": "Typescript facades",
   "keywords": [

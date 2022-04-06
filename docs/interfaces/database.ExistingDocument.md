@@ -6,9 +6,13 @@
 
 ## Hierarchy
 
-- [`PutDocument`](database.PutDocument.md)
+- [`BaseExistingDocument`](database.BaseExistingDocument.md)
 
   ↳ **`ExistingDocument`**
+
+## Indexable
+
+▪ [K: `string`]: `unknown`
 
 ## Table of contents
 
@@ -28,7 +32,7 @@
 
 #### Inherited from
 
-[PutDocument](database.PutDocument.md).[_deleted](database.PutDocument.md#_deleted)
+[BaseExistingDocument](database.BaseExistingDocument.md).[_deleted](database.BaseExistingDocument.md#_deleted)
 
 ___
 
@@ -36,9 +40,9 @@ ___
 
 • `Readonly` **\_id**: `string`
 
-#### Overrides
+#### Inherited from
 
-[PutDocument](database.PutDocument.md).[_id](database.PutDocument.md#_id)
+[BaseExistingDocument](database.BaseExistingDocument.md).[_id](database.BaseExistingDocument.md#_id)
 
 ___
 
@@ -46,9 +50,9 @@ ___
 
 • `Readonly` **\_rev**: `string`
 
-#### Overrides
+#### Inherited from
 
-[PutDocument](database.PutDocument.md).[_rev](database.PutDocument.md#_rev)
+[BaseExistingDocument](database.BaseExistingDocument.md).[_rev](database.BaseExistingDocument.md#_rev)
 
 ___
 
@@ -58,7 +62,7 @@ ___
 
 #### Inherited from
 
-[PutDocument](database.PutDocument.md).[attachedDocs](database.PutDocument.md#attacheddocs)
+[BaseExistingDocument](database.BaseExistingDocument.md).[attachedDocs](database.BaseExistingDocument.md#attacheddocs)
 
 ___
 
@@ -68,4 +72,4 @@ ___
 
 #### Inherited from
 
-[PutDocument](database.PutDocument.md).[lastAttachedDocs](database.PutDocument.md#lastattacheddocs)
+[BaseExistingDocument](database.BaseExistingDocument.md).[lastAttachedDocs](database.BaseExistingDocument.md#lastattacheddocs)

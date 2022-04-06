@@ -6,12 +6,11 @@
 
 ### Interfaces
 
-- [Extension](../interfaces/handlePromise.Extension.md)
 - [Facade](../interfaces/handlePromise.Facade.md)
 
 ### Type aliases
 
-- [TaskType](handlePromise.md#tasktype)
+- [Type](handlePromise.md#type)
 
 ### Variables
 
@@ -19,12 +18,12 @@
 
 ## Type aliases
 
-### TaskType
+### Type
 
-Ƭ **TaskType**: ``"createDb"`` \| ``"dbRequest"`` \| ``"destroyDb"`` \| ``"httpRequest"`` \| ``"navigation"``
+Ƭ **Type**: ``"createDb"`` \| ``"dbRequest"`` \| ``"destroyDb"`` \| ``"httpRequest"`` \| ``"navigation"``
 
 ## Variables
 
 ### handlePromise
 
-• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), [`Extension`](../interfaces/handlePromise.Extension.md)\>
+• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), `unknown`\>

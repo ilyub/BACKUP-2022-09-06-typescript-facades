@@ -18,7 +18,7 @@
 
 ### create
 
-▸ `Readonly` **create**(`dt?`): [`DateTime`](datetime.DateTime.md)
+▸ `Readonly` **create**(`date?`): [`DateTime`](datetime.DateTime.md)
 
 Creates DateTime instance.
 
@@ -26,7 +26,7 @@ Creates DateTime instance.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt?` | `NumStr` \| [`DateTime`](datetime.DateTime.md) \| `Date` | Date/time. |
+| `date?` | `NumStr` \| [`DateTime`](datetime.DateTime.md) \| `Date` | Date. |
 
 #### Returns
 
@@ -40,13 +40,13 @@ ___
 
 ▸ `Readonly` **now**(): `string`
 
-Returns current date/time as a "yyyy-MM-dd HH:mm:ss" formatted string.
+Returns current date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
 
 #### Returns
 
 `string`
 
-Current date/time.
+Formatted string.
 
 ___
 
@@ -54,13 +54,13 @@ ___
 
 ▸ `Readonly` **time**(): `number`
 
-Returns current date/time as a number of milliseconds.
+Returns current date as a number of milliseconds.
 
 #### Returns
 
 `number`
 
-Current date/time.
+Number of milliseconds.
 
 ___
 
@@ -68,19 +68,19 @@ ___
 
 ▸ `Readonly` **timeSec**(): `number`
 
-Returns current date/time as a number of seconds.
+Returns current date as a number of seconds.
 
 #### Returns
 
 `number`
 
-Current date/time.
+Number of seconds.
 
 ___
 
 ### validate
 
-▸ `Readonly` **validate**(`dt`): `boolean`
+▸ `Readonly` **validate**(`date`): `boolean`
 
 Validates date string.
 
@@ -88,10 +88,10 @@ Validates date string.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `dt` | `string` | Date/time. |
+| `date` | `string` | Date. |
 
 #### Returns
 
 `boolean`
 
-_True_ if date/time is valid, _false_ otherwise.
+_True_ if date is valid, _false_ otherwise.

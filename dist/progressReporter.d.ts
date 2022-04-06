@@ -13,7 +13,7 @@ export interface Facade {
     /**
      * Starts new process.
      *
-     * @returns Process instance.
+     * @returns Process.
      */
     readonly spawn: () => Process;
 }
@@ -39,7 +39,7 @@ export interface Process {
      */
     readonly setProgress: (value: number) => Process;
     /**
-     * Sets weight of the process.
+     * Sets weight.
      *
      * @param value - A number between 0 and 1.
      * @returns Self.

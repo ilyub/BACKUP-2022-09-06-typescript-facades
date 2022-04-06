@@ -10,14 +10,14 @@
 
 ▸ **Facade**(`x`, `y`): `number`
 
-Compares arbitrary values.
+Compares values.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `x` | `unknown` | First value. |
-| `y` | `unknown` | Second value. |
+| `x` | `unknown` | Value 1. |
+| `y` | `unknown` | Value 2. |
 
 #### Returns
 
@@ -43,8 +43,8 @@ Compares strings.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `x` | `string` | First value. |
-| `y` | `string` | Second value. |
+| `x` | `string` | String 1. |
+| `y` | `string` | String 2. |
 
 #### Returns
 

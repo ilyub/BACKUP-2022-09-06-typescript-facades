@@ -73,7 +73,7 @@ ___
 
 ▸ `Readonly` **setWeight**(`value`): [`Process`](progressReporter.Process.md)
 
-Sets weight of the process.
+Sets weight.
 
 #### Parameters
 

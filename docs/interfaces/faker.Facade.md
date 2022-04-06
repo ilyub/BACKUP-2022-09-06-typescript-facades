@@ -29,8 +29,8 @@ Generates random boolean.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `trueWeight?` | `number` | Weight. |
-| `falseWeight?` | `number` | Weight. |
+| `trueWeight?` | `number` | Weight of the _true_ value. |
+| `falseWeight?` | `number` | Weight of the _false_ value. |
 
 #### Returns
 

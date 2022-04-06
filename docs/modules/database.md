@@ -7,6 +7,13 @@
 ### Interfaces
 
 - [AttachedChangesHandler](../interfaces/database.AttachedChangesHandler.md)
+- [BaseBulkAttachedDocument](../interfaces/database.BaseBulkAttachedDocument.md)
+- [BaseExistingAttachedDocument](../interfaces/database.BaseExistingAttachedDocument.md)
+- [BaseExistingDocument](../interfaces/database.BaseExistingDocument.md)
+- [BasePutAttachedDocument](../interfaces/database.BasePutAttachedDocument.md)
+- [BasePutDocument](../interfaces/database.BasePutDocument.md)
+- [BaseStoredAttachedDocument](../interfaces/database.BaseStoredAttachedDocument.md)
+- [BulkAttachedDocument](../interfaces/database.BulkAttachedDocument.md)
 - [ChangesHandler](../interfaces/database.ChangesHandler.md)
 - [Database](../interfaces/database.Database.md)
 - [DatabaseOptions](../interfaces/database.DatabaseOptions.md)
@@ -24,16 +31,18 @@
 - [ReactiveConfig](../interfaces/database.ReactiveConfig.md)
 - [ReactiveConfigAttached](../interfaces/database.ReactiveConfigAttached.md)
 - [ReactiveRefresh](../interfaces/database.ReactiveRefresh.md)
-- [ReactiveResponseAsync](../interfaces/database.ReactiveResponseAsync.md)
+- [ReactiveResponseBase](../interfaces/database.ReactiveResponseBase.md)
+- [ReactiveResponseLoaded](../interfaces/database.ReactiveResponseLoaded.md)
 - [ReactiveResponseLoading](../interfaces/database.ReactiveResponseLoading.md)
 - [ReactiveUnsubscribe](../interfaces/database.ReactiveUnsubscribe.md)
-- [ReactiveUpdateFn](../interfaces/database.ReactiveUpdateFn.md)
+- [ReactiveUpdate](../interfaces/database.ReactiveUpdate.md)
 - [ResetCallback](../interfaces/database.ResetCallback.md)
 - [StoredAttachedDocument](../interfaces/database.StoredAttachedDocument.md)
 
 ### Type aliases
 
 - [AttachedSubscriptionId](database.md#attachedsubscriptionid)
+- [BulkAttachedDocuments](database.md#bulkattacheddocuments)
 - [Conditions](database.md#conditions)
 - [ConditionsArray](database.md#conditionsarray)
 - [ConditionsRecord](database.md#conditionsrecord)
@@ -54,27 +63,10 @@
 
 ### Variables
 
-- [DateConditionSignVO](database.md#dateconditionsignvo)
-- [DateConditionTypeVO](database.md#dateconditiontypevo)
-- [DateConditionUnitVO](database.md#dateconditionunitvo)
 - [database](database.md#database)
 
 ### Functions
 
-- [isConditions](database.md#isconditions)
-- [isConditionsArray](database.md#isconditionsarray)
-- [isConditionsArrayFactory](database.md#isconditionsarrayfactory)
-- [isConditionsFactory](database.md#isconditionsfactory)
-- [isConditionsRecord](database.md#isconditionsrecord)
-- [isConditionsRecordFactory](database.md#isconditionsrecordfactory)
-- [isDateCondition](database.md#isdatecondition)
-- [isDateConditionSign](database.md#isdateconditionsign)
-- [isDateConditionType](database.md#isdateconditiontype)
-- [isDateConditionUnit](database.md#isdateconditionunit)
-- [isFieldConditions](database.md#isfieldconditions)
-- [isFieldConditionsFactory](database.md#isfieldconditionsfactory)
-- [isStoredAttachedDocument](database.md#isstoredattacheddocument)
-- [isStoredAttachedDocuments](database.md#isstoredattacheddocuments)
 - [uniqueAttachedSubscriptionId](database.md#uniqueattachedsubscriptionid)
 - [uniqueSubscriptionId](database.md#uniquesubscriptionid)
 
@@ -83,6 +75,12 @@
 ### AttachedSubscriptionId
 
 Ƭ **AttachedSubscriptionId**: \`attached-subscription-id-${string}\`
+
+___
+
+### BulkAttachedDocuments
+
+Ƭ **BulkAttachedDocuments**: readonly [`BulkAttachedDocument`](../interfaces/database.BulkAttachedDocument.md)[]
 
 ___
 
@@ -190,7 +188,7 @@ ___
 
 ### ReactiveResponse
 
-Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseAsync`](../interfaces/database.ReactiveResponseAsync.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)<`T`\>
+Ƭ **ReactiveResponse**<`T`\>: [`ReactiveResponseLoaded`](../interfaces/database.ReactiveResponseLoaded.md)<`T`\> \| [`ReactiveResponseLoading`](../interfaces/database.ReactiveResponseLoading.md)<`T`\>
 
 #### Type parameters
 
@@ -212,293 +210,11 @@ ___
 
 ## Variables
 
-### DateConditionSignVO
-
-• `Const` **DateConditionSignVO**: `ValidationObject`<[`DateConditionSign`](database.md#dateconditionsign)\>
-
-___
-
-### DateConditionTypeVO
-
-• `Const` **DateConditionTypeVO**: `ValidationObject`<[`DateConditionType`](database.md#dateconditiontype)\>
-
-___
-
-### DateConditionUnitVO
-
-• `Const` **DateConditionUnitVO**: `ValidationObject`<[`DateConditionUnit`](database.md#dateconditionunit)\>
-
-___
-
 ### database
 
 • `Const` **database**: `Facade`<[`Facade`](../interfaces/database.Facade.md), `unknown`\>
 
 ## Functions
-
-### isConditions
-
-▸ **isConditions**(`value`): value is Conditions<string\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is Conditions<string\>
-
-___
-
-### isConditionsArray
-
-▸ **isConditionsArray**(`value`): value is ConditionsArray<string\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is ConditionsArray<string\>
-
-___
-
-### isConditionsArrayFactory
-
-▸ **isConditionsArrayFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsArray`](database.md#conditionsarray)\>
-
-Creates conditions guard.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `_guard` | `Guard`<`T`\> | Guard. |
-
-#### Returns
-
-`is.Guard`<[`ConditionsArray`](database.md#conditionsarray)\>
-
-Conditions guard.
-
-___
-
-### isConditionsFactory
-
-▸ **isConditionsFactory**<`T`\>(`_guard`): `is.Guard`<[`Conditions`](database.md#conditions)\>
-
-Creates conditions guard.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `_guard` | `Guard`<`T`\> | Guard. |
-
-#### Returns
-
-`is.Guard`<[`Conditions`](database.md#conditions)\>
-
-Conditions guard.
-
-___
-
-### isConditionsRecord
-
-▸ **isConditionsRecord**(`value`): value is ConditionsRecord<string\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is ConditionsRecord<string\>
-
-___
-
-### isConditionsRecordFactory
-
-▸ **isConditionsRecordFactory**<`T`\>(`_guard`): `is.Guard`<[`ConditionsRecord`](database.md#conditionsrecord)\>
-
-Creates conditions guard.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `_guard` | `Guard`<`T`\> | Guard. |
-
-#### Returns
-
-`is.Guard`<[`ConditionsRecord`](database.md#conditionsrecord)\>
-
-Conditions guard.
-
-___
-
-### isDateCondition
-
-▸ **isDateCondition**(`value`): value is DateCondition
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is DateCondition
-
-___
-
-### isDateConditionSign
-
-▸ **isDateConditionSign**(`value`): value is DateConditionSign
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is DateConditionSign
-
-___
-
-### isDateConditionType
-
-▸ **isDateConditionType**(`value`): value is DateConditionType
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is DateConditionType
-
-___
-
-### isDateConditionUnit
-
-▸ **isDateConditionUnit**(`value`): value is DateConditionUnit
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is DateConditionUnit
-
-___
-
-### isFieldConditions
-
-▸ **isFieldConditions**(`value`): value is FieldConditions
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is FieldConditions
-
-___
-
-### isFieldConditionsFactory
-
-▸ **isFieldConditionsFactory**<`T`\>(`_guard`): `is.Guard`<[`FieldConditions`](../interfaces/database.FieldConditions.md)\>
-
-Creates conditions guard.
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `string` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `_guard` | `Guard`<`T`\> | Guard. |
-
-#### Returns
-
-`is.Guard`<[`FieldConditions`](../interfaces/database.FieldConditions.md)\>
-
-Conditions guard.
-
-___
-
-### isStoredAttachedDocument
-
-▸ **isStoredAttachedDocument**(`value`): value is StoredAttachedDocument
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is StoredAttachedDocument
-
-___
-
-### isStoredAttachedDocuments
-
-▸ **isStoredAttachedDocuments**(`value`): value is readonly StoredAttachedDocument[]
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `unknown` |
-
-#### Returns
-
-value is readonly StoredAttachedDocument[]
-
-___
 
 ### uniqueAttachedSubscriptionId
 

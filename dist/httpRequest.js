@@ -1,17 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HttpRequestMethodVO = exports.HttpHeaderVO = exports.httpRequest = void 0;
+exports.httpRequest = void 0;
 const helpers_1 = require("@skylib/functions/dist/helpers");
 exports.httpRequest = (0, helpers_1.createFacade)("httpRequest", {});
-exports.HttpHeaderVO = (0, helpers_1.createValidationObject)({
-    "Accept": "Accept",
-    "Accept-Language": "Accept-Language",
-    "Authorization": "Authorization",
-    "Content-Type": "Content-Type"
-});
-exports.HttpRequestMethodVO = (0, helpers_1.createValidationObject)({
-    delete: "delete",
-    get: "get",
-    post: "post"
-});
 //# sourceMappingURL=httpRequest.js.map

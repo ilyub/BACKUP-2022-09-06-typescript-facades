@@ -1,8 +1,15 @@
 [Typescript facades](../index.md) / [Exports](../modules.md) / [lang](../modules/lang.md) / Dictionary
 
-# Interface: Dictionary
+# Interface: Dictionary<W, C\>
 
 [lang](../modules/lang.md).Dictionary
+
+## Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `W` | extends [`Word`](../modules/lang.md#word) |
+| `C` | extends [`Context`](../modules/lang.md#context) |
 
 ## Table of contents
 
@@ -26,7 +33,7 @@ Sets context.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `context` | `never` | Context. |
+| `context` | `C` | Context. |
 
 #### Returns
 
@@ -40,7 +47,7 @@ ___
 
 ▸ `Readonly` **get**(`key`): `string`
 
-Returns word based on context and count (applies replacements).
+Returns word. Uses previosly set context, count and replacements.
 
 #### Parameters
 
@@ -58,7 +65,7 @@ ___
 
 ### has
 
-▸ `Readonly` **has**(`key`): key is never
+▸ `Readonly` **has**(`key`): key is Transforms<W\>
 
 Checks that word exists.
 
@@ -70,7 +77,7 @@ Checks that word exists.
 
 #### Returns
 
-key is never
+key is Transforms<W\>
 
 _True_ if word exists, _false_ otherwise.
 
@@ -98,7 +105,7 @@ ___
 
 ### with
 
-▸ `Readonly` **with**(`search`, `replace`): [`Facade`](../modules/lang.md#facade)
+▸ `Readonly` **with**(`name`, `replacement`): [`Facade`](../modules/lang.md#facade)
 
 Adds replacement.
 
@@ -106,8 +113,8 @@ Adds replacement.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `search` | `string` | Search term. |
-| `replace` | `NumStr` | Replacement. |
+| `name` | `string` | Name. |
+| `replacement` | `NumStr` | Value or word ID. |
 
 #### Returns
 

@@ -4,7 +4,7 @@ export interface Engine<T extends object> {
      * Performs search.
      *
      * @param query - Query string.
-     * @returns - Matching items' IDs.
+     * @returns - Matching items.
      */
     readonly search: (query: string) => readonly T[];
 }

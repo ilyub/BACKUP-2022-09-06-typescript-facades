@@ -10,7 +10,7 @@
 
 - [conditions](database.ReactiveConfig.md#conditions)
 - [options](database.ReactiveConfig.md#options)
-- [updateFn](database.ReactiveConfig.md#updatefn)
+- [update](database.ReactiveConfig.md#update)
 - [updateInterval](database.ReactiveConfig.md#updateinterval)
 
 ## Properties
@@ -27,9 +27,9 @@ ___
 
 ___
 
-### updateFn
+### update
 
-• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](database.ReactiveUpdateFn.md)<[`ExistingDocument`](database.ExistingDocument.md)\>
+• `Optional` `Readonly` **update**: [`ReactiveUpdate`](database.ReactiveUpdate.md)<[`ExistingDocument`](database.ExistingDocument.md)\>
 
 ___
 

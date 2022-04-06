@@ -48,4 +48,4 @@ Shows confirmation dialog.
 
 `Promise`<`boolean`\>
 
-_True_ on success, _false_ on failure.
+_True_ if accepted, _false_ if rejected.

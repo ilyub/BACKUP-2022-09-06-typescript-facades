@@ -10,9 +10,19 @@
 - [Handler](../interfaces/reactiveStorage.Handler.md)
 - [Reducer](../interfaces/reactiveStorage.Reducer.md)
 
+### Type aliases
+
+- [Observer](reactiveStorage.md#observer)
+
 ### Variables
 
 - [reactiveStorage](reactiveStorage.md#reactivestorage)
+
+## Type aliases
+
+### Observer
+
+Ƭ **Observer**: `facades.reactiveStorage.Observer`
 
 ## Variables
 

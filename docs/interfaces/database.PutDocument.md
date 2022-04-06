@@ -6,9 +6,9 @@
 
 ## Hierarchy
 
-- **`PutDocument`**
+- [`BasePutDocument`](database.BasePutDocument.md)
 
-  ↳ [`ExistingDocument`](database.ExistingDocument.md)
+  ↳ **`PutDocument`**
 
 ## Indexable
 
@@ -30,11 +30,19 @@
 
 • `Optional` `Readonly` **\_deleted**: ``true``
 
+#### Inherited from
+
+[BasePutDocument](database.BasePutDocument.md).[_deleted](database.BasePutDocument.md#_deleted)
+
 ___
 
 ### \_id
 
 • `Optional` `Readonly` **\_id**: `string`
+
+#### Inherited from
+
+[BasePutDocument](database.BasePutDocument.md).[_id](database.BasePutDocument.md#_id)
 
 ___
 
@@ -42,14 +50,26 @@ ___
 
 • `Optional` `Readonly` **\_rev**: `string`
 
+#### Inherited from
+
+[BasePutDocument](database.BasePutDocument.md).[_rev](database.BasePutDocument.md#_rev)
+
 ___
 
 ### attachedDocs
 
 • `Optional` `Readonly` **attachedDocs**: [`StoredAttachedDocuments`](../modules/database.md#storedattacheddocuments)
 
+#### Inherited from
+
+[BasePutDocument](database.BasePutDocument.md).[attachedDocs](database.BasePutDocument.md#attacheddocs)
+
 ___
 
 ### lastAttachedDocs
 
 • `Optional` `Readonly` **lastAttachedDocs**: `numbers`
+
+#### Inherited from
+
+[BasePutDocument](database.BasePutDocument.md).[lastAttachedDocs](database.BasePutDocument.md#lastattacheddocs)

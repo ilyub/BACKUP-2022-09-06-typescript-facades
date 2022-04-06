@@ -11,8 +11,9 @@
 ### Type aliases
 
 - [Context](lang.md#context)
-- [DictionaryAndWords](lang.md#dictionaryandwords)
 - [Facade](lang.md#facade)
+- [Lang](lang.md#lang)
+- [PickKeys](lang.md#pickkeys)
 - [Transforms](lang.md#transforms)
 - [Word](lang.md#word)
 
@@ -24,25 +25,40 @@
 
 ### Context
 
-Ƭ **Context**: keyof `facades.lang.Context`
-
-___
-
-### DictionaryAndWords
-
-Ƭ **DictionaryAndWords**<`T`\>: [`Dictionary`](../interfaces/lang.Dictionary.md) & `Rec`<[`Transforms`](lang.md#transforms)<`T`\>, `string`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`Word`](lang.md#word) |
+Ƭ **Context**: [`PickKeys`](lang.md#pickkeys)<`facades.lang.Context`, ``true``, ``"extends->"``\>
 
 ___
 
 ### Facade
 
-Ƭ **Facade**: [`DictionaryAndWords`](lang.md#dictionaryandwords)<[`Word`](lang.md#word)\>
+Ƭ **Facade**: [`Lang`](lang.md#lang)<[`Word`](lang.md#word), [`Context`](lang.md#context)\>
+
+___
+
+### Lang
+
+Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.Dictionary.md)<`W`, `C`\> & `Rec`<[`Transforms`](lang.md#transforms)<`W`\>, `string`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `W` | extends [`Word`](lang.md#word) |
+| `C` | extends [`Context`](lang.md#context) |
+
+___
+
+### PickKeys
+
+Ƭ **PickKeys**<`T`, `E`, `M`\>: `Exclude`<keyof `T`, `FilterKeys`<`T`, `E`, `M`\>\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
+| `E` | `E` |
+| `M` | extends `Match` = ``"default"`` |
 
 ___
 
@@ -54,16 +70,16 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `T` | extends `string` |
+| `T` | extends [`Word`](lang.md#word) |
 
 ___
 
 ### Word
 
-Ƭ **Word**: keyof `facades.lang.Word`
+Ƭ **Word**: [`PickKeys`](lang.md#pickkeys)<`facades.lang.Word`, ``true``, ``"extends->"``\>
 
 ## Variables
 
 ### lang
 
-• `Const` **lang**: `Facade`<[`Facade`](lang.md#facade), `object`\>
+• `Const` **lang**: `Facade`<[`Facade`](lang.md#facade), `unknown`\>

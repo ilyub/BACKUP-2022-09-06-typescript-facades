@@ -50,7 +50,7 @@ Unsubscribes from changes.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `obj` | `object` | Reactive object. |
-| `observer` | `unknown` | Observer. |
+| `observer` | `Observer` | Observer. |
 
 #### Returns
 
@@ -60,7 +60,7 @@ ___
 
 ### watch
 
-▸ `Readonly` **watch**<`T`\>(`obj`, `handler`, `reducer?`): `unknown`
+▸ `Readonly` **watch**<`T`\>(`obj`, `handler`, `reducer?`): `Observer`
 
 Subscribes to changes.
 
@@ -75,11 +75,11 @@ Subscribes to changes.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `obj` | `T` | Reactive object. |
-| `handler` | [`Handler`](reactiveStorage.Handler.md)<`T`\> | Handles changes. |
-| `reducer?` | [`Reducer`](reactiveStorage.Reducer.md)<`T`\> | Generates reduced value. |
+| `handler` | [`Handler`](reactiveStorage.Handler.md)<`T`\> | Handles object change. |
+| `reducer?` | [`Reducer`](reactiveStorage.Reducer.md)<`T`\> | Reduces object for comparison. |
 
 #### Returns
 
-`unknown`
+`Observer`
 
 Observer.

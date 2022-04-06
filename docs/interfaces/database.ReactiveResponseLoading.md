@@ -10,6 +10,12 @@
 | :------ |
 | `T` |
 
+## Hierarchy
+
+- [`ReactiveResponseBase`](database.ReactiveResponseBase.md)<`T`\>
+
+  ↳ **`ReactiveResponseLoading`**
+
 ## Table of contents
 
 ### Properties
@@ -26,11 +32,19 @@
 
 • `Readonly` **loaded**: ``false``
 
+#### Overrides
+
+[ReactiveResponseBase](database.ReactiveResponseBase.md).[loaded](database.ReactiveResponseBase.md#loaded)
+
 ___
 
 ### loading
 
 • `Readonly` **loading**: ``true``
+
+#### Overrides
+
+[ReactiveResponseBase](database.ReactiveResponseBase.md).[loading](database.ReactiveResponseBase.md#loading)
 
 ___
 
@@ -38,14 +52,26 @@ ___
 
 • `Readonly` **refresh**: [`ReactiveRefresh`](database.ReactiveRefresh.md)
 
+#### Inherited from
+
+[ReactiveResponseBase](database.ReactiveResponseBase.md).[refresh](database.ReactiveResponseBase.md#refresh)
+
 ___
 
 ### unsubscribe
 
 • `Readonly` **unsubscribe**: [`ReactiveUnsubscribe`](database.ReactiveUnsubscribe.md)
 
+#### Inherited from
+
+[ReactiveResponseBase](database.ReactiveResponseBase.md).[unsubscribe](database.ReactiveResponseBase.md#unsubscribe)
+
 ___
 
 ### value
 
 • `Optional` `Readonly` **value**: `T`
+
+#### Inherited from
+
+[ReactiveResponseBase](database.ReactiveResponseBase.md).[value](database.ReactiveResponseBase.md#value)

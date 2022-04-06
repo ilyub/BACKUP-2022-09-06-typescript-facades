@@ -34,4 +34,4 @@ Performs search.
 
 readonly `T`[]
 
-- Matching items' IDs.
+- Matching items.

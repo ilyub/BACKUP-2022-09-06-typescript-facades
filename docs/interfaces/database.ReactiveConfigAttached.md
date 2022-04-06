@@ -11,7 +11,7 @@
 - [conditions](database.ReactiveConfigAttached.md#conditions)
 - [options](database.ReactiveConfigAttached.md#options)
 - [parentConditions](database.ReactiveConfigAttached.md#parentconditions)
-- [updateFn](database.ReactiveConfigAttached.md#updatefn)
+- [update](database.ReactiveConfigAttached.md#update)
 - [updateInterval](database.ReactiveConfigAttached.md#updateinterval)
 
 ## Properties
@@ -34,9 +34,9 @@ ___
 
 ___
 
-### updateFn
+### update
 
-• `Optional` `Readonly` **updateFn**: [`ReactiveUpdateFn`](database.ReactiveUpdateFn.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
+• `Optional` `Readonly` **update**: [`ReactiveUpdate`](database.ReactiveUpdate.md)<[`ExistingAttachedDocument`](database.ExistingAttachedDocument.md)\>
 
 ___
 
