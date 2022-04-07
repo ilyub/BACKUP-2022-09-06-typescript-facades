@@ -37,7 +37,7 @@ ___
 
 ### Lang
 
-Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.Dictionary.md)<`W`, `C`\> & `Rec`<[`Transforms`](lang.md#transforms)<`W`\>, `string`\>
+Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.Dictionary.md)<`C`\> & `Rec`<[`Transforms`](lang.md#transforms)<`W`\>, `string`\>
 
 #### Type parameters
 

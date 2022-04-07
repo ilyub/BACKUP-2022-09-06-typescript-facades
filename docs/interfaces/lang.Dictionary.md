@@ -1,6 +1,6 @@
 [Typescript facades](../index.md) / [Exports](../modules.md) / [lang](../modules/lang.md) / Dictionary
 
-# Interface: Dictionary<W, C\>
+# Interface: Dictionary<C\>
 
 [lang](../modules/lang.md).Dictionary
 
@@ -8,7 +8,6 @@
 
 | Name | Type |
 | :------ | :------ |
-| `W` | extends [`Word`](../modules/lang.md#word) |
 | `C` | extends [`Context`](../modules/lang.md#context) |
 
 ## Table of contents
@@ -65,7 +64,7 @@ ___
 
 ### has
 
-▸ `Readonly` **has**(`key`): key is Transforms<W\>
+▸ `Readonly` **has**(`key`): `boolean`
 
 Checks that word exists.
 
@@ -77,7 +76,7 @@ Checks that word exists.
 
 #### Returns
 
-key is Transforms<W\>
+`boolean`
 
 _True_ if word exists, _false_ otherwise.
 

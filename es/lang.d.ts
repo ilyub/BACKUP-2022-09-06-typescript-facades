@@ -13,7 +13,7 @@ declare global {
 }
 export declare const lang: import("@skylib/functions/es/helpers").Facade<Facade, unknown>;
 export declare type Context = PickKeys<facades.lang.Context, true, "extends->">;
-export interface Dictionary<W extends Word, C extends Context> {
+export interface Dictionary<C extends Context> {
     /**
      * Sets context.
      *
@@ -34,7 +34,7 @@ export interface Dictionary<W extends Word, C extends Context> {
      * @param key - Word ID.
      * @returns _True_ if word exists, _false_ otherwise.
      */
-    readonly has: (key: string) => key is Transforms<W>;
+    readonly has: (key: string) => boolean;
     /**
      * Sets count for plural form.
      *
@@ -52,7 +52,7 @@ export interface Dictionary<W extends Word, C extends Context> {
     readonly with: (name: string, replacement: NumStr) => Facade;
 }
 export declare type Facade = Lang<Word, Context>;
-export declare type Lang<W extends Word, C extends Context> = Dictionary<W, C> & Rec<Transforms<W>, string>;
+export declare type Lang<W extends Word, C extends Context> = Dictionary<C> & Rec<Transforms<W>, string>;
 export declare type Transforms<T extends Word> = Capitalize<T> | Lowercase<T> | Uncapitalize<T> | Uppercase<T>;
 export declare type Word = PickKeys<facades.lang.Word, true, "extends->">;
 export declare type PickKeys<T extends object, E, M extends Match = "default"> = Exclude<keyof T, FilterKeys<T, E, M>>;
