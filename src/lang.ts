@@ -18,7 +18,7 @@ export const lang = createFacade<Facade>("lang", {});
 
 export type Context = PickKeys<facades.lang.Context, true, "extends->">;
 
-export interface Dictionary<W extends Word, C extends Context> {
+export interface Dictionary<C extends Context> {
   /**
    * Sets context.
    *
@@ -39,7 +39,7 @@ export interface Dictionary<W extends Word, C extends Context> {
    * @param key - Word ID.
    * @returns _True_ if word exists, _false_ otherwise.
    */
-  readonly has: (key: string) => key is Transforms<W>;
+  readonly has: (key: string) => boolean;
   /**
    * Sets count for plural form.
    *
@@ -59,7 +59,7 @@ export interface Dictionary<W extends Word, C extends Context> {
 
 export type Facade = Lang<Word, Context>;
 
-export type Lang<W extends Word, C extends Context> = Dictionary<W, C> &
+export type Lang<W extends Word, C extends Context> = Dictionary<C> &
   Rec<Transforms<W>, string>;
 
 export type Transforms<T extends Word> =
