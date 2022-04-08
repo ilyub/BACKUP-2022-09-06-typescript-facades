@@ -21,39 +21,52 @@ export interface AttachedChangesHandler {
 export type AttachedSubscriptionId = `attached-subscription-id-${string}`;
 
 export interface BaseBulkAttachedDocument extends BasePutAttachedDocument {
-  readonly parentDoc: ExistingDocument;
+  readonly parentDoc: BaseExistingDocument;
 }
+
+export type BaseBulkAttachedDocuments = readonly BaseBulkAttachedDocument[];
 
 export interface BaseExistingAttachedDocument extends BasePutAttachedDocument {
   readonly _id: number;
   readonly _rev: number;
-  readonly parentDoc: ExistingDocument;
+  readonly parentDoc: BaseExistingDocument;
 }
+
+export type BaseExistingAttachedDocuments =
+  readonly BaseExistingAttachedDocument[];
 
 export interface BaseExistingDocument extends BasePutDocument {
   readonly _id: string;
   readonly _rev: string;
 }
 
+export type BaseExistingDocuments = readonly BaseExistingDocument[];
+
 export interface BasePutAttachedDocument {
   readonly _deleted?: true;
   readonly _id?: number;
   readonly _rev?: number;
-  readonly parentDoc?: ExistingDocument;
+  readonly parentDoc?: BaseExistingDocument;
 }
+
+export type BasePutAttachedDocuments = readonly BasePutAttachedDocument[];
 
 export interface BasePutDocument {
   readonly _deleted?: true;
   readonly _id?: string;
   readonly _rev?: string;
-  readonly attachedDocs?: StoredAttachedDocuments;
+  readonly attachedDocs?: BaseStoredAttachedDocuments;
   readonly lastAttachedDocs?: numbers;
 }
+
+export type BasePutDocuments = readonly BasePutDocument[];
 
 export interface BaseStoredAttachedDocument extends BasePutAttachedDocument {
   readonly _id: number;
   readonly _rev: number;
 }
+
+export type BaseStoredAttachedDocuments = readonly BaseStoredAttachedDocument[];
 
 export interface BulkAttachedDocument extends BaseBulkAttachedDocument {
   readonly [K: string]: unknown;
@@ -598,12 +611,6 @@ export interface ResetCallback {
    */
   (this: Database): Promise<void>;
 }
-
-export interface StoredAttachedDocument extends BaseStoredAttachedDocument {
-  readonly [K: string]: unknown;
-}
-
-export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 
 export type SubscriptionId = `subscription-id-${string}`;
 
