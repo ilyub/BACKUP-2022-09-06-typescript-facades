@@ -57,7 +57,7 @@ ___
 
 ### parentDoc
 
-• `Optional` `Readonly` **parentDoc**: [`ExistingDocument`](database.ExistingDocument.md)
+• `Optional` `Readonly` **parentDoc**: [`BaseExistingDocument`](database.BaseExistingDocument.md)
 
 #### Inherited from
 

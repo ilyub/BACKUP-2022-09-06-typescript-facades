@@ -55,7 +55,7 @@ ___
 
 ### parentDoc
 
-• `Readonly` **parentDoc**: [`ExistingDocument`](database.ExistingDocument.md)
+• `Readonly` **parentDoc**: [`BaseExistingDocument`](database.BaseExistingDocument.md)
 
 #### Overrides
 

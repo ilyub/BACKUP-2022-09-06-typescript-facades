@@ -37,11 +37,16 @@
 - [ReactiveUnsubscribe](../interfaces/database.ReactiveUnsubscribe.md)
 - [ReactiveUpdate](../interfaces/database.ReactiveUpdate.md)
 - [ResetCallback](../interfaces/database.ResetCallback.md)
-- [StoredAttachedDocument](../interfaces/database.StoredAttachedDocument.md)
 
 ### Type aliases
 
 - [AttachedSubscriptionId](database.md#attachedsubscriptionid)
+- [BaseBulkAttachedDocuments](database.md#basebulkattacheddocuments)
+- [BaseExistingAttachedDocuments](database.md#baseexistingattacheddocuments)
+- [BaseExistingDocuments](database.md#baseexistingdocuments)
+- [BasePutAttachedDocuments](database.md#baseputattacheddocuments)
+- [BasePutDocuments](database.md#baseputdocuments)
+- [BaseStoredAttachedDocuments](database.md#basestoredattacheddocuments)
 - [BulkAttachedDocuments](database.md#bulkattacheddocuments)
 - [Conditions](database.md#conditions)
 - [ConditionsArray](database.md#conditionsarray)
@@ -58,7 +63,6 @@
 - [PutDocuments](database.md#putdocuments)
 - [PutResponses](database.md#putresponses)
 - [ReactiveResponse](database.md#reactiveresponse)
-- [StoredAttachedDocuments](database.md#storedattacheddocuments)
 - [SubscriptionId](database.md#subscriptionid)
 
 ### Variables
@@ -75,6 +79,42 @@
 ### AttachedSubscriptionId
 
 Ƭ **AttachedSubscriptionId**: \`attached-subscription-id-${string}\`
+
+___
+
+### BaseBulkAttachedDocuments
+
+Ƭ **BaseBulkAttachedDocuments**: readonly [`BaseBulkAttachedDocument`](../interfaces/database.BaseBulkAttachedDocument.md)[]
+
+___
+
+### BaseExistingAttachedDocuments
+
+Ƭ **BaseExistingAttachedDocuments**: readonly [`BaseExistingAttachedDocument`](../interfaces/database.BaseExistingAttachedDocument.md)[]
+
+___
+
+### BaseExistingDocuments
+
+Ƭ **BaseExistingDocuments**: readonly [`BaseExistingDocument`](../interfaces/database.BaseExistingDocument.md)[]
+
+___
+
+### BasePutAttachedDocuments
+
+Ƭ **BasePutAttachedDocuments**: readonly [`BasePutAttachedDocument`](../interfaces/database.BasePutAttachedDocument.md)[]
+
+___
+
+### BasePutDocuments
+
+Ƭ **BasePutDocuments**: readonly [`BasePutDocument`](../interfaces/database.BasePutDocument.md)[]
+
+___
+
+### BaseStoredAttachedDocuments
+
+Ƭ **BaseStoredAttachedDocuments**: readonly [`BaseStoredAttachedDocument`](../interfaces/database.BaseStoredAttachedDocument.md)[]
 
 ___
 
@@ -195,12 +235,6 @@ ___
 | Name |
 | :------ |
 | `T` |
-
-___
-
-### StoredAttachedDocuments
-
-Ƭ **StoredAttachedDocuments**: readonly [`StoredAttachedDocument`](../interfaces/database.StoredAttachedDocument.md)[]
 
 ___
 

@@ -10,8 +10,6 @@
 
   ↳ **`BaseStoredAttachedDocument`**
 
-  ↳↳ [`StoredAttachedDocument`](database.StoredAttachedDocument.md)
-
 ## Table of contents
 
 ### Properties
@@ -55,7 +53,7 @@ ___
 
 ### parentDoc
 
-• `Optional` `Readonly` **parentDoc**: [`ExistingDocument`](database.ExistingDocument.md)
+• `Optional` `Readonly` **parentDoc**: [`BaseExistingDocument`](database.BaseExistingDocument.md)
 
 #### Inherited from
 

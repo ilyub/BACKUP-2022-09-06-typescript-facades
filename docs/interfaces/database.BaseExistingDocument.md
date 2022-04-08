@@ -56,7 +56,7 @@ ___
 
 ### attachedDocs
 
-• `Optional` `Readonly` **attachedDocs**: [`StoredAttachedDocuments`](../modules/database.md#storedattacheddocuments)
+• `Optional` `Readonly` **attachedDocs**: [`BaseStoredAttachedDocuments`](../modules/database.md#basestoredattacheddocuments)
 
 #### Inherited from
 
