@@ -51,6 +51,8 @@ export interface Handler<T extends object> {
   (obj: T): void;
 }
 
+export type Observer = facades.reactiveStorage.Observer;
+
 export interface Reducer<T extends object> {
   /**
    * Reduces object for comparison.
@@ -59,5 +61,3 @@ export interface Reducer<T extends object> {
    */
   (obj: T): unknown;
 }
-
-export type Observer = facades.reactiveStorage.Observer;

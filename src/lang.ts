@@ -7,9 +7,13 @@ import type { NumStr, Rec } from "@skylib/functions/dist/types/core";
 declare global {
   namespace facades {
     namespace lang {
-      interface Context {}
+      interface Context {
+        readonly _placeholder?: never;
+      }
 
-      interface Word {}
+      interface Word {
+        readonly _placeholder?: never;
+      }
     }
   }
 }
@@ -62,14 +66,6 @@ export type Facade = Lang<Word, Context>;
 export type Lang<W extends Word, C extends Context> = Dictionary<C> &
   Rec<Transforms<W>, string>;
 
-export type Transforms<T extends Word> =
-  | Capitalize<T>
-  | Lowercase<T>
-  | Uncapitalize<T>
-  | Uppercase<T>;
-
-export type Word = PickKeys<facades.lang.Word, true, "extends->">;
-
 // eslint-disable-next-line no-warning-comments -- Wait for @skylib/functions update
 // fixme
 export type PickKeys<
@@ -77,3 +73,11 @@ export type PickKeys<
   E,
   M extends Match = "default"
 > = Exclude<keyof T, FilterKeys<T, E, M>>;
+
+export type Transforms<T extends Word> =
+  | Capitalize<T>
+  | Lowercase<T>
+  | Uncapitalize<T>
+  | Uppercase<T>;
+
+export type Word = PickKeys<facades.lang.Word, true, "extends->">;

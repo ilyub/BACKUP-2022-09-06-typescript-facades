@@ -1,5 +1,3 @@
-export {};
-
 declare global {
   namespace facades {
     namespace icons {
@@ -17,11 +15,7 @@ declare global {
         readonly SampleWord: true;
       }
     }
-
-    namespace reactiveStorage {
-      interface Observer {
-        readonly resource: unknown;
-      }
-    }
   }
 }
+
+export {};

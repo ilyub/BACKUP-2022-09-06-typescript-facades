@@ -7,7 +7,9 @@ import type { Rec } from "@skylib/functions/dist/types/core";
 declare global {
   namespace facades {
     namespace icons {
-      interface Icon {}
+      interface Icon {
+        readonly _placeholder?: never;
+      }
     }
   }
 }
