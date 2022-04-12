@@ -13,19 +13,18 @@
 - [Context](lang.md#context)
 - [Facade](lang.md#facade)
 - [Lang](lang.md#lang)
-- [PickKeys](lang.md#pickkeys)
 - [Transforms](lang.md#transforms)
 - [Word](lang.md#word)
 
 ### Variables
 
-- [lang](lang.md#lang)
+- [lang](lang.md#lang-1)
 
 ## Type aliases
 
 ### Context
 
-Ƭ **Context**: [`PickKeys`](lang.md#pickkeys)<`facades.lang.Context`, ``true``, ``"extends->"``\>
+Ƭ **Context**: `PickKeys`<`facades.lang.Context`, ``true``, ``"extends->"``\>
 
 ___
 
@@ -48,20 +47,6 @@ ___
 
 ___
 
-### PickKeys
-
-Ƭ **PickKeys**<`T`, `E`, `M`\>: `Exclude`<keyof `T`, `FilterKeys`<`T`, `E`, `M`\>\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `object` |
-| `E` | `E` |
-| `M` | extends `Match` = ``"default"`` |
-
-___
-
 ### Transforms
 
 Ƭ **Transforms**<`T`\>: `Capitalize`<`T`\> \| `Lowercase`<`T`\> \| `Uncapitalize`<`T`\> \| `Uppercase`<`T`\>
@@ -76,7 +61,7 @@ ___
 
 ### Word
 
-Ƭ **Word**: [`PickKeys`](lang.md#pickkeys)<`facades.lang.Word`, ``true``, ``"extends->"``\>
+Ƭ **Word**: `PickKeys`<`facades.lang.Word`, ``true``, ``"extends->"``\>
 
 ## Variables
 
