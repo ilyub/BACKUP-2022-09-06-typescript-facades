@@ -21,7 +21,9 @@ export interface Facade {
    * @returns Random date.
    */
   readonly date: (
+    // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
     from: string | readonly [number, Unit],
+    // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
     to: string | readonly [number, Unit],
     step?: number,
     unit?: Unit

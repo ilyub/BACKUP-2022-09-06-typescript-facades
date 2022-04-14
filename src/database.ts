@@ -4,7 +4,6 @@ import type {
   NumStr,
   PartialRecord
 } from "@skylib/functions/dist/types/core";
-
 import { uniqueId } from "./uniqueId";
 
 export const database = createFacade<Facade>("database", {});
@@ -428,6 +427,7 @@ export interface DatabaseOptions {
 
 export type DateCondition =
   | string
+  // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
   | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit]
   | readonly [DateConditionType];
 

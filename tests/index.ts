@@ -1,6 +1,5 @@
 import * as o from "@skylib/functions/dist/object";
 import * as reflect from "@skylib/functions/dist/reflect";
-
 import { compare } from "@/compare";
 import { database } from "@/database";
 import { datetime } from "@/datetime";
