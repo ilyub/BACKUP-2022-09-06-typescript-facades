@@ -1,6 +1,5 @@
-import { createFacade } from "@skylib/functions/dist/helpers";
-import type { Rec } from "@skylib/functions/dist/types/core";
-import type { PickKeys } from "@skylib/functions/dist/types/object";
+import { createFacade } from "@skylib/functions";
+import type { Rec, PickKeys } from "@skylib/functions";
 
 declare global {
   namespace facades {
@@ -12,10 +11,12 @@ declare global {
   }
 }
 
-export const icons = createFacade<Facade>("icons", {});
+export const icons = createFacade<icons.Facade>("icons", {});
 
-export type Facade = Icons<Icon>;
+export namespace icons {
+  export type Facade = Icons<Icon>;
 
-export type Icon = PickKeys<facades.icons.Icon, true, "extends->">;
+  export type Icon = PickKeys<facades.icons.Icon, true, "extends->">;
 
-export type Icons<T extends Icon> = Rec<T, string>;
+  export type Icons<T extends Icon> = Rec<T, string>;
+}

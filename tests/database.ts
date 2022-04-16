@@ -1,14 +1,13 @@
-import { uniqueAttachedSubscriptionId, uniqueSubscriptionId } from "@/database";
-import { uniqueId } from "@/uniqueId";
+import { database, uniqueId } from "@";
 
 uniqueId.setImplementation(() => "unique");
 
 test("uniqueAttachedSubscriptionId", () => {
-  expect(uniqueAttachedSubscriptionId()).toStartWith(
+  expect(database.uniqueAttachedSubscriptionId()).toStartWith(
     "attached-subscription-id-unique"
   );
 });
 
 test("uniqueSubscriptionId", () => {
-  expect(uniqueSubscriptionId()).toStartWith("subscription-id-unique");
+  expect(database.uniqueSubscriptionId()).toStartWith("subscription-id-unique");
 });

@@ -1,22 +1,23 @@
-import * as o from "@skylib/functions/dist/object";
-import * as reflect from "@skylib/functions/dist/reflect";
-import { compare } from "@/compare";
-import { database } from "@/database";
-import { datetime } from "@/datetime";
-import { facebook } from "@/facebook";
-import { faker } from "@/faker";
-import { google } from "@/google";
-import { handlePromise } from "@/handlePromise";
-import { httpRequest } from "@/httpRequest";
-import { icons } from "@/icons";
-import { inlineSearch } from "@/inlineSearch";
-import { lang } from "@/lang";
-import { progressReporter } from "@/progressReporter";
-import { reactiveStorage } from "@/reactiveStorage";
-import { showAlert } from "@/showAlert";
-import { showConfirm } from "@/showConfirm";
-import { testDelay } from "@/testDelay";
-import { uniqueId } from "@/uniqueId";
+import { o, reflect } from "@skylib/functions";
+import {
+  compare,
+  database,
+  datetime,
+  facebook,
+  faker,
+  google,
+  handlePromise,
+  httpRequest,
+  icons,
+  inlineSearch,
+  lang,
+  progressReporter,
+  reactiveStorage,
+  showAlert,
+  showConfirm,
+  testDelay,
+  uniqueId
+} from "@";
 
 test.each(
   o

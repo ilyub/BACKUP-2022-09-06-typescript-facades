@@ -1,4 +1,4 @@
-import * as testUtils from "@skylib/functions/dist/testUtils";
+import { testUtils } from "@skylib/functions";
 
 testUtils.jestSetup();
 beforeEach(testUtils.jestReset);

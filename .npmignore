@@ -1,6 +1,5 @@
 *
 !dist/**
 !es/**
-!src/configs/**
 dist/dev/**
 es/dev/**

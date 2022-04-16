@@ -1,12 +1,14 @@
-import { createFacade } from "@skylib/functions/dist/helpers";
+import { createFacade } from "@skylib/functions";
 
-export const uniqueId = createFacade<Facade>("uniqueId", {});
+export const uniqueId = createFacade<uniqueId.Facade>("uniqueId", {});
 
-export interface Facade {
-  /**
-   * Creates unique ID.
-   *
-   * @returns Unique ID.
-   */
-  (): string;
+export namespace uniqueId {
+  export interface Facade {
+    /**
+     * Creates unique ID.
+     *
+     * @returns Unique ID.
+     */
+    (): string;
+  }
 }
