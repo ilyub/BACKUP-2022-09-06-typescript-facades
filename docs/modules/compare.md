@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/compare.Facade.md)
+- [compare](compare.compare-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### compare
 
-• `Const` **compare**: `Facade`<[`Facade`](../interfaces/compare.Facade.md), `unknown`\>
+• `Const` **compare**: `Facade`<[`Facade`](../interfaces/compare.compare-1.Facade.md), `unknown`\>

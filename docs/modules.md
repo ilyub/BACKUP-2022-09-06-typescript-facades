@@ -15,6 +15,7 @@
 - [handlePromise](modules/handlePromise.md)
 - [httpRequest](modules/httpRequest.md)
 - [icons](modules/icons.md)
+- [index](modules/index.md)
 - [inlineSearch](modules/inlineSearch.md)
 - [lang](modules/lang.md)
 - [progressReporter](modules/progressReporter.md)

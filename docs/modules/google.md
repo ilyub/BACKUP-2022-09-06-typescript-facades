@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/google.Facade.md)
+- [google](google.google-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### google
 
-• `Const` **google**: `Facade`<[`Facade`](../interfaces/google.Facade.md), `unknown`\>
+• `Const` **google**: `Facade`<[`Facade`](../interfaces/google.google-1.Facade.md), `unknown`\>

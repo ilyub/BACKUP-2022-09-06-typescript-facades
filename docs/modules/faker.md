@@ -4,26 +4,16 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/faker.Facade.md)
-
-### Type aliases
-
-- [Unit](faker.md#unit)
+- [faker](faker.faker-1.md)
 
 ### Variables
 
 - [faker](faker.md#faker)
 
-## Type aliases
-
-### Unit
-
-Ƭ **Unit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"``
-
 ## Variables
 
 ### faker
 
-• `Const` **faker**: `Facade`<[`Facade`](../interfaces/faker.Facade.md), `unknown`\>
+• `Const` **faker**: `Facade`<[`Facade`](../interfaces/faker.faker-1.Facade.md), `unknown`\>

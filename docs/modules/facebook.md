@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/facebook.Facade.md)
+- [facebook](facebook.facebook-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### facebook
 
-• `Const` **facebook**: `Facade`<[`Facade`](../interfaces/facebook.Facade.md), `unknown`\>
+• `Const` **facebook**: `Facade`<[`Facade`](../interfaces/facebook.facebook-1.Facade.md), `unknown`\>

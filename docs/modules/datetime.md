@@ -4,27 +4,16 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [DateTime](../interfaces/datetime.DateTime.md)
-- [Facade](../interfaces/datetime.Facade.md)
-
-### Type aliases
-
-- [Unit](datetime.md#unit)
+- [datetime](datetime.datetime-1.md)
 
 ### Variables
 
 - [datetime](datetime.md#datetime)
 
-## Type aliases
-
-### Unit
-
-Ƭ **Unit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"`` \| ``"month"`` \| ``"months"`` \| ``"week"`` \| ``"weeks"`` \| ``"year"`` \| ``"years"``
-
 ## Variables
 
 ### datetime
 
-• `Const` **datetime**: `Facade`<[`Facade`](../interfaces/datetime.Facade.md), `unknown`\>
+• `Const` **datetime**: `Facade`<[`Facade`](../interfaces/datetime.datetime-1.Facade.md), `unknown`\>

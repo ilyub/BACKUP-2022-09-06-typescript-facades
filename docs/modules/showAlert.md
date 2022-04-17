@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/showAlert.Facade.md)
+- [showAlert](showAlert.showAlert-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### showAlert
 
-• `Const` **showAlert**: `Facade`<[`Facade`](../interfaces/showAlert.Facade.md), `unknown`\>
+• `Const` **showAlert**: `Facade`<[`Facade`](../interfaces/showAlert.showAlert-1.Facade.md), `unknown`\>

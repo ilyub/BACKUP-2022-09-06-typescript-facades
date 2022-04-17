@@ -4,26 +4,16 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/handlePromise.Facade.md)
-
-### Type aliases
-
-- [Type](handlePromise.md#type)
+- [handlePromise](handlePromise.handlePromise-1.md)
 
 ### Variables
 
 - [handlePromise](handlePromise.md#handlepromise)
 
-## Type aliases
-
-### Type
-
-Ƭ **Type**: ``"createDb"`` \| ``"dbRequest"`` \| ``"destroyDb"`` \| ``"httpRequest"`` \| ``"navigation"``
-
 ## Variables
 
 ### handlePromise
 
-• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.Facade.md), `unknown`\>
+• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handlePromise.handlePromise-1.Facade.md), `unknown`\>

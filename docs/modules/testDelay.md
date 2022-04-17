@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/testDelay.Facade.md)
+- [testDelay](testDelay.testDelay-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### testDelay
 
-• `Const` **testDelay**: `Facade`<[`Facade`](../interfaces/testDelay.Facade.md), `unknown`\>
+• `Const` **testDelay**: `Facade`<[`Facade`](../interfaces/testDelay.testDelay-1.Facade.md), `unknown`\>

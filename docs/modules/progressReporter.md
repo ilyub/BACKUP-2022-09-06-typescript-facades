@@ -4,10 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/progressReporter.Facade.md)
-- [Process](../interfaces/progressReporter.Process.md)
+- [progressReporter](progressReporter.progressReporter-1.md)
 
 ### Variables
 
@@ -17,4 +16,4 @@
 
 ### progressReporter
 
-• `Const` **progressReporter**: `Facade`<[`Facade`](../interfaces/progressReporter.Facade.md), `unknown`\>
+• `Const` **progressReporter**: `Facade`<[`Facade`](../interfaces/progressReporter.progressReporter-1.Facade.md), `unknown`\>

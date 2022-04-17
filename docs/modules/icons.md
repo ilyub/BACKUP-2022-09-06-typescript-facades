@@ -4,42 +4,16 @@
 
 ## Table of contents
 
-### Type aliases
+### Namespaces
 
-- [Facade](icons.md#facade)
-- [Icon](icons.md#icon)
-- [Icons](icons.md#icons)
+- [icons](icons.icons-1.md)
 
 ### Variables
 
-- [icons](icons.md#icons-1)
-
-## Type aliases
-
-### Facade
-
-Ƭ **Facade**: [`Icons`](icons.md#icons)<[`Icon`](icons.md#icon)\>
-
-___
-
-### Icon
-
-Ƭ **Icon**: `PickKeys`<`facades.icons.Icon`, ``true``, ``"extends->"``\>
-
-___
-
-### Icons
-
-Ƭ **Icons**<`T`\>: `Rec`<`T`, `string`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`Icon`](icons.md#icon) |
+- [icons](icons.md#icons)
 
 ## Variables
 
 ### icons
 
-• `Const` **icons**: `Facade`<[`Facade`](icons.md#facade), `unknown`\>
+• `Const` **icons**: `Facade`<[`Facade`](icons.icons-1.md#facade), `unknown`\>

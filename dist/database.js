@@ -1,25 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.uniqueSubscriptionId = exports.uniqueAttachedSubscriptionId = exports.database = void 0;
-const helpers_1 = require("@skylib/functions/dist/helpers");
+exports.database = void 0;
+const functions_1 = require("@skylib/functions");
 const uniqueId_1 = require("./uniqueId");
-exports.database = (0, helpers_1.createFacade)("database", {});
-/**
- * Generates unique attached subscription ID.
- *
- * @returns Attached subscription ID.
- */
-function uniqueAttachedSubscriptionId() {
-    return `attached-subscription-id-${(0, uniqueId_1.uniqueId)()}`;
-}
-exports.uniqueAttachedSubscriptionId = uniqueAttachedSubscriptionId;
-/**
- * Generates unique subscription ID.
- *
- * @returns Subscription ID.
- */
-function uniqueSubscriptionId() {
-    return `subscription-id-${(0, uniqueId_1.uniqueId)()}`;
-}
-exports.uniqueSubscriptionId = uniqueSubscriptionId;
+exports.database = (0, functions_1.createFacade)("database", {
+    uniqueAttachedSubscriptionId() {
+        return `attached-subscription-id-${(0, uniqueId_1.uniqueId)()}`;
+    },
+    uniqueSubscriptionId() {
+        return `subscription-id-${(0, uniqueId_1.uniqueId)()}`;
+    }
+});
 //# sourceMappingURL=database.js.map

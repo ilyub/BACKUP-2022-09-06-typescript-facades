@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/uniqueId.Facade.md)
+- [uniqueId](uniqueId.uniqueId-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### uniqueId
 
-• `Const` **uniqueId**: `Facade`<[`Facade`](../interfaces/uniqueId.Facade.md), `unknown`\>
+• `Const` **uniqueId**: `Facade`<[`Facade`](../interfaces/uniqueId.uniqueId-1.Facade.md), `unknown`\>

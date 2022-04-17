@@ -4,40 +4,16 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/httpRequest.Facade.md)
-
-### Type aliases
-
-- [HttpHeader](httpRequest.md#httpheader)
-- [HttpHeaders](httpRequest.md#httpheaders)
-- [HttpRequestMethod](httpRequest.md#httprequestmethod)
+- [httpRequest](httpRequest.httpRequest-1.md)
 
 ### Variables
 
 - [httpRequest](httpRequest.md#httprequest)
 
-## Type aliases
-
-### HttpHeader
-
-Ƭ **HttpHeader**: ``"Accept-Language"`` \| ``"Accept"`` \| ``"Authorization"`` \| ``"Content-Type"``
-
-___
-
-### HttpHeaders
-
-Ƭ **HttpHeaders**: `PartialRecord`<[`HttpHeader`](httpRequest.md#httpheader), `string`\>
-
-___
-
-### HttpRequestMethod
-
-Ƭ **HttpRequestMethod**: ``"delete"`` \| ``"get"`` \| ``"post"``
-
 ## Variables
 
 ### httpRequest
 
-• `Const` **httpRequest**: `Facade`<[`Facade`](../interfaces/httpRequest.Facade.md), `unknown`\>
+• `Const` **httpRequest**: `Facade`<[`Facade`](../interfaces/httpRequest.httpRequest-1.Facade.md), `unknown`\>

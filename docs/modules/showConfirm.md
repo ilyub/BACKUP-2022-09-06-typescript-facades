@@ -4,9 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/showConfirm.Facade.md)
+- [showConfirm](showConfirm.showConfirm-1.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### showConfirm
 
-• `Const` **showConfirm**: `Facade`<[`Facade`](../interfaces/showConfirm.Facade.md), `unknown`\>
+• `Const` **showConfirm**: `Facade`<[`Facade`](../interfaces/showConfirm.showConfirm-1.Facade.md), `unknown`\>

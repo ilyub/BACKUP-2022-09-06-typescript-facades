@@ -4,28 +4,16 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Facade](../interfaces/reactiveStorage.Facade.md)
-- [Handler](../interfaces/reactiveStorage.Handler.md)
-- [Reducer](../interfaces/reactiveStorage.Reducer.md)
-
-### Type aliases
-
-- [Observer](reactiveStorage.md#observer)
+- [reactiveStorage](reactiveStorage.reactiveStorage-1.md)
 
 ### Variables
 
 - [reactiveStorage](reactiveStorage.md#reactivestorage)
 
-## Type aliases
-
-### Observer
-
-Ƭ **Observer**: `facades.reactiveStorage.Observer`
-
 ## Variables
 
 ### reactiveStorage
 
-• `Const` **reactiveStorage**: `Facade`<[`Facade`](../interfaces/reactiveStorage.Facade.md), `unknown`\>
+• `Const` **reactiveStorage**: `Facade`<[`Facade`](../interfaces/reactiveStorage.reactiveStorage-1.Facade.md), `unknown`\>

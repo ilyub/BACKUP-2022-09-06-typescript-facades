@@ -4,10 +4,9 @@
 
 ## Table of contents
 
-### Interfaces
+### Namespaces
 
-- [Engine](../interfaces/inlineSearch.Engine.md)
-- [Facade](../interfaces/inlineSearch.Facade.md)
+- [inlineSearch](inlineSearch.inlineSearch-1.md)
 
 ### Variables
 
@@ -17,4 +16,4 @@
 
 ### inlineSearch
 
-• `Const` **inlineSearch**: `Facade`<[`Facade`](../interfaces/inlineSearch.Facade.md), `unknown`\>
+• `Const` **inlineSearch**: `Facade`<[`Facade`](../interfaces/inlineSearch.inlineSearch-1.Facade.md), `unknown`\>
