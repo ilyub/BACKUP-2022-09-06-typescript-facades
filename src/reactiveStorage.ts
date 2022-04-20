@@ -1,4 +1,5 @@
 import { createFacade } from "@skylib/functions";
+import type { ObjectKeys } from "@skylib/functions";
 
 declare global {
   namespace facades {
@@ -55,7 +56,16 @@ export namespace reactiveStorage {
     (obj: T): void;
   }
 
-  export type Observer = facades.reactiveStorage.Observer;
+  export type Observer = Pick<
+    facades.reactiveStorage.Observer,
+    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents -- Ok
+    | ObjectKeys<
+        facades.reactiveStorage.Observer,
+        "optional" | "readonly",
+        never
+      >
+    | "_type"
+  >;
 
   export interface Reducer<T extends object> {
     /**
