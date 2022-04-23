@@ -15,7 +15,7 @@ export namespace handlePromise {
      */
     readonly runAll: () => Promise<void>;
     /**
-     * Checks that there are active promises.
+     * Checks if there are active promises.
      *
      * @returns _True_ if there are active promises, _false_ otherwise.
      */

@@ -36,7 +36,7 @@ export namespace lang {
      */
     readonly get: (key: string) => string;
     /**
-     * Checks that word exists.
+     * Checks if word exists.
      *
      * @param key - Word ID.
      * @returns _True_ if word exists, _false_ otherwise.
