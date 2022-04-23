@@ -62,13 +62,7 @@ export namespace lang {
   export type Facade = Lang<Word, Context>;
 
   export type Lang<W extends Word, C extends Context> = Dictionary<C> &
-    Rec<Transforms<W>, string>;
-
-  export type Transforms<T extends Word> =
-    | Capitalize<T>
-    | Lowercase<T>
-    | Uncapitalize<T>
-    | Uppercase<T>;
+    Rec<Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>, string>;
 
   export type Word = PickKeys<facades.lang.Word, true, "extends->">;
 }

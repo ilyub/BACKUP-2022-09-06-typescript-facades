@@ -22,12 +22,10 @@ export namespace faker {
      * @returns Random date.
      */
     readonly date: (
-      // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
-      from: string | readonly [number, Unit],
-      // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
-      to: string | readonly [number, Unit],
+      from: TimeInterval | string,
+      to: TimeInterval | string,
       step?: number,
-      unit?: Unit
+      unit?: TimeUnit
     ) => string;
     /**
      * Generates random number.
@@ -84,5 +82,14 @@ export namespace faker {
     readonly word: () => string;
   }
 
-  export type Unit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
+  // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
+  export type TimeInterval = readonly [number, TimeUnit];
+
+  export type TimeUnit =
+    | "day"
+    | "days"
+    | "hour"
+    | "hours"
+    | "minute"
+    | "minutes";
 }
