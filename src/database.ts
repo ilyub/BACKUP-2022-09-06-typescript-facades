@@ -1,6 +1,6 @@
+import { uniqueId } from "./uniqueId";
 import { createFacade } from "@skylib/functions";
 import type { numbers, NumStr, PartialRecord } from "@skylib/functions";
-import { uniqueId } from "./uniqueId";
 
 export const database = createFacade<database.Facade, database.Extension>(
   "database",

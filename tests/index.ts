@@ -1,4 +1,3 @@
-import { o, reflect } from "@skylib/functions";
 import {
   compare,
   database,
@@ -18,6 +17,7 @@ import {
   testDelay,
   uniqueId
 } from "@";
+import { o, reflect } from "@skylib/functions";
 
 test.each(
   o
