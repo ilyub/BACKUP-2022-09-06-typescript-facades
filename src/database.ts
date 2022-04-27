@@ -1,4 +1,4 @@
-import { uniqueId } from "./uniqueId";
+import { uniqueId } from "./unique-id";
 import { createFacade } from "@skylib/functions";
 import type { numbers, NumStr, PartialRecord } from "@skylib/functions";
 

@@ -10,24 +10,24 @@ export { faker } from "./faker";
 
 export { google } from "./google";
 
-export { handlePromise } from "./handlePromise";
+export { handlePromise } from "./handle-promise";
 
-export { httpRequest } from "./httpRequest";
+export { httpRequest } from "./http-request";
 
 export { icons } from "./icons";
 
-export { inlineSearch } from "./inlineSearch";
+export { inlineSearch } from "./inline-search";
 
 export { lang } from "./lang";
 
-export { progressReporter } from "./progressReporter";
+export { progressReporter } from "./progress-reporter";
 
-export { reactiveStorage } from "./reactiveStorage";
+export { reactiveStorage } from "./reactive-storage";
 
-export { showAlert } from "./showAlert";
+export { showAlert } from "./show-alert";
 
-export { showConfirm } from "./showConfirm";
+export { showConfirm } from "./show-confirm";
 
-export { testDelay } from "./testDelay";
+export { testDelay } from "./test-delay";
 
-export { uniqueId } from "./uniqueId";
+export { uniqueId } from "./unique-id";
