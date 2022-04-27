@@ -132,7 +132,7 @@ ___
 
 ▸ `Readonly` **exists**(`id`): `Promise`<`boolean`\>
 
-Checks that document exists.
+Checks if document exists.
 
 #### Parameters
 
@@ -152,7 +152,7 @@ ___
 
 ▸ `Readonly` **existsAttached**(`id`, `parentId`): `Promise`<`boolean`\>
 
-Checks that attached document exists.
+Checks if attached document exists.
 
 #### Parameters
 
@@ -441,7 +441,7 @@ ___
 
 ▸ `Readonly` **reactiveExists**(`id`): [`ReactiveResponse`](../modules/database.database-1.md#reactiveresponse)<`boolean`\>
 
-Checks that document exists.
+Checks if document exists.
 
 #### Parameters
 
@@ -461,7 +461,7 @@ ___
 
 ▸ `Readonly` **reactiveExistsAttached**(`id`, `parentId`): [`ReactiveResponse`](../modules/database.database-1.md#reactiveresponse)<`boolean`\>
 
-Checks that attached document exists.
+Checks if attached document exists.
 
 #### Parameters
 

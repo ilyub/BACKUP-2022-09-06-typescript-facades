@@ -30,7 +30,7 @@ export declare namespace lang {
          */
         readonly get: (key: string) => string;
         /**
-         * Checks that word exists.
+         * Checks if word exists.
          *
          * @param key - Word ID.
          * @returns _True_ if word exists, _false_ otherwise.
@@ -53,8 +53,7 @@ export declare namespace lang {
         readonly with: (name: string, replacement: NumStr) => Facade;
     }
     type Facade = Lang<Word, Context>;
-    type Lang<W extends Word, C extends Context> = Dictionary<C> & Rec<Transforms<W>, string>;
-    type Transforms<T extends Word> = Capitalize<T> | Lowercase<T> | Uncapitalize<T> | Uppercase<T>;
+    type Lang<W extends Word, C extends Context> = Dictionary<C> & Rec<Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>, string>;
     type Word = PickKeys<facades.lang.Word, true, "extends->">;
 }
 //# sourceMappingURL=lang.d.ts.map

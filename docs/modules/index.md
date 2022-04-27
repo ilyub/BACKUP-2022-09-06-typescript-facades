@@ -64,13 +64,13 @@ ___
 
 ### handlePromise
 
-Re-exports [handlePromise](handlePromise.md#handlepromise)
+Re-exports [handlePromise](handle_promise.md#handlepromise)
 
 ___
 
 ### httpRequest
 
-Re-exports [httpRequest](httpRequest.md#httprequest)
+Re-exports [httpRequest](http_request.md#httprequest)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 ### inlineSearch
 
-Re-exports [inlineSearch](inlineSearch.md#inlinesearch)
+Re-exports [inlineSearch](inline_search.md#inlinesearch)
 
 ___
 
@@ -94,34 +94,34 @@ ___
 
 ### progressReporter
 
-Re-exports [progressReporter](progressReporter.md#progressreporter)
+Re-exports [progressReporter](progress_reporter.md#progressreporter)
 
 ___
 
 ### reactiveStorage
 
-Re-exports [reactiveStorage](reactiveStorage.md#reactivestorage)
+Re-exports [reactiveStorage](reactive_storage.md#reactivestorage)
 
 ___
 
 ### showAlert
 
-Re-exports [showAlert](showAlert.md#showalert)
+Re-exports [showAlert](show_alert.md#showalert)
 
 ___
 
 ### showConfirm
 
-Re-exports [showConfirm](showConfirm.md#showconfirm)
+Re-exports [showConfirm](show_confirm.md#showconfirm)
 
 ___
 
 ### testDelay
 
-Re-exports [testDelay](testDelay.md#testdelay)
+Re-exports [testDelay](test_delay.md#testdelay)
 
 ___
 
 ### uniqueId
 
-Re-exports [uniqueId](uniqueId.md#uniqueid)
+Re-exports [uniqueId](unique_id.md#uniqueid)

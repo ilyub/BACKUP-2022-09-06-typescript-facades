@@ -66,7 +66,7 @@ ___
 
 ▸ `Readonly` **has**(`key`): `boolean`
 
-Checks that word exists.
+Checks if word exists.
 
 #### Parameters
 

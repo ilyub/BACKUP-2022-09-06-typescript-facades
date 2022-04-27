@@ -18,7 +18,7 @@ export declare namespace faker {
          * @param unit - Step unit.
          * @returns Random date.
          */
-        readonly date: (from: string | readonly [number, Unit], to: string | readonly [number, Unit], step?: number, unit?: Unit) => string;
+        readonly date: (from: TimeInterval | string, to: TimeInterval | string, step?: number, unit?: TimeUnit) => string;
         /**
          * Generates random number.
          *
@@ -68,6 +68,7 @@ export declare namespace faker {
          */
         readonly word: () => string;
     }
-    type Unit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
+    type TimeInterval = readonly [number, TimeUnit];
+    type TimeUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
 }
 //# sourceMappingURL=faker.d.ts.map

@@ -91,14 +91,14 @@ export declare namespace database {
          */
         readonly countAttached: (conditions?: Conditions, parentConditions?: Conditions) => Promise<number>;
         /**
-         * Checks that document exists.
+         * Checks if document exists.
          *
          * @param id - ID.
          * @returns _True_ if document exists, _false_ otherwise.
          */
         readonly exists: (id: string) => Promise<boolean>;
         /**
-         * Checks that attached document exists.
+         * Checks if attached document exists.
          *
          * @param id - ID.
          * @param parentId - Parent ID.
@@ -205,14 +205,14 @@ export declare namespace database {
          */
         readonly reactiveCountAttached: (config: ReactiveConfigAttached) => ReactiveResponse<number>;
         /**
-         * Checks that document exists.
+         * Checks if document exists.
          *
          * @param id - ID.
          * @returns _True_ if document exists, _false_ otherwise.
          */
         readonly reactiveExists: (id: string) => ReactiveResponse<boolean>;
         /**
-         * Checks that attached document exists.
+         * Checks if attached document exists.
          *
          * @param id - ID.
          * @param parentId - Parent ID.

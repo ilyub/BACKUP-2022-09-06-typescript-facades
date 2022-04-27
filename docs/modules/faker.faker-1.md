@@ -12,10 +12,17 @@
 
 ### Type aliases
 
-- [Unit](faker.faker-1.md#unit)
+- [TimeInterval](faker.faker-1.md#timeinterval)
+- [TimeUnit](faker.faker-1.md#timeunit)
 
 ## Type aliases
 
-### Unit
+### TimeInterval
 
-Ƭ **Unit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"``
+Ƭ **TimeInterval**: readonly [`number`, [`TimeUnit`](faker.faker-1.md#timeunit)]
+
+___
+
+### TimeUnit
+
+Ƭ **TimeUnit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"``

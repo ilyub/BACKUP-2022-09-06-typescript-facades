@@ -15,7 +15,6 @@
 - [Context](lang.lang-1.md#context)
 - [Facade](lang.lang-1.md#facade)
 - [Lang](lang.lang-1.md#lang)
-- [Transforms](lang.lang-1.md#transforms)
 - [Word](lang.lang-1.md#word)
 
 ## Type aliases
@@ -34,7 +33,7 @@ ___
 
 ### Lang
 
-Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.lang-1.Dictionary.md)<`C`\> & `Rec`<[`Transforms`](lang.lang-1.md#transforms)<`W`\>, `string`\>
+Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.lang-1.Dictionary.md)<`C`\> & `Rec`<`Capitalize`<`W`\> \| `Lowercase`<`W`\> \| `Uncapitalize`<`W`\> \| `Uppercase`<`W`\>, `string`\>
 
 #### Type parameters
 
@@ -42,18 +41,6 @@ ___
 | :------ | :------ |
 | `W` | extends [`Word`](lang.lang-1.md#word) |
 | `C` | extends [`Context`](lang.lang-1.md#context) |
-
-___
-
-### Transforms
-
-Ƭ **Transforms**<`T`\>: `Capitalize`<`T`\> \| `Lowercase`<`T`\> \| `Uncapitalize`<`T`\> \| `Uppercase`<`T`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`Word`](lang.lang-1.md#word) |
 
 ___
 

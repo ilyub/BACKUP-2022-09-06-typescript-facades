@@ -1,5 +1,5 @@
+import { uniqueId } from "./unique-id";
 import { createFacade } from "@skylib/functions";
-import { uniqueId } from "./uniqueId";
 export const database = createFacade("database", {
     uniqueAttachedSubscriptionId() {
         return `attached-subscription-id-${uniqueId()}`;

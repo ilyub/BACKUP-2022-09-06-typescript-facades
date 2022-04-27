@@ -50,10 +50,10 @@ Generates random date.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `from` | `string` \| readonly [`number`, [`Unit`](../modules/faker.faker-1.md#unit)] | Min date. |
-| `to` | `string` \| readonly [`number`, [`Unit`](../modules/faker.faker-1.md#unit)] | Max date. |
+| `from` | `string` \| [`TimeInterval`](../modules/faker.faker-1.md#timeinterval) | Min date. |
+| `to` | `string` \| [`TimeInterval`](../modules/faker.faker-1.md#timeinterval) | Max date. |
 | `step?` | `number` | Step. |
-| `unit?` | [`Unit`](../modules/faker.faker-1.md#unit) | Step unit. |
+| `unit?` | [`TimeUnit`](../modules/faker.faker-1.md#timeunit) | Step unit. |
 
 #### Returns
 
