@@ -109,7 +109,7 @@ ___
 
 ### format
 
-▸ `Readonly` **format**(`fmt`): `string`
+▸ `Readonly` **format**(`format`): `string`
 
 Formats date.
 
@@ -117,7 +117,7 @@ Formats date.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `fmt` | `string` | Format. |
+| `format` | `string` | Format. |
 
 #### Returns
 
@@ -271,7 +271,7 @@ ___
 
 ### setDayOfMonth
 
-▸ `Readonly` **setDayOfMonth**(`date`): [`DateTime`](datetime.datetime-1.DateTime.md)
+▸ `Readonly` **setDayOfMonth**(`day`): [`DateTime`](datetime.datetime-1.DateTime.md)
 
 Sets day of month.
 
@@ -279,7 +279,7 @@ Sets day of month.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `date` | `number` | Day of month. |
+| `day` | `number` | Day of month. |
 
 #### Returns
 

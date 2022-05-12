@@ -45,7 +45,7 @@ ___
 
 ### silent
 
-▸ `Readonly` **silent**<`T`\>(`promiseAsync`, `errorMessage?`): `void`
+▸ `Readonly` **silent**<`T`\>(`mixed`, `errorMessage?`): `void`
 
 Handles promise.
 
@@ -59,7 +59,7 @@ Handles promise.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `promiseAsync` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
+| `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 
 #### Returns
@@ -70,7 +70,7 @@ ___
 
 ### verbose
 
-▸ `Readonly` **verbose**<`T`\>(`promiseAsync`, `type`, `errorMessage?`): `void`
+▸ `Readonly` **verbose**<`T`\>(`mixed`, `type`, `errorMessage?`): `void`
 
 Handles promise with progress reporting.
 
@@ -84,7 +84,7 @@ Handles promise with progress reporting.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `promiseAsync` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
+| `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
 | `type` | [`Type`](../modules/handle_promise.handlePromise.md#type) | Type (determines expected duration for progress reporting). |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 

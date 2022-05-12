@@ -31,10 +31,10 @@ export declare namespace datetime {
         /**
          * Formats date.
          *
-         * @param fmt - Format.
+         * @param format - Format.
          * @returns Formatted string.
          */
-        readonly format: (fmt: string) => string;
+        readonly format: (format: string) => string;
         /**
          * Returns hours.
          *
@@ -91,10 +91,10 @@ export declare namespace datetime {
         /**
          * Sets day of month.
          *
-         * @param date - Day of month.
+         * @param day - Day of month.
          * @returns Self.
          */
-        readonly setDayOfMonth: (date: number) => DateTime;
+        readonly setDayOfMonth: (day: number) => DateTime;
         /**
          * Sets day of week.
          *

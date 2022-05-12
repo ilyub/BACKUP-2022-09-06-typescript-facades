@@ -17,18 +17,18 @@ export declare namespace handlePromise {
         /**
          * Handles promise.
          *
-         * @param promiseAsync - Promise or async function.
+         * @param mixed - Promise or async function.
          * @param errorMessage - Error message (used to alert user on error).
          */
-        readonly silent: <T>(promiseAsync: AsyncPromise<T>, errorMessage?: string) => void;
+        readonly silent: <T>(mixed: AsyncPromise<T>, errorMessage?: string) => void;
         /**
          * Handles promise with progress reporting.
          *
-         * @param promiseAsync - Promise or async function.
+         * @param mixed - Promise or async function.
          * @param type - Type (determines expected duration for progress reporting).
          * @param errorMessage - Error message (used to alert user on error).
          */
-        readonly verbose: <T>(promiseAsync: AsyncPromise<T>, type: Type, errorMessage?: string) => void;
+        readonly verbose: <T>(mixed: AsyncPromise<T>, type: Type, errorMessage?: string) => void;
     }
     type Type = "createDb" | "dbRequest" | "destroyDb" | "httpRequest" | "navigation";
 }
