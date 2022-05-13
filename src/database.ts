@@ -5,12 +5,10 @@ import type { numbers, NumStr, PartialRecord } from "@skylib/functions";
 export const database = createFacade<database.Facade, database.Extension>(
   "database",
   {
-    uniqueAttachedSubscriptionId(): database.AttachedSubscriptionId {
-      return `attached-subscription-id-${uniqueId()}`;
-    },
-    uniqueSubscriptionId(): database.SubscriptionId {
-      return `subscription-id-${uniqueId()}`;
-    }
+    uniqueAttachedSubscriptionId: (): database.AttachedSubscriptionId =>
+      `attached-subscription-id-${uniqueId()}`,
+    uniqueSubscriptionId: (): database.SubscriptionId =>
+      `subscription-id-${uniqueId()}`
   }
 );
 
