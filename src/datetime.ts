@@ -4,7 +4,7 @@ import type { NumStr } from "@skylib/functions";
 export const datetime = createFacade<datetime.Facade>("datetime", {});
 
 export namespace datetime {
-  export interface DateTime {
+  export interface DateTime extends ReadonlyDateTime {
     /**
      * Adds time interval.
      *
@@ -13,84 +13,6 @@ export namespace datetime {
      * @returns Self.
      */
     readonly add: (amount: number, unit: Unit) => DateTime;
-    /**
-     * Clones self.
-     *
-     * @returns DateTime instance.
-     */
-    readonly clone: () => DateTime;
-    /**
-     * Returns day of month.
-     *
-     * @returns Day of month.
-     */
-    readonly dayOfMonth: () => number;
-    /**
-     * Returns day of week.
-     *
-     * @returns Day of week (Sunday = 0, Monday = 1).
-     */
-    readonly dayOfWeek: () => number;
-    /**
-     * Formats date.
-     *
-     * @param format - Format.
-     * @returns Formatted string.
-     */
-    readonly format: (format: string) => string;
-    /**
-     * Returns hours.
-     *
-     * @returns Hours.
-     */
-    readonly hours: () => number;
-    /**
-     * Compares two dates up to day of month.
-     *
-     * @param date - Date.
-     * @returns _True_ if dates are equal, _false_ otherwise.
-     */
-    readonly isSameDayOfMonth: (date: DateTime) => boolean;
-    /**
-     * Compares two dates up to hours.
-     *
-     * @param date - Date.
-     * @returns _True_ if dates are equal, _false_ otherwise.
-     */
-    readonly isSameHour: (date: DateTime) => boolean;
-    /**
-     * Compares two dates up to minutes.
-     *
-     * @param date - Date.
-     * @returns _True_ if dates are equal, _false_ otherwise.
-     */
-    readonly isSameMinute: (date: DateTime) => boolean;
-    /**
-     * Compares two dates up to month.
-     *
-     * @param date - Date.
-     * @returns _True_ if dates are equal, _false_ otherwise.
-     */
-    readonly isSameMonth: (date: DateTime) => boolean;
-    /**
-     * Compares two dates up to year.
-     *
-     * @param date - Date.
-     * @returns _True_ if dates are equal, _false_ otherwise.
-     */
-    readonly isSameYear: (date: DateTime) => boolean;
-    /**
-     * Returns minutes.
-     *
-     * @returns Minutes.
-     */
-    readonly minutes: () => number;
-    /**
-     * Returns month.
-     *
-     * @returns Month (0 = January).
-     */
-    readonly month: () => number;
     /**
      * Sets day of month.
      *
@@ -192,36 +114,6 @@ export namespace datetime {
      * @returns Self.
      */
     readonly sub: (amount: number, unit: Unit) => DateTime;
-    /**
-     * Returns date as a Date object.
-     *
-     * @returns Date object.
-     */
-    readonly toDate: () => Date;
-    /**
-     * Returns date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
-     *
-     * @returns Formatted string.
-     */
-    readonly toString: () => string;
-    /**
-     * Returns date as a number of milliseconds.
-     *
-     * @returns Number of milliseconds.
-     */
-    readonly toTime: () => number;
-    /**
-     * Returns date as a number of seconds.
-     *
-     * @returns Number of seconds.
-     */
-    readonly toTimeSec: () => number;
-    /**
-     * Returns year.
-     *
-     * @returns Year.
-     */
-    readonly year: () => number;
   }
 
   export interface Facade {
@@ -257,6 +149,117 @@ export namespace datetime {
      * @returns _True_ if date is valid, _false_ otherwise.
      */
     readonly validate: (date: string) => boolean;
+  }
+
+  export interface ReadonlyDateTime {
+    /**
+     * Clones self.
+     *
+     * @returns DateTime instance.
+     */
+    readonly clone: () => DateTime;
+    /**
+     * Returns day of month.
+     *
+     * @returns Day of month.
+     */
+    readonly dayOfMonth: () => number;
+    /**
+     * Returns day of week.
+     *
+     * @returns Day of week (Sunday = 0, Monday = 1).
+     */
+    readonly dayOfWeek: () => number;
+    /**
+     * Formats date.
+     *
+     * @param format - Format.
+     * @returns Formatted string.
+     */
+    readonly format: (format: string) => string;
+    /**
+     * Returns hours.
+     *
+     * @returns Hours.
+     */
+    readonly hours: () => number;
+    /**
+     * Compares two dates up to day of month.
+     *
+     * @param date - Date.
+     * @returns _True_ if dates are equal, _false_ otherwise.
+     */
+    readonly isSameDayOfMonth: (date: DateTime) => boolean;
+    /**
+     * Compares two dates up to hours.
+     *
+     * @param date - Date.
+     * @returns _True_ if dates are equal, _false_ otherwise.
+     */
+    readonly isSameHour: (date: DateTime) => boolean;
+    /**
+     * Compares two dates up to minutes.
+     *
+     * @param date - Date.
+     * @returns _True_ if dates are equal, _false_ otherwise.
+     */
+    readonly isSameMinute: (date: DateTime) => boolean;
+    /**
+     * Compares two dates up to month.
+     *
+     * @param date - Date.
+     * @returns _True_ if dates are equal, _false_ otherwise.
+     */
+    readonly isSameMonth: (date: DateTime) => boolean;
+    /**
+     * Compares two dates up to year.
+     *
+     * @param date - Date.
+     * @returns _True_ if dates are equal, _false_ otherwise.
+     */
+    readonly isSameYear: (date: DateTime) => boolean;
+    /**
+     * Returns minutes.
+     *
+     * @returns Minutes.
+     */
+    readonly minutes: () => number;
+    /**
+     * Returns month.
+     *
+     * @returns Month (0 = January).
+     */
+    readonly month: () => number;
+    /**
+     * Returns date as a Date object.
+     *
+     * @returns Date object.
+     */
+    readonly toDate: () => Date;
+    /**
+     * Returns date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
+     *
+     * @returns Formatted string.
+     */
+    readonly toString: () => string;
+    /**
+     * Returns date as a number of milliseconds.
+     *
+     * @returns Number of milliseconds.
+     */
+    readonly toTime: () => number;
+    /**
+     * Returns date as a number of seconds.
+     *
+     * @returns Number of seconds.
+     */
+    readonly toTimeSec: () => number;
+    /**
+     * Returns year.
+     *
+     * @returns Year.
+     */
+    readonly year: () => number;
   }
 
   export type Unit =
