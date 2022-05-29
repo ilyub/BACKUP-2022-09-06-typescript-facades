@@ -525,9 +525,9 @@ export namespace database {
     /**
      * Migration callback.
      *
-     * @param this - Database.
+     * @param db - Database.
      */
-    (this: Database): Promise<void>;
+    (db: Database): Promise<void>;
   }
 
   export type Migrations = readonly Migration[];
