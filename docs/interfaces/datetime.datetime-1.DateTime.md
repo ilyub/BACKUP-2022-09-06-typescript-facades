@@ -4,6 +4,12 @@
 
 [datetime](../modules/datetime.md).[datetime](../modules/datetime.datetime-1.md).DateTime
 
+## Hierarchy
+
+- [`ReadonlyDateTime`](datetime.datetime-1.ReadonlyDateTime.md)
+
+  ↳ **`DateTime`**
+
 ## Table of contents
 
 ### Methods
@@ -77,6 +83,10 @@ Clones self.
 
 DateTime instance.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[clone](datetime.datetime-1.ReadonlyDateTime.md#clone)
+
 ___
 
 ### dayOfMonth
@@ -91,6 +101,10 @@ Returns day of month.
 
 Day of month.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[dayOfMonth](datetime.datetime-1.ReadonlyDateTime.md#dayofmonth)
+
 ___
 
 ### dayOfWeek
@@ -104,6 +118,10 @@ Returns day of week.
 `number`
 
 Day of week (Sunday = 0, Monday = 1).
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[dayOfWeek](datetime.datetime-1.ReadonlyDateTime.md#dayofweek)
 
 ___
 
@@ -125,6 +143,10 @@ Formats date.
 
 Formatted string.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[format](datetime.datetime-1.ReadonlyDateTime.md#format)
+
 ___
 
 ### hours
@@ -138,6 +160,10 @@ Returns hours.
 `number`
 
 Hours.
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[hours](datetime.datetime-1.ReadonlyDateTime.md#hours)
 
 ___
 
@@ -159,6 +185,10 @@ Compares two dates up to day of month.
 
 _True_ if dates are equal, _false_ otherwise.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[isSameDayOfMonth](datetime.datetime-1.ReadonlyDateTime.md#issamedayofmonth)
+
 ___
 
 ### isSameHour
@@ -178,6 +208,10 @@ Compares two dates up to hours.
 `boolean`
 
 _True_ if dates are equal, _false_ otherwise.
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[isSameHour](datetime.datetime-1.ReadonlyDateTime.md#issamehour)
 
 ___
 
@@ -199,6 +233,10 @@ Compares two dates up to minutes.
 
 _True_ if dates are equal, _false_ otherwise.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[isSameMinute](datetime.datetime-1.ReadonlyDateTime.md#issameminute)
+
 ___
 
 ### isSameMonth
@@ -218,6 +256,10 @@ Compares two dates up to month.
 `boolean`
 
 _True_ if dates are equal, _false_ otherwise.
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[isSameMonth](datetime.datetime-1.ReadonlyDateTime.md#issamemonth)
 
 ___
 
@@ -239,6 +281,10 @@ Compares two dates up to year.
 
 _True_ if dates are equal, _false_ otherwise.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[isSameYear](datetime.datetime-1.ReadonlyDateTime.md#issameyear)
+
 ___
 
 ### minutes
@@ -253,6 +299,10 @@ Returns minutes.
 
 Minutes.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[minutes](datetime.datetime-1.ReadonlyDateTime.md#minutes)
+
 ___
 
 ### month
@@ -266,6 +316,10 @@ Returns month.
 `number`
 
 Month (0 = January).
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[month](datetime.datetime-1.ReadonlyDateTime.md#month)
 
 ___
 
@@ -547,6 +601,10 @@ Returns date as a Date object.
 
 Date object.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[toDate](datetime.datetime-1.ReadonlyDateTime.md#todate)
+
 ___
 
 ### toString
@@ -560,6 +618,10 @@ Returns date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
 `string`
 
 Formatted string.
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[toString](datetime.datetime-1.ReadonlyDateTime.md#tostring)
 
 ___
 
@@ -575,6 +637,10 @@ Returns date as a number of milliseconds.
 
 Number of milliseconds.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[toTime](datetime.datetime-1.ReadonlyDateTime.md#totime)
+
 ___
 
 ### toTimeSec
@@ -589,6 +655,10 @@ Returns date as a number of seconds.
 
 Number of seconds.
 
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[toTimeSec](datetime.datetime-1.ReadonlyDateTime.md#totimesec)
+
 ___
 
 ### year
@@ -602,3 +672,7 @@ Returns year.
 `number`
 
 Year.
+
+#### Inherited from
+
+[ReadonlyDateTime](datetime.datetime-1.ReadonlyDateTime.md).[year](datetime.datetime-1.ReadonlyDateTime.md#year)

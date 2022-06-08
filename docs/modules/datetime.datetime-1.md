@@ -10,6 +10,7 @@
 
 - [DateTime](../interfaces/datetime.datetime-1.DateTime.md)
 - [Facade](../interfaces/datetime.datetime-1.Facade.md)
+- [ReadonlyDateTime](../interfaces/datetime.datetime-1.ReadonlyDateTime.md)
 
 ### Type aliases
 

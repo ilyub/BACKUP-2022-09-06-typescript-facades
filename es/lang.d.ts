@@ -14,7 +14,7 @@ declare global {
 export declare const lang: import("@skylib/functions").Facade<lang.Facade, unknown>;
 export declare namespace lang {
     type Context = PickKeys<facades.lang.Context, true, "extends->">;
-    interface Dictionary<C extends Context> {
+    interface Dictionary<W extends Word, C extends Context> {
         /**
          * Sets context.
          *
@@ -28,14 +28,22 @@ export declare namespace lang {
          * @param key - Word ID.
          * @returns Word.
          */
-        readonly get: (key: string) => string;
+        readonly get: (key: Transform<W>) => string;
+        /**
+         * Returns word. Uses previosly set context, count and replacements.
+         *
+         * @param key - Word ID.
+         * @returns Word.
+         */
+        readonly getIfExists: (key: string) => string;
         /**
          * Checks if word exists.
          *
          * @param key - Word ID.
          * @returns _True_ if word exists, _false_ otherwise.
          */
-        readonly has: (key: string) => boolean;
+        readonly has: (key: string) => key is Transform<Word>;
+        readonly keys: Rec<Transform<W>, Transform<Word>>;
         /**
          * Sets count for plural form.
          *
@@ -53,7 +61,8 @@ export declare namespace lang {
         readonly with: (name: string, replacement: NumStr) => Facade;
     }
     type Facade = Lang<Word, Context>;
-    type Lang<W extends Word, C extends Context> = Dictionary<C> & Rec<Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>, string>;
+    type Lang<W extends Word, C extends Context> = Dictionary<W, C> & Rec<Transform<W>, string>;
+    type Transform<W extends Word> = Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>;
     type Word = PickKeys<facades.lang.Word, true, "extends->">;
 }
 //# sourceMappingURL=lang.d.ts.map

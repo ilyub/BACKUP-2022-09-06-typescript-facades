@@ -4,6 +4,32 @@
 
 [handle-promise](../modules/handle_promise.md).[handlePromise](../modules/handle_promise.handlePromise.md).Facade
 
+## Callable
+
+### Facade
+
+▸ **Facade**<`T`\>(`type`, `mixed`, `errorMessage?`): `void`
+
+Handles promise with progress reporting.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `type` | `undefined` \| [`Type`](../modules/handle_promise.handlePromise.md#type) | Type (determines expected duration for progress reporting). |
+| `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
+| `errorMessage?` | `string` | Error message (used to alert user on error). |
+
+#### Returns
+
+`void`
+
 ## Table of contents
 
 ### Methods
@@ -11,7 +37,6 @@
 - [runAll](handle_promise.handlePromise.Facade.md#runall)
 - [running](handle_promise.handlePromise.Facade.md#running)
 - [silent](handle_promise.handlePromise.Facade.md#silent)
-- [verbose](handle_promise.handlePromise.Facade.md#verbose)
 
 ## Methods
 
@@ -60,32 +85,6 @@ Handles promise.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
-| `errorMessage?` | `string` | Error message (used to alert user on error). |
-
-#### Returns
-
-`void`
-
-___
-
-### verbose
-
-▸ `Readonly` **verbose**<`T`\>(`mixed`, `type`, `errorMessage?`): `void`
-
-Handles promise with progress reporting.
-
-#### Type parameters
-
-| Name |
-| :------ |
-| `T` |
-
-#### Parameters
-
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
-| `type` | [`Type`](../modules/handle_promise.handlePromise.md#type) | Type (determines expected duration for progress reporting). |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 
 #### Returns

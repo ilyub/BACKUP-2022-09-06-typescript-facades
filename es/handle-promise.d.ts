@@ -3,6 +3,14 @@ export declare const handlePromise: import("@skylib/functions").Facade<handlePro
 export declare namespace handlePromise {
     interface Facade {
         /**
+         * Handles promise with progress reporting.
+         *
+         * @param mixed - Promise or async function.
+         * @param type - Type (determines expected duration for progress reporting).
+         * @param errorMessage - Error message (used to alert user on error).
+         */
+        <T>(type: Type | undefined, mixed: AsyncPromise<T>, errorMessage?: string): void;
+        /**
          * Waits for all promises.
          *
          * @returns Promise.
@@ -21,14 +29,6 @@ export declare namespace handlePromise {
          * @param errorMessage - Error message (used to alert user on error).
          */
         readonly silent: <T>(mixed: AsyncPromise<T>, errorMessage?: string) => void;
-        /**
-         * Handles promise with progress reporting.
-         *
-         * @param mixed - Promise or async function.
-         * @param type - Type (determines expected duration for progress reporting).
-         * @param errorMessage - Error message (used to alert user on error).
-         */
-        readonly verbose: <T>(mixed: AsyncPromise<T>, type: Type, errorMessage?: string) => void;
     }
     type Type = "createDb" | "dbRequest" | "destroyDb" | "httpRequest" | "navigation";
 }
