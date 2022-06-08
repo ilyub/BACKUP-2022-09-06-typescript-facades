@@ -20,7 +20,7 @@ export const lang = createFacade<lang.Facade>("lang", {});
 export namespace lang {
   export type Context = PickKeys<facades.lang.Context, true, "extends->">;
 
-  export interface Dictionary<C extends Context> {
+  export interface Dictionary<W extends Word, C extends Context> {
     /**
      * Sets context.
      *
@@ -34,14 +34,22 @@ export namespace lang {
      * @param key - Word ID.
      * @returns Word.
      */
-    readonly get: (key: string) => string;
+    readonly get: (key: Transform<W>) => string;
+    /**
+     * Returns word. Uses previosly set context, count and replacements.
+     *
+     * @param key - Word ID.
+     * @returns Word.
+     */
+    readonly getIfExists: (key: string) => string;
     /**
      * Checks if word exists.
      *
      * @param key - Word ID.
      * @returns _True_ if word exists, _false_ otherwise.
      */
-    readonly has: (key: string) => boolean;
+    readonly has: (key: string) => key is Transform<Word>;
+    readonly keys: Rec<Transform<W>, Transform<Word>>;
     /**
      * Sets count for plural form.
      *
@@ -61,8 +69,14 @@ export namespace lang {
 
   export type Facade = Lang<Word, Context>;
 
-  export type Lang<W extends Word, C extends Context> = Dictionary<C> &
-    Rec<Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>, string>;
+  export type Lang<W extends Word, C extends Context> = Dictionary<W, C> &
+    Rec<Transform<W>, string>;
+
+  export type Transform<W extends Word> =
+    | Capitalize<W>
+    | Lowercase<W>
+    | Uncapitalize<W>
+    | Uppercase<W>;
 
   export type Word = PickKeys<facades.lang.Word, true, "extends->">;
 }
