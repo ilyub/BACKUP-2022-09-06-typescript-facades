@@ -15,7 +15,9 @@ declare global {
   }
 }
 
-export const lang = createFacade<lang.Facade>("lang", {});
+export const lang = createFacade<lang.Facade, lang.Extension>("lang", {
+  plain: (str: string) => `plain:${str}`
+});
 
 export namespace lang {
   export type Context = PickKeys<facades.lang.Context, true, "extends->">;
@@ -67,12 +69,24 @@ export namespace lang {
     readonly with: (name: string, replacement: NumStr) => Facade;
   }
 
+  export interface Extension {
+    /**
+     * Wraps plain text.
+     *
+     * @param str - Plain text.
+     * @returns Wrapped plain text.
+     */
+    readonly plain: (str: string) => Plain;
+  }
+
   export type Facade = Lang<Word, Context>;
 
   export type Key<W extends Word = Word> = Transform<W> | `plain:${string}`;
 
   export type Lang<W extends Word, C extends Context> = Dictionary<W, C> &
     Rec<Transform<W>, string>;
+
+  export type Plain = `plain:${string}`;
 
   export type Transform<W extends Word = Word> =
     | Capitalize<W>
