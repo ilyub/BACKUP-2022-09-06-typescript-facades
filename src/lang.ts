@@ -34,7 +34,7 @@ export namespace lang {
      * @param key - Word ID.
      * @returns Word.
      */
-    readonly get: (key: Transform<W>) => string;
+    readonly get: (key: Key<W>) => string;
     /**
      * Returns word. Uses previosly set context, count and replacements.
      *
@@ -48,8 +48,8 @@ export namespace lang {
      * @param key - Word ID.
      * @returns _True_ if word exists, _false_ otherwise.
      */
-    readonly has: (key: string) => key is Transform<Word>;
-    readonly keys: Rec<Transform<W>, Transform<Word>>;
+    readonly has: (key: string) => key is Key;
+    readonly keys: Rec<Transform<W>, Transform>;
     /**
      * Sets count for plural form.
      *
@@ -69,10 +69,12 @@ export namespace lang {
 
   export type Facade = Lang<Word, Context>;
 
+  export type Key<W extends Word = Word> = Transform<W> | `plain:${string}`;
+
   export type Lang<W extends Word, C extends Context> = Dictionary<W, C> &
     Rec<Transform<W>, string>;
 
-  export type Transform<W extends Word> =
+  export type Transform<W extends Word = Word> =
     | Capitalize<W>
     | Lowercase<W>
     | Uncapitalize<W>
