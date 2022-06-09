@@ -16,4 +16,4 @@
 
 ### lang
 
-• `Const` **lang**: `Facade`<[`Facade`](lang.lang-1.md#facade), `unknown`\>
+• `Const` **lang**: `Facade`<[`Facade`](lang.lang-1.md#facade), [`Extension`](../interfaces/lang.lang-1.Extension.md)\>

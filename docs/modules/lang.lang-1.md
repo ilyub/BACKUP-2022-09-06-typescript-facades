@@ -9,6 +9,7 @@
 ### Interfaces
 
 - [Dictionary](../interfaces/lang.lang-1.Dictionary.md)
+- [Extension](../interfaces/lang.lang-1.Extension.md)
 
 ### Type Aliases
 
@@ -16,6 +17,7 @@
 - [Facade](lang.lang-1.md#facade)
 - [Key](lang.lang-1.md#key)
 - [Lang](lang.lang-1.md#lang)
+- [Plain](lang.lang-1.md#plain)
 - [Transform](lang.lang-1.md#transform)
 - [Word](lang.lang-1.md#word)
 
@@ -55,6 +57,12 @@ ___
 | :------ | :------ |
 | `W` | extends [`Word`](lang.lang-1.md#word) |
 | `C` | extends [`Context`](lang.lang-1.md#context) |
+
+___
+
+### Plain
+
+Ƭ **Plain**: \`plain:${string}\`
 
 ___
 
