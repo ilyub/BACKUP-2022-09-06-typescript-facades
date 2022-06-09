@@ -10,15 +10,16 @@
 
 - [Dictionary](../interfaces/lang.lang-1.Dictionary.md)
 
-### Type aliases
+### Type Aliases
 
 - [Context](lang.lang-1.md#context)
 - [Facade](lang.lang-1.md#facade)
+- [Key](lang.lang-1.md#key)
 - [Lang](lang.lang-1.md#lang)
 - [Transform](lang.lang-1.md#transform)
 - [Word](lang.lang-1.md#word)
 
-## Type aliases
+## Type Aliases
 
 ### Context
 
@@ -29,6 +30,18 @@ ___
 ### Facade
 
 Ƭ **Facade**: [`Lang`](lang.lang-1.md#lang)<[`Word`](lang.lang-1.md#word), [`Context`](lang.lang-1.md#context)\>
+
+___
+
+### Key
+
+Ƭ **Key**<`W`\>: [`Transform`](lang.lang-1.md#transform)<`W`\> \| \`plain:${string}\`
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `W` | extends [`Word`](lang.lang-1.md#word) = [`Word`](lang.lang-1.md#word) |
 
 ___
 
@@ -53,7 +66,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `W` | extends [`Word`](lang.lang-1.md#word) |
+| `W` | extends [`Word`](lang.lang-1.md#word) = [`Word`](lang.lang-1.md#word) |
 
 ___
 

@@ -64,7 +64,7 @@ Returns word. Uses previosly set context, count and replacements.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `key` | [`Transform`](../modules/lang.lang-1.md#transform)<`W`\> | Word ID. |
+| `key` | [`Key`](../modules/lang.lang-1.md#key)<`W`\> | Word ID. |
 
 #### Returns
 
@@ -96,7 +96,7 @@ ___
 
 ### has
 
-▸ `Readonly` **has**(`key`): key is Transform<"SampleWord"\>
+▸ `Readonly` **has**(`key`): key is Key<"SampleWord"\>
 
 Checks if word exists.
 
@@ -108,7 +108,7 @@ Checks if word exists.
 
 #### Returns
 
-key is Transform<"SampleWord"\>
+key is Key<"SampleWord"\>
 
 _True_ if word exists, _false_ otherwise.
 

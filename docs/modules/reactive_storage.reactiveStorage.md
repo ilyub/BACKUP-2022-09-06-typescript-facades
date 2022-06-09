@@ -12,11 +12,11 @@
 - [Handler](../interfaces/reactive_storage.reactiveStorage.Handler.md)
 - [Reducer](../interfaces/reactive_storage.reactiveStorage.Reducer.md)
 
-### Type aliases
+### Type Aliases
 
 - [Observer](reactive_storage.reactiveStorage.md#observer)
 
-## Type aliases
+## Type Aliases
 
 ### Observer
 

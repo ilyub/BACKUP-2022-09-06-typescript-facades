@@ -41,7 +41,7 @@
 - [ReactiveUpdate](../interfaces/database.database-1.ReactiveUpdate.md)
 - [ResetCallback](../interfaces/database.database-1.ResetCallback.md)
 
-### Type aliases
+### Type Aliases
 
 - [AttachedSubscriptionId](database.database-1.md#attachedsubscriptionid)
 - [BaseBulkAttachedDocuments](database.database-1.md#basebulkattacheddocuments)
@@ -68,7 +68,7 @@
 - [ReactiveResponse](database.database-1.md#reactiveresponse)
 - [SubscriptionId](database.database-1.md#subscriptionid)
 
-## Type aliases
+## Type Aliases
 
 ### AttachedSubscriptionId
 

@@ -10,12 +10,12 @@
 
 - [Facade](../interfaces/faker.faker-1.Facade.md)
 
-### Type aliases
+### Type Aliases
 
 - [TimeInterval](faker.faker-1.md#timeinterval)
 - [TimeUnit](faker.faker-1.md#timeunit)
 
-## Type aliases
+## Type Aliases
 
 ### TimeInterval
 

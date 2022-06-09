@@ -12,11 +12,11 @@
 - [Facade](../interfaces/datetime.datetime-1.Facade.md)
 - [ReadonlyDateTime](../interfaces/datetime.datetime-1.ReadonlyDateTime.md)
 
-### Type aliases
+### Type Aliases
 
 - [Unit](datetime.datetime-1.md#unit)
 
-## Type aliases
+## Type Aliases
 
 ### Unit
 

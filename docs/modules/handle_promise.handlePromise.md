@@ -10,11 +10,11 @@
 
 - [Facade](../interfaces/handle_promise.handlePromise.Facade.md)
 
-### Type aliases
+### Type Aliases
 
 - [Type](handle_promise.handlePromise.md#type)
 
-## Type aliases
+## Type Aliases
 
 ### Type
 

@@ -10,13 +10,13 @@
 
 - [Facade](../interfaces/http_request.httpRequest.Facade.md)
 
-### Type aliases
+### Type Aliases
 
 - [HttpHeader](http_request.httpRequest.md#httpheader)
 - [HttpHeaders](http_request.httpRequest.md#httpheaders)
 - [HttpRequestMethod](http_request.httpRequest.md#httprequestmethod)
 
-## Type aliases
+## Type Aliases
 
 ### HttpHeader
 

@@ -6,13 +6,13 @@
 
 ## Table of contents
 
-### Type aliases
+### Type Aliases
 
 - [Facade](icons.icons-1.md#facade)
 - [Icon](icons.icons-1.md#icon)
 - [Icons](icons.icons-1.md#icons)
 
-## Type aliases
+## Type Aliases
 
 ### Facade
 
