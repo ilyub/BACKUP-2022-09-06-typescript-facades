@@ -36,7 +36,7 @@ export namespace lang {
      * @param key - Word ID.
      * @returns Word.
      */
-    readonly get: (key: Key<W>) => string;
+    readonly get: (key: Key) => string;
     /**
      * Returns word. Uses previosly set context, count and replacements.
      *
