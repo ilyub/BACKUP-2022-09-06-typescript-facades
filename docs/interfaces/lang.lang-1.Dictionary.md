@@ -64,7 +64,7 @@ Returns word. Uses previosly set context, count and replacements.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `key` | [`Key`](../modules/lang.lang-1.md#key)<`W`\> | Word ID. |
+| `key` | [`Key`](../modules/lang.lang-1.md#key)<``"SampleWord"``\> | Word ID. |
 
 #### Returns
 
