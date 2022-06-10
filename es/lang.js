@@ -1,5 +1,3 @@
 import { createFacade } from "@skylib/functions";
-export const lang = createFacade("lang", {
-    plain: (str) => `plain:${str}`
-});
+export const lang = createFacade("lang", {});
 //# sourceMappingURL=lang.js.map

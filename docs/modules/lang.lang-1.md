@@ -9,7 +9,6 @@
 ### Interfaces
 
 - [Dictionary](../interfaces/lang.lang-1.Dictionary.md)
-- [Extension](../interfaces/lang.lang-1.Extension.md)
 
 ### Type Aliases
 
@@ -37,7 +36,7 @@ ___
 
 ### Key
 
-Ƭ **Key**<`W`\>: [`Transform`](lang.lang-1.md#transform)<`W`\> \| \`plain:${string}\`
+Ƭ **Key**<`W`\>: [`Plain`](lang.lang-1.md#plain) \| [`Transform`](lang.lang-1.md#transform)<`W`\>
 
 #### Type parameters
 

@@ -11,7 +11,7 @@ declare global {
         }
     }
 }
-export declare const lang: import("@skylib/functions").Facade<lang.Facade, lang.Extension>;
+export declare const lang: import("@skylib/functions").Facade<lang.Facade, unknown>;
 export declare namespace lang {
     type Context = PickKeys<facades.lang.Context, true, "extends->">;
     interface Dictionary<W extends Word, C extends Context> {
@@ -45,6 +45,13 @@ export declare namespace lang {
         readonly has: (key: string) => key is Key;
         readonly keys: Rec<Transform<W>, Transform>;
         /**
+         * Wraps plain text.
+         *
+         * @param str - Plain text.
+         * @returns Wrapped plain text.
+         */
+        readonly plain: (str: string) => Plain;
+        /**
          * Sets count for plural form.
          *
          * @param count - Count for plural form.
@@ -60,17 +67,8 @@ export declare namespace lang {
          */
         readonly with: (name: string, replacement: NumStr) => Facade;
     }
-    interface Extension {
-        /**
-         * Wraps plain text.
-         *
-         * @param str - Plain text.
-         * @returns Wrapped plain text.
-         */
-        readonly plain: (str: string) => Plain;
-    }
     type Facade = Lang<Word, Context>;
-    type Key<W extends Word = Word> = Transform<W> | `plain:${string}`;
+    type Key<W extends Word = Word> = Plain | Transform<W>;
     type Lang<W extends Word, C extends Context> = Dictionary<W, C> & Rec<Transform<W>, string>;
     type Plain = `plain:${string}`;
     type Transform<W extends Word = Word> = Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>;

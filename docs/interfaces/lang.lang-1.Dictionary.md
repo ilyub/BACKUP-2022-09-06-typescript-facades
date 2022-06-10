@@ -23,6 +23,7 @@
 - [get](lang.lang-1.Dictionary.md#get)
 - [getIfExists](lang.lang-1.Dictionary.md#getifexists)
 - [has](lang.lang-1.Dictionary.md#has)
+- [plain](lang.lang-1.Dictionary.md#plain)
 - [plural](lang.lang-1.Dictionary.md#plural)
 - [with](lang.lang-1.Dictionary.md#with)
 
@@ -111,6 +112,26 @@ Checks if word exists.
 key is Key<"SampleWord"\>
 
 _True_ if word exists, _false_ otherwise.
+
+___
+
+### plain
+
+▸ `Readonly` **plain**(`str`): \`plain:${string}\`
+
+Wraps plain text.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `str` | `string` | Plain text. |
+
+#### Returns
+
+\`plain:${string}\`
+
+Wrapped plain text.
 
 ___
 
