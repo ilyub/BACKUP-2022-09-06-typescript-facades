@@ -9,6 +9,7 @@
 - [compare](index.md#compare)
 - [database](index.md#database)
 - [datetime](index.md#datetime)
+- [dump](index.md#dump)
 - [facebook](index.md#facebook)
 - [faker](index.md#faker)
 - [google](index.md#google)
@@ -41,6 +42,12 @@ ___
 ### datetime
 
 Re-exports [datetime](datetime.md#datetime)
+
+___
+
+### dump
+
+Re-exports [dump](dump.md#dump)
 
 ___
 

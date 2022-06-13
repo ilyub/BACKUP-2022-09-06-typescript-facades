@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.uniqueId = exports.testDelay = exports.showConfirm = exports.showAlert = exports.reactiveStorage = exports.progressReporter = exports.lang = exports.inlineSearch = exports.icons = exports.httpRequest = exports.handlePromise = exports.google = exports.faker = exports.facebook = exports.datetime = exports.database = exports.compare = void 0;
+exports.uniqueId = exports.testDelay = exports.showConfirm = exports.showAlert = exports.reactiveStorage = exports.progressReporter = exports.lang = exports.inlineSearch = exports.icons = exports.httpRequest = exports.handlePromise = exports.google = exports.faker = exports.facebook = exports.dump = exports.datetime = exports.database = exports.compare = void 0;
 var compare_1 = require("./compare");
 Object.defineProperty(exports, "compare", { enumerable: true, get: function () { return compare_1.compare; } });
 var database_1 = require("./database");
 Object.defineProperty(exports, "database", { enumerable: true, get: function () { return database_1.database; } });
 var datetime_1 = require("./datetime");
 Object.defineProperty(exports, "datetime", { enumerable: true, get: function () { return datetime_1.datetime; } });
+var dump_1 = require("./dump");
+Object.defineProperty(exports, "dump", { enumerable: true, get: function () { return dump_1.dump; } });
 var facebook_1 = require("./facebook");
 Object.defineProperty(exports, "facebook", { enumerable: true, get: function () { return facebook_1.facebook; } });
 var faker_1 = require("./faker");

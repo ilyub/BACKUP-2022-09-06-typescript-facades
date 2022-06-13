@@ -10,6 +10,7 @@
 - [database](modules/database.md)
 - [datetime](modules/datetime.md)
 - [dev/global-types](modules/dev_global_types.md)
+- [dump](modules/dump.md)
 - [facebook](modules/facebook.md)
 - [faker](modules/faker.md)
 - [google](modules/google.md)

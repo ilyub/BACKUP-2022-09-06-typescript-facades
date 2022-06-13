@@ -1,6 +1,7 @@
 export { compare } from "./compare";
 export { database } from "./database";
 export { datetime } from "./datetime";
+export { dump } from "./dump";
 export { facebook } from "./facebook";
 export { faker } from "./faker";
 export { google } from "./google";
