@@ -41,12 +41,12 @@
     "update-package-force-skylib": "ncu --dep peer --filter @skylib/* --upgrade"
   },
   "devDependencies": {
-    "@skylib/config": "^1.14.1",
+    "@skylib/config": "^1.15.0",
     "@skylib/eslint-plugin": "^0.1.28",
     "@skylib/typescript-types": "^1.0.0"
   },
   "peerDependencies": {
-    "@skylib/functions": "^2.3.0"
+    "@skylib/functions": "^2.4.0"
   },
   "engines": {
     "node": ">=14.0.0",
