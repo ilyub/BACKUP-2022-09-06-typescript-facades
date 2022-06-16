@@ -1,6 +1,6 @@
 import { uniqueId } from "./unique-id";
 import { createFacade } from "@skylib/functions";
-import type { numbers, NumStr, PartialRecord } from "@skylib/functions";
+import type { NumStr, PartialRecord, numbers } from "@skylib/functions";
 
 export const database = createFacade<database.Facade, database.Extension>(
   "database",
@@ -429,6 +429,7 @@ export namespace database {
   }
 
   export interface DatabaseOptions {
+    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly caseSensitiveSorting?: boolean;
     readonly migrations?: Migrations;
     readonly retries?: number;
@@ -510,6 +511,7 @@ export namespace database {
     readonly eq?: unknown;
     readonly gt?: NumStr;
     readonly gte?: NumStr;
+    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly isSet?: boolean;
     readonly lt?: NumStr;
     readonly lte?: NumStr;
@@ -561,6 +563,7 @@ export namespace database {
   export type PutResponses = readonly PutResponse[];
 
   export interface QueryOptions {
+    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly descending?: boolean;
     readonly limit?: number;
     readonly skip?: number;
