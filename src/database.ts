@@ -48,6 +48,7 @@ export namespace database {
   export type BaseExistingDocuments = readonly BaseExistingDocument[];
 
   export interface BasePutAttachedDocument {
+    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly _deleted?: true;
     readonly _id?: number;
     readonly _rev?: number;
@@ -57,6 +58,7 @@ export namespace database {
   export type BasePutAttachedDocuments = readonly BasePutAttachedDocument[];
 
   export interface BasePutDocument {
+    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly _deleted?: true;
     readonly _id?: string;
     readonly _rev?: string;
@@ -429,7 +431,6 @@ export namespace database {
   }
 
   export interface DatabaseOptions {
-    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly caseSensitiveSorting?: boolean;
     readonly migrations?: Migrations;
     readonly retries?: number;
@@ -511,7 +512,6 @@ export namespace database {
     readonly eq?: unknown;
     readonly gt?: NumStr;
     readonly gte?: NumStr;
-    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly isSet?: boolean;
     readonly lt?: NumStr;
     readonly lte?: NumStr;
@@ -563,7 +563,6 @@ export namespace database {
   export type PutResponses = readonly PutResponse[];
 
   export interface QueryOptions {
-    // eslint-disable-next-line no-restricted-syntax -- Ok
     readonly descending?: boolean;
     readonly limit?: number;
     readonly skip?: number;
