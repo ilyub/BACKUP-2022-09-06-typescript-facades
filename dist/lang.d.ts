@@ -1,4 +1,4 @@
-import type { NumStr, Rec, PickKeys } from "@skylib/functions";
+import type { NumStr, PickKeys, Rec } from "@skylib/functions";
 declare global {
     namespace facades {
         namespace lang {

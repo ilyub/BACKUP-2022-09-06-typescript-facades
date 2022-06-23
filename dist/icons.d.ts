@@ -1,4 +1,4 @@
-import type { Rec, PickKeys } from "@skylib/functions";
+import type { PickKeys, Rec } from "@skylib/functions";
 declare global {
     namespace facades {
         namespace icons {

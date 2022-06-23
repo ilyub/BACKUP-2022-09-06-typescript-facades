@@ -1,4 +1,4 @@
-import type { numbers, NumStr, PartialRecord } from "@skylib/functions";
+import type { NumStr, PartialRecord, numbers } from "@skylib/functions";
 export declare const database: import("@skylib/functions").Facade<database.Facade, database.Extension>;
 export declare namespace database {
     interface AttachedChangesHandler {
