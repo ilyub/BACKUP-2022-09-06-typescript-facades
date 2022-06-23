@@ -1,12 +1,20 @@
+const { eslint } = require("@skylib/config");
+
 module.exports = {
-  extends: [require.resolve("@skylib/config/src/eslintrc")],
   rules: {
-    // eslint-disable-next-line no-warning-comments -- Wait for @skylib/config update
-    // fixme
-    "@typescript-eslint/no-redeclare": "off",
-    // eslint-disable-next-line no-warning-comments -- Postponed
-    // fixme
-    "boundaries/element-types": "off",
-    "import/export": "off"
+    "boundaries/element-types": [
+      "warn",
+      {
+        default: "disallow",
+        rules: [
+          ...eslint.boundaries.elementTypes.rules,
+          ...eslint.boundaries.elementTypes.createRules(
+            filename => ["src1", { filename }],
+            "unique-id",
+            "database"
+          )
+        ]
+      }
+    ]
   }
 };
