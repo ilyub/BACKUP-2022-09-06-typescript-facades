@@ -6,7 +6,6 @@ test.each(
     return { facade, name };
   })
 )("facades", ({ facade, name }) => {
-  // eslint-disable-next-line @skylib/functions/no-restricted-syntax -- Wait for @skylib/functions update
   expect(() => o.get(facade, "unknown-property")).toThrow(
     new Error(`Missing facade implementation: ${name}`)
   );
