@@ -1,5 +1,5 @@
 import { createFacade } from "@skylib/functions";
-import type { IndexedObject, PartialRecord } from "@skylib/functions";
+import type { IndexedRecord, PartialRecord } from "@skylib/functions";
 
 export const httpRequest = createFacade<httpRequest.Facade>("httpRequest", {});
 
@@ -17,7 +17,7 @@ export namespace httpRequest {
     readonly send: (
       url: string,
       method?: HttpRequestMethod,
-      data?: IndexedObject,
+      data?: IndexedRecord,
       headers?: HttpHeaders
     ) => Promise<unknown>;
   }
