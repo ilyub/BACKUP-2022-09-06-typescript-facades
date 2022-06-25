@@ -4,6 +4,7 @@ module.exports = {
     require.resolve("@skylib/functions/configs/eslintrc"),
     "./configs/eslintrc",
     "./.eslintrc.overrides",
+    "./.eslintrc.rule-overrides",
     "./.eslintrc.temp"
   ]
 };
