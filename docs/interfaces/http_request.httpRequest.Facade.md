@@ -24,7 +24,7 @@ Sends HTTP request.
 | :------ | :------ | :------ |
 | `url` | `string` | URL. |
 | `method?` | [`HttpRequestMethod`](../modules/http_request.httpRequest.md#httprequestmethod) | HTTP method. |
-| `data?` | `IndexedObject`<`unknown`\> | Data. |
+| `data?` | `IndexedRecord`<`unknown`\> | Data. |
 | `headers?` | [`HttpHeaders`](../modules/http_request.httpRequest.md#httpheaders) | Headers. |
 
 #### Returns
