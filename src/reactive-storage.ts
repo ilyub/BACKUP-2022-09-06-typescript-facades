@@ -1,11 +1,12 @@
 import { createFacade } from "@skylib/functions";
 import type { ObjectKeys } from "@skylib/functions";
+import type { Required as KeysToRequired } from "ts-toolbelt/out/Object/Required";
 
 declare global {
   namespace facades {
     namespace reactiveStorage {
       interface Observer {
-        readonly _type: "ReactiveStorageObserver";
+        readonly _type?: "ReactiveStorageObserver";
       }
     }
   }
@@ -56,15 +57,16 @@ export namespace reactiveStorage {
     (obj: T): void;
   }
 
-  export type Observer = Pick<
-    facades.reactiveStorage.Observer,
-    // eslint-disable-next-line @typescript-eslint/no-redundant-type-constituents -- Ok
-    | ObjectKeys<
+  export type Observer = KeysToRequired<
+    Pick<
+      facades.reactiveStorage.Observer,
+      ObjectKeys<
         facades.reactiveStorage.Observer,
         "optional" | "readonly",
         never
       >
-    | "_type"
+    >,
+    "_type"
   >;
 
   export interface Reducer<T extends object> {

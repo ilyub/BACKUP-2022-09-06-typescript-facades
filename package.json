@@ -69,7 +69,8 @@
     "@skylib/typescript-types": "^1.0.0"
   },
   "peerDependencies": {
-    "@skylib/functions": "^3.0.1"
+    "@skylib/functions": "^3.0.1",
+    "ts-toolbelt": "^9.6.0"
   },
   "engines": {
     "node": ">=14.0.0",
