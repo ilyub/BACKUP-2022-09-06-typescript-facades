@@ -12,7 +12,13 @@ module.exports = {
             filename => ["src1", { filename }],
             "unique-id",
             "database"
-          )
+          ),
+          // eslint-disable-next-line no-warning-comments -- Wait for @skylib/config update
+          // fixme
+          {
+            allow: "{src1,src2,src3,src4,src5,src6,src7}",
+            from: "{mocks,tests}"
+          }
         ]
       }
     ]
