@@ -8,7 +8,7 @@ module.exports = {
             message: 'Prefer "uniqueId" facade',
             selector:
               "CallExpression > MemberExpression.callee[object.name=_][property.name=uniqueId]",
-            subOptionsId: "prefer-uniqueId-facade"
+            _id: "prefer-uniqueId-facade"
           }
         ]
       }
