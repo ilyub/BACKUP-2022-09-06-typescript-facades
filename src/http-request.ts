@@ -28,6 +28,7 @@ export namespace httpRequest {
     | "Authorization"
     | "Content-Type";
 
+  // eslint-disable-next-line @skylib/no-restricted-syntax -- Ok
   export type HttpHeaders = PartialRecord<HttpHeader, string>;
 
   export type HttpRequestMethod = "delete" | "get" | "post";

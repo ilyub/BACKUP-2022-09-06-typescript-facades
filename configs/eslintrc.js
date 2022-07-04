@@ -5,10 +5,10 @@ module.exports = {
       {
         rules: [
           {
+            _id: "prefer-uniqueId-facade",
             message: 'Prefer "uniqueId" facade',
             selector:
-              "CallExpression > MemberExpression.callee[object.name=_][property.name=uniqueId]",
-            _id: "prefer-uniqueId-facade"
+              "CallExpression > MemberExpression.callee[object.name=_][property.name=uniqueId]"
           }
         ]
       }
