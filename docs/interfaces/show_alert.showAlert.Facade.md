@@ -24,25 +24,29 @@ Shows alert.
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [async](show_alert.showAlert.Facade.md#async)
 
-## Methods
+## Properties
 
 ### async
 
-▸ `Readonly` **async**(`message`): `Promise`<`void`\>
+• `Readonly` **async**: (`message`: `string`) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`message`): `Promise`<`void`\>
 
 Shows alert.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `message` | `string` | Message. |
 
-#### Returns
+##### Returns
 
 `Promise`<`void`\>
 

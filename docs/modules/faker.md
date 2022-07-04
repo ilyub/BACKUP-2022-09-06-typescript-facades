@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [faker](faker.faker-1.md)
+- [faker](faker.faker.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### faker
 
-• `Const` **faker**: `Facade`<[`Facade`](../interfaces/faker.faker-1.Facade.md), `unknown`\>
+• `Const` **faker**: `Facade`<[`Facade`](../interfaces/faker.faker.Facade.md), `unknown`\>

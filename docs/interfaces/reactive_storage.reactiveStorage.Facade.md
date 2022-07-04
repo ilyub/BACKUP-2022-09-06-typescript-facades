@@ -32,27 +32,32 @@ Reactive object.
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [unwatch](reactive_storage.reactiveStorage.Facade.md#unwatch)
 - [watch](reactive_storage.reactiveStorage.Facade.md#watch)
 
-## Methods
+## Properties
 
 ### unwatch
 
-▸ `Readonly` **unwatch**(`obj`, `observer`): `void`
+• `Readonly` **unwatch**: (`obj`: `object`, `observer`: { `_type`: ``"ReactiveStorageObserver"``  }) => `void`
+
+#### Type declaration
+
+▸ (`obj`, `observer`): `void`
 
 Unsubscribes from changes.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `obj` | `object` | Reactive object. |
-| `observer` | [`Observer`](../modules/reactive_storage.reactiveStorage.md#observer) | Observer. |
+| `observer` | `Object` | Observer. |
+| `observer._type` | ``"ReactiveStorageObserver"`` | - |
 
-#### Returns
+##### Returns
 
 `void`
 
@@ -60,17 +65,21 @@ ___
 
 ### watch
 
-▸ `Readonly` **watch**<`T`\>(`obj`, `handler`, `reducer?`): [`Observer`](../modules/reactive_storage.reactiveStorage.md#observer)
+• `Readonly` **watch**: <T\>(`obj`: `T`, `handler`: [`Handler`](reactive_storage.reactiveStorage.Handler.md)<`T`\>, `reducer?`: [`Reducer`](reactive_storage.reactiveStorage.Reducer.md)<`T`\>) => { `_type`: ``"ReactiveStorageObserver"``  }
+
+#### Type declaration
+
+▸ <`T`\>(`obj`, `handler`, `reducer?`): `Object`
 
 Subscribes to changes.
 
-#### Type parameters
+##### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `T` | extends `object` |
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -78,8 +87,12 @@ Subscribes to changes.
 | `handler` | [`Handler`](reactive_storage.reactiveStorage.Handler.md)<`T`\> | Handles object change. |
 | `reducer?` | [`Reducer`](reactive_storage.reactiveStorage.Reducer.md)<`T`\> | Reduces object for comparison. |
 
-#### Returns
+##### Returns
 
-[`Observer`](../modules/reactive_storage.reactiveStorage.md#observer)
+`Object`
 
 Observer.
+
+| Name | Type |
+| :------ | :------ |
+| `_type` | ``"ReactiveStorageObserver"`` |

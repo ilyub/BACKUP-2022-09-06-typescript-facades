@@ -32,21 +32,25 @@ Handles promise with progress reporting.
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [runAll](handle_promise.handlePromise.Facade.md#runall)
 - [running](handle_promise.handlePromise.Facade.md#running)
 - [silent](handle_promise.handlePromise.Facade.md#silent)
 
-## Methods
+## Properties
 
 ### runAll
 
-▸ `Readonly` **runAll**(): `Promise`<`void`\>
+• `Readonly` **runAll**: () => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (): `Promise`<`void`\>
 
 Waits for all promises.
 
-#### Returns
+##### Returns
 
 `Promise`<`void`\>
 
@@ -56,11 +60,15 @@ ___
 
 ### running
 
-▸ `Readonly` **running**(): `boolean`
+• `Readonly` **running**: () => `boolean`
+
+#### Type declaration
+
+▸ (): `boolean`
 
 Checks if there are active promises.
 
-#### Returns
+##### Returns
 
 `boolean`
 
@@ -70,23 +78,27 @@ ___
 
 ### silent
 
-▸ `Readonly` **silent**<`T`\>(`mixed`, `errorMessage?`): `void`
+• `Readonly` **silent**: <T\>(`mixed`: `AsyncPromise`<`T`, `nevers`\>, `errorMessage?`: `string`) => `void`
+
+#### Type declaration
+
+▸ <`T`\>(`mixed`, `errorMessage?`): `void`
 
 Handles promise.
 
-#### Type parameters
+##### Type parameters
 
 | Name |
 | :------ |
 | `T` |
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 
-#### Returns
+##### Returns
 
 `void`

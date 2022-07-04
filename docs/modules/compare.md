@@ -6,14 +6,29 @@
 
 ### Namespaces
 
-- [compare](compare.compare-1.md)
+- [compare](compare.compare.md)
 
-### Variables
+### Functions
 
 - [compare](compare.md#compare)
 
-## Variables
+## Functions
 
 ### compare
 
-• `Const` **compare**: `Facade`<[`Facade`](../interfaces/compare.compare-1.Facade.md), `unknown`\>
+▸ **compare**(`x`, `y`): `number`
+
+Compares values.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `x` | `unknown` | Value 1. |
+| `y` | `unknown` | Value 2. |
+
+#### Returns
+
+`number`
+
+Comparison result.

@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [google](google.google-1.md)
+- [google](google.google.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### google
 
-• `Const` **google**: `Facade`<[`Facade`](../interfaces/google.google-1.Facade.md), `unknown`\>
+• `Const` **google**: `Facade`<[`Facade`](../interfaces/google.google.Facade.md), `unknown`\>

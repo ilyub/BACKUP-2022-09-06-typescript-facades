@@ -1,9 +1,10 @@
 import type { ObjectKeys } from "@skylib/functions";
+import type { Required as KeysToRequired } from "ts-toolbelt/out/Object/Required";
 declare global {
     namespace facades {
         namespace reactiveStorage {
             interface Observer {
-                readonly _type: "ReactiveStorageObserver";
+                readonly _type?: "ReactiveStorageObserver";
             }
         }
     }
@@ -43,7 +44,7 @@ export declare namespace reactiveStorage {
          */
         (obj: T): void;
     }
-    type Observer = Pick<facades.reactiveStorage.Observer, ObjectKeys<facades.reactiveStorage.Observer, "optional" | "readonly", never> | "_type">;
+    type Observer = KeysToRequired<Pick<facades.reactiveStorage.Observer, ObjectKeys<facades.reactiveStorage.Observer, "optional" | "readonly", never>>, "_type">;
     interface Reducer<T extends object> {
         /**
          * Reduces object for comparison.

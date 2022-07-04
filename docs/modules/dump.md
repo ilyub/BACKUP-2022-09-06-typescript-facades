@@ -6,14 +6,28 @@
 
 ### Namespaces
 
-- [dump](dump.dump-1.md)
+- [dump](dump.dump.md)
 
-### Variables
+### Functions
 
 - [dump](dump.md#dump)
 
-## Variables
+## Functions
 
 ### dump
 
-• `Const` **dump**: `Facade`<[`Facade`](../interfaces/dump.dump-1.Facade.md), `unknown`\>
+▸ **dump**(`value`): `string`
+
+Dumps value to string.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `unknown` | Value. |
+
+#### Returns
+
+`string`
+
+String.

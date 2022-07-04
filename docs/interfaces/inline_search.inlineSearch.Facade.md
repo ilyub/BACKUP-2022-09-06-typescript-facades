@@ -6,25 +6,29 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [create](inline_search.inlineSearch.Facade.md#create)
 
-## Methods
+## Properties
 
 ### create
 
-▸ `Readonly` **create**<`T`\>(`idField`, `fields`, `items`): [`Engine`](inline_search.inlineSearch.Engine.md)<`T`\>
+• `Readonly` **create**: <T\>(`idField`: `string` & keyof `T`, `fields`: readonly `string` & keyof `T`[], `items`: readonly `T`[]) => [`Engine`](inline_search.inlineSearch.Engine.md)<`T`\>
+
+#### Type declaration
+
+▸ <`T`\>(`idField`, `fields`, `items`): [`Engine`](inline_search.inlineSearch.Engine.md)<`T`\>
 
 Creates search engine.
 
-#### Type parameters
+##### Type parameters
 
 | Name | Type |
 | :------ | :------ |
 | `T` | extends `object` |
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -32,7 +36,7 @@ Creates search engine.
 | `fields` | readonly `string` & keyof `T`[] | Searchable fields. |
 | `items` | readonly `T`[] | Items. |
 
-#### Returns
+##### Returns
 
 [`Engine`](inline_search.inlineSearch.Engine.md)<`T`\>
 

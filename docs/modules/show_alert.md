@@ -8,12 +8,24 @@
 
 - [showAlert](show_alert.showAlert.md)
 
-### Variables
+### Functions
 
 - [showAlert](show_alert.md#showalert)
 
-## Variables
+## Functions
 
 ### showAlert
 
-• `Const` **showAlert**: `Facade`<[`Facade`](../interfaces/show_alert.showAlert.Facade.md), `unknown`\>
+▸ **showAlert**(`message`): `void`
+
+Shows alert.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Message. |
+
+#### Returns
+
+`void`

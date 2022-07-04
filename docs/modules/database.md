@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [database](database.database-1.md)
+- [database](database.database.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### database
 
-• `Const` **database**: `Facade`<[`Facade`](../interfaces/database.database-1.Facade.md), [`Extension`](../interfaces/database.database-1.Extension.md)\>
+• `Const` **database**: `Facade`<[`Facade`](../interfaces/database.database.Facade.md), [`Extension`](../interfaces/database.database.Extension.md)\>

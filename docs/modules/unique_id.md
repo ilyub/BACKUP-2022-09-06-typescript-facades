@@ -8,12 +8,20 @@
 
 - [uniqueId](unique_id.uniqueId.md)
 
-### Variables
+### Functions
 
 - [uniqueId](unique_id.md#uniqueid)
 
-## Variables
+## Functions
 
 ### uniqueId
 
-• `Const` **uniqueId**: `Facade`<[`Facade`](../interfaces/unique_id.uniqueId.Facade.md), `unknown`\>
+▸ **uniqueId**(): `string`
+
+Creates unique ID.
+
+#### Returns
+
+`string`
+
+Unique ID.

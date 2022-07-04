@@ -8,12 +8,32 @@
 
 - [handlePromise](handle_promise.handlePromise.md)
 
-### Variables
+### Functions
 
 - [handlePromise](handle_promise.md#handlepromise)
 
-## Variables
+## Functions
 
 ### handlePromise
 
-• `Const` **handlePromise**: `Facade`<[`Facade`](../interfaces/handle_promise.handlePromise.Facade.md), `unknown`\>
+▸ **handlePromise**<`T`\>(`type`, `mixed`, `errorMessage?`): `void`
+
+Handles promise with progress reporting.
+
+#### Type parameters
+
+| Name |
+| :------ |
+| `T` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `type` | `undefined` \| [`Type`](handle_promise.handlePromise.md#type) | Type (determines expected duration for progress reporting). |
+| `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
+| `errorMessage?` | `string` | Error message (used to alert user on error). |
+
+#### Returns
+
+`void`

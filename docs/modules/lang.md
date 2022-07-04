@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [lang](lang.lang-1.md)
+- [lang](lang.lang.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### lang
 
-• `Const` **lang**: `Facade`<[`Facade`](lang.lang-1.md#facade), `unknown`\>
+• `Const` **lang**: `Facade`<[`Facade`](lang.lang.md#facade), `unknown`\>

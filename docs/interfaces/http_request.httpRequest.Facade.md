@@ -6,19 +6,23 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [send](http_request.httpRequest.Facade.md#send)
 
-## Methods
+## Properties
 
 ### send
 
-▸ `Readonly` **send**(`url`, `method?`, `data?`, `headers?`): `Promise`<`unknown`\>
+• `Readonly` **send**: (`url`: `string`, `method?`: [`HttpRequestMethod`](../modules/http_request.httpRequest.md#httprequestmethod), `data?`: `IndexedRecord`<`unknown`\>, `headers?`: [`HttpHeaders`](../modules/http_request.httpRequest.md#httpheaders)) => `Promise`<`unknown`\>
+
+#### Type declaration
+
+▸ (`url`, `method?`, `data?`, `headers?`): `Promise`<`unknown`\>
 
 Sends HTTP request.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
@@ -27,7 +31,7 @@ Sends HTTP request.
 | `data?` | `IndexedRecord`<`unknown`\> | Data. |
 | `headers?` | [`HttpHeaders`](../modules/http_request.httpRequest.md#httpheaders) | Headers. |
 
-#### Returns
+##### Returns
 
 `Promise`<`unknown`\>
 

@@ -26,25 +26,29 @@ Shows confirmation dialog.
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [async](show_confirm.showConfirm.Facade.md#async)
 
-## Methods
+## Properties
 
 ### async
 
-▸ `Readonly` **async**(`message`): `Promise`<`boolean`\>
+• `Readonly` **async**: (`message`: `string`) => `Promise`<`boolean`\>
+
+#### Type declaration
+
+▸ (`message`): `Promise`<`boolean`\>
 
 Shows confirmation dialog.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `message` | `string` | Message. |
 
-#### Returns
+##### Returns
 
 `Promise`<`boolean`\>
 

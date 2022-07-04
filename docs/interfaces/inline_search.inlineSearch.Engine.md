@@ -12,25 +12,29 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [search](inline_search.inlineSearch.Engine.md#search)
 
-## Methods
+## Properties
 
 ### search
 
-▸ `Readonly` **search**(`query`): readonly `T`[]
+• `Readonly` **search**: (`query`: `string`) => readonly `T`[]
+
+#### Type declaration
+
+▸ (`query`): readonly `T`[]
 
 Performs search.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `query` | `string` | Query string. |
 
-#### Returns
+##### Returns
 
 readonly `T`[]
 

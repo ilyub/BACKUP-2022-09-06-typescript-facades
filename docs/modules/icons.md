@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [icons](icons.icons-1.md)
+- [icons](icons.icons.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### icons
 
-• `Const` **icons**: `Facade`<[`Facade`](icons.icons-1.md#facade), `unknown`\>
+• `Const` **icons**: `Facade`<[`Facade`](icons.icons.md#facade), `unknown`\>

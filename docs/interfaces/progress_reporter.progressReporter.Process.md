@@ -6,22 +6,26 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [done](progress_reporter.progressReporter.Process.md#done)
 - [setAuto](progress_reporter.progressReporter.Process.md#setauto)
 - [setProgress](progress_reporter.progressReporter.Process.md#setprogress)
 - [setWeight](progress_reporter.progressReporter.Process.md#setweight)
 
-## Methods
+## Properties
 
 ### done
 
-▸ `Readonly` **done**(): [`Process`](progress_reporter.progressReporter.Process.md)
+• `Readonly` **done**: () => [`Process`](progress_reporter.progressReporter.Process.md)
+
+#### Type declaration
+
+▸ (): [`Process`](progress_reporter.progressReporter.Process.md)
 
 Marks process as done.
 
-#### Returns
+##### Returns
 
 [`Process`](progress_reporter.progressReporter.Process.md)
 
@@ -31,17 +35,21 @@ ___
 
 ### setAuto
 
-▸ `Readonly` **setAuto**(`expectedDuration`): [`Process`](progress_reporter.progressReporter.Process.md)
+• `Readonly` **setAuto**: (`expectedDuration`: `number`) => [`Process`](progress_reporter.progressReporter.Process.md)
+
+#### Type declaration
+
+▸ (`expectedDuration`): [`Process`](progress_reporter.progressReporter.Process.md)
 
 Auto-grows progress.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `expectedDuration` | `number` | Expected duration in milliseconds. |
 
-#### Returns
+##### Returns
 
 [`Process`](progress_reporter.progressReporter.Process.md)
 
@@ -51,17 +59,21 @@ ___
 
 ### setProgress
 
-▸ `Readonly` **setProgress**(`value`): [`Process`](progress_reporter.progressReporter.Process.md)
+• `Readonly` **setProgress**: (`value`: `number`) => [`Process`](progress_reporter.progressReporter.Process.md)
+
+#### Type declaration
+
+▸ (`value`): [`Process`](progress_reporter.progressReporter.Process.md)
 
 Sets progress.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `value` | `number` | A number between 0 and 1. |
 
-#### Returns
+##### Returns
 
 [`Process`](progress_reporter.progressReporter.Process.md)
 
@@ -71,17 +83,21 @@ ___
 
 ### setWeight
 
-▸ `Readonly` **setWeight**(`value`): [`Process`](progress_reporter.progressReporter.Process.md)
+• `Readonly` **setWeight**: (`value`: `number`) => [`Process`](progress_reporter.progressReporter.Process.md)
+
+#### Type declaration
+
+▸ (`value`): [`Process`](progress_reporter.progressReporter.Process.md)
 
 Sets weight.
 
-#### Parameters
+##### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `value` | `number` | A number between 0 and 1. |
 
-#### Returns
+##### Returns
 
 [`Process`](progress_reporter.progressReporter.Process.md)
 

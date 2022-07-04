@@ -8,12 +8,26 @@
 
 - [showConfirm](show_confirm.showConfirm.md)
 
-### Variables
+### Functions
 
 - [showConfirm](show_confirm.md#showconfirm)
 
-## Variables
+## Functions
 
 ### showConfirm
 
-• `Const` **showConfirm**: `Facade`<[`Facade`](../interfaces/show_confirm.showConfirm.Facade.md), `unknown`\>
+▸ **showConfirm**(`message`, `success?`, `failure?`): `void`
+
+Shows confirmation dialog.
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `message` | `string` | Message. |
+| `success?` | () => `void` | Success callback. |
+| `failure?` | () => `void` | Failure callback. |
+
+#### Returns
+
+`void`

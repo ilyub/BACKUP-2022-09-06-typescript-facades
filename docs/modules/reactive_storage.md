@@ -8,12 +8,32 @@
 
 - [reactiveStorage](reactive_storage.reactiveStorage.md)
 
-### Variables
+### Functions
 
 - [reactiveStorage](reactive_storage.md#reactivestorage)
 
-## Variables
+## Functions
 
 ### reactiveStorage
 
-• `Const` **reactiveStorage**: `Facade`<[`Facade`](../interfaces/reactive_storage.reactiveStorage.Facade.md), `unknown`\>
+▸ **reactiveStorage**<`T`\>(`obj`): `T`
+
+Creates reactive object.
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `T` | extends `object` |
+
+#### Parameters
+
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `obj` | `T` | Object. |
+
+#### Returns
+
+`T`
+
+Reactive object.

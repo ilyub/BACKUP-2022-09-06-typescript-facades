@@ -8,12 +8,18 @@
 
 - [testDelay](test_delay.testDelay.md)
 
-### Variables
+### Functions
 
 - [testDelay](test_delay.md#testdelay)
 
-## Variables
+## Functions
 
 ### testDelay
 
-• `Const` **testDelay**: `Facade`<[`Facade`](../interfaces/test_delay.testDelay.Facade.md), `unknown`\>
+▸ **testDelay**(): `Promise`<`void`\>
+
+Test delay.
+
+#### Returns
+
+`Promise`<`void`\>

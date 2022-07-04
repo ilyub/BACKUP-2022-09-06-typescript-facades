@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [datetime](datetime.datetime-1.md)
+- [datetime](datetime.datetime.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### datetime
 
-• `Const` **datetime**: `Facade`<[`Facade`](../interfaces/datetime.datetime-1.Facade.md), `unknown`\>
+• `Const` **datetime**: `Facade`<[`Facade`](../interfaces/datetime.datetime.Facade.md), `unknown`\>

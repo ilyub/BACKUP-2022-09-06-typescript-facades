@@ -6,21 +6,25 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [getProgress](progress_reporter.progressReporter.Facade.md#getprogress)
 - [reset](progress_reporter.progressReporter.Facade.md#reset)
 - [spawn](progress_reporter.progressReporter.Facade.md#spawn)
 
-## Methods
+## Properties
 
 ### getProgress
 
-▸ `Readonly` **getProgress**(): `number`
+• `Readonly` **getProgress**: () => `number`
+
+#### Type declaration
+
+▸ (): `number`
 
 Returns progress.
 
-#### Returns
+##### Returns
 
 `number`
 
@@ -30,11 +34,15 @@ ___
 
 ### reset
 
-▸ `Readonly` **reset**(): `void`
+• `Readonly` **reset**: () => `void`
+
+#### Type declaration
+
+▸ (): `void`
 
 Resets to initial state.
 
-#### Returns
+##### Returns
 
 `void`
 
@@ -42,11 +50,15 @@ ___
 
 ### spawn
 
-▸ `Readonly` **spawn**(): [`Process`](progress_reporter.progressReporter.Process.md)
+• `Readonly` **spawn**: () => [`Process`](progress_reporter.progressReporter.Process.md)
+
+#### Type declaration
+
+▸ (): [`Process`](progress_reporter.progressReporter.Process.md)
 
 Starts new process.
 
-#### Returns
+##### Returns
 
 [`Process`](progress_reporter.progressReporter.Process.md)
 

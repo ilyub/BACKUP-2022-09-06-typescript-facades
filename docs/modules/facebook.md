@@ -6,7 +6,7 @@
 
 ### Namespaces
 
-- [facebook](facebook.facebook-1.md)
+- [facebook](facebook.facebook.md)
 
 ### Variables
 
@@ -16,4 +16,4 @@
 
 ### facebook
 
-• `Const` **facebook**: `Facade`<[`Facade`](../interfaces/facebook.facebook-1.Facade.md), `unknown`\>
+• `Const` **facebook**: `Facade`<[`Facade`](../interfaces/facebook.facebook.Facade.md), `unknown`\>
