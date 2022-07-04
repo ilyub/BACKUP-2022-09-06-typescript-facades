@@ -1,10 +1,10 @@
 {
-  "extends": "node_modules/@skylib/config/src/typedoc",
+  "extends": "@skylib/config/src/typedoc",
   "intentionallyNotExported": [
-    "Context",
-    "Icon",
-    "Observer",
-    "Word"
+    "global.facades.lang.Context",
+    "global.facades.icons.Icon",
+    "global.facades.reactiveStorage.Observer",
+    "global.facades.lang.Word"
   ],
   "name": "Typescript facades",
   "out": "docs",
