@@ -48,7 +48,7 @@ export namespace database {
   export type BaseExistingDocuments = readonly BaseExistingDocument[];
 
   export interface BasePutAttachedDocument {
-    // eslint-disable-next-line @skylib/no-restricted-syntax -- Ok
+    // eslint-disable-next-line @skylib/no-restricted-syntax/no-optional-true-type -- Ok
     readonly _deleted?: true;
     readonly _id?: number;
     readonly _rev?: number;
@@ -58,7 +58,7 @@ export namespace database {
   export type BasePutAttachedDocuments = readonly BasePutAttachedDocument[];
 
   export interface BasePutDocument {
-    // eslint-disable-next-line @skylib/no-restricted-syntax -- Ok
+    // eslint-disable-next-line @skylib/no-restricted-syntax/no-optional-true-type -- Ok
     readonly _deleted?: true;
     readonly _id?: string;
     readonly _rev?: string;
@@ -91,12 +91,10 @@ export namespace database {
     (doc: ExistingDocument): void;
   }
 
-  // eslint-disable-next-line @skylib/no-restricted-syntax -- Ok
   export type Conditions<T extends string = string> =
     | ConditionsArray<T>
     | ConditionsRecord<T>;
 
-  // eslint-disable-next-line @skylib/no-restricted-syntax -- Wait for @skylib/config update
   export type ConditionsArray<T extends string = string> = ReadonlyArray<
     ConditionsRecord<T>
   >;

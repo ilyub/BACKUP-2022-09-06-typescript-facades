@@ -18,6 +18,5 @@ export namespace icons {
 
   export type Icon = PickKeys<facades.icons.Icon, true, "extends->">;
 
-  // eslint-disable-next-line @skylib/no-restricted-syntax -- Ok
   export type Icons<T extends Icon> = Rec<T, string>;
 }
