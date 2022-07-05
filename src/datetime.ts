@@ -4,20 +4,21 @@ import type { NumStr } from "@skylib/functions";
 export const datetime = createFacade<datetime.Facade>("datetime", {});
 
 export namespace datetime {
+  // eslint-disable-next-line deprecation/deprecation -- Wait for major update
   export interface DateTime extends ReadonlyDateTime {
     /**
      * Adds time interval.
      *
      * @param amount - Amount to be added.
      * @param unit - Unit.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly add: (amount: number, unit: Unit) => DateTime;
     /**
      * Sets day of month.
      *
      * @param day - Day of month.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setDayOfMonth: (day: number) => DateTime;
     /**
@@ -25,85 +26,85 @@ export namespace datetime {
      *
      * @param day - Day of week (Sunday = 0, Monday = 1).
      * @param weekStartsOn - Start of week (Sunday = 0, Monday = 1).
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setDayOfWeek: (day: number, weekStartsOn: 0 | 1) => DateTime;
     /**
      * Sets day of week.
      *
      * @param day - Day of week (Sunday = 0, Monday = 1).
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setDayOfWeekLocale: (day: number) => DateTime;
     /**
      * Sets hours.
      *
      * @param hours - Hours.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setHours: (hours: number) => DateTime;
     /**
      * Sets minutes.
      *
      * @param minutes - Minutes.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setMinutes: (minutes: number) => DateTime;
     /**
      * Sets month (0 = January).
      *
      * @param month - Month.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setMonth: (month: number) => DateTime;
     /**
      * Sets date to the start of day.
      *
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfDay: () => DateTime;
     /**
      * Sets date to the start of hour.
      *
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfHour: () => DateTime;
     /**
      * Sets date to the start of minute.
      *
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfMinute: () => DateTime;
     /**
      * Sets date to the start of month.
      *
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfMonth: () => DateTime;
     /**
      * Sets date to the start of week.
      *
      * @param weekStartsOn - Start of week (Sunday = 0, Monday = 1).
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfWeek: (weekStartsOn: 0 | 1) => DateTime;
     /**
      * Sets date to the start of week.
      *
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfWeekLocale: () => DateTime;
     /**
      * Sets date to the start of year.
      *
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setStartOfYear: () => DateTime;
     /**
      * Sets year.
      *
      * @param year - Year.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly setYear: (year: number) => DateTime;
     /**
@@ -111,7 +112,7 @@ export namespace datetime {
      *
      * @param amount - Amount to be subtracted.
      * @param unit - Unit.
-     * @returns Self.
+     * @returns New instance.
      */
     readonly sub: (amount: number, unit: Unit) => DateTime;
   }
@@ -151,11 +152,15 @@ export namespace datetime {
     readonly validate: (date: string) => boolean;
   }
 
+  /**
+   * @deprecated - DateTime is readonly.
+   */
   export interface ReadonlyDateTime {
     /**
      * Clones self.
      *
      * @returns DateTime instance.
+     * @deprecated - DateTime is readonly.
      */
     readonly clone: () => DateTime;
     /**
