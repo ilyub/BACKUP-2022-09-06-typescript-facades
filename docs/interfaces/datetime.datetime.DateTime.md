@@ -4,6 +4,10 @@
 
 [datetime](../modules/datetime.md).[datetime](../modules/datetime.datetime.md).DateTime
 
+**`Deprecated`**
+
+- DateTime is readonly.
+
 ## Hierarchy
 
 - [`ReadonlyDateTime`](datetime.datetime.ReadonlyDateTime.md)
@@ -71,7 +75,7 @@ Adds time interval.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -84,6 +88,10 @@ ___
 ▸ (): [`DateTime`](datetime.datetime.DateTime.md)
 
 Clones self.
+
+**`Deprecated`**
+
+- DateTime is readonly.
 
 ##### Returns
 
@@ -395,7 +403,7 @@ Sets day of month.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -420,7 +428,7 @@ Sets day of week.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -444,7 +452,7 @@ Sets day of week.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -468,7 +476,7 @@ Sets hours.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -492,7 +500,7 @@ Sets minutes.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -516,7 +524,7 @@ Sets month (0 = January).
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -534,7 +542,7 @@ Sets date to the start of day.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -552,7 +560,7 @@ Sets date to the start of hour.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -570,7 +578,7 @@ Sets date to the start of minute.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -588,7 +596,7 @@ Sets date to the start of month.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -612,7 +620,7 @@ Sets date to the start of week.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -630,7 +638,7 @@ Sets date to the start of week.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -648,7 +656,7 @@ Sets date to the start of year.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -672,7 +680,7 @@ Sets year.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 
@@ -697,7 +705,7 @@ Subtracts time interval.
 
 [`DateTime`](datetime.datetime.DateTime.md)
 
-Self.
+New instance.
 
 ___
 

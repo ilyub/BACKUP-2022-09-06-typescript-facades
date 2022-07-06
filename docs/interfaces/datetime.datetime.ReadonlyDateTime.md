@@ -4,6 +4,10 @@
 
 [datetime](../modules/datetime.md).[datetime](../modules/datetime.datetime.md).ReadonlyDateTime
 
+**`Deprecated`**
+
+- DateTime is readonly.
+
 ## Hierarchy
 
 - **`ReadonlyDateTime`**
@@ -43,6 +47,10 @@
 ▸ (): [`DateTime`](datetime.datetime.DateTime.md)
 
 Clones self.
+
+**`Deprecated`**
+
+- DateTime is readonly.
 
 ##### Returns
 
