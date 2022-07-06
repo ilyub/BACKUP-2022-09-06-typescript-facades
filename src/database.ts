@@ -48,7 +48,7 @@ export namespace database {
   export type BaseExistingDocuments = readonly BaseExistingDocument[];
 
   export interface BasePutAttachedDocument {
-    // eslint-disable-next-line @skylib/no-restricted-syntax/no-optional-true-type -- Ok
+    // eslint-disable-next-line @skylib/custom/no-optional-true-type -- Ok
     readonly _deleted?: true;
     readonly _id?: number;
     readonly _rev?: number;
@@ -58,7 +58,7 @@ export namespace database {
   export type BasePutAttachedDocuments = readonly BasePutAttachedDocument[];
 
   export interface BasePutDocument {
-    // eslint-disable-next-line @skylib/no-restricted-syntax/no-optional-true-type -- Ok
+    // eslint-disable-next-line @skylib/custom/no-optional-true-type -- Ok
     readonly _deleted?: true;
     readonly _id?: string;
     readonly _rev?: string;

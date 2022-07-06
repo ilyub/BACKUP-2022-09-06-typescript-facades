@@ -1,6 +1,6 @@
 module.exports = {
   rules: {
-    "@skylib/no-restricted-syntax/prefer-uniqueId-facade": [
+    "@skylib/custom/facades/prefer-uniqueId-facade": [
       "warn",
       {
         message: 'Prefer "uniqueId" facade',

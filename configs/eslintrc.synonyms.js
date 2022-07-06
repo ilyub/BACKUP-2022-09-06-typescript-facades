@@ -1,1 +1,1 @@
-module.exports = ["no-restricted-syntax/prefer-uniqueId-facade"];
+module.exports = ["@skylib/custom/facades/prefer-uniqueId-facade"];
