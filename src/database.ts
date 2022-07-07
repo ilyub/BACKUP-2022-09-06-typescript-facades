@@ -639,5 +639,11 @@ export namespace database {
     (this: Database): Promise<void>;
   }
 
+  export interface StoredAttachedDocument extends BaseStoredAttachedDocument {
+    readonly [K: string]: unknown;
+  }
+
+  export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
+
   export type SubscriptionId = `subscription-id-${string}`;
 }
