@@ -1,5 +1,5 @@
-import { createFacade } from "@skylib/functions";
 import type { AsyncPromise } from "@skylib/functions";
+import { createFacade } from "@skylib/functions";
 
 export const handlePromise = createFacade<handlePromise.Facade>(
   "handlePromise",

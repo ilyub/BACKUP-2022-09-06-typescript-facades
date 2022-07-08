@@ -1,5 +1,5 @@
-import { createFacade } from "@skylib/functions";
 import type { PickKeys, Rec } from "@skylib/functions";
+import { createFacade } from "@skylib/functions";
 
 declare global {
   namespace facades {

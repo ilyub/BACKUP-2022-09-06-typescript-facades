@@ -1,6 +1,6 @@
-import { createFacade } from "@skylib/functions";
-import type { ObjectKeys } from "@skylib/functions";
 import type { Required as KeysToRequired } from "ts-toolbelt/out/Object/Required";
+import type { ObjectKeys } from "@skylib/functions";
+import { createFacade } from "@skylib/functions";
 
 declare global {
   namespace facades {

@@ -1,5 +1,5 @@
-import { createFacade } from "@skylib/functions";
 import type { NumStr } from "@skylib/functions";
+import { createFacade } from "@skylib/functions";
 
 export const datetime = createFacade<datetime.Facade>("datetime", {});
 

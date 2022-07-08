@@ -1,5 +1,5 @@
-import { createFacade } from "@skylib/functions";
 import type { IndexedRecord, PartialRecord } from "@skylib/functions";
+import { createFacade } from "@skylib/functions";
 
 export const httpRequest = createFacade<httpRequest.Facade>("httpRequest", {});
 
