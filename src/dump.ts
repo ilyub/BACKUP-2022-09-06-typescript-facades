@@ -2,6 +2,7 @@ import { createFacade } from "@skylib/functions";
 
 export const dump = createFacade<dump.Facade>("dump", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace dump {
   export interface Facade {
     /**

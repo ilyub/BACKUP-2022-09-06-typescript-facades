@@ -2,6 +2,7 @@ import { createFacade } from "@skylib/functions";
 
 export const compare = createFacade<compare.Facade>("compare", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace compare {
   export interface Facade {
     /**

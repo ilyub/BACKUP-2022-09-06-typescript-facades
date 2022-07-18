@@ -3,6 +3,7 @@ import type { stringU } from "@skylib/functions";
 
 export const google = createFacade<google.Facade>("google", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace google {
   export interface Facade {
     /**

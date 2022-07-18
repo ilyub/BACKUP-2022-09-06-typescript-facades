@@ -1,24 +1,27 @@
-import type { NumStr, PickKeys, Rec } from "@skylib/functions";
+import type { NumStr, Rec, types } from "@skylib/functions";
 import { createFacade } from "@skylib/functions";
 
 declare global {
   namespace facades {
     namespace lang {
-      interface Context {
-        readonly _placeholder?: never;
-      }
+      // eslint-disable-next-line @skylib/custom/no-empty-interface -- Ok
+      interface Context {}
 
-      interface Word {
-        readonly _placeholder?: never;
-      }
+      // eslint-disable-next-line @skylib/custom/no-empty-interface -- Ok
+      interface Word {}
     }
   }
 }
 
 export const lang = createFacade<lang.Facade>("lang", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace lang {
-  export type Context = PickKeys<facades.lang.Context, true, "extends->">;
+  export type Context = types.object.keys.Pick<
+    facades.lang.Context,
+    true,
+    "extends->"
+  >;
 
   export interface Dictionary<W extends Word, C extends Context> {
     /**
@@ -49,7 +52,7 @@ export namespace lang {
      * @returns _True_ if word exists, _false_ otherwise.
      */
     readonly has: (key: string) => key is Key;
-    readonly keys: Rec<Transform<W>, Transform>;
+    readonly keys: Rec<Transforms<W>, Transforms>;
     /**
      * Wraps plain text.
      *
@@ -76,18 +79,22 @@ export namespace lang {
 
   export type Facade = Lang<Word, Context>;
 
-  export type Key<W extends Word = Word> = Plain | Transform<W>;
+  export type Key<W extends Word = Word> = Plain | Transforms<W>;
 
   export type Lang<W extends Word, C extends Context> = Dictionary<W, C> &
-    Rec<Transform<W>, string>;
+    Rec<Transforms<W>, string>;
 
   export type Plain = `plain:${string}`;
 
-  export type Transform<W extends Word = Word> =
+  export type Transforms<W extends Word = Word> =
     | Capitalize<W>
     | Lowercase<W>
     | Uncapitalize<W>
     | Uppercase<W>;
 
-  export type Word = PickKeys<facades.lang.Word, true, "extends->">;
+  export type Word = types.object.keys.Pick<
+    facades.lang.Word,
+    true,
+    "extends->"
+  >;
 }

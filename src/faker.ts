@@ -1,7 +1,9 @@
+import type { TimeInterval, TimeUnit } from "./types";
 import { createFacade } from "@skylib/functions";
 
 export const faker = createFacade<faker.Facade>("faker", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace faker {
   export interface Facade {
     /**
@@ -81,15 +83,4 @@ export namespace faker {
      */
     readonly word: () => string;
   }
-
-  // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
-  export type TimeInterval = readonly [number, TimeUnit];
-
-  export type TimeUnit =
-    | "day"
-    | "days"
-    | "hour"
-    | "hours"
-    | "minute"
-    | "minutes";
 }

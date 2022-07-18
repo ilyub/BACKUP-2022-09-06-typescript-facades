@@ -1,8 +1,10 @@
-import type { IndexedRecord, PartialRecord } from "@skylib/functions";
+import type { HTTPHeaders, HttpMethod } from "./types";
+import type { IndexedRecord } from "@skylib/functions";
 import { createFacade } from "@skylib/functions";
 
 export const httpRequest = createFacade<httpRequest.Facade>("httpRequest", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace httpRequest {
   export interface Facade {
     /**
@@ -11,24 +13,14 @@ export namespace httpRequest {
      * @param url - URL.
      * @param method - HTTP method.
      * @param data - Data.
-     * @param headers - Headers.
+     * @param headers - HTTPHeaders.
      * @returns Server response.
      */
     readonly send: (
       url: string,
-      method?: HttpRequestMethod,
+      method?: HttpMethod,
       data?: IndexedRecord,
-      headers?: HttpHeaders
+      headers?: HTTPHeaders
     ) => Promise<unknown>;
   }
-
-  export type HttpHeader =
-    | "Accept-Language"
-    | "Accept"
-    | "Authorization"
-    | "Content-Type";
-
-  export type HttpHeaders = PartialRecord<HttpHeader, string>;
-
-  export type HttpRequestMethod = "delete" | "get" | "post";
 }

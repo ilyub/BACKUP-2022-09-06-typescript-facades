@@ -1,17 +1,17 @@
 import type { NumStr, PartialRecord, numbers } from "@skylib/functions";
+import type { RelativeDate, Sign, TimeUnit } from "./types";
 import { createFacade } from "@skylib/functions";
 import { uniqueId } from "./unique-id";
 
 export const database = createFacade<database.Facade, database.Extension>(
   "database",
   {
-    uniqueAttachedSubscriptionId: (): database.AttachedSubscriptionId =>
-      `attached-subscription-id-${uniqueId()}`,
-    uniqueSubscriptionId: (): database.SubscriptionId =>
-      `subscription-id-${uniqueId()}`
+    uniqueAttachedSubscriptionId: () => `uasid-${uniqueId()}`,
+    uniqueSubscriptionId: () => `usid-${uniqueId()}`
   }
 );
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace database {
   export interface AttachedChangesHandler {
     /**
@@ -22,7 +22,7 @@ export namespace database {
     (doc: ExistingAttachedDocument): void;
   }
 
-  export type AttachedSubscriptionId = `attached-subscription-id-${string}`;
+  export type AttachedSubscriptionId = `uasid-${string}`;
 
   export interface BaseBulkAttachedDocument extends BasePutAttachedDocument {
     readonly parentDoc: BaseExistingDocument;
@@ -439,29 +439,8 @@ export namespace database {
   export type DateCondition =
     | string
     // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
-    | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit]
-    | readonly [DateConditionType];
-
-  export type DateConditionSign = "-" | "+";
-
-  export type DateConditionType =
-    | "endOfDay"
-    | "endOfHour"
-    | "endOfMonth"
-    | "endOfWeek"
-    | "now"
-    | "startOfDay"
-    | "startOfHour"
-    | "startOfMonth"
-    | "startOfWeek";
-
-  export type DateConditionUnit =
-    | "day"
-    | "days"
-    | "hour"
-    | "hours"
-    | "minute"
-    | "minutes";
+    | readonly [RelativeDate, Sign, number, TimeUnit]
+    | readonly [RelativeDate];
 
   export interface ExistingAttachedDocument
     extends BaseExistingAttachedDocument {
@@ -645,5 +624,5 @@ export namespace database {
 
   export type StoredAttachedDocuments = readonly StoredAttachedDocument[];
 
-  export type SubscriptionId = `subscription-id-${string}`;
+  export type SubscriptionId = `usid-${string}`;
 }

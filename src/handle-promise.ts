@@ -1,11 +1,13 @@
-import type { AsyncPromise } from "@skylib/functions";
+import type { PromiseType } from "./types";
 import { createFacade } from "@skylib/functions";
+import type { types } from "@skylib/functions";
 
 export const handlePromise = createFacade<handlePromise.Facade>(
   "handlePromise",
   {}
 );
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace handlePromise {
   export interface Facade {
     /**
@@ -16,8 +18,8 @@ export namespace handlePromise {
      * @param errorMessage - Error message (used to alert user on error).
      */
     <T>(
-      type: Type | undefined,
-      mixed: AsyncPromise<T>,
+      type: PromiseType | undefined,
+      mixed: types.fn.AsyncPromise<T>,
       errorMessage?: string
     ): void;
     /**
@@ -38,13 +40,9 @@ export namespace handlePromise {
      * @param mixed - Promise or async function.
      * @param errorMessage - Error message (used to alert user on error).
      */
-    readonly silent: <T>(mixed: AsyncPromise<T>, errorMessage?: string) => void;
+    readonly silent: <T>(
+      mixed: types.fn.AsyncPromise<T>,
+      errorMessage?: string
+    ) => void;
   }
-
-  export type Type =
-    | "createDb"
-    | "dbRequest"
-    | "destroyDb"
-    | "httpRequest"
-    | "navigation";
 }

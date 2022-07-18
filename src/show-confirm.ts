@@ -2,6 +2,7 @@ import { createFacade } from "@skylib/functions";
 
 export const showConfirm = createFacade<showConfirm.Facade>("showConfirm", {});
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace showConfirm {
   export interface Facade {
     /**

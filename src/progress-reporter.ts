@@ -5,6 +5,7 @@ export const progressReporter = createFacade<progressReporter.Facade>(
   {}
 );
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace progressReporter {
   export interface Facade {
     /**

@@ -5,6 +5,7 @@ export const inlineSearch = createFacade<inlineSearch.Facade>(
   {}
 );
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
 export namespace inlineSearch {
   export interface Engine<T extends object> {
     /**
