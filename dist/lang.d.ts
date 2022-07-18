@@ -1,19 +1,17 @@
-import type { NumStr, PickKeys, Rec } from "@skylib/functions";
+import type { NumStr, Rec, types } from "@skylib/functions";
 declare global {
     namespace facades {
         namespace lang {
             interface Context {
-                readonly _placeholder?: never;
             }
             interface Word {
-                readonly _placeholder?: never;
             }
         }
     }
 }
 export declare const lang: import("@skylib/functions").Facade<lang.Facade, unknown>;
 export declare namespace lang {
-    type Context = PickKeys<facades.lang.Context, true, "extends->">;
+    type Context = types.object.keys.Pick<facades.lang.Context, true, "extends->">;
     interface Dictionary<W extends Word, C extends Context> {
         /**
          * Sets context.
@@ -43,7 +41,7 @@ export declare namespace lang {
          * @returns _True_ if word exists, _false_ otherwise.
          */
         readonly has: (key: string) => key is Key;
-        readonly keys: Rec<Transform<W>, Transform>;
+        readonly keys: Rec<Transforms<W>, Transforms>;
         /**
          * Wraps plain text.
          *
@@ -68,10 +66,10 @@ export declare namespace lang {
         readonly with: (name: string, replacement: NumStr) => Facade;
     }
     type Facade = Lang<Word, Context>;
-    type Key<W extends Word = Word> = Plain | Transform<W>;
-    type Lang<W extends Word, C extends Context> = Dictionary<W, C> & Rec<Transform<W>, string>;
+    type Key<W extends Word = Word> = Plain | Transforms<W>;
+    type Lang<W extends Word, C extends Context> = Dictionary<W, C> & Rec<Transforms<W>, string>;
     type Plain = `plain:${string}`;
-    type Transform<W extends Word = Word> = Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>;
-    type Word = PickKeys<facades.lang.Word, true, "extends->">;
+    type Transforms<W extends Word = Word> = Capitalize<W> | Lowercase<W> | Uncapitalize<W> | Uppercase<W>;
+    type Word = types.object.keys.Pick<facades.lang.Word, true, "extends->">;
 }
 //# sourceMappingURL=lang.d.ts.map

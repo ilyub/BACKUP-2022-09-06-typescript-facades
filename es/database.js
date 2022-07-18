@@ -1,7 +1,7 @@
-import { uniqueId } from "./unique-id";
 import { createFacade } from "@skylib/functions";
+import { uniqueId } from "./unique-id";
 export const database = createFacade("database", {
-    uniqueAttachedSubscriptionId: () => `attached-subscription-id-${uniqueId()}`,
-    uniqueSubscriptionId: () => `subscription-id-${uniqueId()}`
+    uniqueAttachedSubscriptionId: () => `uasid-${uniqueId()}`,
+    uniqueSubscriptionId: () => `usid-${uniqueId()}`
 });
 //# sourceMappingURL=database.js.map

@@ -25,4 +25,5 @@
 - [show-alert](modules/show_alert.md)
 - [show-confirm](modules/show_confirm.md)
 - [test-delay](modules/test_delay.md)
+- [types](modules/types.md)
 - [unique-id](modules/unique_id.md)

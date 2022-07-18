@@ -46,7 +46,7 @@ ___
 
 ### date
 
-• `Readonly` **date**: (`from`: `string` \| [`TimeInterval`](../modules/faker.faker.md#timeinterval), `to`: `string` \| [`TimeInterval`](../modules/faker.faker.md#timeinterval), `step?`: `number`, `unit?`: [`TimeUnit`](../modules/faker.faker.md#timeunit)) => `string`
+• `Readonly` **date**: (`from`: `string` \| [`TimeInterval`](../modules/types.md#timeinterval), `to`: `string` \| [`TimeInterval`](../modules/types.md#timeinterval), `step?`: `number`, `unit?`: [`TimeUnit`](../enums/types.TimeUnit.md)) => `string`
 
 #### Type declaration
 
@@ -58,10 +58,10 @@ Generates random date.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `from` | `string` \| [`TimeInterval`](../modules/faker.faker.md#timeinterval) | Min date. |
-| `to` | `string` \| [`TimeInterval`](../modules/faker.faker.md#timeinterval) | Max date. |
+| `from` | `string` \| [`TimeInterval`](../modules/types.md#timeinterval) | Min date. |
+| `to` | `string` \| [`TimeInterval`](../modules/types.md#timeinterval) | Max date. |
 | `step?` | `number` | Step. |
-| `unit?` | [`TimeUnit`](../modules/faker.faker.md#timeunit) | Step unit. |
+| `unit?` | [`TimeUnit`](../enums/types.TimeUnit.md) | Step unit. |
 
 ##### Returns
 

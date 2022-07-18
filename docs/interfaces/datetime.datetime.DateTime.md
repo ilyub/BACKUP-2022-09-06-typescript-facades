@@ -4,16 +4,6 @@
 
 [datetime](../modules/datetime.md).[datetime](../modules/datetime.datetime.md).DateTime
 
-**`Deprecated`**
-
-- DateTime is readonly.
-
-## Hierarchy
-
-- [`ReadonlyDateTime`](datetime.datetime.ReadonlyDateTime.md)
-
-  ↳ **`DateTime`**
-
 ## Table of contents
 
 ### Properties
@@ -56,7 +46,7 @@
 
 ### add
 
-• `Readonly` **add**: (`amount`: `number`, `unit`: [`Unit`](../modules/datetime.datetime.md#unit)) => [`DateTime`](datetime.datetime.DateTime.md)
+• `Readonly` **add**: (`amount`: `number`, `unit`: [`TimeUnit`](../enums/types.TimeUnit.md)) => [`DateTime`](datetime.datetime.DateTime.md)
 
 #### Type declaration
 
@@ -69,7 +59,7 @@ Adds time interval.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `amount` | `number` | Amount to be added. |
-| `unit` | [`Unit`](../modules/datetime.datetime.md#unit) | Unit. |
+| `unit` | [`TimeUnit`](../enums/types.TimeUnit.md) | Unit. |
 
 ##### Returns
 
@@ -99,10 +89,6 @@ Clones self.
 
 DateTime instance.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[clone](datetime.datetime.ReadonlyDateTime.md#clone)
-
 ___
 
 ### dayOfMonth
@@ -121,10 +107,6 @@ Returns day of month.
 
 Day of month.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[dayOfMonth](datetime.datetime.ReadonlyDateTime.md#dayofmonth)
-
 ___
 
 ### dayOfWeek
@@ -142,10 +124,6 @@ Returns day of week.
 `number`
 
 Day of week (Sunday = 0, Monday = 1).
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[dayOfWeek](datetime.datetime.ReadonlyDateTime.md#dayofweek)
 
 ___
 
@@ -171,10 +149,6 @@ Formats date.
 
 Formatted string.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[format](datetime.datetime.ReadonlyDateTime.md#format)
-
 ___
 
 ### hours
@@ -192,10 +166,6 @@ Returns hours.
 `number`
 
 Hours.
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[hours](datetime.datetime.ReadonlyDateTime.md#hours)
 
 ___
 
@@ -221,10 +191,6 @@ Compares two dates up to day of month.
 
 _True_ if dates are equal, _false_ otherwise.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[isSameDayOfMonth](datetime.datetime.ReadonlyDateTime.md#issamedayofmonth)
-
 ___
 
 ### isSameHour
@@ -248,10 +214,6 @@ Compares two dates up to hours.
 `boolean`
 
 _True_ if dates are equal, _false_ otherwise.
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[isSameHour](datetime.datetime.ReadonlyDateTime.md#issamehour)
 
 ___
 
@@ -277,10 +239,6 @@ Compares two dates up to minutes.
 
 _True_ if dates are equal, _false_ otherwise.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[isSameMinute](datetime.datetime.ReadonlyDateTime.md#issameminute)
-
 ___
 
 ### isSameMonth
@@ -304,10 +262,6 @@ Compares two dates up to month.
 `boolean`
 
 _True_ if dates are equal, _false_ otherwise.
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[isSameMonth](datetime.datetime.ReadonlyDateTime.md#issamemonth)
 
 ___
 
@@ -333,10 +287,6 @@ Compares two dates up to year.
 
 _True_ if dates are equal, _false_ otherwise.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[isSameYear](datetime.datetime.ReadonlyDateTime.md#issameyear)
-
 ___
 
 ### minutes
@@ -355,10 +305,6 @@ Returns minutes.
 
 Minutes.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[minutes](datetime.datetime.ReadonlyDateTime.md#minutes)
-
 ___
 
 ### month
@@ -376,10 +322,6 @@ Returns month.
 `number`
 
 Month (0 = January).
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[month](datetime.datetime.ReadonlyDateTime.md#month)
 
 ___
 
@@ -686,7 +628,7 @@ ___
 
 ### sub
 
-• `Readonly` **sub**: (`amount`: `number`, `unit`: [`Unit`](../modules/datetime.datetime.md#unit)) => [`DateTime`](datetime.datetime.DateTime.md)
+• `Readonly` **sub**: (`amount`: `number`, `unit`: [`TimeUnit`](../enums/types.TimeUnit.md)) => [`DateTime`](datetime.datetime.DateTime.md)
 
 #### Type declaration
 
@@ -699,7 +641,7 @@ Subtracts time interval.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `amount` | `number` | Amount to be subtracted. |
-| `unit` | [`Unit`](../modules/datetime.datetime.md#unit) | Unit. |
+| `unit` | [`TimeUnit`](../enums/types.TimeUnit.md) | Unit. |
 
 ##### Returns
 
@@ -725,10 +667,6 @@ Returns date as a Date object.
 
 Date object.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[toDate](datetime.datetime.ReadonlyDateTime.md#todate)
-
 ___
 
 ### toString
@@ -746,10 +684,6 @@ Returns date as "yyyy-MM-dd HH:mm" / "yyyy-MM-dd HH:mm:ss" formatted string.
 `string`
 
 Formatted string.
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[toString](datetime.datetime.ReadonlyDateTime.md#tostring)
 
 ___
 
@@ -769,10 +703,6 @@ Returns date as a number of milliseconds.
 
 Number of milliseconds.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[toTime](datetime.datetime.ReadonlyDateTime.md#totime)
-
 ___
 
 ### toTimeSec
@@ -791,10 +721,6 @@ Returns date as a number of seconds.
 
 Number of seconds.
 
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[toTimeSec](datetime.datetime.ReadonlyDateTime.md#totimesec)
-
 ___
 
 ### year
@@ -812,7 +738,3 @@ Returns year.
 `number`
 
 Year.
-
-#### Inherited from
-
-[ReadonlyDateTime](datetime.datetime.ReadonlyDateTime.md).[year](datetime.datetime.ReadonlyDateTime.md#year)

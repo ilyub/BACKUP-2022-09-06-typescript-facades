@@ -124,7 +124,7 @@ ___
 
 ### keys
 
-• `Readonly` **keys**: `Rec`<[`Transform`](../modules/lang.lang.md#transform)<`W`\>, [`Transform`](../modules/lang.lang.md#transform)<``"SampleWord"``\>\>
+• `Readonly` **keys**: `Rec`<[`Transforms`](../modules/lang.lang.md#transforms)<`W`\>, [`Transforms`](../modules/lang.lang.md#transforms)<``"SampleWord"``\>\>
 
 ___
 

@@ -15,17 +15,17 @@
 
 ### uniqueAttachedSubscriptionId
 
-• `Readonly` **uniqueAttachedSubscriptionId**: () => \`attached-subscription-id-${string}\`
+• `Readonly` **uniqueAttachedSubscriptionId**: () => \`uasid-${string}\`
 
 #### Type declaration
 
-▸ (): \`attached-subscription-id-${string}\`
+▸ (): \`uasid-${string}\`
 
 Generates unique attached subscription ID.
 
 ##### Returns
 
-\`attached-subscription-id-${string}\`
+\`uasid-${string}\`
 
 Attached subscription ID.
 
@@ -33,16 +33,16 @@ ___
 
 ### uniqueSubscriptionId
 
-• `Readonly` **uniqueSubscriptionId**: () => \`subscription-id-${string}\`
+• `Readonly` **uniqueSubscriptionId**: () => \`usid-${string}\`
 
 #### Type declaration
 
-▸ (): \`subscription-id-${string}\`
+▸ (): \`usid-${string}\`
 
 Generates unique subscription ID.
 
 ##### Returns
 
-\`subscription-id-${string}\`
+\`usid-${string}\`
 
 Subscription ID.

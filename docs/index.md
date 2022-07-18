@@ -9,7 +9,7 @@ Typescript facades / [Exports](modules.md)
 
 ## <a name="installation"></a>Installation
 
-    npm install @skylib/facades
+npm install @skylib/facades
 
 ## <a name="modules"></a>Modules
 

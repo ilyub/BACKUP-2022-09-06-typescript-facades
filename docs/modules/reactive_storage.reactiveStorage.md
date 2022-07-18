@@ -20,4 +20,4 @@
 
 ### Observer
 
-Ƭ **Observer**: `KeysToRequired`<`Pick`<`facades.reactiveStorage.Observer`, `ObjectKeys`<`facades.reactiveStorage.Observer`, ``"optional"`` \| ``"readonly"``, `never`\>\>, ``"_type"``\>
+Ƭ **Observer**: `types.object.Required`<`Pick`<`facades.reactiveStorage.Observer`, `types.object.keys.Pick`<`facades.reactiveStorage.Observer`, ``"optional"`` \| ``"readonly"``, `never`\>\>, ``"type"``\>

@@ -10,6 +10,8 @@
 
   ↳ **`BaseStoredAttachedDocument`**
 
+  ↳↳ [`StoredAttachedDocument`](database.database.StoredAttachedDocument.md)
+
 ## Table of contents
 
 ### Properties

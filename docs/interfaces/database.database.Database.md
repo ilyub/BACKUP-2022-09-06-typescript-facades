@@ -782,11 +782,11 @@ ___
 
 ### subscribe
 
-• `Readonly` **subscribe**: (`handler`: [`ChangesHandler`](database.database.ChangesHandler.md)) => \`subscription-id-${string}\`
+• `Readonly` **subscribe**: (`handler`: [`ChangesHandler`](database.database.ChangesHandler.md)) => \`usid-${string}\`
 
 #### Type declaration
 
-▸ (`handler`): \`subscription-id-${string}\`
+▸ (`handler`): \`usid-${string}\`
 
 Subscribes to changes.
 
@@ -798,7 +798,7 @@ Subscribes to changes.
 
 ##### Returns
 
-\`subscription-id-${string}\`
+\`usid-${string}\`
 
 Subscription ID.
 
@@ -806,11 +806,11 @@ ___
 
 ### subscribeAttached
 
-• `Readonly` **subscribeAttached**: (`handler`: [`AttachedChangesHandler`](database.database.AttachedChangesHandler.md)) => \`attached-subscription-id-${string}\`
+• `Readonly` **subscribeAttached**: (`handler`: [`AttachedChangesHandler`](database.database.AttachedChangesHandler.md)) => \`uasid-${string}\`
 
 #### Type declaration
 
-▸ (`handler`): \`attached-subscription-id-${string}\`
+▸ (`handler`): \`uasid-${string}\`
 
 Subscribes to changes.
 
@@ -822,7 +822,7 @@ Subscribes to changes.
 
 ##### Returns
 
-\`attached-subscription-id-${string}\`
+\`uasid-${string}\`
 
 Subscription ID.
 
@@ -879,7 +879,7 @@ ___
 
 ### unsubscribe
 
-• `Readonly` **unsubscribe**: (`id`: \`subscription-id-${string}\`) => `void`
+• `Readonly` **unsubscribe**: (`id`: \`usid-${string}\`) => `void`
 
 #### Type declaration
 
@@ -891,7 +891,7 @@ Unsubscribes from changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | \`subscription-id-${string}\` | Subscription ID. |
+| `id` | \`usid-${string}\` | Subscription ID. |
 
 ##### Returns
 
@@ -903,7 +903,7 @@ ___
 
 ### unsubscribeAttached
 
-• `Readonly` **unsubscribeAttached**: (`id`: \`attached-subscription-id-${string}\`) => `void`
+• `Readonly` **unsubscribeAttached**: (`id`: \`uasid-${string}\`) => `void`
 
 #### Type declaration
 
@@ -915,7 +915,7 @@ Unsubscribes from changes.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `id` | \`attached-subscription-id-${string}\` | Subscription ID. |
+| `id` | \`uasid-${string}\` | Subscription ID. |
 
 ##### Returns
 

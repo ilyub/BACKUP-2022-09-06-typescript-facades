@@ -9,13 +9,3 @@
 ### Interfaces
 
 - [Facade](../interfaces/handle_promise.handlePromise.Facade.md)
-
-### Type Aliases
-
-- [Type](handle_promise.handlePromise.md#type)
-
-## Type Aliases
-
-### Type
-
-Ƭ **Type**: ``"createDb"`` \| ``"dbRequest"`` \| ``"destroyDb"`` \| ``"httpRequest"`` \| ``"navigation"``

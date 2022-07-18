@@ -22,7 +22,7 @@ ___
 
 ### Icon
 
-Ƭ **Icon**: `PickKeys`<`facades.icons.Icon`, ``true``, ``"extends->"``\>
+Ƭ **Icon**: `types.object.keys.Pick`<`facades.icons.Icon`, ``true``, ``"extends->"``\>
 
 ___
 

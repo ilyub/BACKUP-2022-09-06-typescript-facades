@@ -6,6 +6,14 @@
 
 ### References
 
+- [HTTPHeaders](index.md#httpheaders)
+- [HttpHeader](index.md#httpheader)
+- [HttpMethod](index.md#httpmethod)
+- [PromiseType](index.md#promisetype)
+- [RelativeDate](index.md#relativedate)
+- [Sign](index.md#sign)
+- [TimeInterval](index.md#timeinterval)
+- [TimeUnit](index.md#timeunit)
 - [compare](index.md#compare)
 - [database](index.md#database)
 - [datetime](index.md#datetime)
@@ -26,6 +34,54 @@
 - [uniqueId](index.md#uniqueid)
 
 ## References
+
+### HTTPHeaders
+
+Re-exports [HTTPHeaders](types.md#httpheaders)
+
+___
+
+### HttpHeader
+
+Re-exports [HttpHeader](../enums/types.HttpHeader.md)
+
+___
+
+### HttpMethod
+
+Re-exports [HttpMethod](../enums/types.HttpMethod.md)
+
+___
+
+### PromiseType
+
+Re-exports [PromiseType](../enums/types.PromiseType.md)
+
+___
+
+### RelativeDate
+
+Re-exports [RelativeDate](../enums/types.RelativeDate.md)
+
+___
+
+### Sign
+
+Re-exports [Sign](types.md#sign)
+
+___
+
+### TimeInterval
+
+Re-exports [TimeInterval](types.md#timeinterval)
+
+___
+
+### TimeUnit
+
+Re-exports [TimeUnit](../enums/types.TimeUnit.md)
+
+___
 
 ### compare
 

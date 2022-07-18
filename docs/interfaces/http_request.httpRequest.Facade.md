@@ -14,7 +14,7 @@
 
 ### send
 
-• `Readonly` **send**: (`url`: `string`, `method?`: [`HttpRequestMethod`](../modules/http_request.httpRequest.md#httprequestmethod), `data?`: `IndexedRecord`<`unknown`\>, `headers?`: [`HttpHeaders`](../modules/http_request.httpRequest.md#httpheaders)) => `Promise`<`unknown`\>
+• `Readonly` **send**: (`url`: `string`, `method?`: [`HttpMethod`](../enums/types.HttpMethod.md), `data?`: `IndexedRecord`<`unknown`\>, `headers?`: [`HTTPHeaders`](../modules/types.md#httpheaders)) => `Promise`<`unknown`\>
 
 #### Type declaration
 
@@ -27,9 +27,9 @@ Sends HTTP request.
 | Name | Type | Description |
 | :------ | :------ | :------ |
 | `url` | `string` | URL. |
-| `method?` | [`HttpRequestMethod`](../modules/http_request.httpRequest.md#httprequestmethod) | HTTP method. |
+| `method?` | [`HttpMethod`](../enums/types.HttpMethod.md) | HTTP method. |
 | `data?` | `IndexedRecord`<`unknown`\> | Data. |
-| `headers?` | [`HttpHeaders`](../modules/http_request.httpRequest.md#httpheaders) | Headers. |
+| `headers?` | [`HTTPHeaders`](../modules/types.md#httpheaders) | HTTPHeaders. |
 
 ##### Returns
 

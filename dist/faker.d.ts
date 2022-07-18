@@ -1,3 +1,4 @@
+import type { TimeInterval, TimeUnit } from "./types";
 export declare const faker: import("@skylib/functions").Facade<faker.Facade, unknown>;
 export declare namespace faker {
     interface Facade {
@@ -68,7 +69,5 @@ export declare namespace faker {
          */
         readonly word: () => string;
     }
-    type TimeInterval = readonly [number, TimeUnit];
-    type TimeUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
 }
 //# sourceMappingURL=faker.d.ts.map

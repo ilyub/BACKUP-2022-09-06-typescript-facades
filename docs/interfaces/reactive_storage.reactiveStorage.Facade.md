@@ -41,7 +41,7 @@ Reactive object.
 
 ### unwatch
 
-• `Readonly` **unwatch**: (`obj`: `object`, `observer`: { `_type`: ``"ReactiveStorageObserver"``  }) => `void`
+• `Readonly` **unwatch**: (`obj`: `object`, `observer`: { `resourceType?`: ``"reactive-storage__observer"``  }) => `void`
 
 #### Type declaration
 
@@ -55,7 +55,7 @@ Unsubscribes from changes.
 | :------ | :------ | :------ |
 | `obj` | `object` | Reactive object. |
 | `observer` | `Object` | Observer. |
-| `observer._type` | ``"ReactiveStorageObserver"`` | - |
+| `observer.resourceType?` | ``"reactive-storage__observer"`` | - |
 
 ##### Returns
 
@@ -65,7 +65,7 @@ ___
 
 ### watch
 
-• `Readonly` **watch**: <T\>(`obj`: `T`, `handler`: [`Handler`](reactive_storage.reactiveStorage.Handler.md)<`T`\>, `reducer?`: [`Reducer`](reactive_storage.reactiveStorage.Reducer.md)<`T`\>) => { `_type`: ``"ReactiveStorageObserver"``  }
+• `Readonly` **watch**: <T\>(`obj`: `T`, `handler`: [`Handler`](reactive_storage.reactiveStorage.Handler.md)<`T`\>, `reducer?`: [`Reducer`](reactive_storage.reactiveStorage.Reducer.md)<`T`\>) => { `resourceType?`: ``"reactive-storage__observer"``  }
 
 #### Type declaration
 
@@ -95,4 +95,4 @@ Observer.
 
 | Name | Type |
 | :------ | :------ |
-| `_type` | ``"ReactiveStorageObserver"`` |
+| `resourceType?` | ``"reactive-storage__observer"`` |

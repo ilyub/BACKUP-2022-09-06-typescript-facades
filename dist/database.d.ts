@@ -1,4 +1,5 @@
 import type { NumStr, PartialRecord, numbers } from "@skylib/functions";
+import type { RelativeDate, Sign, TimeUnit } from "./types";
 export declare const database: import("@skylib/functions").Facade<database.Facade, database.Extension>;
 export declare namespace database {
     interface AttachedChangesHandler {
@@ -9,7 +10,7 @@ export declare namespace database {
          */
         (doc: ExistingAttachedDocument): void;
     }
-    type AttachedSubscriptionId = `attached-subscription-id-${string}`;
+    type AttachedSubscriptionId = `uasid-${string}`;
     interface BaseBulkAttachedDocument extends BasePutAttachedDocument {
         readonly parentDoc: BaseExistingDocument;
     }
@@ -333,10 +334,7 @@ export declare namespace database {
         readonly migrations?: Migrations;
         readonly retries?: number;
     }
-    type DateCondition = string | readonly [DateConditionType, DateConditionSign, number, DateConditionUnit] | readonly [DateConditionType];
-    type DateConditionSign = "-" | "+";
-    type DateConditionType = "endOfDay" | "endOfHour" | "endOfMonth" | "endOfWeek" | "now" | "startOfDay" | "startOfHour" | "startOfMonth" | "startOfWeek";
-    type DateConditionUnit = "day" | "days" | "hour" | "hours" | "minute" | "minutes";
+    type DateCondition = string | readonly [RelativeDate, Sign, number, TimeUnit] | readonly [RelativeDate];
     interface ExistingAttachedDocument extends BaseExistingAttachedDocument {
         readonly [K: string]: unknown;
     }
@@ -481,6 +479,10 @@ export declare namespace database {
          */
         (this: Database): Promise<void>;
     }
-    type SubscriptionId = `subscription-id-${string}`;
+    interface StoredAttachedDocument extends BaseStoredAttachedDocument {
+        readonly [K: string]: unknown;
+    }
+    type StoredAttachedDocuments = readonly StoredAttachedDocument[];
+    type SubscriptionId = `usid-${string}`;
 }
 //# sourceMappingURL=database.d.ts.map

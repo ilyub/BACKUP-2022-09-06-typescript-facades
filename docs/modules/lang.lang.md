@@ -17,14 +17,14 @@
 - [Key](lang.lang.md#key)
 - [Lang](lang.lang.md#lang)
 - [Plain](lang.lang.md#plain)
-- [Transform](lang.lang.md#transform)
+- [Transforms](lang.lang.md#transforms)
 - [Word](lang.lang.md#word)
 
 ## Type Aliases
 
 ### Context
 
-Ƭ **Context**: `PickKeys`<`facades.lang.Context`, ``true``, ``"extends->"``\>
+Ƭ **Context**: `types.object.keys.Pick`<`facades.lang.Context`, ``true``, ``"extends->"``\>
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 ### Key
 
-Ƭ **Key**<`W`\>: [`Plain`](lang.lang.md#plain) \| [`Transform`](lang.lang.md#transform)<`W`\>
+Ƭ **Key**<`W`\>: [`Plain`](lang.lang.md#plain) \| [`Transforms`](lang.lang.md#transforms)<`W`\>
 
 #### Type parameters
 
@@ -48,7 +48,7 @@ ___
 
 ### Lang
 
-Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.lang.Dictionary.md)<`W`, `C`\> & `Rec`<[`Transform`](lang.lang.md#transform)<`W`\>, `string`\>
+Ƭ **Lang**<`W`, `C`\>: [`Dictionary`](../interfaces/lang.lang.Dictionary.md)<`W`, `C`\> & `Rec`<[`Transforms`](lang.lang.md#transforms)<`W`\>, `string`\>
 
 #### Type parameters
 
@@ -65,9 +65,9 @@ ___
 
 ___
 
-### Transform
+### Transforms
 
-Ƭ **Transform**<`W`\>: `Capitalize`<`W`\> \| `Lowercase`<`W`\> \| `Uncapitalize`<`W`\> \| `Uppercase`<`W`\>
+Ƭ **Transforms**<`W`\>: `Capitalize`<`W`\> \| `Lowercase`<`W`\> \| `Uncapitalize`<`W`\> \| `Uppercase`<`W`\>
 
 #### Type parameters
 
@@ -79,4 +79,4 @@ ___
 
 ### Word
 
-Ƭ **Word**: `PickKeys`<`facades.lang.Word`, ``true``, ``"extends->"``\>
+Ƭ **Word**: `types.object.keys.Pick`<`facades.lang.Word`, ``true``, ``"extends->"``\>

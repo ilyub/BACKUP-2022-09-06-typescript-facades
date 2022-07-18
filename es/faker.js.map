@@ -1,1 +1,1 @@
-{"version":3,"file":"faker.js","sourceRoot":"","sources":["../src/faker.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,mBAAmB,CAAC;AAEjD,MAAM,CAAC,MAAM,KAAK,GAAG,YAAY,CAAe,OAAO,EAAE,EAAE,CAAC,CAAC"}
+{"version":3,"file":"faker.js","sourceRoot":"","sources":["../src/faker.ts"],"names":[],"mappings":"AACA,OAAO,EAAE,YAAY,EAAE,MAAM,mBAAmB,CAAC;AAEjD,MAAM,CAAC,MAAM,KAAK,GAAG,YAAY,CAAe,OAAO,EAAE,EAAE,CAAC,CAAC"}

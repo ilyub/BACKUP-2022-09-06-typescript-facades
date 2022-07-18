@@ -30,7 +30,7 @@ Handles promise with progress reporting.
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `type` | `undefined` \| [`Type`](handle_promise.handlePromise.md#type) | Type (determines expected duration for progress reporting). |
+| `type` | `undefined` \| [`PromiseType`](../enums/types.PromiseType.md) | Type (determines expected duration for progress reporting). |
 | `mixed` | `AsyncPromise`<`T`, `nevers`\> | Promise or async function. |
 | `errorMessage?` | `string` | Error message (used to alert user on error). |
 

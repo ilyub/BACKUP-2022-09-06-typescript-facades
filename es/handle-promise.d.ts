@@ -1,4 +1,5 @@
-import type { AsyncPromise } from "@skylib/functions";
+import type { PromiseType } from "./types";
+import type { types } from "@skylib/functions";
 export declare const handlePromise: import("@skylib/functions").Facade<handlePromise.Facade, unknown>;
 export declare namespace handlePromise {
     interface Facade {
@@ -9,7 +10,7 @@ export declare namespace handlePromise {
          * @param type - Type (determines expected duration for progress reporting).
          * @param errorMessage - Error message (used to alert user on error).
          */
-        <T>(type: Type | undefined, mixed: AsyncPromise<T>, errorMessage?: string): void;
+        <T>(type: PromiseType | undefined, mixed: types.fn.AsyncPromise<T>, errorMessage?: string): void;
         /**
          * Waits for all promises.
          *
@@ -28,8 +29,7 @@ export declare namespace handlePromise {
          * @param mixed - Promise or async function.
          * @param errorMessage - Error message (used to alert user on error).
          */
-        readonly silent: <T>(mixed: AsyncPromise<T>, errorMessage?: string) => void;
+        readonly silent: <T>(mixed: types.fn.AsyncPromise<T>, errorMessage?: string) => void;
     }
-    type Type = "createDb" | "dbRequest" | "destroyDb" | "httpRequest" | "navigation";
 }
 //# sourceMappingURL=handle-promise.d.ts.map

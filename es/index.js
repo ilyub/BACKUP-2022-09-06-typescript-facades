@@ -1,3 +1,4 @@
+export * from "./types";
 export { compare } from "./compare";
 export { database } from "./database";
 export { datetime } from "./datetime";

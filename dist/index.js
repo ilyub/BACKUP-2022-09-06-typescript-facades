@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.uniqueId = exports.testDelay = exports.showConfirm = exports.showAlert = exports.reactiveStorage = exports.progressReporter = exports.lang = exports.inlineSearch = exports.icons = exports.httpRequest = exports.handlePromise = exports.google = exports.faker = exports.facebook = exports.dump = exports.datetime = exports.database = exports.compare = void 0;
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./types"), exports);
 var compare_1 = require("./compare");
 Object.defineProperty(exports, "compare", { enumerable: true, get: function () { return compare_1.compare; } });
 var database_1 = require("./database");

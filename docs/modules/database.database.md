@@ -40,6 +40,7 @@
 - [ReactiveUnsubscribe](../interfaces/database.database.ReactiveUnsubscribe.md)
 - [ReactiveUpdate](../interfaces/database.database.ReactiveUpdate.md)
 - [ResetCallback](../interfaces/database.database.ResetCallback.md)
+- [StoredAttachedDocument](../interfaces/database.database.StoredAttachedDocument.md)
 
 ### Type Aliases
 
@@ -55,9 +56,6 @@
 - [ConditionsArray](database.database.md#conditionsarray)
 - [ConditionsRecord](database.database.md#conditionsrecord)
 - [DateCondition](database.database.md#datecondition)
-- [DateConditionSign](database.database.md#dateconditionsign)
-- [DateConditionType](database.database.md#dateconditiontype)
-- [DateConditionUnit](database.database.md#dateconditionunit)
 - [ExistingAttachedDocuments](database.database.md#existingattacheddocuments)
 - [ExistingDocuments](database.database.md#existingdocuments)
 - [Migrations](database.database.md#migrations)
@@ -66,13 +64,14 @@
 - [PutDocuments](database.database.md#putdocuments)
 - [PutResponses](database.database.md#putresponses)
 - [ReactiveResponse](database.database.md#reactiveresponse)
+- [StoredAttachedDocuments](database.database.md#storedattacheddocuments)
 - [SubscriptionId](database.database.md#subscriptionid)
 
 ## Type Aliases
 
 ### AttachedSubscriptionId
 
-Ƭ **AttachedSubscriptionId**: \`attached-subscription-id-${string}\`
+Ƭ **AttachedSubscriptionId**: \`uasid-${string}\`
 
 ___
 
@@ -156,25 +155,7 @@ ___
 
 ### DateCondition
 
-Ƭ **DateCondition**: `string` \| readonly [[`DateConditionType`](database.database.md#dateconditiontype), [`DateConditionSign`](database.database.md#dateconditionsign), `number`, [`DateConditionUnit`](database.database.md#dateconditionunit)] \| readonly [[`DateConditionType`](database.database.md#dateconditiontype)]
-
-___
-
-### DateConditionSign
-
-Ƭ **DateConditionSign**: ``"-"`` \| ``"+"``
-
-___
-
-### DateConditionType
-
-Ƭ **DateConditionType**: ``"endOfDay"`` \| ``"endOfHour"`` \| ``"endOfMonth"`` \| ``"endOfWeek"`` \| ``"now"`` \| ``"startOfDay"`` \| ``"startOfHour"`` \| ``"startOfMonth"`` \| ``"startOfWeek"``
-
-___
-
-### DateConditionUnit
-
-Ƭ **DateConditionUnit**: ``"day"`` \| ``"days"`` \| ``"hour"`` \| ``"hours"`` \| ``"minute"`` \| ``"minutes"``
+Ƭ **DateCondition**: `string` \| readonly [[`RelativeDate`](../enums/types.RelativeDate.md), [`Sign`](types.md#sign), `number`, [`TimeUnit`](../enums/types.TimeUnit.md)] \| readonly [[`RelativeDate`](../enums/types.RelativeDate.md)]
 
 ___
 
@@ -232,6 +213,12 @@ ___
 
 ___
 
+### StoredAttachedDocuments
+
+Ƭ **StoredAttachedDocuments**: readonly [`StoredAttachedDocument`](../interfaces/database.database.StoredAttachedDocument.md)[]
+
+___
+
 ### SubscriptionId
 
-Ƭ **SubscriptionId**: \`subscription-id-${string}\`
+Ƭ **SubscriptionId**: \`usid-${string}\`
