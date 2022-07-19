@@ -12,13 +12,6 @@ export declare namespace datetime {
          */
         readonly add: (amount: number, unit: TimeUnit) => DateTime;
         /**
-         * Clones self.
-         *
-         * @returns DateTime instance.
-         * @deprecated - DateTime is readonly.
-         */
-        readonly clone: () => DateTime;
-        /**
          * Returns day of month.
          *
          * @returns Day of month.

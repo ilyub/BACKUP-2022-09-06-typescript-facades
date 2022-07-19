@@ -9,7 +9,6 @@
 ### Properties
 
 - [add](datetime.datetime.DateTime.md#add)
-- [clone](datetime.datetime.DateTime.md#clone)
 - [dayOfMonth](datetime.datetime.DateTime.md#dayofmonth)
 - [dayOfWeek](datetime.datetime.DateTime.md#dayofweek)
 - [format](datetime.datetime.DateTime.md#format)
@@ -66,28 +65,6 @@ Adds time interval.
 [`DateTime`](datetime.datetime.DateTime.md)
 
 New instance.
-
-___
-
-### clone
-
-• `Readonly` **clone**: () => [`DateTime`](datetime.datetime.DateTime.md)
-
-#### Type declaration
-
-▸ (): [`DateTime`](datetime.datetime.DateTime.md)
-
-Clones self.
-
-**`Deprecated`**
-
-- DateTime is readonly.
-
-##### Returns
-
-[`DateTime`](datetime.datetime.DateTime.md)
-
-DateTime instance.
 
 ___
 
