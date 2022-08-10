@@ -4,10 +4,10 @@ import { createFacade } from "@skylib/functions";
 declare global {
   namespace facades {
     namespace lang {
-      // eslint-disable-next-line @skylib/custom/no-empty-interface -- Ok
+      // eslint-disable-next-line @skylib/no-empty-interfaces -- Ok
       interface Context {}
 
-      // eslint-disable-next-line @skylib/custom/no-empty-interface -- Ok
+      // eslint-disable-next-line @skylib/no-empty-interfaces -- Ok
       interface Word {}
     }
   }

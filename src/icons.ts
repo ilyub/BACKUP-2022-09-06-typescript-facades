@@ -4,7 +4,7 @@ import { createFacade } from "@skylib/functions";
 declare global {
   namespace facades {
     namespace icons {
-      // eslint-disable-next-line @skylib/custom/no-empty-interface -- Ok
+      // eslint-disable-next-line @skylib/no-empty-interfaces -- Ok
       interface Icon {}
     }
   }

@@ -48,7 +48,7 @@ export namespace database {
   export type BaseExistingDocuments = readonly BaseExistingDocument[];
 
   export interface BasePutAttachedDocument {
-    // eslint-disable-next-line @skylib/custom/no-optional-true-type -- Ok
+    // eslint-disable-next-line @skylib/typescript/no-true-type -- Ok
     readonly _deleted?: true;
     readonly _id?: number;
     readonly _rev?: number;
@@ -58,7 +58,7 @@ export namespace database {
   export type BasePutAttachedDocuments = readonly BasePutAttachedDocument[];
 
   export interface BasePutDocument {
-    // eslint-disable-next-line @skylib/custom/no-optional-true-type -- Ok
+    // eslint-disable-next-line @skylib/typescript/no-true-type -- Ok
     readonly _deleted?: true;
     readonly _id?: string;
     readonly _rev?: string;
@@ -235,6 +235,7 @@ export namespace database {
      * @param doc - Attached document.
      * @returns Response.
      */
+    // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
     readonly putIfNotExistsAttached: (
       parentId: string,
       doc: PutAttachedDocument
@@ -333,6 +334,7 @@ export namespace database {
      * @param parentId - Parent ID.
      * @returns Attached document if exists, _undefined_ otherwise.
      */
+    // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
     readonly reactiveGetIfExistsAttached: (
       id: number,
       parentId: string
@@ -438,7 +440,7 @@ export namespace database {
 
   export type DateCondition =
     | string
-    // eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
+    // eslint-disable-next-line @skylib/typescript/no-multi-type-tuples -- Ok
     | readonly [RelativeDate, Sign, number, TimeUnit]
     | readonly [RelativeDate];
 

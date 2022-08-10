@@ -1,3 +1,5 @@
+export {};
+
 declare global {
   namespace facades {
     namespace icons {
@@ -17,5 +19,3 @@ declare global {
     }
   }
 }
-
-export {};

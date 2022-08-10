@@ -1,3 +1,1 @@
-module.exports = {
-  dirs: ["./src", "./tests"]
-};
+module.exports = { dirs: ["./src", "./tests"] };

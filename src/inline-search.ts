@@ -27,9 +27,13 @@ export namespace inlineSearch {
      * @returns Search engine instance.
      */
     readonly create: <T extends object>(
-      idField: string & keyof T,
-      fields: ReadonlyArray<string & keyof T>,
+      idField: Field<T>,
+      fields: Fields<T>,
       items: readonly T[]
     ) => Engine<T>;
   }
+
+  export type Field<T extends object> = string & keyof T;
+
+  export type Fields<T extends object> = ReadonlyArray<string & keyof T>;
 }

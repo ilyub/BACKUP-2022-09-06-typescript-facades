@@ -46,6 +46,7 @@ export namespace datetime {
      * @param date - Date.
      * @returns _True_ if dates are equal, _false_ otherwise.
      */
+    // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
     readonly isSameDayOfMonth: (date: DateTime) => boolean;
     /**
      * Compares two dates up to hours.
@@ -108,6 +109,7 @@ export namespace datetime {
      * @param day - Day of week (Sunday = 0, Monday = 1).
      * @returns New instance.
      */
+    // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
     readonly setDayOfWeekLocale: (day: number) => DateTime;
     /**
      * Sets hours.
@@ -166,6 +168,7 @@ export namespace datetime {
      *
      * @returns New instance.
      */
+    // eslint-disable-next-line @skylib/max-identifier-blocks -- Ok
     readonly setStartOfWeekLocale: () => DateTime;
     /**
      * Sets date to the start of year.

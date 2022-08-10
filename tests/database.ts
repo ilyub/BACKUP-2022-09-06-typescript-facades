@@ -1,12 +1,11 @@
-/* eslint-disable no-warning-comments -- Wait for @skylib/eslint-plugin update */
+import * as facades from "@";
 
-import { database, uniqueId } from "@";
+facades.uniqueId.setImplementation(() => "unique");
 
-// fixme
-uniqueId.setImplementation(() => "unique");
 test("uniqueAttachedSubscriptionId", () => {
-  expect(database.uniqueAttachedSubscriptionId()).toStartWith("uasid-");
+  expect(facades.database.uniqueAttachedSubscriptionId()).toBe("uasid-unique");
 });
+
 test("uniqueSubscriptionId", () => {
-  expect(database.uniqueSubscriptionId()).toStartWith("usid-");
+  expect(facades.database.uniqueSubscriptionId()).toBe("usid-unique");
 });

@@ -1,9 +1,13 @@
 import type { PartialRecord } from "@skylib/functions";
 
 export enum HttpHeader {
+  // eslint-disable-next-line @skylib/consistent-enum-members -- Ok
   accept = "Accept",
+  // eslint-disable-next-line @skylib/consistent-enum-members -- Ok
   acceptLanguage = "Accept-Language",
+  // eslint-disable-next-line @skylib/consistent-enum-members -- Ok
   authorization = "Authorization",
+  // eslint-disable-next-line @skylib/consistent-enum-members -- Ok
   contentType = "Content-Type"
 }
 
@@ -50,8 +54,8 @@ export enum TimeUnit {
 
 export type HTTPHeaders = PartialRecord<HttpHeader, string>;
 
-// eslint-disable-next-line @skylib/custom/no-literal-union-type -- Ok
+// eslint-disable-next-line @skylib/typescript/prefer-enum -- Ok
 export type Sign = "-" | "+";
 
-// eslint-disable-next-line @skylib/no-multi-type-tuples -- Ok
+// eslint-disable-next-line @skylib/typescript/no-multi-type-tuples -- Ok
 export type TimeInterval = readonly [number, TimeUnit];
