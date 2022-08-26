@@ -1,16 +1,6 @@
 import { createFacade } from "@skylib/functions";
 import type { types } from "@skylib/functions";
 
-declare global {
-  namespace facades {
-    namespace reactiveStorage {
-      interface Observer {
-        readonly resourceType?: "reactive-storage__observer";
-      }
-    }
-  }
-}
-
 export const reactiveStorage = createFacade<reactiveStorage.Facade>(
   "reactiveStorage",
   {}
@@ -76,5 +66,15 @@ export namespace reactiveStorage {
      * @param obj - Object.
      */
     (obj: T): unknown;
+  }
+}
+
+declare global {
+  namespace facades {
+    namespace reactiveStorage {
+      interface Observer {
+        readonly resourceType?: "reactive-storage__observer";
+      }
+    }
   }
 }
