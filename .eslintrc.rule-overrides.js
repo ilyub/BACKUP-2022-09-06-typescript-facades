@@ -8,27 +8,27 @@ module.exports = {
       "warn",
       {
         sources: [
-          ...consistentImport.sources,
           {
             _id: "src",
             localName: "facades",
             source: "@skylib/facades/src",
             wildcard: true
-          }
+          },
+          ...consistentImport.sources
         ]
       }
     ],
     "@skylib/no-sibling-import": [
       "warn",
       {
-        folders: [
+        rules: [
           {
             filesToLint: ["./*"],
-            levels: [["./jest.config"], ["./jest.config.fast"]]
+            hierarchy: [["./jest.config"], ["./jest.config.fast"]]
           },
           {
             filesToLint: ["./src/*"],
-            levels: [["./unique-id"], ["./database"]]
+            hierarchy: [["./unique-id"], ["./database"]]
           }
         ]
       }
