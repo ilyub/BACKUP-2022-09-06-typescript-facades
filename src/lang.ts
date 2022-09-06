@@ -1,6 +1,18 @@
 import type { NumStr, Rec, types } from "@skylib/functions";
 import { createFacade } from "@skylib/functions";
 
+declare global {
+  namespace facades {
+    namespace lang {
+      // eslint-disable-next-line @skylib/typescript/no-empty-interfaces -- Ok
+      interface Context {}
+
+      // eslint-disable-next-line @skylib/typescript/no-empty-interfaces -- Ok
+      interface Word {}
+    }
+  }
+}
+
 export const lang = createFacade<lang.Facade>("lang", {});
 
 // eslint-disable-next-line @typescript-eslint/no-redeclare -- Ok
@@ -85,16 +97,4 @@ export namespace lang {
     true,
     "extends->"
   >;
-}
-
-declare global {
-  namespace facades {
-    namespace lang {
-      // eslint-disable-next-line @skylib/typescript/no-empty-interfaces -- Ok
-      interface Context {}
-
-      // eslint-disable-next-line @skylib/typescript/no-empty-interfaces -- Ok
-      interface Word {}
-    }
-  }
 }
